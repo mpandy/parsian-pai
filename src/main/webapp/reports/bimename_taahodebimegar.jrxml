@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bimename_taahodebimegar" language="groovy" pageWidth="17" pageHeight="800" columnWidth="17" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="0b5c5e45-2c28-4f62-a5eb-62a7eefd4058">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<field name="sarmaye_taahod" class="java.lang.Long"/>
+	<field name="hagh_bime_taahod" class="java.lang.Long"/>
+	<field name="hagh_bime_khataratezafi" class="java.lang.Long"/>
+	<field name="nerkh_taahod" class="java.lang.Double"/>
+	<field name="nerkh_khatareEzafi" class="java.lang.Double"/>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<rectangle>
+				<reportElement x="238" y="0" width="98" height="16" uuid="d8b5aae5-fe10-46e2-9246-7eeaa7effdc2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="173" y="0" width="65" height="16" uuid="45c0005d-a838-4552-9e94-54bb47be56ae"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="120" y="0" width="53" height="16" uuid="33bb2a63-cf4b-48d1-ad00-93dc72d59df3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="64" y="0" width="56" height="16" uuid="0b78e5f6-2b94-4003-ba01-188b13df8917"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="64" height="16" uuid="409bd376-e618-485d-b796-fd68ef6e9e3e"/>
+			</rectangle>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="style1" x="0" y="0" width="64" height="16" uuid="3d44b14b-72e2-4a51-abd8-995b4b41c246"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hagh_bime_khataratezafi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" mode="Transparent" x="173" y="0" width="65" height="16" uuid="3f716654-adce-424e-92e4-df7aca2e15d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nerkh_taahod}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="120" y="0" width="53" height="16" uuid="cf7bbfce-bf9a-4ab8-a5f8-552fc8b31901"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nerkh_khatareEzafi}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="style1" x="64" y="0" width="56" height="16" uuid="96da115d-cb98-4066-9691-3cf99ca31a30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hagh_bime_taahod}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="style1" x="238" y="0" width="98" height="16" backcolor="#D7E1EF" uuid="3fe98e01-37bb-4cff-aed3-f5053aceda67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sarmaye_taahod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

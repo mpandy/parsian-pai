@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <p:dialog id="newkarbardialog" header="#{msg['karbarejadid']}" dir="rtl" styleClass="matnfarsi"
+              minHeight="40" position="top" visible="#{userAdminPanelBean.karbarDialogVisible}"
+              closable="false" resizable="false">
+        <p:outputPanel style="padding: 3%" styleClass="matnfarsi">
+
+            <h:form>
+                <h:panelGrid columns="2" styleClass="matnfarsi" >
+
+                    <p:outputLabel value="#{msg['nameandfamily']} : " for="naam"/>
+                    <p:inputText id="naam" value="#{userAdminPanelBean.newKarbar.realName}"/>
+
+                    <p:outputLabel value="#{msg['username']} : " for="username"/>
+                    <p:inputText id="username" value="#{userAdminPanelBean.newKarbar.username}"/>
+
+                    <p:outputLabel value="#{msg['vahedeMahaleKhedmat']} : " for="vahedeMahaleKhedmat"/>
+                    <p:autoComplete id="vahedeMahaleKhedmat"  value="#{userAdminPanelBean.newKarbar.vahed}"
+                                    var="vahedeMahaleKhedmat"
+                                    itemLabel="#{vahedeMahaleKhedmat}"
+                                    itemValue="#{vahedeMahaleKhedmat}"
+                                    completeMethod="#{baseInfoService.autocompleteVahed}"
+                                    converter="#{vahedConverter}"
+                                    style="direction: ltr"
+                                    forceSelection="true">
+                    </p:autoComplete>
+
+                    <p:outputLabel value="#{msg['codebazaryabi']} : " for="codebazaryabi"/>
+                    <p:inputText id="codebazaryabi" value="#{userAdminPanelBean.newKarbar.codeBazaryab}"/>
+
+                    <p:outputLabel value="#{msg['vaziatekarbar']} : " for="usertype"/>
+                    <p:selectOneMenu id="usertype" value="#{userAdminPanelBean.newKarbar.vaziateFaaliat}"
+                                     style="font-size: small; direction: ltr">
+                        <f:selectItems value="#{userAdminPanelBean.userTypes}" var="usertype" itemValue="#{usertype}"
+                                       itemLabel="#{msg[usertype.name()]}" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="#{msg['roles']} : " for="rolenames"/>
+                    <p:autoComplete id="rolenames" multiple="true" value="#{userAdminPanelBean.selectedRoles}"
+                                    completeMethod="#{userAdminPanelBean.autocompleteRole}"
+                                    forceSelection="true">
+                    </p:autoComplete>
+
+                    <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" styleClass="matnfarsi" style="right: 90%"
+                                     actionListener="#{userAdminPanelBean.addOrEditKarbar}" update="karbarantable newkarbardialog"/>
+                    <p:commandButton value="#{msg['close']}" icon="fa fa-close" styleClass="matnfarsi" style="right: 15%"
+                                     actionListener="#{userAdminPanelBean.closeDialogKarbar}" update="newkarbardialog"/>
+                </h:panelGrid>
+            </h:form>
+
+        </p:outputPanel>
+    </p:dialog>
+</f:view>
+</html>

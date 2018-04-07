@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+
+<p:layout style="height: 450px">
+
+<p:layoutUnit header="#{msg['jostejuDarkhast']}" position="east" maxSize="300"
+              minSize="300">
+    <h:form id="artifactdocsform" >
+
+    <h:panelGrid columns="2" styleClass="matnfarsi" style="direction: rtl;padding-top: 5%">
+                <p:outputLabel value="#{msg['darkhasthaye']} : " for="darkhastha"/>
+                <p:selectOneMenu id="darkhastha" value="#{artifactDocListBean.searchArtifact.ersali_or_daryafti}"
+                                 style="direction: ltr">
+                    <f:selectItems value="#{comboOptions.artifactDaryaftiErsali}" var="ersalidaryafti"
+                                   itemValue="#{ersalidaryafti}" itemLabel="#{msg[ersalidaryafti.name()]}"/>
+                </p:selectOneMenu>
+                <p:outputLabel value="#{msg['shomare_pishnahad']} : " for="shomare_pishnahad"/>
+                <p:inputText id="shomare_pishnahad" value="#{artifactDocListBean.searchArtifact.shomarePishnahad}"
+                             style="font-family: byekan" size="20" />
+
+                <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
+                                 style="right: 45%; margin: 1%"
+                                 actionListener="#{artifactDocListBean.search}" update="artifactdocstable"/>
+             </h:panelGrid>
+    </h:form>
+</p:layoutUnit>
+
+<p:layoutUnit header="#{msg['listeDarkhastHa']}" position="center" style="height: 90%" maxSize="600" minSize="600">
+
+<p:outputPanel>
+
+        <p:dataTable id="artifactdocstable" var="nextartifactdoc" value="#{artifactDocListBean.showOperatableArtifactDocs()}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" tableStyle="text-align: center" scrollable="true"
+                     resizableColumns="true" dir="rtl" rowIndexVar="index">
+
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['creator']}" style="text-align: center" styleClass="matnfarsi">
+                #{nextartifactdoc.creator}
+            </p:column>
+
+            <p:column headerText="#{msg['artifactDocType']}" style="text-align: center" styleClass="matnfarsi" width="150">
+                #{msg[nextartifactdoc['class'].simpleName]}
+            </p:column>
+
+            <p:column headerText="#{msg['artifactDocState']}" style="text-align: center" styleClass="matnfarsi" width="85">
+                #{msg[nextartifactdoc.artifactDocState]}
+            </p:column>
+
+            <p:column headerText="#{msg['tarikheSabteArtifactDoc']}" style="text-align: center" styleClass="matnfarsi" width="100">
+                <p:outputLabel value="#{nextartifactdoc.tarikheSabteArtifactDoc}" style="font-family: byekan"/>
+            </p:column>
+
+            <p:column headerText="#{msg['amaliat']}" width="145" style="text-align: center" styleClass="matnfarsi">
+                <h:form>
+                <p:commandButton icon="fa fa-refresh" value="#{msg['tagheervaziat']}"
+                                 styleClass="matnfarsi" rendered="#{artifactDocListBean.showTaghirVaziatButton(nextartifactdoc)}">
+                <p:ajax event="click" listener="#{artifactDocListBean.taghirVaziat(nextartifactdoc)}"
+                        update=":artifactdialogform:artifactdialog"/>
+                </p:commandButton>
+
+                <p:commandButton icon="fa fa-file-text-o" value="#{msg['namayesh']}"
+                                 styleClass="matnfarsi"  rendered="#{artifactDocListBean.showNamayeshButton(nextartifactdoc)}">
+                <p:ajax event="click" listener="#{artifactDocListBean.namayesh(nextartifactdoc)}"
+                        update=":artifactdialogform:artifactdialog"/>
+                </p:commandButton>
+                </h:form>
+            </p:column>
+
+        </p:dataTable>
+        <ui:include src="dialog/artifactdoc.xhtml" />
+
+
+    </p:outputPanel>
+    </p:layoutUnit>
+    </p:layout>
+
+<h:form>
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+    </p:outputPanel>
+
+</h:form>
+</html>

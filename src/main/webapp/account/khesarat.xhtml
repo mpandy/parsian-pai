@@ -1,0 +1,235 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pfaces="http://omidbiz.com/ui" xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+      <p:outputPanel style="direction: rtl">
+   <h:form id="khesaratform" >
+
+       <p:panel id="khesarat" header="#{msg['moshakhasateparvande']}">
+           <h:panelGrid columns="6"  styleClass="matnfarsi" width="100%">
+
+            <p:outputLabel value="#{msg['shomareparvande']} : " for="shomareparvande"
+                              rendered="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.VIRAYESH_KHESARAT])}"/>
+            <p:inputText id="shomareparvande" value="#{khesaratBean.khesarat.shomare_parvande}"
+                        size="24" style="font-family: byekan"
+                        disabled="true"
+                        rendered="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.VIRAYESH_KHESARAT])}"/>
+
+            <p:outputLabel value="#{msg['masooleparvande']} : " for="masooleparvande"
+                            rendered="#{not empty khesaratBean.khesarat.masool_parvande}"/>
+            <p:inputText id="masooleparvande" value="#{khesaratBean.khesarat.masool_parvande}"
+                            disabled="true"
+                            rendered="#{not empty khesaratBean.khesarat.masool_parvande}"/>
+
+           <p:outputLabel value="#{msg['vaziateparvande']} : " for="vaziateparvande" />
+           <p:selectOneMenu id="vaziateparvande" value="#{khesaratBean.khesarat.vaziateparvande}"
+                             style="direction: ltr"
+                            disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                   <f:selectItems value="#{khesaratBean.validNextVaziats}" var="vaziateParvande" itemValue="#{vaziateParvande}" itemLabel="#{msg[vaziateParvande.name()]}" />
+           </p:selectOneMenu>
+
+               <p:outputLabel value="#{msg['tarikhetashkileparvande']} : " for="tarikhetashkileparvande" />
+           <p:inputText id="tarikhetashkileparvande" value="#{khesaratBean.khesarat.tarikhe_tashkil_parvande}"
+                         disabled="true" style="font-family: byekan"/>
+
+           <p:outputLabel value="#{msg['tarikhehadese']} : " />
+               <pfaces:datePicker value="#{khesaratBean.khesarat.tarikhe_hadese}" style="font-family: byekan"
+                                  styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"
+               disabled="#{not khesaratBean.filter.tarikhhadese}"/>
+
+           <p:outputLabel value="#{msg['shahremahalehadese']} : " for="shahremahalehadese" />
+           <p:inputText id="shahremahalehadese" value="#{khesaratBean.khesarat.shahr_mahale_hadese}"
+                         disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}"/>
+
+               <p:outputLabel value="#{msg['tarikhenaame']} : " />
+               <pfaces:datePicker value="#{khesaratBean.khesarat.tarikh_naame}" style="font-family: byekan"
+                                  styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+             <p:outputLabel value="#{msg['tarikheelamekhesarat']} : " />
+               <pfaces:datePicker value="#{khesaratBean.khesarat.tarikh_elam_khesarat}" style="font-family: byekan"
+                                  styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+               <p:outputLabel value="#{msg['shomarenaame']} : " for="shomarenaame" />
+               <p:inputText id="shomarenaame" value="#{khesaratBean.khesarat.shomare_naame}"
+                            style="font-family: byekan" disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}"/>
+
+               <p:outputLabel value="#{msg['nahveelamekhesarate']} : " for="nahveelamekhesarate" />
+               <p:selectOneMenu id="nahveelamekhesarate" value="#{khesaratBean.khesarat.nahve_elam_khesarat}"
+                                 style="direction: ltr"
+                                disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                   <f:selectItems value="#{comboOptions.nahveElameKhesarat}" var="elamekhesarat" itemValue="#{elamekhesarat}" itemLabel="#{msg[elamekhesarat.name()]}" />
+               </p:selectOneMenu>
+
+           </h:panelGrid>
+       </p:panel>
+       <p:panel id="mavardekhesarat" style="width: 100%" header="#{msg['mavaredekhesarat']}"
+                rendered="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.VIRAYESH_KHESARAT,state.KHESARAT])}">
+           <h:panelGrid columns="1" style="width: 100%" styleClass="matnfarsi">
+
+               <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
+                                rendered="#{mainView.inAnyOf([state.VIRAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT,state.KHESARAT])}">
+                   <p:ajax event="click" listener="#{khesaratBean.newKhesaratCaseInit}" update="newkhesaratdialog"/>
+               </p:commandButton>
+
+               <p:dataTable id="khesarattable" var="nextkhesaratcase" value="#{khesaratBean.undeletedKhesaratCases()}"
+                            emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true">
+
+                   <p:column headerText="#{msg['noekhesarat']}" style="text-align: center" styleClass="matnfarsi">
+                       #{msg[nextkhesaratcase.noe_khesarat]}
+                   </p:column>
+
+                   <p:column headerText="#{msg['noehadese']}" style="text-align: center" styleClass="matnfarsi">
+                       #{msg[nextkhesaratcase.noehadese]}
+                   </p:column>
+
+                   <p:column headerText="#{msg['vaziatekhesarat']}" style="text-align: center" styleClass="matnfarsi">
+                       #{msg[nextkhesaratcase.vaziat]}
+                   </p:column>
+
+                   <p:column headerText="#{msg['mablaghekhesarattaeedshode']}" style="text-align: center" styleClass="matnfarsi">
+                       <h:outputText value=" #{nextkhesaratcase.mablagh_khesarate_taeedshode}" style="font-family: byekan">
+                           <f:convertNumber pattern="#,##0"/>
+                       </h:outputText>
+                   </p:column>
+
+                   <p:column headerText="#{msg['mablaghekharejaztaahod']}" style="text-align: center" styleClass="matnfarsi">
+                       <h:outputText value="#{nextkhesaratcase.mablagh_kharej_az_taahoh}" style="font-family: byekan">
+                           <f:convertNumber pattern="#,##0"/>
+                       </h:outputText>
+                   </p:column>
+
+                   <p:column headerText="#{msg['khesarateghabelpardakht']}" style="text-align: center" styleClass="matnfarsi">
+                       <h:outputText value="#{nextkhesaratcase.khesarat_ghabl_pardakht}" style="font-family: byekan">
+                           <f:convertNumber pattern="#,##0"/>
+                       </h:outputText>
+                   </p:column>
+
+                   <p:column headerText="#{msg['karshenasekhesarat']}" style="text-align: center" styleClass="matnfarsi">
+                       #{nextkhesaratcase.karshenase_khesarat}
+                   </p:column>
+
+                   <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145"
+                             rendered="#{mainView.inAnyOf([state.SODOOR_NEW_HAVALE_KHESARAT, state.KHESARAT, state.VIRAYESH_KHESARAT])}">
+                       <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                        actionListener="#{khesaratBean.editKhesaratCase(nextkhesaratcase)}"
+                                        update="khesarattable :khesaratform:newkhesaratdialog"
+                                        disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT])}">
+                       </p:commandButton>
+
+                       <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                        actionListener="#{khesaratBean.removeKhesaratCase(nextkhesaratcase)}"
+                                        update="khesarattable"
+                                        disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT])}">
+                       </p:commandButton>
+                   </p:column>
+
+               </p:dataTable>
+               <ui:include src="dialog/khesaratcase.xhtml" />
+
+           </h:panelGrid>
+       </p:panel>
+
+       <p:panel id="havalekhesarat" style="width: 100%" header="#{msg['havalekhesarat']}"
+                rendered="#{mainView.inAnyOf([state.SODOOR_NEW_HAVALE_KHESARAT,state.NAMAYESH_KHESARAT])}">
+            <h:panelGrid columns="1" width="100%" styleClass="matnfarsi">
+
+             <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
+                        rendered="#{mainView.inAnyOf([state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                <p:ajax event="click" listener="#{khesaratBean.newHavaleKhesaratInit}" update="newhavalekhesaratdialog"/>
+             </p:commandButton>
+
+           <p:dataTable id="havalekhesarattable" var="nexthavalekhesarat" value="#{khesaratBean.undeletedHavaleKhesarats()}"
+                        emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true">
+
+               <p:column headerText="#{msg['shomarehavale']}" styleClass="matnfarsi" style="text-align: center"
+                         rendered="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT])}">
+                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.shomareHavale}"/>
+               </p:column>
+
+               <p:column headerText="#{msg['noehavale']}" styleClass="matnfarsi" style="text-align: center" width="125">
+                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.noeHavale}"/>
+               </p:column>
+
+               <p:column headerText="#{msg['mablaghHavale']}" styleClass="matnfarsi" style="text-align: center" width="100">
+                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.mablaghHavale}">
+                   <f:convertNumber pattern="#,##0"/>
+                   </p:outputLabel>
+               </p:column>
+
+               <p:column headerText="#{msg['namedaryaftkonande']}" styleClass="matnfarsi" style="text-align: center" width="110">
+                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.name_daryaft_konande}"/>
+               </p:column>
+
+               <p:column headerText="#{msg['nesbatbabimeshode']}" styleClass="matnfarsi" style="text-align: center" width="90">
+                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.nesbatBaBimeshode}"/>
+               </p:column>
+
+               <p:column headerText="#{msg['tarikheHavale']}" styleClass="matnfarsi" style="text-align: center" width="90">
+                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.tarikhSodoorHavale}"/>
+               </p:column>
+
+               <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="190" style="text-align: center">
+                   <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                    actionListener="#{khesaratBean.editHavaleKhesarat(nexthavalekhesarat)}"
+                                    update="havalekhesarattable :khesaratform:newhavalekhesaratdialog"
+                                    rendered="#{mainView.inAnyOf([state.KHESARAT, state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                   </p:commandButton>
+
+                   <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                    actionListener="#{khesaratBean.removeHavaleKhesarat(nexthavalekhesarat)}"
+                                    update="havalekhesarattable"
+                                    rendered="#{mainView.inAnyOf([state.KHESARAT, state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                   </p:commandButton>
+
+                   <p:commandButton value="#{msg['chap']}" icon="fa fa-print"  ajax="false"
+                                    action="#{khesaratBean.printHavaleKhesarat(nexthavalekhesarat)}" styleClass="matnfarsi">
+                   </p:commandButton>
+               </p:column>
+
+             </p:dataTable>
+                <ui:include src="dialog/havalekhesarat.xhtml" />
+
+
+        </h:panelGrid>
+       </p:panel>
+
+       <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+           <p:commandButton value="#{msg['sabtkhesarat']}"
+                            actionListener="#{khesaratBean.sabtkhesarat}"
+                            icon="fa fa-save"
+                            styleClass="matnfarsi"
+                            style="border-color:#303030; border-width: 2px;"
+                            rendered="#{mainView.inAnyOf([state.KHESARAT, state.VIRAYESH_KHESARAT])}"
+           />
+
+           <p:commandButton value="#{msg['sabthavalekhesarat']}"
+                            actionListener="#{khesaratBean.sabtHavalekhesarat}"
+                            icon="fa fa-save"
+                            styleClass="matnfarsi"
+                            style="border-color:#303030; border-width: 2px;"
+                            rendered="#{mainView.inAnyOf([state.SODOOR_NEW_HAVALE_KHESARAT])}"
+           />
+
+           <p:commandButton value="#{msg['enserafazkhesarat']}" icon="fa fa-external-link"
+                            actionListener="#{khesaratBean.enserafazkhesarat}"
+                            styleClass="matnfarsi"
+                            style="border-color:#303030; border-width: 2px;"
+                            rendered="#{mainView.inAnyOf([state.KHESARAT, state.VIRAYESH_KHESARAT])}"
+           />
+
+           <p:commandButton value="#{msg['bazgasht']}" icon="fa fa-external-link"
+                            actionListener="#{khesaratBean.bazagasht}"
+                            styleClass="matnfarsi"
+                            style="border-color:#303030; border-width: 2px;"
+                            rendered="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}"
+           />
+
+       </p:outputPanel>
+
+   </h:form>
+ </p:outputPanel>
+</html>

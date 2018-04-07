@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:shiro="http://shiro.apache.org/faces/tags"
+>
+
+    <p:panel header="#{msg['jostejuElhaghiye']}" toggleable="true"
+             toggleSpeed="500" style="direction: rtl"
+             styleClass="panelbackground">
+
+    <p align="center">
+
+        <h:form id="jostejuElhaghiye" >
+    <h:panelGrid columns="8" cellpadding="2" styleClass="matnfarsi" style="direction: rtl">
+        <p:outputLabel value="#{msg['shomareelhaghiye']} : " for="searchElhaghiye_shomare" />
+        <p:inputText id="searchElhaghiye_shomare" value="#{elhaghiyeListBean.searchElhaghiye.shomareElhaghiye}"
+                     size="15" style="font-family: byekan"/>
+
+        <p:outputLabel value="#{msg['shomareBimename']} : " for="shomareBimename" />
+        <p:inputText id="shomareBimename" value="#{elhaghiyeListBean.searchElhaghiye.shomareBimename}"
+                     style="font-family: byekan" size="15" />
+
+        <p:commandButton value="#{msg['josteju']}" actionListener="#{elhaghiyeListBean.search}"
+                         update="listeElhaghiyeHa" icon="fa fa-search" styleClass="matnfarsi" style="right: 45%; margin: 1%"/>
+
+    </h:panelGrid>
+        </h:form>
+
+
+    </p>
+
+    </p:panel>
+
+<p:outputPanel id="listeElhaghiyeHa">
+
+        <p:dataTable var="elhaghiye" value="#{elhaghiyeListBean.elhaghiyes}" styleClass="matnfarsi"
+                     emptyMessage="#{msg['emptylist']}" id="elhaghiyelist_table"
+                     rowStyleClass="#{index eq elhaghiyeListBean.selectedItemRow ? 'highlight-row' : null}"
+                     rowIndexVar="index" dir="rtl" resizableColumns="true" tableStyle="text-align: center" >
+
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['noeelhaghie']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{msg[elhaghiye.noe_elhaghie]}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['vaziatelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{msg[elhaghiye.vaziateElhaghiye]}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['shomareelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{elhaghiye.shomareElhaghiye}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['mozoelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{elhaghiye.mozoo_elhaghie}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['aztarikheSodoor']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{elhaghiye.tarikh_sodoor_elhaghie}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['tarikhasar']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{elhaghiye.tarikh_asar_elhaghie}"/>
+            </p:column>
+
+            <p:column width="90" exportable="false" >
+                <h:form>
+                <p:commandButton value="#{msg['amaliat']}"
+                                 actionListener="#{elhaghiyeListBean.selectElhaghie(elhaghiye, index)}" width="130"
+                                 icon="fa fa-gear"
+                                 update=":jostejuElhaghiye"
+                                 styleClass="matnfarsi"/>
+                </h:form>
+            </p:column>
+
+        </p:dataTable>
+
+    <h:form>
+        <h:commandLink>
+            <p:graphicImage library="default" name="images/excel.png" width="50"/>
+            <p:dataExporter type="xls" target="elhaghiyelist_table" fileName="elhaghiyeList" />
+        </h:commandLink>
+    </h:form>
+
+
+</p:outputPanel>
+
+    <h:form>
+
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar" >
+
+        <shiro:hasPermission name="NAMAYESHE_JOZIATE_ELHAGHIYE">
+        <p:commandButton value="#{msg['namayesh']}" icon="fa fa-file-text-o"
+                         actionListener="#{elhaghiyeListBean.namayeshElhaghiye}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.ELHAGHIYE_SELECTED])}"
+        />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="CHAP_ELHAGHIYE">
+        <p:commandButton value="#{msg['chapelhaghiye']}" icon="fa fa-print"  ajax="false"
+                         action="#{elhaghiyeListBean.printElhaghiye}" styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.ELHAGHIYE_SELECTED])}"
+        />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABT_FASKH">
+            <p:commandButton value="#{msg['faskh']}" icon="fa fa-external-link"
+                             actionListener="#{elhaghiyeListBean.faskh}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.ELHAGHIYE_SELECTED]) and elhaghiyeListBean.showFaskhButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABT_EBTAL">
+            <p:commandButton value="#{msg['ebtal']}" icon="fa fa-external-link"
+                             actionListener="#{elhaghiyeListBean.ebtal}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.ELHAGHIYE_SELECTED]) and elhaghiyeListBean.showEbtalButton}"
+            />
+        </shiro:hasPermission>
+
+    </p:outputPanel>
+
+
+</h:form>
+</html>

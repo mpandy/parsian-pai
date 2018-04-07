@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="HSQLDB - test" uuid="5262c1a6-f81d-45f4-83c9-800408f83d93">
+      <driver-ref>hsqldb.local</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.hsqldb.jdbc.JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:mem:test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="TEST 157" uuid="33acd94c-6615-45fd-ab62-f1cd93e21ef0">
+      <driver-ref>oracle</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//172.16.0.142:1521/lifetest</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="LOCAL" uuid="7b6e015a-ff61-413b-82c5-3bcbca56f9a1">
+      <driver-ref>oracle</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//172.16.0.142:1521/lifetest</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="H2 - default@localhost" uuid="cbc34fd7-d7fc-4369-9f92-090d9a82de48">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/default</jdbc-url>
+    </data-source>
+  </component>
+</project>

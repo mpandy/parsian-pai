@@ -1,0 +1,280 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pfaces="http://omidbiz.com/ui"
+      xmlns:shiro="http://shiro.apache.org/faces/tags"
+>
+
+<p:panel header="#{msg['jostejuBimename']}" toggleable="true"
+         toggleSpeed="500" style="direction: rtl"
+         styleClass="panelbackground">
+
+    <p align="center">
+        <h:form id="jostejuBimename" >
+            <h:panelGrid columns="8" cellpadding="2" styleClass="matnfarsi" >
+
+                <p:outputLabel value="#{msg['shomareBimename']} : " for="searchBimename_shomare"/>
+                <p:inputText id="searchBimename_shomare" value="#{bimenameListBean.searchBimename.shomareBimename}"
+                             style="font-family: byekan" size="15" />
+
+                <p:outputLabel value="#{msg['shomare_pishnahad']} : " for="shomare_pishnahad"/>
+                <p:inputText id="shomare_pishnahad" value="#{bimenameListBean.searchBimename.shomarePishnahad}"
+                             style="font-family: byekan" size="15" />
+
+                <p:outputLabel value="#{msg['namebimegozar']} : " for="namebimegozar"/>
+                <p:inputText id="namebimegozar" value="#{bimenameListBean.searchBimename.bimegozarName}"
+                             style="font-family: byekan" size="15" />
+
+                <p:outputLabel value="#{msg['namebimeshode']} : " for="namebimeshode"/>
+                <p:inputText id="namebimeshode" value="#{bimenameListBean.searchBimename.bimeshodeName}"
+                             style="font-family: byekan" size="15" />
+
+                <p:outputLabel value="#{msg['namayandegi']} : " for="namayandegi"/>
+                <p:autoComplete id="namayandegi"
+                                value="#{bimenameListBean.searchBimename.namayandegi}"
+                                var="namayandegi"
+                                itemLabel="#{namayandegi}"
+                                itemValue="#{namayandegi}"
+                                completeMethod="#{baseInfoService.autocompleteVahed}"
+                                converter="#{vahedConverter}"
+                                style="direction: ltr"
+                                forceSelection="true">
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['vahedesodoor']} : " for="vahedesodoor"/>
+                <p:autoComplete id="vahedesodoor"
+                                value="#{bimenameListBean.searchBimename.vahedeSodoor}"
+                                var="vahedeSodoor"
+                                itemLabel="#{vahedeSodoor}"
+                                itemValue="#{vahedeSodoor}"
+                                completeMethod="#{baseInfoService.autocompleteVahed}"
+                                converter="#{vahedConverter}"
+                                style="direction: ltr"
+                                forceSelection="true">
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['aztarikheSodoor']} : "/>
+                <pfaces:datePicker value="#{bimenameListBean.searchBimename.aztarikheSodoor}" style="font-family: byekan"
+                                   styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+                <p:outputLabel value="#{msg['tatarikheSodoor']} : "/>
+                <pfaces:datePicker value="#{bimenameListBean.searchBimename.tatarikheSodoor}" style="font-family: byekan"
+                                   styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+
+                <p:outputLabel value="#{msg['bazaryab']} : " for="bazaryab"/>
+                <p:autoComplete id="bazaryab" value="#{bimenameListBean.searchBimename.bazaryab}"
+                                var="bazaryab"
+                                itemLabel="#{bazaryab.toStringBazaryab()}"
+                                itemValue="#{bazaryab}"
+                                completeMethod="#{userService.autocompleteBazaryab}"
+                                converter="#{bazaryabConverter}"
+                                style="font-family: byekan; direction: ltr"
+                                forceSelection="true">
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['namesherkat']} : " for="namesherkat"/>
+                <p:inputText id="namesherkat" value="#{bimenameListBean.searchBimename.nameSherkat}" size="15" />
+
+
+                <p:outputLabel value="#{msg['codemelibimeshode']} : " for="searchBimename_codemelibimeshode"/>
+                <p:inputText id="searchBimename_codemelibimeshode"
+                             value="#{bimenameListBean.searchBimename.codemeliBimeshode}"
+                             size="15" style="font-family: byekan"/>
+
+                <p:outputLabel value="#{msg['codemelibimegozar']} : " for="codemelibimegozar"/>
+                <p:inputText id="codemelibimegozar" value="#{bimenameListBean.searchBimename.codemeliBimegozar}"
+                             size="15" style="font-family: byekan"/>
+
+                <p:outputLabel value="#{msg['shoghl']} : " for="shoghl"/>
+                <p:inputText id="shoghl" value="#{bimenameListBean.searchBimename.shoghl}"
+                             size="15" style="font-family: byekan"/>
+
+                <p:outputLabel value="#{msg['gharardad']} : " for="gharardad"/>
+                <p:inputText id="gharardad" value="#{bimenameListBean.searchBimename.gharardadName}"
+                             style="font-family: byekan" size="15" />
+
+                <p:outputLabel value="#{msg['gorooh']} : " for="gorooh"/>
+                <p:inputText id="gorooh" value="#{bimenameListBean.searchBimename.goroohName}"
+                             style="font-family: byekan" size="15" />
+
+
+                <p:outputLabel value="#{msg['vaziateBimename']} : " for="searchVaziateBimename"/>
+                <p:selectOneMenu id="searchVaziateBimename" value="#{bimenameListBean.searchBimename.vaziateBimename}"
+                                 style="direction: ltr">
+                    <f:selectItems value="#{comboOptions.vaziateBimenames}" var="vaziateBimenames" itemValue="#{vaziateBimenames}"
+                                   itemLabel="#{msg[vaziateBimenames.name()]}" />
+                </p:selectOneMenu>
+
+
+                <p:outputLabel value="#{msg['tabaghekhatar']} : " for="tabaghekhatar"/>
+                <p:selectOneMenu id="tabaghekhatar" value="#{bimenameListBean.searchBimename.tabagheKhatar}"
+                                 style="direction: ltr; font-family: byekan">
+                    <f:selectItems value="#{bimenameListBean.tabagheKhatars}" var="tabagheKhatar" itemValue="#{tabagheKhatar}" itemLabel="#{msg[tabagheKhatar.name()]}" />
+                </p:selectOneMenu>
+
+                <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
+                                 style="right: 45%; margin: 1%"
+                                 actionListener="#{bimenameListBean.search}" update="bimenamelistpanel"/>
+
+            </h:panelGrid>
+        </h:form>
+
+    </p>
+
+</p:panel>
+<p:outputPanel id="bimenamelistpanel">
+
+    <p:dataTable var="bimename" value="#{bimenameListBean.bimenames}" styleClass="matnfarsi"
+                 emptyMessage="#{msg['emptylist']}" id="bimenamelist_table"
+                 rowStyleClass="#{index eq bimenameListBean.selectedItemRow ? 'highlight-row' : null}"
+                 rowIndexVar="index"  resizableColumns="true" tableStyle="text-align: center" scrollable="true">
+
+        <p:column headerText="#{msg['amaliat']}" exportable="false" width="80" style="text-align: center"
+                  styleClass="matnfarsi">
+
+            <h:form>
+                <p:commandButton value="#{msg['amaliat']}"
+                                 icon="fa fa-gear"
+                                 actionListener="#{bimenameListBean.selectBimename(bimename, index)}"
+                                 update=":jostejuBimename"
+                                 styleClass="matnfarsi" />
+            </h:form>
+
+        </p:column>
+
+        <p:column headerText="#{msg['vaziateBimename']}" style="text-align: center; height: 10%" styleClass="matnfarsi" width="80">
+            <p:outputLabel style="font-family: byekan" value="#{msg[bimename.vaziateBimename]}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['namayandegi']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.vahed}"/>
+        </p:column>
+
+
+        <p:column headerText="#{msg['bimeshode']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.bimeShode}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['bimegozar']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.bimeGozar}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['aztarikheSodoor']}" style="text-align: center" styleClass="matnfarsi" width="95">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.tarikhesodoor}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['shomareBimename']}" style="text-align: center" styleClass="matnfarsi" width="150">
+            <p:outputLabel style="font-family: byekan" value=" #{bimename.shomare}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['shomare_pishnahad']}" style="text-align: center" styleClass="matnfarsi" width="150">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.shomare_pishnahad}"/>
+        </p:column>
+
+        <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+        </p:column>
+
+    </p:dataTable>
+
+    <h:form>
+        <h:commandLink>
+            <p:graphicImage library="default" name="images/excel.png" width="50"/>
+            <p:dataExporter type="xls" target="bimenamelist_table" fileName="bimenameList" />
+        </h:commandLink>
+    </h:form>
+
+</p:outputPanel>
+
+
+<h:form>
+
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+        <shiro:hasPermission name="SODOOR_BIMENAME">
+            <p:commandButton value="#{msg['sodoor']}" action="#{bimenameListBean.sodoor}"
+                             icon="fa fa-credit-card"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showSodoorButton}"/>
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABT_PISHNAHAD">
+            <p:commandButton value="#{msg['sabtpishnahad']}" action="#{bimenameListBean.sabtePishnahad}"
+                             icon="fa fa-plus"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SODOOR_KHESARAT">
+            <p:commandButton value="#{msg['sodoorkhesarat']}" action="#{bimenameListBean.sabteKhesarat}"
+                             icon="fa fa-dollar"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showKhesaratButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABT_FASKH">
+            <p:commandButton value="#{msg['faskh']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameListBean.faskheBimename}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showFaskhButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABT_EBTAL">
+            <p:commandButton value="#{msg['ebtal']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameListBean.ebtaleBimename}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showEbtalButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABT_ELHAGHIYE_TAGHIR">
+            <p:commandButton value="#{msg['elhaghiye_taghir']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameListBean.elhaghiyeTaghir}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showElhaghiyeButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="CHAP_HAGHEBIME">
+            <p:commandButton value="#{msg['chaphaghebime']}" icon="fa fa-print"  ajax="false"
+                             action="#{bimenameListBean.printAghsat}" styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showChapButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="CHAP_BIMENAME">
+            <p:commandButton value="#{msg['chap']}" icon="fa fa-print"  ajax="false"
+                             action="#{bimenameListBean.printBimename}" styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showChapButton}"
+            />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="NAMAYESHE_JOZIATE_BIMENAME">
+            <p:commandButton value="#{msg['namayesh']}" icon="fa fa-file-text-o"
+                             actionListener="#{bimenameListBean.namayesh}"
+                             styleClass="matnfarsi" style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED])}"/>
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="DARKHAST_MOJAVEZ_ROOYE_BIMENAME">
+            <p:commandButton value="#{msg['darkhastha']}" icon="fa fa-envelope-o"
+                             actionListener="#{bimenameListBean.darkhastMojavezRooyeBimename}"
+                             styleClass="matnfarsi" style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showDarkhastMojavezButton}"/>
+        </shiro:hasPermission>
+
+    </p:outputPanel>
+</h:form>
+
+</html>

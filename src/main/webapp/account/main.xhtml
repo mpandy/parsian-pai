@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:shiro="http://shiro.apache.org/faces/tags"
+      xmlns:pfaces="http://omidbiz.com/ui">
+
+<f:view contentType="text/html">
+    <h:head>
+        <link href="../resources/default/css/main.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" type="image/png" href="../resources/default/images/favicon.png"/>
+    </h:head>
+
+    <h:body styleClass="background">
+
+        <p:outputPanel styleClass="applicationtitlelogo">
+            <img src="../resources/default/images/logo.png" style="width:51px;height:70px;"/>
+        </p:outputPanel>
+
+        <p:outputPanel styleClass="applicationtitle">
+            <p:outputLabel value="#{msg['applicationtitle']}"/>
+        </p:outputPanel>
+
+        <p:growl id="msg" showDetail="true" life="5000" />
+        <p:importEnum type="ir.parsianinsurance.he.interfaces.view.uiflow.StateName" var="state"  />
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+        <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+            <p:graphicImage library="default" name="images/ajax-loader.gif" />
+        </p:dialog>
+
+        <p:idleMonitor timeout="#{mainView.idleTimeBeforeLogout}">
+            <p:ajax event="idle" listener="#{loginBean.logout()}" />
+        </p:idleMonitor>
+
+        <ui:include src="dialog/userinfo.xhtml" />
+        <ui:include src="dialog/changepassword.xhtml" />
+
+        <p:outputPanel id="mainpanel">
+                    <pfaces:datePicker rendered="false" />
+
+                    <h:form>
+                        <p:remoteCommand name="logout" actionListener="#{loginBean.logout}" />
+
+                        <p:menubar style="color: #004b99">
+                            <p:submenu label="#{msg['bimename']}" icon="fa fa-file-text-o" style="float:right">
+                                <shiro:hasPermission name="MOSHAHEBE_BIMENAME">
+                                <p:menuitem value="#{msg['moshahedebimename']}" icon="fa fa-list" actionListener="#{homeBean.listPishnahad}" style="text-align: right"/>
+                                </shiro:hasPermission>
+                            </p:submenu>
+
+                            <p:submenu label="#{msg['elhaghiye']}" icon="fa fa-edit" style="float:right">
+                                <shiro:hasPermission name="MOSHAHEDE_ELHAGHIYE">
+                                <p:menuitem value="#{msg['moshahedelhaghiye']}" icon="fa fa-list" actionListener="#{homeBean.listElhaghiye}" />
+                                </shiro:hasPermission>
+                            </p:submenu>
+
+                            <p:submenu label="#{msg['khesarat']}" icon="fa fa-dollar" style="float:right">
+                                <shiro:hasPermission name="MOSHAHEDE_KHESARAT">
+                                <p:menuitem value="#{msg['moshahedehesarat']}" icon="fa fa-list" actionListener="#{homeBean.listKhesarat}"/>
+                                </shiro:hasPermission>
+                            </p:submenu>
+
+                             <p:submenu label="#{msg['darkhast']}" icon="fa fa-envelope-o" style="float:right">
+                                 <shiro:hasPermission name="MOSHAHEDE_DARKHAST">
+                                 <p:menuitem value="#{msg['moshahededarkhastha']}" icon="fa fa-list" actionListener="#{homeBean.moshahedeDarkhastha}"/>
+                                 </shiro:hasPermission>
+                             </p:submenu>
+
+                            <shiro:hasPermission name="MOSHAHEDE_GOZARESH">
+                            <p:submenu label="#{msg['gozaresh']}" icon="fa fa-bar-chart" style="float:right">
+                                <p:menuitem value="#{msg['bordrobimename']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroBimename}"/>
+                                <p:menuitem value="#{msg['bordroelhaghiye']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroElhaghiye}" />
+                            </p:submenu>
+                            </shiro:hasPermission>
+
+                            <shiro:hasRole name="ADMIN">
+                            <p:submenu label="#{msg['ADMIN']}" icon="fa fa-cogs" style="float:right">
+                                <p:menuitem value="#{msg['modiriatekarbaran']}" icon="fa fa-user" actionListener="#{homeBean.modiriateKarbaran}" style="text-align: right"/>
+                                <p:menuitem value="#{msg['modiriategharardadha']}" icon="fa fa-cog" actionListener="#{homeBean.modiriateGharardadha}"/>
+                                <p:menuitem value="#{msg['modiriatemashaghel']}" icon="fa fa-cog" actionListener="#{homeBean.modiriateMashaghel}" />
+                                <p:menuitem value="#{msg['modiriatenamayandegan']}" icon="fa fa-cog" actionListener="#{homeBean.modiriateNamayandegan}"/>
+                            </p:submenu>
+                            </shiro:hasRole>
+
+                            <p:submenu label="#{mainView.userRealName()}" icon="fa fa-user">
+                                <p:menuitem value="#{msg['userinfo']}" icon="fa fa-info" onclick="PF('userinfoDialog').show()" />
+                                <p:menuitem value="#{msg['changepassword']}" icon="fa fa-key" onclick="PF('changepasswordDialog').show()" />
+                                <p:menuitem value="#{msg['khorooj']}" icon="fa fa-power-off" action="#{loginBean.logout}" />
+                            </p:submenu>
+
+                        </p:menubar>
+                    </h:form>
+
+                    <div style="padding-top:8%; padding-bottom: 2%; width:90%; margin:0 auto;">
+                        <ui:include src="#{mainView.currentUIState.viewFile}" />
+                    </div>
+
+                </p:outputPanel>
+
+    </h:body>
+
+</f:view>
+
+
+</html>

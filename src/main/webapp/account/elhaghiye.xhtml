@@ -1,0 +1,192 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pfaces="http://omidbiz.com/ui"
+>
+
+<p:outputPanel style="direction: rtl">
+<h:form id="elhaghiyeform">
+
+    <p:panel id="elhaghiye" header="#{msg['moshakhasateelhaghiye']}" styleClass="matnfarsi">
+        <h:panelGrid columns="6" style="width: 100%" styleClass="matnfarsi">
+
+            <p:outputLabel value="#{msg['shomareelhaghiye']} : " for="shomareelhaghiye"
+                           rendered="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE])}"/>
+            <p:inputText id="shomareelhaghiye" value="#{elhaghiyeBean.elhaghiye.shomareElhaghiye}"
+                         style="font-family: byekan"
+                         rendered="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE])}"
+                         disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE])}"/>
+
+            <p:outputLabel value="#{msg['mozoelhaghiye']} : " for="mozoelhaghiye" />
+            <p:inputText id="mozoelhaghiye" value="#{elhaghiyeBean.elhaghiye.mozoo_elhaghie}"
+                         disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE,state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}" size="17"/>
+
+            <p:outputLabel value="#{msg['aztarikheSodoor']} : " for="aztarikheSodoor" />
+            <p:inputText id="aztarikheSodoor" value="#{elhaghiyeBean.elhaghiye.tarikh_sodoor_elhaghie}"
+                         disabled="true"
+                         size="17" style="font-family: byekan"/>
+
+            <p:outputLabel value="#{msg['tarikhasar']} : " />
+            <pfaces:datePicker value="#{elhaghiyeBean.elhaghiye.tarikh_asar_elhaghie}"
+                               disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE, state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}"
+                               style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" />
+
+            <p:outputLabel value="#{msg['noeelhaghie']} : "/>
+            <p:selectOneMenu id="noeelhaghie" value="#{elhaghiyeBean.elhaghiye.noe_elhaghie}"
+                             style="direction: ltr"
+                             disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE, state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}">
+                <f:selectItems value="#{elhaghiyeBean.noeElhaghiyeOptions}" var="noeelhaghiye"
+                               itemValue="#{noeelhaghiye}" itemLabel="#{msg[noeelhaghiye.name()]}" />
+            </p:selectOneMenu>
+
+            <p:outputLabel value="#{msg['noekhaselhaghiye']} : " for="noekhaselhaghiye" />
+            <p:selectOneMenu id="noekhaselhaghiye" value="#{elhaghiyeBean.elhaghiye.noe_khas_elhaghie}"
+                             disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE, state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}"
+                             style="direction: ltr">
+
+                <f:selectItems value="#{comboOptions.noeKhaseElhaghiye}" var="noekhaselhaghiye" itemValue="#{noekhaselhaghiye}"
+                               itemLabel="#{msg[noekhaselhaghiye.name()]}" />
+
+            </p:selectOneMenu>
+
+            <p:outputLabel value="#{msg['emzakonandeaval']} : " for="emzakonandeaval" />
+            <p:autoComplete id="emzakonandeaval" value="#{elhaghiyeBean.elhaghiye.emzaKonande_aval}"
+                            var="emzakonandeaval"
+                            itemLabel="#{emzakonandeaval}"
+                            itemValue="#{emzakonandeaval}"
+                            completeMethod="#{userService.autocompleteEmzakonande}"
+                            converter="#{emzakonandeConverter}"
+                            style="direction: ltr"
+                            disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE, state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}"
+                            forceSelection="true">
+            </p:autoComplete>
+
+            <p:outputLabel value="#{msg['emzakonandedovom']} : " for="emzakonandedovom" />
+            <p:autoComplete id="emzakonandedovom" value="#{elhaghiyeBean.elhaghiye.emzaKonande_dovom}"
+                            var="emzakonandedovom"
+                            itemLabel="#{emzakonandedovom}"
+                            itemValue="#{emzakonandedovom}"
+                            completeMethod="#{userService.autocompleteEmzakonande}"
+                            converter="#{emzakonandeConverter}"
+                            style="direction: ltr"
+                            disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE, state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}"
+                            forceSelection="true">
+            </p:autoComplete>
+
+        </h:panelGrid>
+        <h:panelGrid columns="2" style="width: 69%" styleClass="matnfarsi">
+
+            <p:outputLabel value="#{msg['matnelhaghie']} : " for="matnelhaghie" />
+            <p:inputTextarea id="matnelhaghie" value="#{elhaghiyeBean.elhaghiye.matn_elhaghie}" rows="3" cols="56"
+                             disabled="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE, state.MOHASEBE_EBTAL, state.MOHASEBE_FASKH])}"/>
+
+        </h:panelGrid>
+
+        <p:separator/>
+
+        <p align="center">
+        <p:outputLabel value="#{msg['mablagheelhaghiye']} (#{'ریال'}) : " styleClass="matnfarsi" style="font-weight:bold; "/>
+            <p:outputLabel value="#{elhaghiyeBean.elhaghiye.mablagheElhaghiye}"
+                           style="font-family: byekan; font-size: xx-large; font-weight:bold">
+                <f:convertNumber pattern="#,###"/>
+            </p:outputLabel>
+        </p>
+
+    </p:panel>
+
+    <p:outputPanel id="elhaghiyediffpanel" rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT, state.NAMAYESH_ELHAGHIYE])}">
+        <p:panel  header="#{msg['taghiratedarkhastshode']}" >
+        <p:dataTable var="diff" value="#{elhaghiyeBean.elhaghiye.diffsList}" styleClass="matnfarsi"
+                     rowIndexVar="index" dir="rtl" resizableColumns="true" style="padding-left: 18%; padding-right: 18%">
+            <p:column width="30" headerText="#{msg['radif']}" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['taghiratemorededarkhast']}" style="text-align: center" styleClass="matnfarsi" >
+                #{msg[diff.title]}
+            </p:column>
+
+            <p:column headerText="#{msg['sharayetefeli']}" style="text-align: center" styleClass="matnfarsi">
+                <h:outputText value="#{diff.oldValue}" styleClass="matnfarsi" style="font-family: byekan"/>
+            </p:column>
+
+            <p:column headerText="#{msg['sharayetejadid']}" style="text-align: center" styleClass="matnfarsi">
+                <h:outputText value="#{diff.newValue}" style="font-family: byekan"/>
+            </p:column>
+
+        </p:dataTable>
+        </p:panel>
+    </p:outputPanel>
+
+
+    <br></br>
+
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+        <p:commandButton value="#{msg['tayidenahayieelhaghiye']}"
+                         actionListener="#{elhaghiyeBean.sabtNahayiElhaghiye}"
+                         icon="fa fa-save"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT])}"
+        />
+
+        <p:commandButton value="#{msg['eslahetaghirebimename']}" icon="fa fa-external-link"
+                         actionListener="#{elhaghiyeBean.eslahetaghirebimename}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT])}"
+        />
+
+        <p:commandButton value="#{msg['mohasebeebtal']}" icon="fa fa-calculator"
+                         actionListener="#{elhaghiyeBean.mohasebeEbtal}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.EBTAL])}"
+        />
+
+        <p:commandButton value="#{msg['taeedebtal']}" icon="fa fa-save"
+                         actionListener="#{elhaghiyeBean.taeedNahayiEbtal}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.MOHASEBE_EBTAL])}"
+        />
+
+        <p:commandButton value="#{msg['mohasebefaskh']}" icon="fa fa-calculator"
+                         actionListener="#{elhaghiyeBean.mohasebefaskh}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.FASKH])}"
+        />
+
+        <p:commandButton value="#{msg['taeedefaskh']}" icon="fa fa-save"
+                         actionListener="#{elhaghiyeBean.taeedNahayFaskh}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.MOHASEBE_FASKH])}"
+        />
+
+        <p:commandButton value="#{msg['enserafazelhaghiye']}" icon="fa fa-external-link"
+                         actionListener="#{elhaghiyeBean.enserafelhaghiye}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.ELHAGHIYE_TAGHIRAT,state.TAEEDE_ELHAGHIYE_TAGHIRAT,state.EBTAL, state.MOHASEBE_EBTAL, state.FASKH, state.MOHASEBE_FASKH])}"
+        />
+
+        <p:commandButton value="#{msg['bazgasht']}" icon="fa fa-external-link"
+                         actionListener="#{elhaghiyeBean.bazgashazNamayesh}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.NAMAYESH_ELHAGHIYE])}"
+        />
+
+
+    </p:outputPanel>
+
+</h:form>
+</p:outputPanel>
+
+
+</html>
+

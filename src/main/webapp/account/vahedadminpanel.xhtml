@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+    <p:panel header="#{msg['josteju']}" styleClass="matnfarsi" style="direction: rtl" >
+
+        <h:form id="namayandeganadminpanel">
+        <h:panelGrid columns="6" cellpadding="10" styleClass="matnfarsi">
+            <p:outputLabel value="#{msg['namenamayandegi']} : " for="searchnamayandeginame"/>
+            <p:inputText id="searchnamayandeginame" value="#{vahedAdminPanelBeen.searchVahed.name}" size="15" />
+            <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
+                             actionListener="#{vahedAdminPanelBeen.search}" update="vahed"/>
+        </h:panelGrid>
+        </h:form>
+
+    </p:panel>
+    <p:outputPanel id="vahed">
+
+        <p:dataTable id="namayandetable" var="nextnamayande" value="#{vahedAdminPanelBeen.undeletedVaheds()}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl" rowIndexVar="index">
+
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['namayandegi']}" styleClass="matnfarsi" style="text-align: center">
+                #{nextnamayande.name}
+            </p:column>
+
+            <p:column headerText="#{msg['codenamayandegi']}" styleClass="matnfarsi" style="text-align: center">
+                <p:outputLabel style="font-family: byekan" value=" #{nextnamayande.codeNamayandegi}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['namayandetype']}" styleClass="matnfarsi" style="text-align: center">
+                #{nextnamayande.vahedType}
+            </p:column>
+
+            <p:column headerText="#{msg['sarparast']}" styleClass="matnfarsi" style="text-align: center">
+            #{nextnamayande.sarparast}
+            </p:column>
+
+            <p:column headerText="#{msg['saghfesodoor']}" styleClass="matnfarsi" style="text-align: center">
+                #{nextnamayande.saghfe_sodoor}
+            </p:column>
+
+            <p:column headerText="#{msg['neshani']}" styleClass="matnfarsi" style="text-align: center">
+                #{nextnamayande.address}
+            </p:column>
+
+            <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145" style="text-align: center">
+
+                <h:form>
+                <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                 actionListener="#{vahedAdminPanelBeen.editNamayande(nextnamayande)}"
+                                 update="namayandetable newnamayandedialog"/>
+                <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                 actionListener="#{vahedAdminPanelBeen.removeNamayande(nextnamayande)}"/>
+                </h:form>
+            </p:column>
+
+        </p:dataTable>
+        <ui:include src="dialog/vahed.xhtml" />
+
+
+
+    </p:outputPanel>
+
+    <h:form>
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+        <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi">
+            <p:ajax event="click" listener="#{vahedAdminPanelBeen.createNewNamayande}" update="newnamayandedialog"/>
+        </p:commandButton>
+    </p:outputPanel>
+    </h:form>
+
+</html>

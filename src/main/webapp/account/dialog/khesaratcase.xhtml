@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <p:dialog id="newkhesaratdialog" header="#{msg['moredekhesarat']}" dir="rtl"
+              position="top"  style="font-size: small" closable="false"
+              minHeight="40" visible="#{khesaratBean.khesaratDialogVisible}" resizable="false">
+
+        <p:outputPanel style="padding: 3%" styleClass="matnfarsi">
+
+            <h:panelGrid columns="6" styleClass="matnfarsi">
+
+                <p:outputLabel value="#{msg['name_khesratdide']} : " for="name_khesratdide"  />
+                <p:outputLabel id="name_khesratdide" value="#{khesaratBean.newkhesaratcase.name_khesarat_dide}"/>
+
+                <p:outputLabel value="#{msg['karshenasekhesarat']} : " for="karshenasekhesarat"
+                               rendered="#{not empty khesaratBean.newkhesaratcase.karshenase_khesarat}" />
+                <p:outputLabel id="karshenasekhesarat" value="#{khesaratBean.newkhesaratcase.karshenase_khesarat.toString()}"
+                               rendered="#{not empty khesaratBean.newkhesaratcase.karshenase_khesarat}"/>
+
+                     <p:outputLabel value="#{msg['noekhesarat']} : " for="noe_khesarat"/>
+                    <p:selectOneMenu id="noe_khesarat" value="#{khesaratBean.newkhesaratcase.noe_khesarat}"
+                                     style="direction: ltr">
+                        <f:selectItems value="#{comboOptions.noeKhesarat}" var="noe_khesarat" itemValue="#{noe_khesarat}" itemLabel="#{msg[noe_khesarat.name()]}" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="#{msg['vaziatekhesarat']} : " for="vaziatekhesarat"  />
+                    <p:selectOneMenu id="vaziatekhesarat" value="#{khesaratBean.newkhesaratcase.vaziat}"
+                                     style="direction: ltr">
+                        <f:selectItems value="#{comboOptions.getSelectableVaziateKhesaratCase()}" var="vaziatekhesarat" itemValue="#{vaziatekhesarat}" itemLabel="#{msg[vaziatekhesarat.name()]}" />
+                    </p:selectOneMenu>
+
+
+                    <p:outputLabel value="#{msg['noehadese']} : " for="noehadese"  />
+                        <p:selectOneMenu id="noehadese" value="#{khesaratBean.newkhesaratcase.noehadese}"
+                                         style="direction: ltr" >
+                            <p:ajax event="change" update="saghfepoosheshebimeshode" listener="#{khesaratBean.updateSarmayeByNoeHadese}" />
+                            <f:selectItems value="#{comboOptions.noeHadese}" var="noe_hadese" itemValue="#{noe_hadese}" itemLabel="#{msg[noe_hadese.name()]}" />
+                        </p:selectOneMenu>
+
+                    <p:outputLabel value="#{msg['elatehadese']} : " for="elatehadese"  />
+                    <p:selectOneMenu id="elatehadese" value="#{khesaratBean.newkhesaratcase.elatehadese}"
+                                     style="direction: ltr">
+                        <f:selectItems value="#{comboOptions.elateHadese}" var="elatehadese" itemValue="#{elatehadese}" itemLabel="#{msg[elatehadese.name()]}" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="#{msg['sharheelat']} : " for="sharheelat"  />
+                    <p:inputTextarea id="sharheelat" value="#{khesaratBean.newkhesaratcase.sharhe_elat}"  rows="2" cols="20" size="15"/>
+
+                    <p:outputLabel value="#{msg['darsadenaghseozv']} (#{'%'}) :  " for="darsadenaghseozv"  />
+                    <p:inputText id="darsadenaghseozv" value="#{khesaratBean.newkhesaratcase.darsad_naghse_ozv}"  size="15"/>
+
+                    <p:outputLabel value="#{msg['mablaghekhesaratelamshode']} (#{msg['rial']}) : " for="mablaghekhesaratelamshode"/>
+                    <p:inputText id="mablaghekhesaratelamshode" value="#{khesaratBean.newkhesaratcase.mablagh_khesarate_elamshode}"
+                                 size="15" style="font-family: byekan"/>
+
+                    <p:outputLabel value="#{msg['mablaghekhesarattaeedshode']} (#{msg['rial']}) : " for="mablaghekhesarattaeedshode"/>
+                    <p:inputText id="mablaghekhesarattaeedshode" value="#{khesaratBean.newkhesaratcase.mablagh_khesarate_taeedshode}"
+                                 size="15" style="font-family: byekan"/>
+
+                    <p:outputLabel value="#{msg['mablaghekharejaztaahod']} (#{msg['rial']}) : " for="mablaghekharejaztaahod"/>
+                    <p:inputText id="mablaghekharejaztaahod" value="#{khesaratBean.newkhesaratcase.mablagh_kharej_az_taahoh}"
+                                 size="15" style="font-family: byekan"/>
+
+                    <p:outputLabel value="#{msg['mablaghebazyafti']} (#{msg['rial']}) : " for="mablaghebazyafti"/>
+                    <p:inputText id="mablaghebazyafti" value="#{khesaratBean.newkhesaratcase.mablagh_bazyafti}"  size="15" style="font-family: byekan"/>
+
+
+                <p:outputLabel value="#{msg['sharhekhesarat']} : " for="sharhekhesarat"/>
+                <p:inputTextarea id="sharhekhesarat" value="#{khesaratBean.newkhesaratcase.sharhe_khesarat}"
+                                 styleClass="matnfarsi" rows="2" cols="27"/>
+
+                </h:panelGrid>
+
+            <p:separator/>
+
+            <p:outputLabel value="#{msg['saghfepoosheshebimeshode']} (#{msg['rial']}) : " for="saghfepoosheshebimeshode"/>
+            <p:outputLabel id="saghfepoosheshebimeshode" value="#{khesaratBean.newkhesaratcase.saghfe_poosheshe_bimeshode}"
+                           style="font-family: byekan; padding-left: 12%"/>
+
+            <p:outputLabel value="#{msg['mablaghemazadbarsaghf']} (#{msg['rial']}) : " for="mablaghemazadbarsaghf"/>
+            <p:outputLabel id="mablaghemazadbarsaghf" value="#{khesaratBean.newkhesaratcase.mablagh_mazad_bar_saghf}"
+                           style="font-family: byekan; padding-left: 12%"/>
+
+            <p:outputLabel value="#{msg['khesarateghabelpardakht']} (#{msg['rial']}) : " for="khesarateghabelpardakht"
+                           style="font-size: large; font-weight:bold"/>
+            <p:outputLabel id="khesarateghabelpardakht" value="#{khesaratBean.newkhesaratcase.khesarat_ghabl_pardakht}"
+                           style="font-family: byekan; font-size: xx-large; font-weight:bold">
+            <f:convertNumber pattern="#,##0"/>
+            </p:outputLabel>
+
+        </p:outputPanel>
+        <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" styleClass="matnfarsi" style="right: 40%"
+                         actionListener="#{khesaratBean.addOrEditKhesaratcases}"
+                         update="khesarattable newkhesaratdialog"/>
+        <p:commandButton value="#{msg['close']}" icon="fa fa-close" styleClass="matnfarsi" style="right: 40%"
+                         actionListener="#{khesaratBean.closeDialogKhesarat}" update="newkhesaratdialog"/>
+    </p:dialog>
+
+</f:view>
+</html>

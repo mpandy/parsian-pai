@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <p:dialog id="newzinafdialog" header="#{msg['zinafejadid']}" dir="rtl" minHeight="40"
+              visible="#{bimenameBean.zinafDialogVisible}" position="top" closable="false" resizable="false">
+
+       <p:outputPanel style="padding: 3%" styleClass="matnfarsi">
+
+            <h:outputText value="#{msg['vorraseGhanooni']}" style="padding: 2%; vertical-align: middle; position: relative; top: -1px" />
+            <p:selectBooleanCheckbox value="#{bimenameBean.newZinafVoraseGhanooni}" style="vertical-align: middle">
+                <p:ajax update="newzinafdialog" listener="#{bimenameBean.voraseGhanooniCheckboxUpdate}" />
+            </p:selectBooleanCheckbox>
+
+            <h:panelGrid columns="6"  style="width: 100%;" styleClass="matnfarsi">
+
+                <p:outputLabel value="#{msg['nesbatbabimeshode']} : " for="nesbatbabimeshode"/>
+                <p:selectOneMenu id="nesbatbabimeshode" value="#{bimenameBean.newZinaf.nesbat_ba_bimeshode}"
+                                 style="direction: ltr" disabled="#{bimenameBean.newZinafVoraseGhanooni}">
+                    <f:selectItems value="#{comboOptions.nesbatBaBimeshodes}" var="nesbatbabimeshode" itemValue="#{nesbatbabimeshode}" itemLabel="#{msg[nesbatbabimeshode.name()]}" />
+                </p:selectOneMenu>
+
+                <p:outputLabel value="#{msg['name']} : " for="namezinaf"/>
+                <p:inputText id="namezinaf" value="#{bimenameBean.newZinaf.name}" size="18"/>
+
+                <p:outputLabel value="#{msg['name_khanevadegi']} : " for="name_khanevadegizinaf" size="18"/>
+                <p:inputText id="name_khanevadegizinaf" value="#{bimenameBean.newZinaf.name_khanevadegi}"/>
+
+                <p:outputLabel value="#{msg['namepedar']} : " for="namepedarzinaf"  style="font-size: small" size="18"/>
+                <p:inputText id="namepedarzinaf" value="#{bimenameBean.newZinaf.name_pedar}"/>
+
+                <p:outputLabel value="#{msg['shomareshenasname']} : " for="shomareshenasnamezinaf"/>
+                <p:inputText id="shomareshenasnamezinaf" value="#{bimenameBean.newZinaf.shomare_shenasname}"
+                             style="font-family: byekan"/>
+
+                <p:outputLabel value="#{msg['codemeli']} : " for="codemelizinaf"/>
+                <p:inputText id="codemelizinaf" value="#{bimenameBean.newZinaf.kode_meli}"
+                             style="font-family: byekan"/>
+
+                <p:outputLabel value="#{msg['olaviatekhesarat']} : " for="olaviatekhesarat"/>
+                <p:selectOneMenu id="olaviatekhesarat" value="#{bimenameBean.newZinaf.olaviat_khesarat}"
+                                 style="direction: ltr; font-family: byekan">
+                    <f:selectItems value="#{comboOptions.olaviateKhesarat}" var="olaviatekhesarat" itemValue="#{olaviatekhesarat}" itemLabel="#{msg[olaviatekhesarat.name()]}" />
+                </p:selectOneMenu>
+
+                <p:outputLabel value="#{msg['zaribesahm']} : " for="zaribesahm" />
+                <p:inputText id="zaribesahm" value="#{bimenameBean.newZinaf.zarib_sahm}"  size="15" style="font-family: byekan"/>
+
+                <p:outputLabel value="#{msg['tozih']} : " for="tozih" />
+                <p:inputTextarea id="tozih" value="#{bimenameBean.newZinaf.tozih}" rows="2" cols="30"/>
+
+            </h:panelGrid>
+
+
+
+</p:outputPanel>
+        <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" styleClass="matnfarsi" style="right: 40%"
+                         actionListener="#{bimenameBean.addOrEditZinaf}" update="zinaftable newzinafdialog"/>
+        <p:commandButton value="#{msg['close']}" icon="fa fa-close" styleClass="matnfarsi" style="right: 40%"
+                         actionListener="#{bimenameBean.closeDialogZinaf}" update="newzinafdialog"/>
+
+    </p:dialog>
+
+</f:view>
+</html>

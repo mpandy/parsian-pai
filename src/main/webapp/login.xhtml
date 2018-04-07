@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+
+<h:head>
+    <link href="resources/default/css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/png" href="resources/default/images/favicon.png"/>
+    <title>#{msg['loginpagetitle']}</title>
+</h:head>
+
+    <h:body style="background: url('resources/default/images/login.png') no-repeat;
+        background-size: 90%;">
+
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+        <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+            <p:graphicImage library="default" name="images/ajax-loader.gif" />
+        </p:dialog>
+
+        <h:form id="login_form">
+            <p:growl id="logingrowl" showDetail="false" />
+
+            <p:outputLabel value="#{msg['loginpagetitle']}" styleClass="matnfarsi" style="position:fixed;top:20%;right:2%;font-size: x-large;color: #004b99;"/>
+
+            <h:panelGrid columns="2" style="border-radius: 10px;padding-top:3%;padding-bottom:3%;padding-left:20%;padding-right:10%;margin-left: 40%;margin-top: 15%;
+        background-color: rgba(255,255,0,0.6);" dir="rtl">
+
+            <p:outputLabel for="username" value="#{msg['username']} :" styleClass="matnfarsi" style="font-size: large;color: #004b99;" />
+            <p:inputText id="username" value="#{loginBean.username}" required="true" requiredMessage="#{msg['requiredMessage']}">
+                <f:ajax event="blur" render="m_username" />
+            </p:inputText>
+
+            <p:outputLabel for="password" value="#{msg['password']} :" styleClass="matnfarsi" style="font-size: large;color: #004b99;"/>
+            <p:password id="password" value="#{loginBean.password}" required="true" requiredMessage="#{msg['requiredMessage']}">
+                <f:ajax event="blur" render="m_password" />
+            </p:password>
+
+            <p:outputLabel for="rememberMe" value="#{msg['rememberme']} :" styleClass="matnfarsi" style="color: #004b99;"/>
+            <p:selectBooleanCheckbox id="rememberMe" value="#{loginBean.remember}" />
+
+            <h:panelGroup />
+            <p:commandButton value="#{msg['login']}" icon="fa fa-sign-in" action="#{loginBean.login}"
+                             styleClass="matnfarsi" update="logingrowl">
+            </p:commandButton>
+        </h:panelGrid>
+
+    </h:form>
+
+
+    </h:body>
+</f:view>
+</html>

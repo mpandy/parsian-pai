@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="elhaghiye" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="74d46278-5319-4901-8f6c-14432817a6f9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<parameter name="maliat" class="java.lang.String"/>
+	<field name="elhaghiye" class="ir.parsianinsurance.he.domain.model.Elhaghiye"/>
+	<field name="elhaghiye.bimename.pishnahadeFaal.bimeGozar.shakhs" class="ir.parsianinsurance.he.domain.model.Shakhs"/>
+	<field name="bimegozarShakhsHaghighi" class="ir.parsianinsurance.he.domain.model.ShakhseHaghighi"/>
+	<field name="elhaghiye.bimename" class="ir.parsianinsurance.he.domain.model.Bimename"/>
+	<field name="elhaghiye.bimename.pishnahadeFaal.vahed" class="ir.parsianinsurance.he.domain.model.Vahed"/>
+	<field name="elhaghiye.bimename.vahedeSodoor" class="ir.parsianinsurance.he.domain.model.Vahed"/>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="227" y="1" width="105" height="20" backcolor="#FFCC00" uuid="df2ba266-8f17-4c69-86a7-20011bd37350"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="15" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[الحاقیه]]></text>
+			</staticText>
+			<image>
+				<reportElement x="522" y="4" width="30" height="40" uuid="4f82ff4b-0b46-4e3b-96fc-f537dc936d58"/>
+				<imageExpression><![CDATA["D:\\parsian_he\\src\\main\\webapp\\reports\\img\\f3.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="480" y="45" width="72" height="1" uuid="134b95d4-a893-4417-9f5a-648037cd68bd"/>
+			</line>
+			<staticText>
+				<reportElement style="style1" x="480" y="31" width="42" height="14" uuid="34ca2b0f-b45c-420a-ba57-ae0f78e68365"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[(سهامی عام)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="430" y="38" width="47" height="16" uuid="feefcb4e-1832-4564-b549-08b18eccf231"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[(سهامی عام)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="483" y="46" width="66" height="18" uuid="5b3e1a72-7dbc-453f-899b-cef42550a504"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[شماره ثبت 00722]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="228" y="30" width="105" height="20" uuid="d450e970-b756-43b5-9664-ed5b11bc243c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[حوادث انفرادی]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="192" height="60" uuid="23dd3038-f46f-481a-907e-b1fcdb24e6fa"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="202" y="1" width="329" height="60" uuid="c0b27d7e-ab5f-43f9-b29c-c96f6d9c9403"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="532" y="1" width="23" height="60" backcolor="#FCDD5D" uuid="a24dcc00-9d0a-428b-a8c4-034b671ece05"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[مشخصات بیمه نامه
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="453" y="1" width="74" height="20" uuid="d2469e75-20bb-40be-a834-af90cad5d884"/>
+				<text><![CDATA[شماره بیمه نامه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="284" y="1" width="55" height="20" uuid="24621153-dc7d-4000-b702-e1243326ed57"/>
+				<text><![CDATA[تاریخ صدور :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="467" y="32" width="58" height="18" uuid="20bee4fa-90ea-4d06-aa07-20bd87aa4ac0"/>
+				<text><![CDATA[نام بیمه گذار :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="119" y="1" width="58" height="20" uuid="ceaf69ae-125e-4c03-aa85-38aa88260ea9"/>
+				<text><![CDATA[نمایندگی :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="140" y="30" width="36" height="20" uuid="de9460c7-4ed9-4c90-8ac4-dd64db6846c5"/>
+				<text><![CDATA[کد :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="202" y="1" width="82" height="20" uuid="9c700370-8c69-4c45-bd8e-6d27fb6197a6"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye.bimename}.getTarikhesodoor()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="395" y="32" width="66" height="18" uuid="43b983fc-94d9-44a2-8e66-599647a57131"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye.bimename.pishnahadeFaal.bimeGozar.shakhs}.getName()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="333" y="32" width="62" height="18" uuid="8095f943-580b-4672-b61d-ad60ac2974fe"/>
+				<textFieldExpression><![CDATA[$F{bimegozarShakhsHaghighi}.getName_khanevadegi()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="339" y="1" width="114" height="20" uuid="8aa4317a-5440-4759-bddc-245fd88b4f4c"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye.bimename}.getShomare()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="40" y="30" width="100" height="20" uuid="ded08f5e-da2a-4b4e-bc4c-3ba971f1c638"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye.bimename.pishnahadeFaal.vahed}.getCode()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="0" y="1" width="119" height="20" uuid="9544b054-bd7e-4c19-bf30-2aae234421aa"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye.bimename.pishnahadeFaal.vahed}.getName()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="69">
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="532" y="0" width="23" height="66" backcolor="#FCDD5D" uuid="61f4dccc-91a8-4ba3-8269-b9b4fef32b4e"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[مشخصات الحاقیه ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="532" height="65" uuid="8a1562e5-8d1f-4fa8-bff1-89f900c88595"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="464" y="6" width="64" height="20" uuid="c8a28013-1df1-433d-9406-678e427b56a9"/>
+				<text><![CDATA[شماره الحاقیه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="474" y="38" width="53" height="20" uuid="907a393a-c22b-4af3-9d4c-baa5a0158281"/>
+				<text><![CDATA[نوع الحاقیه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="322" y="38" width="57" height="20" uuid="fefb79ea-fb8d-4522-9d9f-9d1441408269"/>
+				<text><![CDATA[تاریخ صدور :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="141" y="38" width="74" height="20" uuid="baff44e1-79ba-4eb4-95dd-4e8a01a2add5"/>
+				<text><![CDATA[تاریخ اثر الحاقیه :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="296" y="6" width="165" height="20" uuid="ac61df3a-d170-43f2-a01f-4936b58c26e1"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye}.getShomareElhaghiye()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="38" width="79" height="20" uuid="b31277e6-9e7b-47b1-8da8-6fe2a0d360ca"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye}.getNoe_elhaghie()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="215" y="38" width="107" height="20" uuid="c0447914-c99e-434b-b279-242922384b70"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye}.getTarikh_sodoor_elhaghie()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="40" y="37" width="100" height="21" uuid="c6018768-6d8d-4000-bdda-65b3ba89193c"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye}.getTarikh_asar_elhaghie()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="156">
+			<rectangle>
+				<reportElement x="0" y="1" width="533" height="150" uuid="8bde1597-2baf-4e15-ba33-f486d5a1af73"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="533" y="2" width="23" height="150" backcolor="#FCDD5D" uuid="7d09c90c-3157-4b59-a4b2-55946beb75e4"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[شرح الحاقیه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="461" y="8" width="66" height="20" uuid="442c2915-6595-4a30-aa44-b73612adcb8d"/>
+				<text><![CDATA[موضوع الحاقیه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="468" y="123" width="58" height="20" uuid="39d16642-c082-45fb-828e-7052635cb4af"/>
+				<text><![CDATA[مبلغ الحاقیه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="328" y="123" width="33" height="20" uuid="a1d5606a-b510-42de-8729-86e0790ddea7"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="152" y="123" width="100" height="20" uuid="69d42e37-ffed-4de6-8566-c77a724181aa"/>
+				<text><![CDATA[مالیات بر ارزش افزوده :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="0" y="28" width="531" height="82" uuid="a58f4c49-0f85-449f-adf6-8dd417905f30"/>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye}.getMozoo_elhaghie()]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement style="style1" x="52" y="123" width="100" height="20" uuid="a3c287d1-04b3-4414-bdc8-74bee653e7e3"/>
+				<textFieldExpression><![CDATA[$P{maliat}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement style="style1" x="361" y="123" width="106" height="20" uuid="cbeafa69-6cf7-42b4-b7f8-c4e92f8909d2"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye}.getMablagheElhaghiye()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" x="40" y="123" width="33" height="20" uuid="9a501d81-1695-4222-87c8-93f5651a9bd1"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+		</band>
+		<band height="58">
+			<staticText>
+				<reportElement style="style1" x="438" y="28" width="90" height="20" uuid="c6c654db-ba4c-4193-8d53-01caba84894b"/>
+				<text><![CDATA[نام / کد واحد صدور :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="92" y="5" width="100" height="20" uuid="e9692c6a-2845-4932-a1f2-6c9f5ea9e596"/>
+				<text><![CDATA[مهر و امضای بیمه گر :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="361" y="28" width="78" height="20" uuid="a96b8445-19b1-4291-ab6b-c63afbd0221e"/>
+				<textFieldExpression><![CDATA[$F{elhaghiye.bimename.vahedeSodoor}.getName()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" x="0" y="6" width="555" height="20" uuid="ae605c9a-49b5-43ee-a216-9a3dede5abee"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[آدرس : تهران، خیابان ولیعصر، خیابان والی نژاد، پلاک 3، کد پستی 53391-19698   تلفن  8775261   دورنگار   8777440 ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

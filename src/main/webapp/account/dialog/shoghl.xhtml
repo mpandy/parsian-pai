@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <p:dialog id="newshoghldialog" header="#{msg['shoghljadid']}" dir="rtl" styleClass="matnfarsi"
+              minHeight="40" position="top" visible="#{shoghlAdminPanelBean.shoghlDialogVisible}"
+              closable="false" resizable="false">
+        <p:outputPanel style="padding: 3%" styleClass="matnfarsi">
+            <h:form>
+                <h:panelGrid columns="2" styleClass="matnfarsi">
+
+                    <p:outputLabel value="#{msg['shoghl']} : " for="shoghlname"/>
+                    <p:inputText id="shoghlname" value="#{shoghlAdminPanelBean.newshoghl.name}"/>
+
+                    <p:outputLabel value="#{msg['tabaghekhatar']} : " for="tabaghekhatar"/>
+                    <p:selectOneMenu id="tabaghekhatar" value="#{shoghlAdminPanelBean.newshoghl.defaultTabagheKhatar}"
+                                     style="font-family: byekan; direction: ltr">
+                        <f:selectItems value="#{comboOptions.tabagheKhatar}" var="tabaghekhatar" itemValue="#{tabaghekhatar}" itemLabel="#{msg[tabaghekhatar.name()]}" />
+                    </p:selectOneMenu>
+
+                    <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" style="right: 50%" styleClass="matnfarsi"
+                                     actionListener="#{shoghlAdminPanelBean.addOrEdittabaghekhatar}" update="shoghltable newshoghldialog"/>
+                    <p:commandButton value="#{msg['close']}" icon="fa fa-close" style="right: 20%" styleClass="matnfarsi"
+                                     actionListener="#{shoghlAdminPanelBean.closeDialogShoghl}" update="newshoghldialog"/>
+                </h:panelGrid>
+            </h:form>
+
+        </p:outputPanel>
+    </p:dialog>
+
+</f:view>
+</html>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="chapkhesarat" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e320411-121b-41c5-99c0-60bf20ca1bbc">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="175"/>
+	<style name="header" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="18" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<style name="style1" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement style="header" mode="Opaque" x="194" y="0" width="165" height="28" backcolor="#FDD86A" uuid="40a9c1a1-a8ca-4399-8aba-62dae8185ca5"/>
+				<text><![CDATA[تسویه خسارت بیمه حادثه]]></text>
+			</staticText>
+			<image>
+				<reportElement x="512" y="15" width="35" height="36" uuid="529c7976-d859-4eec-b064-1d248c8d6be6"/>
+				<imageExpression><![CDATA[$P{realPath} + "img\\logo.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="467" y="54" width="83" height="1" uuid="f58377fa-b26f-4336-9583-e231755bf326"/>
+			</line>
+			<staticText>
+				<reportElement x="467" y="40" width="45" height="14" uuid="3129b3e1-9aeb-4c63-9a29-cf4f71ec8d20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[سهامی عام]]></text>
+			</staticText>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="409" y="46" width="58" height="15" uuid="e8f9f311-3c52-43f3-8c69-d666dbfa0ac4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="13" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(سهامی عام)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="56" width="59" height="12" uuid="ff26e2d6-d2cc-4f19-a20d-6ba4fbded404"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[شماره ثبت00722]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="6" width="531" height="49" uuid="55d6b926-529f-419f-ab23-a66264f205a9"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="6" width="20" height="49" backcolor="#FDD86A" uuid="5c0f2af7-82e1-4f93-a4e0-a4a864e3eba4"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="424" y="13" width="88" height="13" uuid="3052e04c-6222-416f-bf48-755760b18333"/>
+				<text><![CDATA[شماره پرونده خسارت :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="433" y="36" width="79" height="14" uuid="ff26612c-f6e2-4ea3-88a1-d477ab8cdc79"/>
+				<text><![CDATA[تاریخ اعلام خسارت :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="161" y="13" width="124" height="13" uuid="68cd112b-f281-4135-924a-c8ed806d0127"/>
+				<text><![CDATA[ردیف مورد خسارت در پرونده :]]></text>
+			</staticText>
+		</band>
+		<band height="108">
+			<rectangle>
+				<reportElement x="183" y="3" width="348" height="105" uuid="311e83b4-4d56-4d60-bbb6-343131370890"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="3" width="20" height="105" backcolor="#FDD86A" uuid="771b827e-ceba-4ffe-9ab0-e5f791077fa0"/>
+				<text><![CDATA[
+]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="3" width="173" height="105" uuid="0cb9f26a-d3b9-46e5-89d3-314997d3bdf6"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="455" y="17" width="58" height="13" uuid="fda38ccc-0f0b-434b-9200-84de7f83683c"/>
+				<text><![CDATA[نام بیمه گذار :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="443" y="41" width="70" height="13" uuid="db65f7cc-ebd3-45fe-aac6-a511b136c7cc"/>
+				<text><![CDATA[شماره بیمه نامه : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="445" y="62" width="66" height="15" uuid="4f7fe107-846b-4fd1-9828-c4ccba983198"/>
+				<text><![CDATA[مبلغ بیمه شده : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="428" y="83" width="84" height="16" uuid="d7a6582c-4e35-4d2f-a511-51509320021f"/>
+				<text><![CDATA[تارخ شروع بیمه نامه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="41" width="49" height="13" uuid="be6a9ea6-dc07-4828-9c92-5c785bd5dc0d"/>
+				<text><![CDATA[تاریخ صدور :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="310" y="62" width="21" height="15" uuid="7649e021-2ba4-4b8d-904d-3ab6b8342097"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="245" y="84" width="84" height="15" uuid="2162c14b-55a2-4be1-8e30-e494c8673534"/>
+				<text><![CDATA[تاریخ انقضا بیمه نامه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="85" y="15" width="76" height="13" uuid="083091f4-f11a-419a-bcb1-640e7df116fd"/>
+				<text><![CDATA[نمایندگی/کارگزار :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="140" y="41" width="19" height="13" uuid="03a3c7c6-760e-48d8-a750-698d3af61e27"/>
+				<text><![CDATA[کد :]]></text>
+			</staticText>
+		</band>
+		<band height="95">
+			<rectangle>
+				<reportElement x="0" y="3" width="531" height="87" uuid="7a033869-d064-4c50-b79d-524fb1301906"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="3" width="20" height="87" backcolor="#FDD86A" uuid="5f5b9ca3-3f69-4365-9577-49a5852cfbe6"/>
+				<text><![CDATA[
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="12" width="85" height="19" uuid="5333c0e4-4311-4a3e-8af8-c0b31546c92d"/>
+				<text><![CDATA[نوع کاربری مورد بیمه : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="445" y="42" width="68" height="15" uuid="8db0b87d-828c-46d1-8ce9-3da09d8462de"/>
+				<text><![CDATA[موضوع فعالیت : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="420" y="67" width="91" height="15" uuid="e6de7aa9-986c-418b-9059-d8f3b3cf9d0f"/>
+				<text><![CDATA[نوع پوشش مورد تعهد :]]></text>
+			</staticText>
+		</band>
+		<band height="87">
+			<rectangle>
+				<reportElement x="0" y="3" width="531" height="82" uuid="ef007147-798b-4c4f-989a-0b89b981a7eb"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="3" width="20" height="82" backcolor="#FDD86A" uuid="3064c7ff-0387-4360-9332-195f8fe938ec"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="435" y="12" width="76" height="15" uuid="88151873-9ce2-447e-9ea6-81ca34b58656"/>
+				<text><![CDATA[محل وقوع حادثه : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="189" y="12" width="77" height="15" uuid="48876384-252a-4e21-bec2-39bc69cfe1af"/>
+				<text><![CDATA[تاریخ وقوع حادثه : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="459" y="28" width="51" height="14" uuid="76211b37-56fa-4a46-99d6-5dc6457971a7"/>
+				<text><![CDATA[نوع خسارت :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="444" y="45" width="67" height="14" uuid="0123ab8f-20d9-47fd-8b57-8d35c0ee22b4"/>
+				<text><![CDATA[مدرک خسارت : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="428" y="66" width="85" height="14" uuid="3e299297-8709-4b56-92dd-60019e2c0bf6"/>
+				<text><![CDATA[تاریخ اعلام خسارت : ]]></text>
+			</staticText>
+		</band>
+		<band height="70">
+			<rectangle>
+				<reportElement x="0" y="6" width="531" height="62" uuid="a125c195-4954-4934-954e-f42337368c7e"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="5" width="20" height="62" backcolor="#FDD86A" uuid="5ed813d5-e5b9-4675-8d59-cd12ea4b7c5c"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="428" y="16" width="84" height="15" uuid="c7428e9c-c890-467d-80b3-8d74ae6abc12"/>
+				<text><![CDATA[نام کارشناس بازدید :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="16" width="53" height="15" uuid="bc98f7ab-d13a-4f00-8ac9-a1dc1ee7b83b"/>
+				<text><![CDATA[تاریخ بازدید :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="469" y="46" width="45" height="17" uuid="59c3a133-a644-4a91-9b7d-30c6f3a021bd"/>
+				<text><![CDATA[محل بازدید :]]></text>
+			</staticText>
+		</band>
+		<band height="133">
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="4" width="20" height="127" backcolor="#FDD86A" uuid="cecebbe4-ceed-42d4-9159-abd4a40326c2"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="4" width="531" height="127" uuid="580affb9-1aaf-4064-98ca-498c87b01fac"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="454" y="9" width="65" height="20" uuid="79a47f11-b565-415a-84c6-4355b398e99e"/>
+				<text><![CDATA[میزان بازیافتی :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="459" y="33" width="57" height="20" uuid="1af8b977-da1a-4883-931b-d4e4a2db8475"/>
+				<text><![CDATA[مبلغ خسارت :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="425" y="59" width="93" height="20" uuid="b0967474-8db0-45fc-92e7-b3e66504a9e8"/>
+				<text><![CDATA[هزینه های کارشناسی :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="372" y="87" width="147" height="15" uuid="83e407c2-b60b-48c7-afea-9e829ee6d57e"/>
+				<text><![CDATA[مبلغ خسارت قابل پرداخت : (به عدد)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="363" y="111" width="160" height="20" uuid="38c1c151-89fc-4976-8285-f701ca796628"/>
+				<text><![CDATA[مبلغ خسارت قابل پرداخت : (به حروف)]]></text>
+			</staticText>
+		</band>
+		<band height="126">
+			<rectangle>
+				<reportElement x="0" y="3" width="531" height="92" uuid="20ea6d3e-f11b-46b3-aa33-ef5c634aebf0"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="535" y="3" width="20" height="92" backcolor="#FDD86A" uuid="c042cdf9-c6e1-43ea-97be-629278b12b88"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="453" y="6" width="63" height="20" uuid="5ef415d8-3c23-4b7a-b7d3-a3df925f7f76"/>
+				<text><![CDATA[سایر توضیحات :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="39" y="100" width="127" height="20" uuid="6d37639f-185a-4142-a86c-c785ecf4d8e8"/>
+				<text><![CDATA[اداره خسارت بیمه های اشخاص
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="3" width="487" height="20" uuid="c2acfcee-1bb8-4db3-b218-5beccea32f36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="B Nazanin" size="10" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آدرس : تهران، خیابان ولیعصر، خیابان والی نژاد، پلاک3، کد پستی 53391-19698 تلفن : 8775261  دورنگار: 8777440
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="24" width="236" height="14" uuid="ca5113ff-8dda-4d47-b6e9-aec8ae303c93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[www.parsianinsurance.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

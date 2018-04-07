@@ -1,0 +1,369 @@
+@font-face {
+    font-family: "yekan";
+    src: url('fonts/Yekan.woff') format('woff'), /* Pretty Modern Browsers */
+    url('fonts/Yekan.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "byekan";
+    src: url('fonts/BYekan.woff') format('woff'), /* Pretty Modern Browsers */
+    url('fonts/BYekan.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+.matnfarsiLarge {
+    font-family: yekan;
+    font-size: 40px;
+}
+
+.matnfarsi {
+    font-family: yekan;
+    font-size: small;
+    text-align: right;
+}
+
+.adadfarsi {
+    font-family: byekan;
+    font-size: large;
+    text-align: right;
+}
+
+.matnfarsikoochik {
+    font-family: yekan;
+    font-size: xx-small;
+    text-align: right;
+}
+
+.ui-widget-header{
+    font-family: yekan;
+    font-size: 100%;
+}
+
+.ui-layout-unit-header{
+    text-align: center;
+}
+
+.ui-button.matnfarsi{
+    font-family: yekan;
+    font-size: small;
+    text-align: right;
+}
+
+.ui-state-disabled {
+   color: #0b58a2;
+}
+
+/*.farsidirection {*/
+    /*direction: rtl;*/
+/*}*/
+
+.ui-growl {
+    font-family: yekan;
+    font-size: large;
+    text-align: right;
+    direction: rtl;
+    position: fixed;
+    top:20%;
+    left:40%;
+    color: #f9e9dd;
+    z-index:99999999999 !important;
+}
+
+
+.ui-growl-item{
+    background-color:#f9e9dd;
+    border-radius: 10px;
+    padding: 7%;
+}
+
+.ui-growl-item-container.ui-state-highlight {
+    border: medium #f99905;
+    opacity:0.8;
+    border-radius: 10px;
+}
+
+.ui-growl-image-info.ui-growl-message {
+    color:#003bb3;
+}
+
+.ui-state-highlight .ui-icon {
+    display: none;
+}
+
+.ui-widget {
+    font-family: yekan;
+    font-size: small;
+    text-align: right;
+}
+
+.highlight-row {
+    background-color: #a6d1fd !important ;
+    border: 2px #4979ff;
+
+}
+
+a:link  {
+    color: #0b3e6f;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: center;
+    width: 1000px;
+    height: 250px;
+    background-color: white;
+}
+
+
+.flex-item {
+    background-color: #FFFCF2 ;
+    width: 200px;
+    height: 70px;
+    margin: 20px;
+    border-radius: 50%;
+    box-shadow: 7px 7px 3px #cccccc;
+}
+
+.center {
+    padding: 20px 0;
+    border: 3px solid #9c947c;
+    text-align: center;
+    font-size: small;
+}
+
+#main_header {
+    margin: 10px auto 0 auto;
+    padding: 5px 10px 10px;
+    height: 28px;
+}
+
+.applicationlogo{
+    position: absolute;
+    top: 8%;
+    right: 2%;
+}
+
+.applicationtitle{
+    z-index: 100;
+    position: fixed;
+    margin-left: 33%;
+    font-size: x-large;
+    color: #004b99;
+}
+
+.applicationtitlelogo{
+    z-index: 100;
+    position: fixed;
+    margin-left: 28%;
+    margin-top: -0.5%;
+}
+
+.pagetitle{
+    position: absolute;
+    top: 70px;
+    right: 590px;
+    color: #f26b06;
+    font-family: yekan;
+    text-align: right;
+    font-weight: bold;
+}
+
+.exitbutton{
+    font-family: yekan;
+    position: absolute;
+    top: 25%;
+    left: 1.8%;
+}
+
+.karbarejari{
+    font-family: yekan;
+    font-size: smaller;
+    position: absolute;
+    color: #5d5d5d;
+    top: 1%;
+    left: 2%;
+    direction: rtl;
+}
+
+.ui-panel-titlebar{
+    text-align: center;
+}
+
+
+
+.operationpanelnavbar {
+    text-align: center;
+    padding: .7%;
+    overflow: hidden;
+    background-color: #848484;
+    position: fixed;
+    opacity:.75;
+    filter:Alpha(Opacity=75);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.buttons {
+    border: 5px #303030;
+}
+
+
+
+.ui-datatable-odd {
+    background: none repeat scroll 0 0 #e4ecfc  ;
+}
+
+.ui-datatable-even {
+    background: none repeat scroll 0 0 white  ;
+}
+
+.ui-state-highlight
+{
+    background-color: #0b93d5;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled{
+    opacity:.8;filter:Alpha(Opacity=80);
+}
+
+/* Minoru */
+.input__field--minoru {
+    width: 100%;
+    background: #fff;
+    box-shadow: 10px 10px 100px 100px transparent;
+    color: #4dc1ec;
+    -webkit-transition: box-shadow .5s;
+    transition: box-shadow .5s;
+}
+
+
+.input__field--minoru:focus {
+    box-shadow: 5px 5px 5px 2px #ecbe24;
+}
+
+.input__field--minoru:focus + .input__label--minoru {
+    pointer-events: none;
+}
+
+.input__field--minoru:focus + .input__label--minoru::after {
+    -webkit-animation: anim-shadow 0.3s forwards;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 100px 50px;
+        opacity: 0;
+    }
+}
+
+@keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 100px 50px;
+        opacity: 0;
+    }
+}
+
+.input__label-content--minoru {
+    padding: 0.75em 0.15em;
+}
+
+.ui-menu .ui-menuitem-text {
+    float: right;
+}
+
+.background {
+    background: url('../images/b1.jpg') repeat;
+    background-size: 100%;
+}
+
+.panelbackground{
+    background-image: url('../images/userinfobackground.jpg');
+    background-size: cover;
+}
+
+.panelbackground_rotated{
+    background-image: url('../images/userinfobackground_rotated.jpg');
+    background-size: cover;
+}
+
+.ui-menubar {
+    background: url('../images/menubackgroundimage.png') no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding-top: 5.5%;
+    margin-left: -1%;
+    margin-top: -2%;
+    border-bottom-width: medium;
+    border-bottom-color: #0e90d2;
+}
+
+.ui-state-highlight {
+    background: #b6dcfd !important;
+    border-color: #5c9ccc;
+}
+
+.ui-dialog{
+    margin-top: 7%;
+    border-radius: 10px;
+    opacity:0.9;
+}
+
+.ui-dialog-titlebar {
+font-size: small;
+}
+
+.ui-autocomplete-input {
+    width: 145px;
+    height: 19px;
+    font-size: small;
+}
+
+.ui-selectonemenu-label {
+    height: 25px;
+}
+
+.ui-fileupload-buttonbar .ui-button-text-icon-left .ui-button-text {
+    font-family: yekan;
+}
+.ui-fileupload-content {
+    border: 0 none;
+}
+
+.artifactdoccolumn1 {
+    width:100px;
+}
+.artifactdoccolumn2 {
+     width:250px;
+ }
+.artifactdoccolumn3 {
+      width:150px;
+  }
+.artifactdoccolumn4 {
+       width:200px;
+   }
+
+.userinfocolumn1{
+    width:170px;
+}
+
+.ui-notificationbar.ui-widget {
+    top: 0px !important;
+    right: 0px;
+    width: 300px;
+    height: 90%;
+    position: absolute;
+    opacity:.8;
+}

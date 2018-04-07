@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+    <p:panel header="#{msg['josteju']}" styleClass="matnfarsi" style="direction: rtl" >
+
+        <h:form id="adminpanel">
+        <h:panelGrid columns="6" cellpadding="10" styleClass="matnfarsi">
+            <p:outputLabel value="#{msg['gharardadname']} : " for="searchgharardadname"/>
+            <p:inputText id="searchgharardadname" value="#{gharardadAdminPanelBean.searchGharardad.name}" size="15" />
+            <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
+                             actionListener="#{gharardadAdminPanelBean.search}" update="gharardad"/>
+        </h:panelGrid>
+        </h:form>
+
+
+    </p:panel>
+    <p:outputPanel id="gharardad">
+
+        <p:dataTable id="gharardadtable" var="nextgharardad" value="#{gharardadAdminPanelBean.undeletedGharardads()}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl" rowIndexVar="index">
+
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                    <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['shomaregharardad']}" style="text-align: center" styleClass="matnfarsi">
+                #{nextgharardad.shomare}
+            </p:column>
+
+            <p:column headerText="#{msg['gharardadname']}" style="text-align: center" styleClass="matnfarsi">
+                #{nextgharardad.name}
+            </p:column>
+
+            <p:column headerText="#{msg['goroohs']}" style="text-align: center" styleClass="matnfarsi">
+                #{gharardadAdminPanelBean.translatedGroops(nextgharardad)}
+            </p:column>
+
+            <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145" style="text-align: center">
+
+                <h:form>
+                <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                 actionListener="#{gharardadAdminPanelBean.editGharardad(nextgharardad)}"
+                                 update="gharardadtable newgharardaddialog"/>
+                <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                 actionListener="#{gharardadAdminPanelBean.removeGharardad(nextgharardad)}"/>
+                </h:form>
+
+            </p:column>
+
+        </p:dataTable>
+        <ui:include src="dialog/gharardad.xhtml" />
+
+    </p:outputPanel>
+
+    <h:form>
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+        <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi">
+            <p:ajax event="click" listener="#{gharardadAdminPanelBean.newGharardad}" update="newgharardaddialog"/>
+        </p:commandButton>
+    </p:outputPanel>
+    </h:form>
+
+</html>

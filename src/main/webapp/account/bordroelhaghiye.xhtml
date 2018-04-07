@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:form id="bordroelhaghiye" >
+    <p:panel header="#{msg['bordroelhaghiye']}" toggleable="true" toggleSpeed="500"
+             styleClass="matnfarsi" style="direction: rtl" >
+
+        <h:panelGrid columns="4" cellpadding="5">
+            <p:outputLabel value="#{msg['tarikheSodoorelhaghiyeaz']} : " for="searchtarikhesodoor" styleClass="matnfarsi"/>
+            <p:inputText id="searchtarikhesodoor" value="#{bordroElhaghiyeBeen.searchElhaghiye.tarikh_sodoor_elhaghie}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['tarikheSodoorelhaghiyeta']} : " for="searchtarikhsodoor" styleClass="matnfarsi"/>
+            <p:inputText id="searchtarikhsodoor" value="#{bordroElhaghiyeBeen.searchElhaghiye.shomareElhaghiye}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['shomareBimenameaz']} : " for="searchBimename_shomare" styleClass="matnfarsi"/>
+            <p:inputText id="searchBimename_shomare" value="#{bordroElhaghiyeBeen.searchElhaghiye.bimename.shomare}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['shomareBimenameta']} : " for="searchBimenameshomare" styleClass="matnfarsi"/>
+            <p:inputText id="searchBimenameshomare" value="#{bordroElhaghiyeBeen.searchElhaghiye.bimename.shomare}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['vahedeSodoor']} : " for="vahedesodoor" styleClass="matnfarsi"/>
+            <p:inputText id="vahedesodoor" value="#{bordroElhaghiyeBeen.searchElhaghiye.vahed.vahedeSodoor}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['namayandegi']} : " for="searchnamayandegi" styleClass="matnfarsi"/>
+            <p:inputText id="searchnamayandegi" value="#{bordroElhaghiyeBeen.searchElhaghiye.vahed.name}"
+                         size="24" />
+        </h:panelGrid>
+    </p:panel>
+
+    <p:outputPanel>
+
+        <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroElhaghiyeBeen.elhaghiyes}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl">
+
+            <p:column headerText="#{msg['tarikheSodoorelhaghiye']}" styleClass="matnfarsi">
+                #{nextbordro.tarikh_sodoor_elhaghie}
+            </p:column>
+
+            <p:column headerText="#{msg['shomareBimename']}" styleClass="matnfarsi">
+                #{nextbordro.bimename.shomare}
+            </p:column>
+
+            <p:column headerText="#{msg['vahedeSodoor']}" styleClass="matnfarsi">
+            #{nextbordro.vahed.vahedeSodoor}
+        </p:column>
+
+            <p:column headerText="#{msg['namayandegi']}" styleClass="matnfarsi">
+                #{nextbordro.vahed.name}
+            </p:column>
+
+        </p:dataTable>
+    </p:outputPanel>
+    <br></br>
+
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+    </p:outputPanel>
+
+</h:form>
+</html>

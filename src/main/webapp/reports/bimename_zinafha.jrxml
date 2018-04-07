@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bimename_zinafha" language="groovy" pageWidth="515" pageHeight="789" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1c220089-4ac8-4210-bf43-3f6821461736">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" fontName="B Nazanin" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<field name="nesbat_ba_bimeshode" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="name_khanevadegi" class="java.lang.String"/>
+	<field name="name_pedar" class="java.lang.String"/>
+	<field name="shomare_shenasname" class="java.lang.String"/>
+	<field name="kode_meli" class="java.lang.String"/>
+	<field name="olaviat_khesarat" class="ir.parsianinsurance.he.domain.model.enums.OlaviateKhesarat"/>
+	<field name="zarib_sahm" class="java.lang.String"/>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="137" height="20" uuid="e2b5e820-8bf4-4efc-9fe2-2da90bd2697e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="130" y="0" width="79" height="20" uuid="aa7c533f-c71b-42ab-94ac-043a99939f0a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="209" y="0" width="52" height="20" uuid="e1fe09d2-c460-4845-95f5-b4e4eef56fa8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="261" y="0" width="65" height="20" uuid="79c662e9-3af7-4caa-b299-93ff0db6626c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="326" y="0" width="66" height="20" uuid="5e361e8d-cd7f-41d9-83ce-813dc419a657"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="392" y="0" width="44" height="20" uuid="0756d12c-6574-4587-9f03-73783fdfc3cc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="436" y="0" width="81" height="20" uuid="a78b6d9e-4e6c-4225-936a-8ae159a36311"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="130" y="0" width="78" height="20" uuid="3a04f76b-1219-40f7-8c41-604602390a7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nesbat_ba_bimeshode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="436" y="0" width="29" height="20" uuid="53508f34-00df-44ce-9d87-203480ba058c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="465" y="0" width="52" height="20" uuid="84726493-1a20-452d-b525-c9b2413e2e6c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name_khanevadegi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="326" y="0" width="66" height="20" uuid="2cf6fbbc-a002-4ea3-8279-8092c53878fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{shomare_shenasname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="392" y="0" width="44" height="20" uuid="e8722bcd-ed4d-42dd-aae0-d56653b85fe0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name_pedar}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="261" y="0" width="65" height="20" uuid="6f5dd00a-9200-4de1-83cf-61f2c4b76451"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kode_meli}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="0" width="53" height="20" uuid="34d6c489-ddad-4402-b843-1b7753c57988"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{olaviat_khesarat}.getIndexValue()+1]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="0" width="136" height="20" uuid="523a554a-c492-4e56-bf90-2ab07490ac5e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{zarib_sahm}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

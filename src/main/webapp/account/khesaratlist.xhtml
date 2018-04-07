@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:shiro="http://shiro.apache.org/faces/tags"
+>
+
+    <p:panel header="#{msg['jostejuKhesarat']}" toggleable="true"
+             toggleSpeed="500" style="direction: rtl"
+             styleClass="panelbackground">
+
+    <p align="center">
+
+
+<h:form id="jostejuKhesarat" >
+        <h:panelGrid columns="8" styleClass="matnfarsi" style="direction: rtl">
+            <p:outputLabel value="#{msg['shomareBimename']} : " for="searchBimename_shomare"/>
+            <p:inputText id="searchBimename_shomare" value="#{khesaratListBean.searchKhesarat.shomareBimename}" size="15" style="font-family: byekan"/>
+
+            <p:outputLabel value="#{msg['shomareparvande']} : " for="shomareparvande"/>
+            <p:inputText id="shomareparvande" value="#{khesaratListBean.searchKhesarat.shomareParvande}" size="15" style="font-family: byekan"/>
+
+            <p:commandButton value="#{msg['josteju']}" actionListener="#{khesaratListBean.search}"
+                             update="khesaratlistpanel" icon="fa fa-search" style="right: 45%; margin: 1%" styleClass="matnfarsi"/>
+        </h:panelGrid>
+    </h:form>
+    </p>
+
+    </p:panel>
+
+<p:outputPanel id="khesaratlistpanel">
+
+        <p:dataTable var="khesarat" value="#{khesaratListBean.khesarats}" styleClass="matnfarsi"
+                     emptyMessage="#{msg['emptylist']}" id="khesaratlist_table"
+                      rowStyleClass="#{index eq khesaratListBean.selectedItemRow ? 'highlight-row' : null}"
+                     rowIndexVar="index" dir="rtl" resizableColumns="true" tableStyle="text-align: center" >
+
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['shomareBimename']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{khesarat.bimename.shomare}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['shomareparvande']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{khesarat.shomare_parvande}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['vaziateparvande']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{msg[khesarat.vaziateparvande]}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['tarikheparvande']}" style="text-align: center" styleClass="matnfarsi" width="100">
+                <p:outputLabel style="font-family: byekan" value="#{khesarat.tarikhe_tashkil_parvande}"/>
+            </p:column>
+
+            <p:column width="80">
+                <h:form>
+                <p:commandButton value="#{msg['amaliat']}"
+                                 actionListener="#{khesaratListBean.selectKhesarat(khesarat, index)}"
+                                 update=":jostejuKhesarat"
+                                 exportable="false"
+                                 icon="fa fa-gear"
+                                 styleClass="matnfarsi" />
+                </h:form>
+            </p:column>
+
+        </p:dataTable>
+
+    <h:form>
+        <h:commandLink>
+            <p:graphicImage library="default" name="images/excel.png" width="50"/>
+            <p:dataExporter type="xls" target="khesaratlist_table" fileName="khesaratList" />
+        </h:commandLink>
+    </h:form>
+
+</p:outputPanel>
+
+
+    <h:form>
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar" >
+
+        <shiro:hasPermission name="NAMAYESHE_JOZIATE_KHESARAT">
+        <p:commandButton value="#{msg['namayesh']}" icon="fa fa-file-text-o"
+                         actionListener="#{khesaratListBean.namayeshKhesarat}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.KHESARAT_SELECTED])}"
+        />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="VIRAYESHE_KHESARAT">
+        <p:commandButton value="#{msg['virayesh']}" icon="fa fa-edit"
+                         actionListener="#{khesaratListBean.editKhesarat}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.KHESARAT_SELECTED]) and not khesaratListBean.hideEditButton}"
+        />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SABTE_HAVALE_KHESARAT">
+        <p:commandButton value="#{msg['havalekhesarat']}" icon="fa fa-plus"  ajax="false"
+                         action="#{khesaratListBean.newSodoorHavaleKhesarat}" styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.KHESARAT_SELECTED]) and not khesaratListBean.hidehavaleButton}"
+        />
+        </shiro:hasPermission>
+
+        <shiro:hasPermission name="SODOOR_KHESARAT">
+            <p:commandButton value="#{msg['sabteKhesarat']}" icon="fa fa-external-link"
+                             actionListener="#{khesaratListBean.sabteKhesarat}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.KHESARAT_SELECTED]) and khesaratListBean.showSabteKhesaratButton}"
+            />
+        </shiro:hasPermission>
+
+    </p:outputPanel>
+
+</h:form>
+
+</html>

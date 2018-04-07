@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="HSQLDB - test" uuid="5262c1a6-f81d-45f4-83c9-800408f83d93">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="TEST 157" uuid="33acd94c-6615-45fd-ab62-f1cd93e21ef0">
+      <database-info product="Oracle" version="Oracle Database 11g Release 11.1.0.0.0 - Production" jdbc-version="11.1" driver-name="Oracle JDBC driver" driver-version="11.1.0.6.0-Production+">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>HEUSER</user-name>
+      <introspection-scope>*:HEUSER,PUBLIC,SYS,SYSTEM</introspection-scope>
+      <resolve-scope>*:HEUSER,PUBLIC</resolve-scope>
+    </data-source>
+    <data-source name="LOCAL" uuid="7b6e015a-ff61-413b-82c5-3bcbca56f9a1">
+      <database-info product="Oracle" version="Oracle Database 11g Release 11.1.0.0.0 - Production" jdbc-version="11.1" driver-name="Oracle JDBC driver" driver-version="11.1.0.6.0-Production+">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>HEUSER2</user-name>
+      <introspection-scope>*:HEUSER,PUBLIC,SYS,SYSTEM</introspection-scope>
+      <resolve-scope>*:HEUSER,PUBLIC</resolve-scope>
+    </data-source>
+    <data-source name="H2 - default@localhost" uuid="cbc34fd7-d7fc-4369-9f92-090d9a82de48">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>

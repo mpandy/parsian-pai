@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+    <p:panel header="#{msg['josteju']}" styleClass="matnfarsi" style="direction: rtl" >
+
+        <h:form id="adminpanel" >
+        <h:panelGrid columns="6" cellpadding="10" styleClass="matnfarsi" >
+            <p:outputLabel value="#{msg['username']} : " for="searchusername"/>
+            <p:inputText id="searchusername" value="#{userAdminPanelBean.searchUser.username}"
+                         size="15" />
+            <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
+                             actionListener="#{userAdminPanelBean.search}" update="karbaran"/>
+        </h:panelGrid>
+        </h:form>
+
+    </p:panel>
+    <p:outputPanel id="karbaran">
+
+        <p:dataTable id="karbarantable" var="nextkarbar" value="#{userAdminPanelBean.undeletedUsers()}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl" rowIndexVar="index">
+
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['username']}" styleClass="matnfarsi">
+                #{nextkarbar.username}
+            </p:column>
+
+            <p:column headerText="#{msg['realName']}" styleClass="matnfarsi">
+                #{nextkarbar.realName}
+            </p:column>
+
+            <p:column headerText="#{msg['roles']}" styleClass="matnfarsi">
+                #{nextkarbar.roles}
+            </p:column>
+
+            <p:column headerText="#{msg['vahedeMahaleKhedmat']}" styleClass="matnfarsi">
+                #{nextkarbar.vahed}
+            </p:column>
+
+            <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145" style="text-align: center">
+
+                <h:form>
+                <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                 actionListener="#{userAdminPanelBean.editKarbar(nextkarbar)}"
+                                 update="karbarantable newkarbardialog"/>
+                <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                 actionListener="#{userAdminPanelBean.removeKarbar(nextkarbar)}"/>
+                </h:form>
+            </p:column>
+
+        </p:dataTable>
+        <ui:include src="dialog/user.xhtml" />
+
+    </p:outputPanel>
+
+    <h:form>
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+        <p:commandButton value="#{msg['add']}" icon="fa fa-user-plus" styleClass="matnfarsi">
+            <p:ajax event="click" listener="#{userAdminPanelBean.newKarbar}" update="newkarbardialog"/>
+        </p:commandButton>
+    </p:outputPanel>
+    </h:form>
+</html>

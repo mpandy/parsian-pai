@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <p:dialog id="newnamayandedialog" header="#{msg['namayandejadid']}" dir="rtl" styleClass="matnfarsi"
+              minHeight="40" position="top" visible="#{vahedAdminPanelBeen.namayandeDialogVisible}"
+              closable="false" resizable="false">
+        <p:outputPanel style="padding: 3%" styleClass="matnfarsi">
+            <h:form>
+            <h:panelGrid columns="2" styleClass="matnfarsi">
+
+                    <p:outputLabel value="#{msg['namenamayandegi']} : " for="namayandename"/>
+                    <p:inputText id="namayandename" value="#{vahedAdminPanelBeen.newVahed.name}"/>
+
+                    <p:outputLabel value="#{msg['codenamayandegi']} : " for="codenamayandegi"/>
+                    <p:inputText id="codenamayandegi" value="#{vahedAdminPanelBeen.newVahed.code}"
+                                 style="font-family: byekan"/>
+
+                    <p:outputLabel value="#{msg['namayandetype']} : " for="namayandetype"/>
+                    <p:selectOneMenu id="namayandetype" value="#{vahedAdminPanelBeen.newVahed.vahedType}"
+                                     style="direction: ltr">
+                        <f:selectItems value="#{comboOptions.vahedType}" var="namayandetype"
+                                       itemValue="#{namayandetype}" itemLabel="#{msg[namayandetype.name()]}" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="#{msg['sarparast']} : " for="sarparast"/>
+                    <p:autoComplete id="sarparast"  value="#{vahedAdminPanelBeen.newVahed.sarparast}"
+                                    var="sarparast"
+                                    itemLabel="#{sarparast}"
+                                    itemValue="#{sarparast}"
+                                    completeMethod="#{baseInfoService.autocompleteVahed}"
+                                    converter="#{vahedConverter}"
+                                    style="direction: ltr"
+                                    forceSelection="true">
+                    </p:autoComplete>
+
+                    <p:outputLabel value="#{msg['vahedeSodoor']} : " for="vahedeSodoor"/>
+                    <p:autoComplete id="vahedeSodoor"  value="#{vahedAdminPanelBeen.newVahed.vahedeSodoor}"
+                                    var="vahedeSodoor"
+                                    itemLabel="#{vahedeSodoor}"
+                                    itemValue="#{vahedeSodoor}"
+                                    completeMethod="#{baseInfoService.autocompleteVahed}"
+                                    converter="#{vahedConverter}"
+                                    style="direction: ltr"
+                                    forceSelection="true">
+                    </p:autoComplete>
+
+                    <p:outputLabel value="#{msg['saghfesodoor']} : " for="saghfesodoor"/>
+                    <p:inputText id="saghfesodoor" value="#{vahedAdminPanelBeen.newVahed.saghfe_sodoor}"/>
+
+                    <p:outputLabel value="#{msg['saghfetakhfifmodiriati']} : " for="saghfetakhfifmodiriati"/>
+                    <p:inputText id="saghfetakhfifmodiriati" value="#{vahedAdminPanelBeen.newVahed.saghfe_takhfif_modiriati}"/>
+
+                    <p:outputLabel value="#{msg['saghfe_khesarat_fot']} : " for="saghfe_khesarat_fot"/>
+                    <p:inputText id="saghfe_khesarat_fot" value="#{vahedAdminPanelBeen.newVahed.saghfe_khesarat_fot}"/>
+
+                    <p:outputLabel value="#{msg['saghfe_khesarat_hazinePezeshki']} : " for="saghfe_khesarat_hazinePezeshki"/>
+                    <p:inputText id="saghfe_khesarat_hazinePezeshki" value="#{vahedAdminPanelBeen.newVahed.saghfe_khesarat_hazinePezeshki}"/>
+
+                    <p:outputLabel value="#{msg['saghfe_khesarat_naghsOzv']} : " for="saghfe_khesarat_naghsOzv"/>
+                    <p:inputText id="saghfe_khesarat_naghsOzv" value="#{vahedAdminPanelBeen.newVahed.saghfe_khesarat_naghsOzv}"/>
+
+                    <p:outputLabel value="#{msg['neshani']} : " for="neshani"/>
+                    <p:inputTextarea id="neshani" rows="2" cols="20" value="#{vahedAdminPanelBeen.newVahed.address}"/>
+
+                    <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" styleClass="matnfarsi" style="right: 80%"
+                                     actionListener="#{vahedAdminPanelBeen.addOrEditNamayande}" update="namayandetable newnamayandedialog"/>
+                    <p:commandButton value="#{msg['close']}" icon="fa fa-close" styleClass="matnfarsi" style="right: 28%"
+                                     actionListener="#{vahedAdminPanelBeen.closeDialogNamayande}" update="newnamayandedialog"/>
+                </h:panelGrid>
+            </h:form>
+
+        </p:outputPanel>
+    </p:dialog>
+
+</f:view>
+</html>

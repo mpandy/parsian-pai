@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <p:dialog id="newtaahoddialog" header="#{msg['taahodejadid']}" dir="rtl" styleClass="matnfarsi" position="top"
+              visible="#{bimenameBean.taahodDialogVisible}" closable="false" resizable="false">
+
+        <p:outputPanel style="padding: 3%" styleClass="matnfarsi">
+                <h:panelGrid columns="2" styleClass="matnfarsi">
+                    <p:outputLabel value="#{msg['noetaahod']} : " for="noetaahod"/>
+
+                    <p:selectOneMenu id="noetaahod" value="#{bimenameBean.newTaahod.noetaahod}"
+                                     style="direction: ltr">
+                        <f:selectItems value="#{comboOptions.noeTaahods}" var="noetaahod" itemValue="#{noetaahod}" itemLabel="#{msg[noetaahod.name()]}" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="#{msg['sarmayetaahod']} : " for="sarmayetaahod"/>
+                    <p:inputText id="sarmayetaahod" value="#{bimenameBean.newTaahod.sarmaye_taahod}" style="font-family: byekan">
+                        <f:convertNumber pattern="#,##0"/>
+                    </p:inputText>
+                </h:panelGrid>
+
+                <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" styleClass="matnfarsi"
+                                 style="right: 30%" actionListener="#{bimenameBean.addOrEditTaahods}"
+                                 update="taahodtable newtaahoddialog"/>
+
+                <p:commandButton value="#{msg['close']}" icon="fa fa-close" styleClass="matnfarsi" style="right: 30%"
+                                 actionListener="#{bimenameBean.closeDialogTaahod}" update="newtaahoddialog"/>
+        </p:outputPanel>
+    </p:dialog>
+
+</f:view>
+</html>

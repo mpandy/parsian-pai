@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bimename_khatareezafi" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="975b5ef3-154b-4323-909f-3b7c27c646cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.amaliat" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="noekhatarezafi" class="java.lang.String"/>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement x="14" y="0" width="164" height="21" uuid="c5c5f043-fef4-4381-9974-fb9e316c88a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{noekhatarezafi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

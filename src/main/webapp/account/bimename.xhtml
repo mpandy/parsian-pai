@@ -1,0 +1,858 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pfaces="http://omidbiz.com/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+<p:outputPanel style="direction: rtl">
+    <h:form id="bimenameform">
+
+        <p:panel id="bimename" header="#{msg['bimename']}" rendered="#{bimenameBean.filter.panelBimename}" >
+            <h:panelGrid columns="6" styleClass="matnfarsi" width="100%">
+
+                <p:outputLabel value="#{msg['shomareBimename']} : " for="shomareBimename"
+                               rendered="#{bimenameBean.filter.shomareBimename}"/>
+                <p:inputText id="shomareBimename" value="#{bimenameBean.bimename.shomare}" styleClass="matnfarsikoochik"
+                             style="font-family: byekan" disabled="true" size="24" rendered="#{bimenameBean.filter.shomareBimename}"/>
+
+                <p:outputLabel value="#{msg['aztarikheSodoor']} : " for="aztarikheSodoor"
+                               rendered="#{bimenameBean.filter.tarikhsodoor}"/>
+                <p:inputText id="aztarikheSodoor" value="#{bimenameBean.bimename.tarikhesodoor}"
+                             disabled="true" style="font-family: byekan"
+                             rendered="#{bimenameBean.filter.tarikhsodoor}"/>
+
+                <p:outputLabel value="#{msg['bimegareghabli']} : " for="bimegareghabli" />
+                <p:selectOneMenu id="bimegareghabli" value="#{bimenameBean.bimename.bimegare_ghabli}"
+                                 style="direction: ltr"
+                                 disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME, state.TAGHIR_BIMENAME])}">
+                    <f:selectItems value="#{comboOptions.bimegars}"/>
+                </p:selectOneMenu>
+            </h:panelGrid>
+
+        </p:panel>
+
+        <p:panel id="pish" header="#{msg['pishnahad']}" >
+            <h:panelGrid columns="6" styleClass="matnfarsi" width="100%">
+
+                <p:outputLabel value="#{msg['namayandegi']} : " for="namayandegi" />
+                <p:inputText id="namayandegi" value="#{bimenameBean.bimename.pishnahadeFaal.vahed}"
+                             disabled="true" style="font-family: byekan; direction: ltr"/>
+
+                <p:outputLabel value="#{msg['vahedeSodoor']} : " for="vahedeSodoor"
+                               rendered="#{bimenameBean.filter.vahedesodoor}"/>
+                <p:inputText id="vahedeSodoor" value="#{bimenameBean.bimename.vahedeSodoor}"
+                             disabled="true" style="font-family: byekan; direction: ltr"
+                             rendered="#{bimenameBean.filter.vahedesodoor}"/>
+
+                <p:outputLabel value="#{msg['bazaryab']} : " for="bazaryab"/>
+                <p:autoComplete id="bazaryab" value="#{bimenameBean.bimename.pishnahadeFaal.bazaryab}"
+                                var="bazaryab"
+                                itemLabel="#{bazaryab.toStringBazaryab()}"
+                                itemValue="#{bazaryab}"
+                                completeMethod="#{userService.autocompleteBazaryab}"
+                                converter="#{bazaryabConverter}"
+                                style="font-family: byekan; direction: ltr"
+                                forceSelection="true"
+                                disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['shomare_pishnahad']} : " for="shomarePishnahad"
+                               rendered="#{bimenameBean.filter.shomarePishnahad}"/>
+                <p:inputText id="shomarePishnahad" value="#{bimenameBean.bimename.pishnahadeFaal.shomare_pishnahad}"
+                             disabled="true" style="font-family: byekan" size="24" rendered="#{bimenameBean.filter.shomarePishnahad}"/>
+
+                <p:outputLabel value="#{msg['tarikhePishnahad']} : " for="tarikhePishnahad"/>
+                <p:inputText id="tarikhePishnahad" value="#{bimenameBean.bimename.pishnahadeFaal.tarikh_pishnahad}"
+                             style="font-family: byekan" disabled="true"/>
+
+                <p:outputLabel value="#{msg['tarikhshoroo']} : "/>
+                <pfaces:datePicker value="#{bimenameBean.bimename.pishnahadeFaal.aztarikh}"
+                                   styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all adadfarsi"
+                                   style="font-family: byekan"
+                                   disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}"/>
+
+                <p:outputLabel value="#{msg['tarikhpayan']} : "/>
+                <pfaces:datePicker value="#{bimenameBean.bimename.pishnahadeFaal.tatarikh}"
+                                   styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"
+                                   style="font-family: byekan"
+                                   disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}"/>
+
+                <p:outputLabel value="#{msg['gharardad']} : " for="gharardad" />
+                <p:autoComplete id="gharardad"  value="#{bimenameBean.bimename.pishnahadeFaal.gharardad}"
+                                var="gharardad"
+                                itemLabel="#{gharardad.name}"
+                                itemValue="#{gharardad}"
+                                completeMethod="#{pishnahadService.autocompleteGharardad}"
+                                converter="#{gharardadConverter}"
+                                style="direction: ltr"
+                                forceSelection="true"
+                                disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE,state.SODOOR_NEW_BIMENAME_MOHASEBE])}">
+                    <p:ajax event="itemSelect" update="gorooheBimename" />
+
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['gorooheBimename']} : " for="gorooheBimename" />
+                <p:selectOneMenu id="gorooheBimename" value="#{bimenameBean.bimename.pishnahadeFaal.goroohbimename}"
+                                  style="direction: ltr"
+                                 disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE,state.SODOOR_NEW_BIMENAME_MOHASEBE])}">
+                    <p:ajax event="change" update="takhfifgroohi" listener="#{bimenameBean.loadTakhfifGoroohi}" />
+                    <f:selectItem itemLabel="---" itemValue="#{null}" />
+                    <f:selectItems value="#{bimenameBean.loadGoroohs()}" />
+                </p:selectOneMenu>
+
+                <p:outputLabel value="#{msg['takhfife_goroohi']} (#{'%'}) : " for="takhfifgroohi" />
+                <p:inputText id="takhfifgroohi" value="#{bimenameBean.bimename.pishnahadeFaal.ezafeKasr.takhfife_goroohi}"
+                             style="font-family: byekan"
+                             disabled="true"/>
+
+                <p:outputLabel value="#{msg['takhfife_modiriati']} (#{'%'}) : " for="takhfife_modiriati" />
+                <p:inputText id="takhfife_modiriati" value="#{bimenameBean.bimename.pishnahadeFaal.ezafeKasr.takhfife_modiriati}"
+                             style="font-family: byekan" disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}"/>
+
+                <p:outputLabel value="#{msg['ezafe_nerkh_pezeshki']} (#{'%'}) : " for="ezafenerkhpezeshki" />
+                <p:inputText id="ezafenerkhpezeshki" value="#{bimenameBean.bimename.pishnahadeFaal.ezafeKasr.ezafe_nerkh_pezeshki}"
+                             style="font-family: byekan" disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}"/>
+
+                <p:outputLabel value="#{msg['shomarebimesaleghabl']} : " for="shomarebimesaleghabl" />
+                <p:inputText id="shomarebimesaleghabl" value="#{bimenameBean.bimename.pishnahadeFaal.shomare_bime_sale_ghabl}"
+                             style="font-family: byekan" disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"/>
+
+                <p:outputLabel value="#{msg['tarikheenghazayeghabli']} : " />
+                <pfaces:datePicker value="#{bimenameBean.bimename.pishnahadeFaal.tarikhe_engheza_ghabli}"
+                                   styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"
+                                   style="font-family: byekan"
+                                   disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"/>
+
+                <p:outputLabel value="#{msg['nahvepardakht']} : " for="nahvepardakht" />
+                <p:selectOneMenu id="nahvepardakht" value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.nahvePardakht}"
+                                 style="direction: ltr"
+                                 disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                    <f:selectItems value="#{comboOptions.nahvePardakhts}" var="nahvepardakht" itemValue="#{nahvepardakht}" itemLabel="#{msg[nahvepardakht.name()]}"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="#{msg['emzakonandeaval']} : " for="emzakonandeaval"/>
+                <p:autoComplete id="emzakonandeaval" value="#{bimenameBean.bimename.pishnahadeFaal.emzaKonande_aval}"
+                                var="emzakonandeaval"
+                                itemLabel="#{emzakonandeaval}"
+                                itemValue="#{emzakonandeaval}"
+                                completeMethod="#{userService.autocompleteEmzakonande}"
+                                converter="#{emzakonandeConverter}"
+                                style="direction: ltr"
+                                forceSelection="true"
+                                disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['emzakonandedovom']} : " for="emzakonandedovom"/>
+                <p:autoComplete id="emzakonandedovom" value="#{bimenameBean.bimename.pishnahadeFaal.emzaKonande_dovom}"
+                                var="emzakonandedovom"
+                                itemLabel="#{emzakonandedovom}"
+                                itemValue="#{emzakonandedovom}"
+                                completeMethod="#{userService.autocompleteEmzakonande}"
+                                converter="#{emzakonandeConverter}"
+                                style="direction: ltr"
+                                forceSelection="true"
+                                disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                </p:autoComplete>
+
+                <p:outputLabel value="#{msg['nahveyeMohasebe']} : " for="nahveyeMohasebe"/>
+                <p:selectOneMenu id="nahveyeMohasebe" value="#{bimenameBean.bimename.pishnahadeFaal.nahveMohasebe}"
+                                 style="direction: ltr"
+                                 disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+                    <f:selectItems value="#{comboOptions.nahveMohasebes}" var="nahveyeMohasebe" itemValue="#{nahveyeMohasebe}" itemLabel="#{msg[nahveyeMohasebe.name()]}"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="#{msg['noePishnahad']} : " for="noePishnahad"/>
+                <p:selectOneMenu id="noePishnahad" value="#{bimenameBean.bimename.pishnahadeFaal.noePishnahad}" style="direction: ltr">
+                    <f:selectItems value="#{comboOptions.noePishNahads}" var="noePishnahad" itemValue="#{noePishnahad}"
+                                   itemLabel="#{msg[noePishnahad.name()]}" disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" />
+                </p:selectOneMenu>
+
+                <p:outputLabel value="#{msg['sharayetekhosoosi']} : " for="sharayetekhosoosi"/>
+                <p:inputTextarea id="sharayetekhosoosi" value="#{bimenameBean.bimename.pishnahadeFaal.sharayete_khosoosi}"
+                                 rows="2" cols="30" disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                <p:outputLabel value="#{msg['sharhe_pishnahad']} : " for="sharhePishnahad"/>
+                <p:inputTextarea id="sharhePishnahad" value="#{bimenameBean.bimename.pishnahadeFaal.sharhe_pishnahad}"
+                                 rows="2" cols="30" disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+            </h:panelGrid>
+
+        </p:panel>
+
+        <p:panel id="bimegozar" header="#{msg['bimegozar']}">
+
+                <h:panelGrid columns="2" styleClass="matnfarsi">
+                    <p:outputLabel for="bimegozarmojood" value="#{msg['BimegozarMojood']} : "/>
+                    <p:autoComplete value="#{bimenameBean.selectedBimeGozarByAutocomplete}"
+                                    id="bimegozarmojood"
+                                    var="bimegozarmojood"
+                                    itemLabel="#{bimegozarmojood}"
+                                    itemValue="#{bimegozarmojood}"
+                                    completeMethod="#{pishnahadService.autocompleteBimegozar}"
+                                    converter="#{bimeGozarConverter}"
+                                     style="direction: ltr; font-family: byekan"
+                                    forceSelection="true"
+                                    disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+                        <p:ajax event="itemSelect" listener="#{bimenameBean.bimegozarSelectedFromAutocomplete}" update="bimegozar bimeShode" />
+                    </p:autoComplete>
+
+                    <p:commandButton value="#{msg['bimegozarejadid_haghighi']}" actionListener="#{bimenameBean.bimegozarHaghighi}"
+                                     update="bimegozar bimeShode" icon="fa fa-plus" styleClass="matnfarsi"/>
+                    <p:commandButton value="#{msg['bimegozarejadid_hoghooghi']}" actionListener="#{bimenameBean.bimegozarHoghooghi}"
+                                     update="bimegozar bimeShode" icon="fa fa-plus" styleClass="matnfarsi"/>
+                </h:panelGrid>
+
+                <p:outputPanel id="bimegozarhaghighi">
+                    <p:panel rendered="#{bimenameBean.filter.bimegozarHaghighiDetails}" style="border: 0px">
+                        <h:panelGrid columns="6"  style="width: 100%;" styleClass="matnfarsi">
+
+                            <p:outputLabel value="#{msg['pishvand']} : " for="pishvandbimegozar"/>
+                            <p:selectOneMenu id="pishvandbimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.pishvand}"
+                                             style="direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.pishvandHaghihi}"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['name']} : " for="name"/>
+                            <p:inputText id="name" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.name}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" size="18"/>
+
+                            <p:outputLabel value="#{msg['name_khanevadegi']} : " for="name_khanevadegi_bimegozar"/>
+                            <p:inputText id="name_khanevadegi_bimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.name_khanevadegi}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" size="18"/>
+
+                            <p:outputLabel value="#{msg['namepedar']} : " for="namepedarbimegozar"/>
+                            <p:inputText id="namepedarbimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.name_pedar}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                            <p:outputLabel value="#{msg['shomareshenasname']} : " for="shomareshenasnamebimegozar"/>
+                            <p:inputText id="shomareshenasnamebimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.shomare_shenasname}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['mahalesodooreshenasname']} : " for="mahalesodooreshenasnamebimegozar"/>
+                            <p:autoComplete id="mahalesodooreshenasnamebimegozar"
+                                            value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.shahre_mahale_sodoor}"
+                                            completeMethod="#{geoService.autocompleteGeo}"
+                                            style="font-family: byekan; direction: ltr"
+                                            forceSelection="true"
+                                            disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                            </p:autoComplete>
+
+                            <p:outputLabel value="#{msg['shahremahaletavalod']} : " for="shahremahaletavalodbimegozar"/>
+                            <p:autoComplete id="shahremahaletavalodbimegozar"
+                                            value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.mahale_tavalod}"
+                                            completeMethod="#{geoService.autocompleteGeo}"
+                                            style="font-family: byekan; direction: ltr"
+                                            forceSelection="true"
+                                            disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}">
+                            </p:autoComplete>
+
+                            <p:outputLabel value="#{msg['tarikhetavalod']} : "/>
+                            <pfaces:datePicker value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.tarikhe_tavalod}"
+                                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"
+                                               disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                               style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['jensiat']} : " for="jensiatbimegozar"/>
+                            <p:selectOneMenu id="jensiatbimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.jensiat}"
+                                             style="direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.jensiats}" var="jensiatbimegozar" itemValue="#{jensiat}" itemLabel="#{msg[jensiatbimegozar.name()]}"  />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['melliat']} : " for="melliatbimegozar"/>
+                            <p:selectOneMenu id="melliatbimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.melliat}"
+                                             style="direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.melliats}" var="melliatbimegozar" itemValue="#{melliatbimegozar}" itemLabel="#{msg[melliatbimegozar.name()]}"  />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['codemeli']} : " for="codemeli"/>
+                            <p:inputText id="codemeli" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.kode_meli}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['codeposti']} : " for="codeposti"/>
+                            <p:inputText id="codeposti" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.code_posti}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['mobile']} : " for="mobile"/>
+                            <p:inputText id="mobile" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.mobile}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['telephone']} : " for="telephone"/>
+                            <p:inputText id="telephone" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.telefon}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['address']} : " for="neshani"/>
+                            <p:inputText id="neshani" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.address}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan; direction: ltr"/>
+
+                            <p:outputLabel value="#{msg['posteelectronic']} : " for="posteelectronicbimegozar"/>
+                            <p:inputText id="posteelectronicbimegozar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.poste_electronic}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                        </h:panelGrid>
+                    </p:panel>
+                </p:outputPanel>
+
+                <p:outputPanel id="bimegozarhoghooghi">
+                    <p:panel rendered="#{bimenameBean.filter.bimegozarHoghooghiDetails}" style="border: 0px">
+                        <h:panelGrid columns="6" styleClass="matnfarsi" width="80%">
+
+                            <p:outputLabel value="#{msg['pishvand']} : " for="pishvandhoghooghi"/>
+                            <p:selectOneMenu id="pishvandhoghooghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.pishvand}"
+                                             style="direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.pishvandHoghooghi}"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['namesherkat']} : " for="namesherkat"/>
+                            <p:inputText id="namesherkat" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.name}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                            <p:outputLabel value="#{msg['codeeghtesadi']} : " for="codeeghtesadi"/>
+                            <p:inputText id="codeeghtesadi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.code_eghtesadi}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                         style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['shenasemeli']} : " for="shenasemeli"/>
+                            <p:inputText id="shenasemeli" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.shenase_meli}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                         style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['address']} : " for="neshanihoghooghi"/>
+                            <p:inputText id="neshanihoghooghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.address}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['telephone']} : " for="telephonehoghooghi"/>
+                            <p:inputText id="telephonehoghooghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.telefon}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['codeposti']} : " for="codepostihoghoghi"/>
+                            <p:inputText id="codepostihoghoghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.code_posti}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['posteelectronic']} : " for="posteelectronichoghoghi"/>
+                            <p:inputText id="posteelectronichoghoghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.poste_electronic}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                        </h:panelGrid>
+                    </p:panel>
+                </p:outputPanel>
+
+            </p:panel>
+
+        <p:panel id="bimeShode" header="#{msg['bimeshode']}">
+
+                <h:panelGrid columns="2" styleClass="matnfarsi" >
+                    <p:outputLabel for="bimeshodemojood" value="#{msg['BimeshodeMojood']} : " />
+                    <p:autoComplete value="#{bimenameBean.selectedBimeShodeByAutocomplete}"
+                                    id="bimeshodemojood"
+                                    var="bimeshodemojood"
+                                    itemLabel="#{bimeshodemojood}"
+                                    itemValue="#{bimeshodemojood}"
+                                    completeMethod="#{pishnahadService.autocompleteBimeshode}"
+                                    converter="#{bimeShodeConverter}"
+                                    style="direction: ltr; font-family: byekan"
+                                    forceSelection="true"
+                                    disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+                        <p:ajax event="itemSelect" update="bimeShode" listener="#{bimenameBean.bimeshodeSelectedFromAutocomplete}"/>
+                    </p:autoComplete>
+                    <p:commandButton value="#{msg['Copyfrombimegozar']}"
+                                     rendered="#{bimenameBean.filter.copyFromBimegozarButton}"
+                                     actionListener="#{bimenameBean.bimeshodeCopyFromBimegozar}"
+                                     icon="fa fa-copy"
+                                     update="bimeShode"
+                                     styleClass="matnfarsi"/>
+
+                    <p:commandButton value="#{msg['bimeshodejadid']}" actionListener="#{bimenameBean.bimeshodeJadid}" update="bimeShode"
+                                     icon="fa fa-plus" styleClass="matnfarsi"/>
+                </h:panelGrid>
+
+                <p:outputPanel id="moshakhasatebimeshode" >
+                    <p:panel rendered="#{bimenameBean.filter.bimeshodeDetails}" style="border: 0px">
+                        <h:panelGrid columns="6" styleClass="matnfarsi" width="100%">
+
+                            <p:outputLabel value="#{msg['pishvand']} : " for="pishvand"/>
+                            <p:selectOneMenu id="pishvand" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.pishvand}"
+                                             style="font-size: small; direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.pishvandHaghihi}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['name']} : " for="name_bimeshode"/>
+                            <p:inputText id="name_bimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.name}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                            <p:outputLabel value="#{msg['name_khanevadegi']} : " for="name_khanevadegi_bimeshode"/>
+                            <p:inputText id="name_khanevadegi_bimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.name_khanevadegi}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                            <p:outputLabel value="#{msg['namepedar']} : " for="namepedar"/>
+                            <p:inputText id="namepedar" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.name_pedar}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                            <p:outputLabel value="#{msg['shomareshenasname']} : " for="shomareshenasname"/>
+                            <p:inputText id="shomareshenasname" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.shomare_shenasname}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['mahalesodooreshenasname']} : " for="mahalesodooreshenasname"/>
+                            <p:autoComplete id="mahalesodooreshenasname"
+                                            value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.shahre_mahale_sodoor}"
+                                            completeMethod="#{geoService.autocompleteGeo}"
+                                            style="font-family: byekan; direction: ltr"
+                                            forceSelection="true"
+                                            disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                            </p:autoComplete>
+
+                            <p:outputLabel value="#{msg['shahremahaletavalod']} : " for="shahremahaletavalod"/>
+                            <p:autoComplete id="shahremahaletavalod"
+                                            value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.mahale_tavalod}"
+                                            completeMethod="#{geoService.autocompleteGeo}"
+                                            style="font-family: byekan; direction: ltr"
+                                            forceSelection="true"
+                                            disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}">
+                            </p:autoComplete>
+
+                            <p:outputLabel value="#{msg['tarikhetavalod']} : "/>
+                            <pfaces:datePicker value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.tarikhe_tavalod}"
+                                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"
+                                               style="font-family: byekan"
+                                               disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"/>
+
+                            <p:outputLabel value="#{msg['jensiat']} : " for="jensiat"/>
+                            <p:selectOneMenu id="jensiat" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.jensiat}"
+                                             style="direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.jensiats}" var="jensiat" itemValue="#{jensiat}" itemLabel="#{msg[jensiat.name()]}"  />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['melliat']} : " for="melliat"/>
+                            <p:selectOneMenu id="melliat" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.melliat}"
+                                             style="direction: ltr"
+                                             disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}">
+                                <f:selectItems value="#{comboOptions.melliats}" var="melliat" itemValue="#{melliat}" itemLabel="#{msg[melliat.name()]}"  />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['codemeli']} : " for="codemeli"/>
+                            <p:inputText id="codemelibimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.kode_meli}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['codeposti']} : " for="codepostibimeshode"/>
+                            <p:inputText id="codepostibimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.ettelaateTamas.code_posti}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['shoghl']} : " for="shoghlbimeshode"/>
+                            <p:autoComplete id="shoghlbimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shoghl.id}"
+                                            var="shoghl"
+                                            itemLabel="#{shoghl}"
+                                            itemValue="#{shoghl.id}"
+                                            completeMethod="#{shoghlService.autocomplete}"
+                                            style="font-family: byekan; direction: ltr"
+                                            forceSelection="true"
+                                            disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+
+                                <p:ajax event="itemSelect"
+                                        listener="#{bimenameBean.updateTabagheKhatarByShoghl}"
+                                        update="tabaghekhatar"/>
+
+                            </p:autoComplete>
+
+
+                            <p:outputLabel value="#{msg['tabaghekhatar']} : " for="tabaghekhatar"/>
+                            <p:selectOneMenu id="tabaghekhatar" value="#{bimenameBean.bimename.pishnahadeFaal.tabagheKhatar}"
+                                             style="direction: ltr; font-family: byekan"
+                                             disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+                                <p:ajax event="change" update="taahodtable" listener="#{bimenameBean.updateTaahodByTabagheKhatar}" />
+                                <f:selectItems value="#{bimenameBean.tabagheKhatarOptions}" var="tabagheKhatar" itemValue="#{tabagheKhatar}" itemLabel="#{msg[tabagheKhatar.name()]}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="#{msg['mobile']} : " for="mobile"/>
+                            <p:inputText id="mobile_bimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.ettelaateTamas.mobile}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['telephone']} : " for="telephone"/>
+                            <p:inputText id="telephone_bimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.ettelaateTamas.telefon}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['address']} : " for="address"/>
+                            <p:inputText id="address" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.ettelaateTamas.address}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+
+                            <p:outputLabel value="#{msg['posteelectronic']} : " for="posteelectronic"/>
+                            <p:inputText id="posteelectronic" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shakhseHaghighi.ettelaateTamas.poste_electronic}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+
+                        </h:panelGrid>
+                    </p:panel>
+                </p:outputPanel>
+
+            </p:panel>
+
+
+        <p:panel header="#{msg['zinaf']}" >
+            <h:panelGrid columns="1" styleClass="matnfarsi">
+
+                <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
+                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                    <p:ajax event="click" listener="#{bimenameBean.newZinafInit}" update="newzinafdialog"/>
+                </p:commandButton>
+
+                <p:dataTable id="zinaftable" var="nextzinaf" value="#{bimenameBean.bimename.pishnahadeFaal.zinafs}"
+                             emptyMessage="#{msg['emptylist']}" resizableColumns="true" tableStyleClass="datatable-odd">
+
+                    <p:column headerText="#{msg['namevanamekhanevadegi']}" style="text-align: center" styleClass="matnfarsi" filterBy="">
+                        <p:outputLabel style="font-family: byekan" value=" #{nextzinaf.shakhsInfo()}"/>
+                    </p:column>
+
+                    <p:column headerText="#{msg['kodemelizinaf']}" style="text-align: center" styleClass="matnfarsi">
+                        <p:outputLabel style="font-family: byekan" value=" #{nextzinaf.kode_meli}"/>
+                    </p:column>
+
+                    <p:column headerText="#{msg['nesbatbabimeshode']}" style="text-align: center" styleClass="matnfarsi">
+                        <p:outputLabel style="font-family: byekan" value=" #{msg[nextzinaf.nesbat_ba_bimeshode]}"/>
+                    </p:column>
+
+                    <p:column headerText="#{msg['olaviatekhesarat']}" style="text-align: center" styleClass="matnfarsi">
+                        <p:outputLabel style="font-family: byekan" value="#{msg[nextzinaf.olaviat_khesarat]}"/>
+                    </p:column>
+
+                    <p:column headerText="#{msg['zaribesahm']}" style="text-align: center" styleClass="matnfarsi">
+                        <p:outputLabel style="font-family: byekan" value="#{nextzinaf.zarib_sahm}"/>
+                    </p:column>
+
+
+
+                    <p:column headerText="#{msg['amaliat']}" width="145" styleClass="matnfarsi"
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                        <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                         actionListener="#{bimenameBean.editZinaf(nextzinaf)}"
+                                         update="zinaftable :bimenameform:newzinafdialog"/>
+                        <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                         actionListener="#{bimenameBean.removeZinafFromZinafs(nextzinaf)}" update="zinaftable"/>
+                    </p:column>
+
+                </p:dataTable>
+                <ui:include src="dialog/zinaf.xhtml" />
+
+            </h:panelGrid>
+        </p:panel>
+
+        <p:panel id="taahod" header="#{msg['taahodatebimegar']}"  >
+            <h:panelGrid columns="1" styleClass="matnfarsi">
+
+                <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
+                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                    <p:ajax event="click" listener="#{bimenameBean.newTaahodInit}" update="newtaahoddialog"/>
+                </p:commandButton>
+
+                <p:dataTable id="taahodtable" var="nexttaahod" value="#{bimenameBean.bimename.pishnahadeFaal.taahodBimegars}"
+                             emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true">
+
+                    <p:column headerText="#{msg['noetaahod']}" styleClass="matnfarsi" style="text-align: center">
+                        #{msg[nexttaahod.noetaahod]}
+                    </p:column>
+
+                    <p:column headerText="#{msg['sarmayetaahod']}" style="text-align: center" styleClass="matnfarsi">
+                        <h:outputText value="#{nexttaahod.sarmaye_taahod}" style="font-family: byekan">
+                            <f:convertNumber pattern="#,##0"/>
+                        </h:outputText>
+
+                    </p:column>
+
+                    <p:column headerText="#{msg['nerkhepaye']}" style="text-align: center" styleClass="matnfarsi">
+                        <p:outputLabel style="font-family: byekan" value="#{nexttaahod.nerkh_paye}"/>
+                    </p:column>
+
+                    <p:column headerText="#{msg['nerkhtaahod']}" style="text-align: center" styleClass="matnfarsi">
+                        <p:outputLabel style="font-family: byekan" value="#{nexttaahod.nerkh_taahod}"/>
+                    </p:column>
+
+                    <p:column headerText="#{msg['haghebimetaahod']}" style="text-align: center" styleClass="matnfarsi">
+                        <h:outputText value="#{nexttaahod.hagh_bime_taahod}" style="font-family: byekan" >
+                            <f:convertNumber pattern="#,##0"/>
+                        </h:outputText>
+                    </p:column>
+
+                    <p:column headerText="#{msg['haghebimekhatarateezafi']}" style="text-align: center" styleClass="matnfarsi">
+                        <h:outputText value="#{nexttaahod.hagh_bime_khataratezafi}" style="font-family: byekan" >
+                            <f:convertNumber pattern="#,##0"/>
+                        </h:outputText>
+                    </p:column>
+
+                    <p:column headerText="#{msg['haghebimekhatarezafimotor']}" style="text-align: center" styleClass="matnfarsi" width="190">
+                        <h:outputText value="#{nexttaahod.hagh_bime_zelzelevamotor}" style="font-family: byekan">
+                            <f:convertNumber pattern="#,##0"/>
+                        </h:outputText>
+                    </p:column>
+
+                    <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145"
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                        <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                         actionListener="#{bimenameBean.editTaahod(nexttaahod)}"
+                                         update="taahodtable :bimenameform:newtaahoddialog">
+                        </p:commandButton>
+
+                        <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                         actionListener="#{bimenameBean.removeTaahodFromTaahods(nexttaahod)}" update="taahodtable">
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+                <ui:include src="dialog/taahod.xhtml" />
+
+            </h:panelGrid>
+        </p:panel>
+
+        <p:panel id="khatarezafi" header="#{msg['khatareezafi']}">
+            <h:panelGrid columns="1" styleClass="matnfarsi">
+
+                <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
+                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                    <p:ajax event="click" listener="#{bimenameBean.newKhatarezafiInit}" update="newkhatarezafidialog"/>
+                </p:commandButton>
+
+                <p:dataTable id="khatarezafitable" var="nextkhatar" value="#{bimenameBean.bimename.pishnahadeFaal.khatarEzafis}"
+                             emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true">
+
+                    <p:column headerText="#{msg['noekhatarezafi']}" style="text-align: center" styleClass="matnfarsi">
+                        #{msg[nextkhatar.noekhatarezafi]}
+                    </p:column>
+
+                    <p:column headerText="#{msg['nerkh']}" style="text-align: center" styleClass="matnfarsi">
+                        #{nextkhatar.nerkh}
+                    </p:column>
+
+                    <p:column headerText="#{msg['tozih']}" style="text-align: center" styleClass="matnfarsi">
+                        #{nextkhatar.tozih}
+                    </p:column>
+
+                    <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145"
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME])}">
+                        <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                         actionListener="#{bimenameBean.editKhatar(nextkhatar)}"
+                                         update="khatarezafitable :bimenameform:newkhatarezafidialog"/>
+                        <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                         actionListener="#{bimenameBean.removeKhatarFromKhatars(nextkhatar)}" update="khatarezafitable"/>
+                    </p:column>
+
+                </p:dataTable>
+                <ui:include src="dialog/khatarezafi.xhtml" />
+
+            </h:panelGrid>
+        </p:panel>
+
+        <p:panel>
+
+            <h:panelGrid columns="2">
+                <p:panel rendered="#{mainView.notInAnyOf([state.SABT_PISHNAHAD, state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+                <p:fileUpload fileUploadListener="#{bimenameBean.uploadZamimePishnahad}"
+                              disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"
+                              mode="advanced"
+                              auto="true"
+                              sizeLimit="1000000"
+                              allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/"
+                              label="#{msg['peyvaste_file_pishnahad']}"
+                              invalidSizeMessage="#{msg['invalidSizeMessage']}"
+                              invalidFileMessage="#{msg['invalidFileMessage']}"
+                              update="zamimepishnahadtable"/>
+
+                <p:dataTable id="zamimepishnahadtable" var="nextzamimePishnahad"
+                             value="#{bimenameBean.bimename.pishnahadeFaal.zamimePishnahad}"
+                             emptyMessage="#{msg['emptylist']}"
+                             tableStyleClass="datatable-odd">
+
+                    <p:column style="text-align: center">
+                        #{nextzamimePishnahad.fileName}
+                    </p:column>
+
+                    <p:column style="text-align: center">
+
+                        <p:commandButton icon="fa fa-trash"
+                                         actionListener="#{bimenameBean.removeZamimePishnahad()}"
+                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                         update="zamimepishnahadtable" />
+
+                        <p:commandButton icon="fa fa-download"
+                                         ajax="false"
+                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.NAMAYESH_BIMENAME])}"
+                                         actionListener="#{bimenameBean.downloadZamimePishnahad()}"/>
+                    </p:column>
+
+                </p:dataTable>
+                </p:panel>
+                <p:panel>
+                <p:fileUpload fileUploadListener="#{bimenameBean.uploadZamime}"
+                              disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"
+                              mode="advanced"
+                              auto="true"
+                              sizeLimit="1000000"
+                              allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/"
+                              label="#{msg['sayere_zamaem']}"
+                              invalidSizeMessage="#{msg['invalidSizeMessage']}"
+                              invalidFileMessage="#{msg['invalidFileMessage']}"
+                              update="zamaemtable"/>
+
+                <p:dataTable id="zamaemtable" var="nextzamime"
+                             value="#{bimenameBean.bimename.pishnahadeFaal.zamaem}"
+                             emptyMessage="#{msg['emptylist']}"
+                             tableStyleClass="datatable-odd">
+
+                    <p:column style="text-align: center">
+                        #{nextzamime.fileName}
+                    </p:column>
+
+                    <p:column style="text-align: center">
+
+                        <p:commandButton icon="fa fa-trash"
+                                         actionListener="#{bimenameBean.removeZamimeFromZamaem(nextzamime)}"
+                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                         update="zamaemtable" />
+
+                        <p:commandButton icon="fa fa-download"
+                                         ajax="false"
+                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.NAMAYESH_BIMENAME])}"
+                                         actionListener="#{bimenameBean.downloadZamime(nextzamime)}"/>
+                    </p:column>
+
+                </p:dataTable>
+                </p:panel>
+
+            </h:panelGrid>
+        </p:panel>
+
+
+        <p:outputPanel id="haghebimepanel">
+            <p:panel header="#{msg['haghebime']}">
+
+                <h:panelGrid columns="2" styleClass="matnfarsi">
+                    <p:outputLabel value="#{msg['jamekhatarateasli']} : " />
+                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.jame_khatarate_asli}"
+                                   style="font-family: byekan; font-size: medium">
+                        <f:convertNumber pattern="#,##0"/>
+                    </p:outputLabel>
+
+                    <p:outputLabel value="#{msg['jamekhatarateezafi']} : "/>
+                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.jame_khatarate_ezafi}"
+                                   style="font-family: byekan; font-size: medium">
+                        <f:convertNumber pattern="#,##0"/>
+                    </p:outputLabel>
+
+                    <p:outputLabel value="#{msg['kasrehezarrial']} : "/>
+                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.kasr_hezar_rial}"
+                                   style="font-family: byekan; font-size: medium">
+                        <f:convertNumber pattern="#,##0"/>
+                    </p:outputLabel>
+
+                    <p:outputLabel value="#{msg['maliat']} : " styleClass="matnfarsi" style="font-weight:bold; " />
+                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.maliat}"
+                                   style="font-family: byekan; font-size: medium">
+                        <f:convertNumber pattern="#,##0"/>
+                    </p:outputLabel>
+
+                    <p:outputLabel value="#{msg['haghebimeghabelpardakht']} : " styleClass="matnfarsi" style="font-weight:bold; " />
+                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.haghe_bime_ghabelepardakht}"
+                                   style="font-family: byekan; font-size: medium">
+                        <f:convertNumber pattern="#,##0"/>
+                    </p:outputLabel>
+
+                </h:panelGrid>
+
+            </p:panel>
+        </p:outputPanel>
+
+        <br></br>
+        <br></br>
+
+        <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+            <p:commandButton value="#{msg['mohasebeyehaghebime']}" action="#{bimenameBean.mohasebeyeHagheBimesodoor}"
+                             icon="fa fa-calculator"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME])}"
+            />
+
+            <p:commandButton value="#{msg['mohasebeyehaghebime']}" action="#{bimenameBean.mohasebeyeHagheBimeSabtPishnahad}"
+                             icon="fa fa-calculator"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD])}"
+            />
+
+            <p:commandButton value="#{msg['sabtnahayipishnahad']}" action="#{bimenameBean.sabtenahayiePishnahad}"
+                             icon="fa fa-save"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SABT_NEW_PISHNAHAD_MOHASEBE])}"
+            />
+
+            <p:commandButton value="#{msg['sodoornahayi']}" action="#{bimenameBean.sodoornahayi}"
+                             icon="fa fa-save"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE])}"
+            />
+
+            <p:commandButton value="#{msg['enserafazsodoor']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.enserafazsodoor}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.SODOOR_NEW_BIMENAME])}"
+            />
+
+            <p:commandButton value="#{msg['taeed']}"
+                             actionListener="#{bimenameBean.taeedElhaghiyeTaghirat}"
+                             icon="fa fa-check"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.TAGHIR_BIMENAME])}"
+            />
+
+
+            <p:commandButton value="#{msg['bazgasht']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.bazgasht}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"
+            />
+
+            <p:commandButton value="#{msg['enserafazsabtpishnahad']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.enserafazsabtpishnahad}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SABT_NEW_PISHNAHAD_MOHASEBE])}"
+            />
+
+            <p:commandButton value="#{msg['enserafazelhaghiye']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.enserafazelhaghiye}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.TAGHIR_BIMENAME,state.TAGHIR_BIMENAME_MOHASEBE_HAGHEBIME])}"
+            />
+
+            <p:commandButton value="#{msg['eslahesodoor']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.eslahesodoor}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE])}"
+            />
+
+
+            <p:commandButton value="#{msg['eslahesodoor']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.eslaheSabtPishnahad}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.SABT_NEW_PISHNAHAD_MOHASEBE])}"
+            />
+
+        </p:outputPanel>
+
+    </h:form>
+</p:outputPanel>
+
+
+
+</html>
+

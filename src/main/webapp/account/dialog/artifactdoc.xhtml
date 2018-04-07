@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+    <h:form id="artifactdialogform">
+    <p:dialog id="artifactdialog" header="#{msg['darkhastdetails']}" dir="rtl" styleClass="matnfarsi"
+              minHeight="40" position="top" visible="#{artifactDocListBean.artifactDialogVisible}"
+              closable="false" resizable="false" width="45%">
+
+        <p:outputPanel rendered="#{not artifactDocListBean.replierIsEligibile}" style="color: #ff3d44" styleClass="matnfarsi">
+        <p align="center">
+            #{msg['youarenotEligibile']}
+        </p>
+            <p:separator/>
+        </p:outputPanel>
+
+
+              <h:panelGrid columns="4" styleClass="matnfarsi" columnClasses="artifactdoccolumn1,artifactdoccolumn2,artifactdoccolumn3,artifactdoccolumn4">
+
+                  <p:outputLabel value="#{msg['artifactDocType']} : " for="artifactDocType" />
+                  <p:outputLabel id="artifactDocType" value="#{msg[artifactDocListBean.dialogArtifactDoc['class'].simpleName]}"/>
+
+                  <p:outputLabel value="#{msg['artifactDocState']} : " for="artifactDocState"/>
+                  <p:selectOneMenu id="artifactDocState" value="#{artifactDocListBean.dialogArtifactDoc.artifactDocState}"
+                                   style="direction: ltr" disabled="#{artifactDocListBean.halateNamayesh}">
+                      <f:selectItems value="#{artifactDocListBean.validNextVaziats}" var="validNextVaziats"
+                                     itemValue="#{validNextVaziats}" itemLabel="#{msg[validNextVaziats.name()]}"/>
+                  </p:selectOneMenu>
+
+                  <p:outputLabel value="#{msg['vahedeferestande']} : " for="vahedeferestande"/>
+                    <p:outputLabel id="vahedeferestande" value="#{artifactDocListBean.dialogArtifactDoc.az}" />
+
+                  <p:outputLabel value="#{msg['vahedegirande']} : " for="vahedegirande"/>
+                  <p:outputLabel id="vahedegirande" value="#{artifactDocListBean.dialogArtifactDoc.be}"/>
+
+                <p:outputLabel value="#{msg['creator']} : " for="creator"/>
+                <p:outputLabel id="creator" value="#{artifactDocListBean.dialogArtifactDoc.creator}"/>
+
+                <p:outputLabel value="#{msg['tarikheSabteArtifactDoc']} : " for="createdate"/>
+                <p:outputLabel id="createdate" style="font-family: byekan"
+                                 value="#{artifactDocListBean.dialogArtifactDoc.tarikheSabteArtifactDoc}"/>
+              </h:panelGrid>
+
+        <h:panelGrid columns="1" styleClass="matnfarsi">
+
+            <p:outputLabel value="#{msg['tozih']} : " for="tozih"/>
+            <p:inputTextarea id="tozih" value="#{artifactDocListBean.dialogArtifactDoc.tozihat}"
+                             disabled="#{artifactDocListBean.halateNamayesh}" rows="4" cols="80"/>
+
+            <p:fileUpload fileUploadListener="#{artifactDocListBean.uploadZamime}"
+                          mode="advanced"
+                          auto="true"
+                          sizeLimit="1000000"
+                          allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/"
+                          label="#{msg['zamime']}"
+                          invalidSizeMessage="#{msg['invalidSizeMessage']}"
+                          invalidFileMessage="#{msg['invalidFileMessage']}"
+                          update="zamaemtable"
+                          rendered="#{not artifactDocListBean.halateNamayesh}"
+                           style="size: 1%"/>
+
+                        <p:dataTable id="zamaemtable" var="nextzamime" value="#{artifactDocListBean.dialogArtifactDoc.zamaem}"
+                                     emptyMessage="#{msg['emptylist']}" resizableColumns="true" tableStyleClass="datatable-odd"
+                                     style="padding-left: 13%; padding-right: 13%">
+
+                            <p:column headerText="#{msg['filename']}" styleClass="matnfarsi" style="text-align: center" width="40">
+                                #{nextzamime.fileName}
+                            </p:column>
+                            <p:column headerText="#{msg['filetype']}" styleClass="matnfarsi" style="text-align: center" width="40">
+                                #{nextzamime.contentType}
+                            </p:column>
+                            <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" style="text-align: center" width="70">
+
+                                <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                                 actionListener="#{artifactDocListBean.removeZamimeFromZamaem(nextzamime)}"
+                                                 update="zamaemtable" rendered="#{not artifactDocListBean.halateNamayesh}"/>
+                                <p:commandButton icon="fa fa-download" value="#{msg['download']}" styleClass="matnfarsi"
+                                                 ajax="false"
+                                                 actionListener="#{artifactDocListBean.downloadZamime(nextzamime)}"/>
+                            </p:column>
+                        </p:dataTable>
+        </h:panelGrid>
+
+        <p align="center">
+        <p:commandButton value="#{msg['taeed']}" icon="fa fa-check" styleClass="matnfarsi"
+                         actionListener="#{artifactDocListBean.add}" update="artifactdialog artifactdocstable"
+                            rendered="#{not artifactDocListBean.halateNamayesh}"/>
+
+        <p:commandButton value="#{msg['close']}" icon="fa fa-close" styleClass="matnfarsi"
+                         actionListener="#{artifactDocListBean.closeDialog}" update="artifactdialog"/>
+        </p>
+            </p:dialog>
+    </h:form>
+
+</f:view>
+</html>

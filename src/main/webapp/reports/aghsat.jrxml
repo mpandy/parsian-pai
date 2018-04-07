@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="aghsat" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="150d2d28-692d-48f9-ab33-092d18c1fe4c">
+	<property name="ireport.zoom" value="1.1269722013523698"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="398"/>
+	<style name="title" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="15" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<parameter name="realPath" class="java.lang.String"/>
+	<field name="bimename" class="ir.parsianinsurance.he.domain.model.Bimename"/>
+	<field name="bimename.pishnahadeFaal" class="ir.parsianinsurance.he.domain.model.Pishnahad"/>
+	<field name="bimename.pishnahadeFaal.vahed" class="ir.parsianinsurance.he.domain.model.Vahed"/>
+	<field name="bimename.pishnahadeFaal.bimeGozar" class="ir.parsianinsurance.he.domain.model.BimeGozar"/>
+	<field name="bimename.pishnahadeFaal.bimeGozar.shakhs" class="ir.parsianinsurance.he.domain.model.Shakhs"/>
+	<field name="bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas" class="ir.parsianinsurance.he.domain.model.EttelaateTamas"/>
+	<field name="bimename.pishnahadeFaal.hagheBime" class="ir.parsianinsurance.he.domain.model.HagheBime"/>
+	<field name="bimename.pishnahadeFaal.ezafeKasr" class="ir.parsianinsurance.he.domain.model.EzafeKasr"/>
+	<field name="bimename.pishnahadeFaal.gharardad" class="ir.parsianinsurance.he.domain.model.Gharardad"/>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement style="title" mode="Opaque" x="184" y="5" width="178" height="21" forecolor="#000000" backcolor="#FFCC00" uuid="91af5926-134a-464c-969e-cbdd97e1dd64"/>
+				<text><![CDATA[حق بیمه بیمه نامه حوادث انفرادی ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="482" y="46" width="71" height="1" uuid="3fbe4bf5-33bb-4445-bd07-db49f156944f"/>
+			</line>
+			<staticText>
+				<reportElement x="482" y="32" width="39" height="11" uuid="92241b32-434f-48e9-9955-68ed365050de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="8" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(سهامی عام)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="518" y="5" width="35" height="38" uuid="ca2662a1-f67a-450e-9e68-2823ca9f48a7"/>
+				<imageExpression><![CDATA[$P{realPath} + "img\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="437" y="40" width="43" height="11" uuid="b715f251-7442-47fe-ba1a-38081201a034"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="10" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(سهامی عام)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="48" width="55" height="12" uuid="4a7fd3b8-204f-4302-9236-0810200703f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="8" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره ثبت 200722 ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="526" y="3" width="29" height="58" backcolor="#FFCC00" uuid="463edf5b-1e7a-431f-8923-2c7a1aeb492d"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[مشخصات
+بیمه نامه]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="201" y="3" width="320" height="58" uuid="066687e6-0af2-4f61-8230-fb295fd7fe7d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="3" width="201" height="58" uuid="26aafc8a-397e-41a2-bea1-a18d3fd13de2"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="447" y="7" width="71" height="15" uuid="d4007b0d-90b6-4152-9029-6300473e5d00"/>
+				<textElement>
+					<font pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[شماره بیمه نامه :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="456" y="36" width="60" height="16" uuid="c2e828c0-070e-45e3-a73c-0c940bba763a"/>
+				<text><![CDATA[حوادث انفرادی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="290" y="36" width="58" height="16" uuid="b938dab2-fb77-482e-8521-2f5457218357"/>
+				<text><![CDATA[تاریخ صدور:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="117" y="8" width="76" height="14" uuid="69580adf-3b20-4877-af81-7758a857b728"/>
+				<text><![CDATA[نمایندگی/کارگزار:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="174" y="36" width="16" height="16" uuid="8057afd6-88b6-4c28-9a72-ada5152cfd3c"/>
+				<text><![CDATA[کد:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="290" y="7" width="157" height="15" uuid="c3792fe9-8b21-403d-9ea2-8b1359c4b239"/>
+				<textElement>
+					<font size="11" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal}.getShomare_pishnahad()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="12" y="8" width="105" height="14" uuid="7eaaa270-0ea2-412f-9199-82bb87768c44"/>
+				<textElement>
+					<font isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.vahed}.getName()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="76" y="36" width="76" height="16" uuid="d962e1fc-bd9c-4b69-8bcb-d872ff96a699"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.vahed}.getCode()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="212" y="36" width="78" height="16" uuid="b9b06d4d-61b4-498e-8d90-2dcfd626e039"/>
+				<textFieldExpression><![CDATA[$F{bimename}.getTarikhesodoor()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="65">
+			<printWhenExpression><![CDATA[$F{bimename.pishnahadeFaal}.getNoeBimegozar().name().equals("HAGHIGHI")]]></printWhenExpression>
+			<rectangle>
+				<reportElement x="0" y="1" width="521" height="60" uuid="cdd29e05-5073-4a32-a775-71378bb8bc22"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="151" y="6" width="36" height="20" uuid="830aec88-b793-4031-9fb6-0cc848425c98"/>
+				<text><![CDATA[تلفن :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="392" y="6" width="64" height="20" uuid="e1ca24a6-dec5-4b86-b038-b30635ad50db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs}.getPishvand()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="38" y="6" width="100" height="20" uuid="e245e1e7-610c-4e65-8148-2a6633a96e98"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas}.getTelefon()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="240" y="6" width="77" height="20" uuid="dda50607-d07b-4e26-8525-7e744b07462b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs}.getName_khanevadegi()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" x="484" y="35" width="34" height="20" uuid="c76944bb-9317-43e9-860a-09272293f34a"/>
+				<text><![CDATA[نشانی :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="456" y="6" width="62" height="20" uuid="855dd529-01d8-4aa1-8527-69fef5c04cc4"/>
+				<text><![CDATA[نام بیمه گذار :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="319" y="6" width="73" height="20" uuid="5a19dd17-df78-40b9-b7ee-c785ed909d07"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs}.getName()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="256" y="35" width="225" height="20" uuid="b3292970-652c-487e-9b26-acf21106244e"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas}.getAddress()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="525" y="1" width="29" height="60" backcolor="#FFCC00" uuid="92c35382-e286-4ddd-a25b-082b2c03e2a2"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[مشخصات
+بیمه گذار ]]></text>
+			</staticText>
+		</band>
+		<band height="69">
+			<printWhenExpression><![CDATA[$F{bimename.pishnahadeFaal}.getNoeBimegozar().name().equals("HOGHOOGHI")]]></printWhenExpression>
+			<rectangle>
+				<reportElement x="0" y="3" width="520" height="60" uuid="6a20eae4-b300-406a-bd5f-4d22be8b09cc"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="484" y="37" width="32" height="20" uuid="33aaf6aa-1019-4621-a263-b2ec0ae87c50"/>
+				<text><![CDATA[نشانی :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="454" y="8" width="62" height="20" uuid="d4d4c7e0-382e-4b4b-b141-f880935dc0b2"/>
+				<text><![CDATA[نام بیمه گذار :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="148" y="8" width="36" height="20" uuid="bed067ca-b63e-4f7a-bc1a-fdb5a83c07e2"/>
+				<text><![CDATA[تلفن :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="393" y="8" width="61" height="20" uuid="c1ffd9c2-b79b-45d8-9f72-274161846f67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs}.getPishvand()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="319" y="8" width="74" height="20" uuid="4a66277d-9060-4223-a56c-a5b4cabddda4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs}.getName()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="258" y="37" width="224" height="20" uuid="3f53f411-756a-42aa-829d-fc3c1aaf3a75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas}.getAddress()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="525" y="3" width="30" height="60" backcolor="#FFCC00" uuid="0c6aadc1-3434-4827-82d1-de3f8c037f9b"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[مشخصات
+بیمه گذار ]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style1" x="75" y="8" width="68" height="20" uuid="60fc46a8-9c43-4a36-b705-203cdb2ceec7"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas}.getTelefon()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="432">
+			<rectangle>
+				<reportElement x="0" y="1" width="521" height="428" uuid="73567473-8a8f-41db-8cbf-0ae8924310e8"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" mode="Opaque" x="526" y="2" width="29" height="428" backcolor="#FFCC00" uuid="af0b2a3c-edf7-48f2-bdc4-d175bb567b22"/>
+				<textElement verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[
+مشخصات حق بیمه ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="1" width="521" height="76" uuid="51b0cb90-aeb7-4bff-bc04-895cfd251543"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="style1" x="290" y="198" width="35" height="20" uuid="343d7d70-b6b3-4f1a-a3b0-cb9edeeb25c2"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<line>
+				<reportElement x="492" y="0" width="1" height="44" uuid="d6bb1ec7-d268-4c25-95e9-f0895b6b35f2"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="90" y="198" width="196" height="20" uuid="7cf62da1-f57d-4676-bd13-dac3d0bf0d86"/>
+				<textElement>
+					<font pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getHaghe_bime_horoof()]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="0" width="522" height="429" uuid="9eb4b9dc-969a-40d6-a999-392fa397e87b"/>
+				<staticText>
+					<reportElement style="style1" x="492" y="0" width="29" height="21" uuid="c7cd8767-0add-4db0-a337-1ecec0fbad60"/>
+					<text><![CDATA[ردیف]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="361" y="0" width="130" height="21" uuid="3f233625-d09a-4946-ae6e-f4f02e98ec65"/>
+					<text><![CDATA[نوع حق بیمه]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="256" y="1" width="105" height="20" uuid="377ed54c-23ac-42c9-9744-42bd4281ec28"/>
+					<text><![CDATA[مبلغ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="171" y="0" width="87" height="21" uuid="3f6a89ad-6c7f-4590-8fa3-29c2b6470a6d"/>
+					<text><![CDATA[تاریخ سررسید]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="0" y="0" width="171" height="21" uuid="414f0747-225a-4c17-a281-fe4ba57f9b19"/>
+					<text><![CDATA[توضیحات]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="21" width="521" height="1" uuid="9f0e2f98-c928-450f-9b63-d549b687903a"/>
+				</line>
+				<staticText>
+					<reportElement style="style1" x="362" y="23" width="129" height="18" uuid="47f830a2-71cf-404b-ab31-4bbcaef5438f"/>
+					<text><![CDATA[بدهی- بیمه نامه - حق بیمه - نقد]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="style1" x="174" y="23" width="79" height="19" uuid="f3506396-342c-44b2-98a1-48171f112dcf"/>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal}.getTarikh_pishnahad()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="style1" x="406" y="116" width="100" height="20" uuid="7e578ffc-b94f-4393-ba2b-619f210dd575"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[جمع خطر اصلی]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="404" y="170" width="100" height="20" uuid="6e60dde3-72d0-4005-9ccb-bc50405dad07"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[مالیات بر ارزش افزوده]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="403" y="141" width="100" height="20" uuid="e33dad9f-d775-4d70-bd3a-8af355b77059"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[جمع خطرات اضافه]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="187" y="116" width="100" height="20" uuid="c27b916a-6cff-4703-af97-609532f3f3af"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[تخفیف گروهی]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="187" y="141" width="100" height="20" uuid="381433f4-6ace-4be9-a031-92b4889589b5"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[تخفیف مدیریتی]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="186" y="169" width="100" height="20" uuid="e8c3a1ee-269b-4f6f-8461-f7ce7e448d34"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[اضافه کسر هزار ریال]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="68" y="116" width="49" height="20" uuid="948ccb43-d893-4271-865d-27e74b9e64ce">
+						<printWhenExpression><![CDATA[$F{bimename.pishnahadeFaal.ezafeKasr}.getKarmandi()]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[(کارمندی)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="style1" x="428" y="88" width="72" height="20" uuid="51faf5db-0a84-4325-b58d-fa16f9cc105d"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+					</textElement>
+					<text><![CDATA[قرارداد]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="style1" x="325" y="117" width="74" height="20" uuid="da4d5d45-d1ea-45de-b975-7f623b9c1e40"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getJame_khatarate_asli()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="style1" x="233" y="88" width="181" height="20" uuid="0a371fd5-b13b-4cb2-8de0-53086e13f9c4"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.gharardad}.getName()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="style1" x="325" y="141" width="73" height="20" uuid="91447e6a-fa75-41af-b3a3-87b8f0433d0f"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getJame_khatarate_ezafi()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="style1" x="325" y="168" width="73" height="20" uuid="c3475c58-b13d-4b71-aab0-cdf4ff4345e4"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getMaliat()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="style1" x="117" y="116" width="68" height="20" uuid="633c97e5-10b5-4098-b333-d1e31ade6d34"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.ezafeKasr}.getTakhfife_goroohi()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="style1" x="117" y="142" width="65" height="20" uuid="9a9827c9-dc61-41f3-a8a4-ac1efae541be"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.ezafeKasr}.getTakhfife_modiriati()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="style1" x="117" y="168" width="64" height="20" uuid="3c7d7f75-b430-4c29-9b7e-6efcd142e570"/>
+					<textElement textAlignment="Right">
+						<font fontName="B Nazanin" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getKasr_hezar_rial()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="style1" x="257" y="22" width="105" height="22" uuid="5e02338a-6474-4538-8e46-b990b0c44a63"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getHaghe_bime_ghabelepardakht()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="title" x="341" y="254" width="166" height="20" uuid="388a2961-2d4d-46d6-adb4-64e5bf53054c"/>
+				<text><![CDATA[ملاحظات پرداخت حق بیمه ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="53" y="198" width="32" height="20" uuid="6c31d40b-29e0-4093-8f47-2258e4094c31"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="44" width="521" height="1" uuid="6e890810-e5b3-4cb3-b46b-a9403b5c26aa"/>
+			</line>
+			<line>
+				<reportElement x="257" y="0" width="1" height="44" uuid="178d587d-da70-443a-baa5-707b6346fad1"/>
+			</line>
+			<line>
+				<reportElement x="361" y="0" width="1" height="44" uuid="0371ab2f-555c-41c1-8e74-5410c1d3f180"/>
+			</line>
+			<line>
+				<reportElement x="170" y="0" width="1" height="44" uuid="8c827fdc-146b-41d8-b338-a84a05eb771d"/>
+			</line>
+			<staticText>
+				<reportElement style="style1" x="414" y="198" width="93" height="20" uuid="b9fdd134-b75b-42e8-8839-7cdb5c88eec6"/>
+				<textElement>
+					<font pdfEncoding="Identity-H"/>
+				</textElement>
+				<text><![CDATA[مبلغ قابل پرداخت]]></text>
+			</staticText>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="style1" x="333" y="198" width="81" height="20" uuid="5765e7c2-1f37-4b2f-a83b-b9f188400a9e"/>
+				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal.hagheBime}.getHaghe_bime_ghabelepardakht()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" x="76" y="142" width="32" height="20" uuid="c9830345-d96f-4b5e-b7b0-cec18c7fb271"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="76" y="168" width="32" height="20" uuid="533319ce-b732-4d95-9b4a-fb4612ca4b08"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="290" y="117" width="35" height="20" uuid="f1acad34-77a9-4f5b-817a-e1e931ec68f8"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="290" y="142" width="35" height="20" uuid="464bde61-8b42-49eb-8ecc-51c7a9f27d5a"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="290" y="168" width="35" height="20" uuid="6532cbad-b86b-4e76-84fb-545cfd4e3152"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" x="341" y="1" width="32" height="13" uuid="07effb9b-b74b-4620-952d-1c20226b490b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[تاریخ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="162" y="1" width="77" height="13" uuid="72c4cc0f-fd5b-43f8-86dd-88d89a83f107"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[مهر و امضای بیمه گر :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="18" width="396" height="20" forecolor="#000000" uuid="c3e2f844-414a-433d-ac5b-14460eb0c009"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[آدرس : تهران، خیابان ولیعصر، خیابان والی نژاد، پلاک3، کد پستی 53391-19698، تلفن  8775261، دورنگار :8777440       ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="38" width="108" height="13" uuid="4a6b1e3f-9cbe-4032-8d75-bdbe73c7123c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[www.parsianinsurance.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

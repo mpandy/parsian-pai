@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+<h:form id="bordrobimename" >
+    <p:panel header="#{msg['bordrobimename']}" toggleable="true" toggleSpeed="500"
+             styleClass="matnfarsi" style="direction: rtl" >
+
+        <h:panelGrid columns="4" cellpadding="5">
+            <p:outputLabel value="#{msg['shomareBimenameaz']} : " for="searchBimename_shomare" styleClass="matnfarsi"/>
+            <p:inputText id="searchBimename_shomare" value="#{bordroBimenameBeen.searchBimename.shomare}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['shomareBimenameta']} : " for="searchBimenameshomare" styleClass="matnfarsi"/>
+            <p:inputText id="searchBimenameshomare" value="#{bordroBimenameBeen.searchBimename.shomare}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['shoghl']} : " for="searchshoghl" styleClass="matnfarsi"/>
+            <p:inputText id="searchshoghl" value="#{bordroBimenameBeen.searchBimename.pishnahadeFaal.bimeShode.shoghl.name}"
+                         size="24" />
+
+            <p:outputLabel value="#{msg['tabaghekhatar']} : " for="tabaghekhatar" styleClass="matnfarsi"/>
+            <p:selectOneMenu id="tabaghekhatar" value="#{bordroBimenameBeen.searchBimename.pishnahadeFaal.bimeShode.shoghl.defaultTabagheKhatar}"
+                             styleClass="matnfarsi" style="font-size: small; direction: ltr">
+                <f:selectItems value="#{comboOptions.tabagheKhatar}" var="tabaghekhatar"
+                               itemValue="#{tabaghekhatar}" itemLabel="#{msg[tabaghekhatar.name()]}" />
+            </p:selectOneMenu>
+        </h:panelGrid>
+    </p:panel>
+
+    <p:outputPanel>
+
+        <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroBimenameBeen.bimenames}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl">
+
+            <p:column headerText="#{msg['shomareBimename']}" styleClass="matnfarsi">
+                #{nextbordro.shomare}
+            </p:column>
+
+            <p:column headerText="#{msg['bimeshodename']}" styleClass="matnfarsi">]
+                #{nextbordro.pishnahadeFaal.bimeShode.shakhseHaghighi.toString()}
+            </p:column>
+
+            <p:column headerText="#{msg['haghebime']}" styleClass="matnfarsi">
+                #{nextbordro.pishnahadeFaal.hagheBime.haghe_bime_ghabelepardakht}
+            </p:column>
+
+        </p:dataTable>
+    </p:outputPanel>
+    <br></br>
+
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+    </p:outputPanel>
+
+</h:form>
+</html>

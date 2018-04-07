@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+    <p:panel header="#{msg['josteju']}" styleClass="matnfarsi" style="direction: rtl" >
+
+        <h:form id="shoghladminpanel">
+        <h:panelGrid columns="6" cellpadding="10" styleClass="matnfarsi">
+            <p:outputLabel value="#{msg['shoghl']} : " for="searchshoghlname" />
+            <p:inputText id="searchshoghlname" value="#{shoghlAdminPanelBean.searchShoghl.name}" size="15" />
+            <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
+                             actionListener="#{shoghlAdminPanelBean.search}" update="shoghl"/>
+        </h:panelGrid>
+        </h:form>
+
+    </p:panel>
+        <p:outputPanel id="shoghl">
+
+            <p:dataTable id="shoghltable" var="nextshoghl" value="#{shoghlAdminPanelBean.undeletedShoghls()}"
+                         emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl" rowIndexVar="index">
+
+                <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                    <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['shoghl']}" styleClass="matnfarsi">
+                    #{nextshoghl.name}
+                </p:column>
+
+                <p:column headerText="#{msg['tabaghekhatar']}" styleClass="matnfarsi">
+                    <p:outputLabel style="font-family: byekan" value="#{nextshoghl.defaultTabagheKhatar}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145" style="text-align: center">
+                    <h:form>
+                    <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
+                                     actionListener="#{shoghlAdminPanelBean.editShoghl(nextshoghl)}"
+                                     update="shoghltable newshoghldialog"/>
+                    <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
+                                     actionListener="#{shoghlAdminPanelBean.removeShodgl(nextshoghl)}"/>
+                    </h:form>
+                </p:column>
+            </p:dataTable>
+            <ui:include src="dialog/shoghl.xhtml" />
+
+        </p:outputPanel>
+
+    <h:form>
+    <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+        <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi">
+            <p:ajax event="click" listener="#{shoghlAdminPanelBean.newshoghl}" update="newshoghldialog"/>
+        </p:commandButton>
+
+    </p:outputPanel>
+    </h:form>
+
+</html>

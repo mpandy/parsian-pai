@@ -97,7 +97,7 @@ public class BimeShode {
         List<ElhaghiyeDiff> returnList = new ArrayList<>();
         returnList.addAll(shakhseHaghighi.elhagiyeDiffs("bimeshode", otherBimeshode.getShakhseHaghighi()));
 
-        if(this.getShoghl().getId() != otherBimeshode.getShoghl().getId())
+        if(this.getShoghl().getId().longValue() != otherBimeshode.getShoghl().getId().longValue())
             returnList.add( new ElhaghiyeDiff("shoghlbimeshode",
                     this.getShoghl().toString(),
                     otherBimeshode.getShoghl().toString()));

@@ -562,15 +562,19 @@
                     </p:column>
 
                     <p:column headerText="#{msg['nerkhepaye']}" style="text-align: center" styleClass="matnfarsi">
-                        <p:outputLabel style="font-family: byekan" value="#{nexttaahod.nerkh_paye}"/>
+                        <h:outputText style="font-family: byekan" value="#{nexttaahod.nerkh_paye}">
+                            <f:convertNumber pattern="#0.00#"/>
+                        </h:outputText>
                     </p:column>
 
                     <p:column headerText="#{msg['nerkhtaahod']}" style="text-align: center" styleClass="matnfarsi">
-                        <p:outputLabel style="font-family: byekan" value="#{nexttaahod.nerkh_taahod}"/>
+                        <h:outputText style="font-family: byekan" value="#{nexttaahod.nerkh_taahod}">
+                            <f:convertNumber pattern="#0.00#"/>
+                        </h:outputText>
                     </p:column>
 
                     <p:column headerText="#{msg['haghebimetaahod']}" style="text-align: center" styleClass="matnfarsi">
-                        <h:outputText value="#{nexttaahod.hagh_bime_taahod}" style="font-family: byekan" >
+                        <h:outputText value="#{nexttaahod.hagh_bime_taahod}" style="font-family: byekan">
                             <f:convertNumber pattern="#,##0"/>
                         </h:outputText>
                     </p:column>
@@ -629,7 +633,7 @@
                     </p:column>
 
                     <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145"
-                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME])}">
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
                         <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
                                          actionListener="#{bimenameBean.editKhatar(nextkhatar)}"
                                          update="khatarezafitable :bimenameform:newkhatarezafidialog"/>

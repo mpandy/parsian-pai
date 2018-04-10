@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 /**
  * Created by 8119 on 4/27/2017.
@@ -35,6 +36,9 @@ public class PrintService implements IPrintService {
 
     @Inject
     FacesContext facesContext;
+
+    @Inject
+    transient ResourceBundle bundle;
 
     @Override
     public JasperPrint printBimename(Bimename bimename, ServletContext context) throws JRException, IOException {
@@ -145,6 +149,7 @@ public class PrintService implements IPrintService {
         Map parameters = new HashMap();
 
         parameters.put("realPath", context.getRealPath("/")+"\\reports\\");
+        parameters.put("noeElhaghiye", bundle.getString(elhaghiye.getNoe_elhaghie().name()));
         parameters.put("maliat", (propertyRules.getSinglesDoubleParam("nerkheMaliat")* elhaghiye.getBimename().getPishnahadeFaal().getHagheBime().getHaghe_bime_ghabelepardakht()+""));
 
         JasperCompileManager.compileReportToFile(   context.getRealPath("/reports/elhaghiye.jrxml"),

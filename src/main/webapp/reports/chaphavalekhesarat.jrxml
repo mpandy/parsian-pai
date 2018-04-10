@@ -5,6 +5,7 @@
 	<property name="ireport.y" value="0"/>
 	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="realPath" class="java.lang.String"/>
 	<field name="havaleKhesarat" class="ir.parsianinsurance.he.domain.model.HavaleKhesarat"/>
 	<field name="havaleKhesarat.khesarat" class="ir.parsianinsurance.he.domain.model.Khesarat"/>
 	<field name="havaleKhesarat.khesarat.bimename" class="ir.parsianinsurance.he.domain.model.Bimename"/>
@@ -29,7 +30,7 @@
 			</staticText>
 			<image>
 				<reportElement x="522" y="2" width="33" height="46" uuid="abbca8d0-50ec-44bb-a23d-41f34b1be9df"/>
-				<imageExpression><![CDATA["D:\\parsian_he\\src\\main\\webapp\\reports\\img\\f3.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{realPath} + "img\\f3.jpg"]]></imageExpression>
 			</image>
 			<line>
 				<reportElement x="478" y="48" width="77" height="1" uuid="e5af8810-0e15-4275-8c0a-60946e2e0e30"/>

@@ -21,7 +21,9 @@ public class WorkflowRules implements IWorkflowRules {
         switch (currentVaziat)
         {
             case TASHKILE_PARVANDE_VA_KARSHENASI:
-                return Arrays.asList(   VaziateParvandeKhesarat.GHEIR_GHABL_PADAKHT,
+                return Arrays.asList(
+                        VaziateParvandeKhesarat.TASHKILE_PARVANDE_VA_KARSHENASI,
+                        VaziateParvandeKhesarat.GHEIR_GHABL_PADAKHT,
                         VaziateParvandeKhesarat.ENSERAFE_MOSHTARI,
                         VaziateParvandeKhesarat.ELAAM_BE_MAALI);
 

@@ -13,7 +13,7 @@ import java.net.URL;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BitartsWebService", targetNamespace = "http://implementation.service.parsian.bitarts.com/", wsdlLocation = "http://172.16.0.28:8090/services/BitartsWebService?wsdl")
+@WebServiceClient(name = "BitartsWebService", targetNamespace = "http://implementation.service.parsian.bitarts.com/", wsdlLocation = "http://172.16.0.168/services/BitartsWebService?wsdl")
 public class BitartsWebService_Service
     extends Service
 {
@@ -26,7 +26,7 @@ public class BitartsWebService_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://172.16.0.28:8090/services/BitartsWebService?wsdl");
+            url = new URL("http://172.16.0.168/services/BitartsWebService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

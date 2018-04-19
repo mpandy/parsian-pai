@@ -41,7 +41,7 @@ public class SanamJob {
     @Inject
     IArtifactLogService artifactLogService;
 
-    @Schedule(hour="*", minute = "*/1", persistent = false)
+//    @Schedule(hour="*", minute = "*/1", persistent = false)
     public void callSanamDebitJsonService() {
 
         System.out.print("Try to call sanamService on... ");
@@ -115,18 +115,18 @@ public class SanamJob {
             isReal = isReal(((Elhaghiye)artifact).getBimename().getPishnahadeFaal());
         }
 
-        if(artifact instanceof Khesarat)
+        if(artifact instanceof HavaleKhesarat)
         {
             description = "Loss";
-            amount = String.valueOf(khesaratService.mablagheKhesarat((Khesarat) artifact));
-            identifier = ((Khesarat)artifact).getShomare_parvande();
-            uniqueCode = "ACC_LOSS_"+((Khesarat)artifact).getId();
-            codeVahedeSodor = ((Khesarat)artifact).getBimename().getVahedeSodoor().getCode();
-            codeNamayande = ((Khesarat)artifact).getVahed().getCode();
-            sarresidDate = ((Khesarat)artifact).getTarikh_elam_be_mali();
-            nationalCode = ((Khesarat)artifact).getBimename().getPishnahadeFaal().getBimeGozar().getShakhs().getShenase();
-            shomareGharardad = ((Khesarat)artifact).getBimename().getPishnahadeFaal().getGharardad().getShomare();
-            isReal = isReal(((Khesarat)artifact).getBimename().getPishnahadeFaal());
+            amount = String.valueOf(((HavaleKhesarat)artifact).getMablaghHavale());
+            identifier = ((HavaleKhesarat)artifact).getKhesarat().getShomare_parvande();
+            uniqueCode = "ACC_LOSS_"+((HavaleKhesarat)artifact).getId();
+            codeVahedeSodor = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getVahedeSodoor().getCode();
+            codeNamayande = ((HavaleKhesarat)artifact).getKhesarat().getVahed().getCode();
+            sarresidDate = ((HavaleKhesarat)artifact).getKhesarat().getTarikh_elam_be_mali();
+            nationalCode = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getBimeGozar().getShakhs().getShenase();
+            shomareGharardad = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getGharardad().getShomare();
+            isReal = isReal(((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal());
         }
 
         Map<String, String> sanam = new HashMap<>();
@@ -158,13 +158,18 @@ public class SanamJob {
         try {
             JSONObject jsonObject = new JSONObject(requestJson);
             long amount = Long.valueOf(jsonObject.get("amount").toString());
+            String description = jsonObject.get("description").toString();
             requestJson = requestJsonWithAbsoluteAmount(jsonObject, amount);
 
-            if(amount > 0)
-                response = sanamService.createDebitJSON(requestJson);
+            if(description.equals("Loss"))
+                response = sanamService.createHavaleKhesarat(requestJson);
+            else {
+                if(amount > 0)
+                    response = sanamService.createDebitJSON(requestJson);
 
-            if(amount < 0)
-                response = sanamService.createCreditJSON(requestJson);
+                if(amount < 0)
+                    response = sanamService.createCreditJSON(requestJson);
+            }
 
              status = "SANAM_INVOKED_SUCCESSFULLY";
 

@@ -253,11 +253,6 @@ public class ApplicationService
 
         bimenameRepository.save(khesarat.getBimename());
 
-        ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
-                                            Khesarat.class.getSimpleName(),
-                                            khesarat.getId(),
-                                            khesarat.getVaziateparvande().name());
-        artifactLogRepository.save(log);
         return Optional.empty();
     }
 
@@ -267,6 +262,11 @@ public class ApplicationService
         for(HavaleKhesarat havaleKhesarat : khesarat.getHavaleKhesarats()) {
             khesaratService.buildHavaleKhesarat(havaleKhesarat);
             havaleKhesaratRepository.save(havaleKhesarat);
+
+            ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
+                    HavaleKhesarat.class.getSimpleName(),
+                    havaleKhesarat.getId(),"");
+            artifactLogRepository.save(log);
         }
         return khesarat;
     }

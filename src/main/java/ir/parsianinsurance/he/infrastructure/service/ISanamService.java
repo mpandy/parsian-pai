@@ -7,4 +7,5 @@ public interface ISanamService {
 
     String createDebitJSON(String json);
     String createCreditJSON(String json);
+    String createHavaleKhesarat(String json);
 }

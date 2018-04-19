@@ -22,8 +22,6 @@ public interface IKhesaratService {
     void setShomareHavaleKhesarat(Khesarat khesarat);
     List<Khesarat> searchKhesarat(KhesaratSearchModel searchedKhesarat, int rowLimit);
     boolean isKhesaratAble(Khesarat khesarat);
-    Long mablagheKhesarat(Khesarat khesarat);
-
     Optional<Warning> addPossibleSaghfeKhesaratFotArtifactDocs(KhesaratCase khesaratCase, User user);
     Optional<Warning> addPossibleSaghfeKhesaratNaghseOzvArtifactDocs(KhesaratCase khesaratCase, User user);
     Optional<Warning> addPossibleSaghfeKhesaratHazPezArtifactDocs(KhesaratCase khesaratCase, User currentUser);

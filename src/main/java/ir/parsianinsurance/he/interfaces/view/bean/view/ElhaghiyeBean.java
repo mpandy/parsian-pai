@@ -147,7 +147,7 @@ public class ElhaghiyeBean implements Serializable{
                 validator = SabteElhaghiyeValidator.class)
     public void mohasebeEbtal(){
         Long mablaghEbtal = elhaghiye.getBimename().getPishnahadeFaal().getHagheBime().getHaghe_bime_ghabelepardakht();
-        elhaghiye.setMablagheElhaghiye(mablaghEbtal);
+        elhaghiye.setMablagheElhaghiye(-1*mablaghEbtal);
     }
 
     @WebAction( successMessage = "bimenamebatelgardid",
@@ -179,7 +179,7 @@ public class ElhaghiyeBean implements Serializable{
                 mablaghElhaghiye = (Math.round (haghebimekol * (1- ayinName24Rules.darsadeHagheBimeSalane(modat))));
                 break;
         }
-        elhaghiye.setMablagheElhaghiye(mablaghElhaghiye);
+        elhaghiye.setMablagheElhaghiye(-1*mablaghElhaghiye);
     }
 
     @WebAction( successMessage = "bimenamefaskhgardid",

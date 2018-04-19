@@ -139,27 +139,6 @@ public class KhesaratService implements IKhesaratService {
     }
 
     @Override
-    public Long mablagheKhesarat(Khesarat khesarat) {
-
-        long sum = 0;
-        for(KhesaratCase khesaratCase : khesarat.getKhesaratCases())
-        {
-            switch (khesaratCase.getNoe_khesarat())
-            {
-                case KHESARAT_PARDAKHTI:
-                    sum = sum + khesaratCase.getKhesarat_ghabl_pardakht();
-                    break;
-
-                case KHESARAT_BARGASHTI:
-                    sum = sum - khesaratCase.getKhesarat_ghabl_pardakht();
-                    break;
-            }
-        }
-
-        return sum;
-    }
-
-    @Override
     public Optional<Warning> addPossibleSaghfeKhesaratFotArtifactDocs(KhesaratCase khesaratCase, User user) {
         long saghfeKhesaratFot = vahedRepository.findOne(user.getVahed().getId()).getSaghfe_khesarat_fot();
         if (saghfeKhesaratFot < khesaratCase.getKhesarat_ghabl_pardakht()) {

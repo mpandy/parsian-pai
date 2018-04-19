@@ -25,9 +25,6 @@ public class PreMohasebeHagheBimeValidator extends HEValidator {
 
         Pishnahad pishnahad = ((BimenameBean)context.getTarget()).getBimename().getPishnahadeFaal();
 
-        if (pishnahad.getNahveMohasebe().equals(NahveMohasebe.EMPTY))
-            errorMessages.add("Nahvemohaseberataeennamaeed");
-
         if (pishnahad.getGoroohbimename() == null)
             errorMessages.add("goroohravarednamaeed");
 

@@ -41,8 +41,14 @@
                disabled="#{not khesaratBean.filter.tarikhhadese}"/>
 
            <p:outputLabel value="#{msg['shahremahalehadese']} : " for="shahremahalehadese" />
-           <p:inputText id="shahremahalehadese" value="#{khesaratBean.khesarat.shahr_mahale_hadese}"
-                         disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}"/>
+               <p:autoComplete id="shahremahalehadese"
+                               value="#{khesaratBean.khesarat.shahr_mahale_hadese}"
+                               completeMethod="#{geoService.autocompleteGeo}"
+                               style="font-family: byekan; direction: ltr"
+                               forceSelection="true"
+                               disabled="#{mainView.inAnyOf([state.NAMAYESH_KHESARAT,state.SODOOR_NEW_HAVALE_KHESARAT])}">
+               </p:autoComplete>
+
 
                <p:outputLabel value="#{msg['tarikhenaame']} : " />
                <pfaces:datePicker value="#{khesaratBean.khesarat.tarikh_naame}" style="font-family: byekan"
@@ -150,7 +156,7 @@
                </p:column>
 
                <p:column headerText="#{msg['noehavale']}" styleClass="matnfarsi" style="text-align: center" width="125">
-                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.noeHavale}"/>
+                   <p:outputLabel style="font-family: byekan" value="#{msg[nexthavalekhesarat.noeHavale]}"/>
                </p:column>
 
                <p:column headerText="#{msg['mablaghHavale']}" styleClass="matnfarsi" style="text-align: center" width="100">
@@ -164,7 +170,7 @@
                </p:column>
 
                <p:column headerText="#{msg['nesbatbabimeshode']}" styleClass="matnfarsi" style="text-align: center" width="90">
-                   <p:outputLabel style="font-family: byekan" value="#{nexthavalekhesarat.nesbatBaBimeshode}"/>
+                   <p:outputLabel style="font-family: byekan" value="#{msg[nexthavalekhesarat.nesbatBaBimeshode]}"/>
                </p:column>
 
                <p:column headerText="#{msg['tarikheHavale']}" styleClass="matnfarsi" style="text-align: center" width="90">

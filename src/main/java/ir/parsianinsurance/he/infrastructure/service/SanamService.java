@@ -30,4 +30,9 @@ public class SanamService implements ISanamService {
         return service.createCreditJSON(json);
     }
 
+    @Override
+    public String createHavaleKhesarat(String json) {
+        return service.createHavaleKhesarat(json);
+    }
+
 }

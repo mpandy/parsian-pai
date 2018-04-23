@@ -181,13 +181,13 @@
                    <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
                                     actionListener="#{khesaratBean.editHavaleKhesarat(nexthavalekhesarat)}"
                                     update="havalekhesarattable :khesaratform:newhavalekhesaratdialog"
-                                    rendered="#{mainView.inAnyOf([state.KHESARAT, state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                                    rendered="#{mainView.inAnyOf([state.KHESARAT, state.SODOOR_NEW_HAVALE_KHESARAT]) and khesaratBean.havaleIsNotSentToSanam(nexthavalekhesarat)}">
                    </p:commandButton>
 
                    <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
                                     actionListener="#{khesaratBean.removeHavaleKhesarat(nexthavalekhesarat)}"
                                     update="havalekhesarattable"
-                                    rendered="#{mainView.inAnyOf([state.KHESARAT, state.SODOOR_NEW_HAVALE_KHESARAT])}">
+                                    rendered="#{mainView.inAnyOf([state.KHESARAT, state.SODOOR_NEW_HAVALE_KHESARAT]) and khesaratBean.havaleIsNotSentToSanam(nexthavalekhesarat)}">
                    </p:commandButton>
 
                    <p:commandButton value="#{msg['chap']}" icon="fa fa-print"  ajax="false"

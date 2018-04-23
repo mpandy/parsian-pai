@@ -25,10 +25,10 @@ public class TaahodeBimegarService implements ITaahodeBimegarService {
                 taahodBimegar.setNerkh_paye(propertyRules.getSinglesDoubleParam("nerkhePayeHazinePezeshki"));
                 break;
 
-            case GHERAMAT_ROOZANE_BASTARI:
-                taahodBimegar.setNerkh_taahod(propertyRules.nerkheTaahodGharameteBastari(tabagheKhatar));
-                taahodBimegar.setNerkh_paye(propertyRules.getSinglesDoubleParam("nerkhePayeGheramateRoozaneBastari"));
-                break;
+//            case GHERAMAT_ROOZANE_BASTARI:
+//                taahodBimegar.setNerkh_taahod(propertyRules.nerkheTaahodGharameteBastari(tabagheKhatar));
+//                taahodBimegar.setNerkh_paye(propertyRules.getSinglesDoubleParam("nerkhePayeGheramateRoozaneBastari"));
+//                break;
 
             case FOT:
                 taahodBimegar.setNerkh_taahod(propertyRules.nerkheTaahodFotNaghs(tabagheKhatar));

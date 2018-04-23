@@ -56,11 +56,11 @@ public class BimenamePrint {
                     taahodBimegar.setHagh_bime_khataratezafi(null);
                     break;
 
-                case GHERAMAT_ROOZANE_BASTARI:
-                    returnTaahodBimegarList.set(4, taahodBimegar);
-                    taahodBimegar.setHagh_bime_khataratezafi(null);
-                    taahodBimegar.setNerkh_khatareEzafi(null);
-                    break;
+//                case GHERAMAT_ROOZANE_BASTARI:
+//                    returnTaahodBimegarList.set(4, taahodBimegar);
+//                    taahodBimegar.setHagh_bime_khataratezafi(null);
+//                    taahodBimegar.setNerkh_khatareEzafi(null);
+//                    break;
 
                 case FOT:
                     if(taahodBimegar.getNerkh_taahod()!= null)

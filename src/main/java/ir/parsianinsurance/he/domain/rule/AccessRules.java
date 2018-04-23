@@ -61,6 +61,8 @@ public class AccessRules implements IAccessRules {
                                         Permission.MOSHAHEDE_ELHAGHIYE,
                                         Permission.MOSHAHEDE_KHESARAT,
                                         Permission.MOSHAHEDE_GOZARESH,
+                                        Permission.VIRAYESHE_KHESARAT,
+                                        Permission.SABTE_HAVALE_KHESARAT,
                                         Permission.SODOOR_KHESARAT);
 
         }

@@ -29,6 +29,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -152,8 +153,13 @@ public class KhesaratBean implements Serializable{
     }
 
     public void addOrEditHavaleKhesarat(){
-        khesarat.getHavaleKhesarats().add(newHavaleKhesarat);
-        HavaleKhesaratDialogVisible = false;
+
+        if(validateHavaleKhesarat(newHavaleKhesarat))
+        {
+            khesarat.getHavaleKhesarats().add(newHavaleKhesarat);
+            HavaleKhesaratDialogVisible = false;
+        }
+
     }
 
     public void closeDialogHavaleKhesarat(){
@@ -170,6 +176,10 @@ public class KhesaratBean implements Serializable{
         setNewHavaleKhesarat(havaleKhesarat);
         HavalekhesaratToBeEdited = true;
         HavaleKhesaratDialogVisible = true;
+    }
+
+    public boolean havaleIsNotSentToSanam(HavaleKhesarat havaleKhesarat){
+        return havaleKhesarat.getBeSanamRafte() == null;
     }
 
     public void removeKhesaratCase(KhesaratCase khesaratCase){
@@ -220,6 +230,20 @@ public class KhesaratBean implements Serializable{
             mainView.error(e.getMessage());
         }
     }
+
+    public boolean validateHavaleKhesarat(HavaleKhesarat havaleKhesarat) {
+
+        List<String> errorMessges = new ArrayList<>();
+
+        if (!shabaIsOk(havaleKhesarat.getEttelaateShaba()))
+            errorMessges.add("shabaisnotOk");
+
+        if(!errorMessges.isEmpty())
+            mainView.errors(errorMessges);
+
+        return errorMessges.size() == 0;
+    }
+
 
     @WebAction(toState = StateName.LIST_KHESARAT)
     public void sabtHavalekhesarat(){
@@ -314,5 +338,23 @@ public class KhesaratBean implements Serializable{
         return  khesarat.getHavaleKhesarats().stream()
                 .filter(havaleKhesarat -> havaleKhesarat.getDeleted() == null )
                 .collect(Collectors.toSet());
+    }
+
+    public boolean shabaIsOk(String shaba) {
+        shaba = shaba.trim();
+        if (shaba.length() != 24) {
+            return false;
+        } else {
+            try {
+                BigInteger toCheck = new BigInteger(shaba.substring(2) + "1827" + shaba.substring(0, 2));
+                if (toCheck.mod(new BigInteger("97")).intValue() != 1) {
+                    return false;
+                }
+            }
+            catch (Exception e){
+                return false;
+            }
+        }
+        return true;
     }
 }

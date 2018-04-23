@@ -84,6 +84,9 @@ public class SanamJob {
         String shomareGharardad = "";
         String isDolati = "0";
         String isReal = "0";
+        String daryaftKonandehKhesarat = "";
+        String shomareHavaleKhesarat = "";
+        String type = "";
 
 
         if (artifact instanceof Bimename)
@@ -104,9 +107,35 @@ public class SanamJob {
         if(artifact instanceof Elhaghiye)
         {
             description = "Endorse";
-            amount = String.valueOf(((Elhaghiye)artifact).getMablagheElhaghiye());
+            String uniqueCode_prefix = "";
+            int amountZarib = 1;
+            Elhaghiye elhaghiye = ((Elhaghiye)artifact);
+            {
+                switch (elhaghiye.getNoe_elhaghie())
+                {
+                    case TAGHIR:
+                        uniqueCode_prefix = "ACC_ELHAGHIYE_TAGHIR_";
+                        break;
+
+                    case EBTAL:
+                        uniqueCode_prefix = "ACC_ELHAGHIYE_EBTAL_";
+                        amountZarib = -1;
+                        break;
+
+                    case FASKHAZTARAFEBIMEGAR:
+                        uniqueCode_prefix = "ACC_ELHAGHIYE_FASKH_BIMEGAR_";
+                        amountZarib = -1;
+                        break;
+
+                    case FASKHAZTARAFEBIMEGOZAR:
+                        uniqueCode_prefix = "ACC_ELHAGHIYE_FASKH_BIMEGOZAR_";
+                        amountZarib = -1;
+                        break;
+                }
+            }
+            amount = String.valueOf(amountZarib * ((Elhaghiye)artifact).getMablagheElhaghiye());
             identifier = ((Elhaghiye)artifact).getShomareElhaghiye();
-            uniqueCode = "ACC_ELHAGHIYE_"+((Elhaghiye)artifact).getId();
+            uniqueCode = uniqueCode_prefix+((Elhaghiye)artifact).getId();
             codeVahedeSodor = ((Elhaghiye)artifact).getBimename().getVahedeSodoor().getCode();
             codeNamayande = ((Elhaghiye)artifact).getVahed().getCode();
             sarresidDate = ((Elhaghiye)artifact).getTarikh_sodoor_elhaghie();
@@ -119,14 +148,22 @@ public class SanamJob {
         {
             description = "Loss";
             amount = String.valueOf(((HavaleKhesarat)artifact).getMablaghHavale());
-            identifier = ((HavaleKhesarat)artifact).getKhesarat().getShomare_parvande();
+            identifier = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getShomare();
             uniqueCode = "ACC_LOSS_"+((HavaleKhesarat)artifact).getId();
             codeVahedeSodor = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getVahedeSodoor().getCode();
             codeNamayande = ((HavaleKhesarat)artifact).getKhesarat().getVahed().getCode();
             sarresidDate = ((HavaleKhesarat)artifact).getKhesarat().getTarikh_elam_be_mali();
             nationalCode = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getBimeGozar().getShakhs().getShenase();
             shomareGharardad = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getGharardad().getShomare();
+            shomareHavaleKhesarat = ((HavaleKhesarat)artifact).getShomareHavale();
+            daryaftKonandehKhesarat = ((HavaleKhesarat)artifact).getName_daryaft_konande();
             isReal = isReal(((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal());
+            type = "HAVALE_KHESARAT";
+            rcptName = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getBimeShode().getShakhseHaghighi().toString();
+
+//            rcptName va codeNamayande
+//
+//                shaba bayad valid bashe
         }
 
         Map<String, String> sanam = new HashMap<>();
@@ -142,6 +179,9 @@ public class SanamJob {
         sanam.put("mohlatSarResid", mohlatSarResid);
         sanam.put("nationalCode", nationalCode);
         sanam.put("shomareGharardad", shomareGharardad);
+        sanam.put("shomareHavaleKhesarat", shomareHavaleKhesarat);
+        sanam.put("type", type);
+        sanam.put("daryaftKonandehKhesarat", daryaftKonandehKhesarat);
         sanam.put("isDolati", isDolati);
         sanam.put("isReal", isReal);
         sanam.put("field", field);

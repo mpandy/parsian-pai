@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "DMN_KHESARAT")
-public class Khesarat implements Artifact {
+public class Khesarat {
 
     @Id
     @GeneratedValue

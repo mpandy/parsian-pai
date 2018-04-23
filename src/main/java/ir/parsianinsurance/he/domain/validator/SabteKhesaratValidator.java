@@ -66,8 +66,9 @@ public class SabteKhesaratValidator extends HEValidator{
     }
     private void validateKhesaratCasesForElamBeMali(List<String> errorMessages, Set<KhesaratCase> khesaratCases) {
         for(KhesaratCase khesaratCase : khesaratCases)
-            if(!khesaratCase.getVaziat().equals(VaziateKhesaratCase.DAEM))
-                errorMessages.add("moredeKhesarateGHeyreDaemVojoodDarad");
+            if(khesaratCase.getVaziat().equals(VaziateKhesaratCase.DAEM))
+                return;
+        errorMessages.add("moredeKhesarateDaemVojoodNadarad");
     }
 
 }

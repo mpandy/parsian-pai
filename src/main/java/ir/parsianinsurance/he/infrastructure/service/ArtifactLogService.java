@@ -1,12 +1,10 @@
 package ir.parsianinsurance.he.infrastructure.service;
 
-import ir.parsianinsurance.he.domain.model.Artifact;
-import ir.parsianinsurance.he.domain.model.Bimename;
-import ir.parsianinsurance.he.domain.model.Elhaghiye;
-import ir.parsianinsurance.he.domain.model.Khesarat;
+import ir.parsianinsurance.he.domain.model.*;
 import ir.parsianinsurance.he.infrastructure.logging.ArtifactLog;
 import ir.parsianinsurance.he.infrastructure.repository.BimenameRepository;
 import ir.parsianinsurance.he.infrastructure.repository.ElhaghiyeRepository;
+import ir.parsianinsurance.he.infrastructure.repository.HavaleKhesaratRepository;
 import ir.parsianinsurance.he.infrastructure.repository.KhesaratRepository;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -22,7 +20,7 @@ public class ArtifactLogService implements IArtifactLogService {
     ElhaghiyeRepository elhaghiyeRepository;
 
     @Inject
-    KhesaratRepository khesaratRepository;
+    HavaleKhesaratRepository havaleKhesaratRepository;
 
     @Override
     public Artifact getArtifact(ArtifactLog log) {
@@ -51,13 +49,10 @@ public class ArtifactLogService implements IArtifactLogService {
                 }
                 break;
 
-            case "Khesarat":
-                if(log.getArtifactState().equals("ELAAM_BE_MAALI"))
-                {
-                    Long khesaratId = log.getArtifactId();
-                    Khesarat khesarat = khesaratRepository.findOne(khesaratId);
-                    artifact = khesarat;
-                }
+            case "HavaleKhesarat":
+                    Long havaleKhesaratId = log.getArtifactId();
+                    HavaleKhesarat havaleKhesarat = havaleKhesaratRepository.findOne(havaleKhesaratId);
+                    artifact = havaleKhesarat;
                 break;
         }
 

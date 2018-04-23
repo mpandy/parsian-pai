@@ -6,7 +6,7 @@ package ir.parsianinsurance.he.domain.model.enums;
 public enum NoeTaahod {
     EMPTY,
     HAZINE_PEZESHKI,
-    GHERAMAT_ROOZANE_BASTARI,
+//    GHERAMAT_ROOZANE_BASTARI,
     FOT,
     NAGHSOZV_AZKAROFTADEGI;
 

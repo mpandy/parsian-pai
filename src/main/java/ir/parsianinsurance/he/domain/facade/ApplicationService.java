@@ -260,13 +260,18 @@ public class ApplicationService
     public Khesarat sabteKhesaratHavales(Khesarat khesarat) {
         khesaratService.setShomareHavaleKhesarat(khesarat);
         for(HavaleKhesarat havaleKhesarat : khesarat.getHavaleKhesarats()) {
-            khesaratService.buildHavaleKhesarat(havaleKhesarat);
-            havaleKhesaratRepository.save(havaleKhesarat);
 
-            ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
-                    HavaleKhesarat.class.getSimpleName(),
-                    havaleKhesarat.getId(),"");
-            artifactLogRepository.save(log);
+            if(havaleKhesarat.getBeSanamRafte() == null) {
+                khesaratService.buildHavaleKhesarat(havaleKhesarat);
+
+                ArtifactLog log = new ArtifactLog(userBean.getCurrentUser().getUsername(),
+                        HavaleKhesarat.class.getSimpleName(),
+                        havaleKhesarat.getId(), "");
+                artifactLogRepository.save(log);
+                havaleKhesarat.setBeSanamRafte(true);
+                havaleKhesaratRepository.save(havaleKhesarat);
+            }
+
         }
         return khesarat;
     }
@@ -276,9 +281,11 @@ public class ApplicationService
 
         elhaghiye = elhaghiyeService.buildElhaghiyeToPersist(elhaghiye);
 
-        Optional<Warning> warningMessages = elhaghiyeService.addPossibleElhaghiyeEbtalArtifactDocs(elhaghiye, userBean.getCurrentUser());
-        if (warningMessages.isPresent()) {
-            return addWarningEffectToElhaghiye(elhaghiye, warningMessages);
+        if(!userBean.isSetad()) {
+            Optional<Warning> warningMessages = elhaghiyeService.addPossibleElhaghiyeEbtalArtifactDocs(elhaghiye, userBean.getCurrentUser());
+            if (warningMessages.isPresent()) {
+                return addWarningEffectToElhaghiye(elhaghiye, warningMessages);
+            }
         }
 
         Bimename bimename = bimenameRepository.findOne(elhaghiye.getBimename().getId());
@@ -310,9 +317,11 @@ public class ApplicationService
 
         elhaghiye = elhaghiyeService.buildElhaghiyeToPersist(elhaghiye);
 
-        Optional<Warning> warningMessages = elhaghiyeService.addPossibleElhaghiyeFaskhArtifactDocs(elhaghiye, userBean.getCurrentUser());
-        if (warningMessages.isPresent()) {
-            return addWarningEffectToElhaghiye(elhaghiye, warningMessages);
+        if(!userBean.isSetad()) {
+            Optional<Warning> warningMessages = elhaghiyeService.addPossibleElhaghiyeFaskhArtifactDocs(elhaghiye, userBean.getCurrentUser());
+            if (warningMessages.isPresent()) {
+                return addWarningEffectToElhaghiye(elhaghiye, warningMessages);
+            }
         }
 
         Bimename bimename = bimenameRepository.findOne(elhaghiye.getBimename().getId());

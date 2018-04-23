@@ -140,13 +140,13 @@ public class BimenameListBean implements Serializable{
 
     private void hideShowOperationButtons() {
         showSodoorButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.MOVAGHAT) || selectedBimename.getVaziateBimename().equals(VaziateBimename.TAYIDE_MOJAVEZ);
-        showKhesaratButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM);
-        showElhaghiyeButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM);
-        showChapButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM);
-        showFaskhButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM);
-        showEbtalButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM) ||
-                            ((selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM) &&
-                            (bimenameService.isEbtalable(selectedBimename))));
+        showKhesaratButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM) || selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR);
+        showElhaghiyeButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM) || selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR);;
+        showChapButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM) || selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR);;
+        showFaskhButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM) || selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR);;
+        showEbtalButton = ((selectedBimename.getVaziateBimename().equals(VaziateBimename.DAEM)  ||
+                            selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR)) &&
+                            (bimenameService.isEbtalable(selectedBimename)));
         showDarkhastMojavezButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.NIAZ_BE_AKHZE_MOJAVEZ);
     }
 

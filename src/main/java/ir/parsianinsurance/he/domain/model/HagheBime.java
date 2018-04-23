@@ -107,21 +107,21 @@ public class HagheBime {
     //     TODO: takhfif karmandi va gorohi hamzaman nbashad
     public void mohasebehaghbime(EzafeKasr ezafeKasr, Double maliat, double darsadeHagheBimeSalane)
     {
-            setJame_khatarate_asli((long) ((1+
+            setJame_khatarate_asli(Math.round ((1+
                                             (ezafeKasr.getEzafe_nerkh_pezeshki()/100)-
                                             (ezafeKasr.getTakhfife_goroohi()/100)-
                                              ezafeKasr.getTakhfife_modiriati()/100)* getJame_khatarate_asli()));
 
-            setJame_khatarate_ezafi((long) ((1+
+            setJame_khatarate_ezafi(Math.round ((1+
                                             (ezafeKasr.getEzafe_nerkh_pezeshki()/100)-
                                             (ezafeKasr.getTakhfife_goroohi()/100)-
                                             (ezafeKasr.getTakhfife_modiriati()/100))* getJame_khatarate_ezafi()));
 
             setHaghe_bime_khales(getJame_khatarate_asli() + getJame_khatarate_ezafi());
 
-            long hagheBimeBedooneEmaaleDarsad = (long) ((( getHaghe_bime_khales() *(1 + maliat))/ 100.00 ) * 100);
+            long hagheBimeBedooneEmaaleDarsad = Math.round ((( getHaghe_bime_khales() *(1 + maliat))/ 100.00 ) * 100);
 
-            long hagheBimePasAzEmaaleDarsad = (long) (hagheBimeBedooneEmaaleDarsad * darsadeHagheBimeSalane);
+            long hagheBimePasAzEmaaleDarsad = Math.round (hagheBimeBedooneEmaaleDarsad * darsadeHagheBimeSalane);
 
             setHaghe_bime_notRounded(hagheBimePasAzEmaaleDarsad);
             setMaliat(getHaghe_bime_notRounded() - getHaghe_bime_khales());
@@ -129,7 +129,7 @@ public class HagheBime {
             long[] round1000 = round1000(getHaghe_bime_notRounded());
             setKasr_hezar_rial((short) round1000[1]);
             setHaghe_bime_ghabelepardakht(round1000[0]);
-            setKarmozd((long)(getHaghe_bime_ghabelepardakht() * 0.28));
+            setKarmozd(Math.round(getHaghe_bime_ghabelepardakht() * 0.28));
 
     }
 

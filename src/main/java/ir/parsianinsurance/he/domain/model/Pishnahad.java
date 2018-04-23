@@ -519,7 +519,7 @@ public class Pishnahad {
             if (tbimegar.getNoetaahod().equals(NoeTaahod.HAZINE_PEZESHKI) || tbimegar.getNoetaahod().equals(NoeTaahod.FOT) || tbimegar.getNoetaahod().equals(NoeTaahod.NAGHSOZV_AZKAROFTADEGI)) {
 
                 if (getNerkheZelze() != 0 || getNerkheMotor() != 0) {
-                    long nextHaghbimezelzelevamotor = (long) (tbimegar.getSarmaye_taahod() * tbimegar.getNerkh_paye() * (getNerkheMotor() + getNerkheZelze()));
+                    long nextHaghbimezelzelevamotor = Math.round(tbimegar.getSarmaye_taahod() * tbimegar.getNerkh_paye() * (getNerkheMotor() + getNerkheZelze()));
                     tbimegar.setHagh_bime_zelzelevamotor(nextHaghbimezelzelevamotor);
                     hagh_bime_zelzelevamotor += nextHaghbimezelzelevamotor;
                 }
@@ -575,4 +575,5 @@ public class Pishnahad {
                 return tb.getSarmaye_taahod();
         return 0L;
     }
+
 }

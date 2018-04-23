@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "DMN_HAVALEKHESARAT")
-public class HavaleKhesarat implements Comparable{
+public class HavaleKhesarat implements Comparable, Artifact {
 
     @Id
     @GeneratedValue
@@ -32,12 +32,12 @@ public class HavaleKhesarat implements Comparable{
     private Long createdDate;
     private String noe_daryaft_konande;
     private String name_daryaft_konande;
-    private String shomare_shaba_daryaftkonande;
     private String elate_bargashti;
     private String tozihat;
     private String taeedkonandenahaei;
     private NoeHavale noeHavale;
     private NesbatBaBimeshode nesbatBaBimeshode;
+    private Boolean beSanamRafte;
     private Boolean deleted;
 
 
@@ -136,14 +136,6 @@ public class HavaleKhesarat implements Comparable{
         this.name_daryaft_konande = name_daryaft_konande;
     }
 
-    public String getShomare_shaba_daryaftkonande() {
-        return shomare_shaba_daryaftkonande;
-    }
-
-    public void setShomare_shaba_daryaftkonande(String shomare_shaba_daryaftkonande) {
-        this.shomare_shaba_daryaftkonande = shomare_shaba_daryaftkonande;
-    }
-
     public String getElate_bargashti() {
         return elate_bargashti;
     }
@@ -182,6 +174,14 @@ public class HavaleKhesarat implements Comparable{
 
     public void setNesbatBaBimeshode(NesbatBaBimeshode nesbatBaBimeshode) {
         this.nesbatBaBimeshode = nesbatBaBimeshode;
+    }
+
+    public Boolean getBeSanamRafte() {
+        return beSanamRafte;
+    }
+
+    public void setBeSanamRafte(Boolean beSanamRafte) {
+        this.beSanamRafte = beSanamRafte;
     }
 
     @Override

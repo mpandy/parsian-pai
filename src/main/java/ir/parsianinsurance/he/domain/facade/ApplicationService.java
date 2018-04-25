@@ -126,8 +126,7 @@ public class ApplicationService
 
         ArtifactLog log = new ArtifactLog(   userBean.getCurrentUser().getUsername(),
                                                 Bimename.class.getSimpleName(),
-                                                bimename.getId(),
-                                                bimename.getVaziateBimename().name());
+                                                bimename.getId());
         artifactLogRepository.save(log);
         return Optional.empty();
     }
@@ -148,11 +147,10 @@ public class ApplicationService
     }
 
     @Override
-    public Elhaghiye sabteElhaghiyeTaghir(Elhaghiye elhaghiye) {
+    public Optional<Warning> sabteElhaghiyeTaghir(Elhaghiye elhaghiye) {
 
         elhaghiye = elhaghiyeService.buildElhaghiyeToPersist(elhaghiye);
         Bimename bimename = bimenameRepository.findOne(elhaghiye.getBimename().getId());
-
         Pishnahad oldPishnahad = bimename.getPishnahadeFaal();
         Pishnahad newPishnahad = pishnahadService.buildPishnahadToPersist(elhaghiye.getPishnahad_new());
 
@@ -170,15 +168,20 @@ public class ApplicationService
         newPishnahad.setElhaghiye(elhaghiye);
         bimename.pishnahad(newPishnahad);
         bimename.vaziat(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR);
+
         elhaghiyeRepository.save(elhaghiye);
 
         ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
                                             Elhaghiye.class.getSimpleName(),
-                                            elhaghiye.getId(),
-                                            elhaghiye.getVaziateElhaghiye().name());
+                                            elhaghiye.getId());
         artifactLogRepository.save(log);
 
-        return elhaghiye;
+        Optional<Warning> saghfeSodoorPossibleWarning =
+                elhaghiyeService.addPossibleElhaghiyeTaghirSaghfeSodoorArtifactDocs(elhaghiye, userBean.getCurrentUser());
+        if (saghfeSodoorPossibleWarning.isPresent()) {
+            return addWarningEffectToElhaghiye(elhaghiye, saghfeSodoorPossibleWarning);
+        }
+        return Optional.empty();
     }
 
     @Override
@@ -266,7 +269,7 @@ public class ApplicationService
 
                 ArtifactLog log = new ArtifactLog(userBean.getCurrentUser().getUsername(),
                         HavaleKhesarat.class.getSimpleName(),
-                        havaleKhesarat.getId(), "");
+                        havaleKhesarat.getId());
                 artifactLogRepository.save(log);
                 havaleKhesarat.setBeSanamRafte(true);
                 havaleKhesaratRepository.save(havaleKhesarat);
@@ -304,8 +307,7 @@ public class ApplicationService
 
         ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
                                             Elhaghiye.class.getSimpleName(),
-                                            elhaghiye.getId(),
-                                            elhaghiye.getVaziateElhaghiye().name());
+                                            elhaghiye.getId());
         artifactLogRepository.save(log);
 
         return Optional.empty();
@@ -340,8 +342,7 @@ public class ApplicationService
 
         ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
                                             Elhaghiye.class.getSimpleName(),
-                                            elhaghiye.getId(),
-                                            elhaghiye.getVaziateElhaghiye().name());
+                                            elhaghiye.getId());
         artifactLogRepository.save(log);
 
         return Optional.empty();
@@ -357,6 +358,9 @@ public class ApplicationService
 
         if(elhaghiye.getNoe_elhaghie().equals(NoeElhaghiye.EBTAL))
             elhaghiye.getBimename().setVaziateBimename(VaziateBimename.DAR_ENTEZARE_EBTAL);
+
+        if(elhaghiye.getNoe_elhaghie().equals(NoeElhaghiye.TAGHIR))
+            elhaghiye.getBimename().setVaziateBimename(VaziateBimename.DAR_ENTEZARE_ELHAGHIYE_TAGHIR);
 
         bimenameRepository.save(elhaghiye.getBimename());
         elhaghiyeRepository.save(elhaghiye);
@@ -387,8 +391,7 @@ public class ApplicationService
 
         ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
                                             Elhaghiye.class.getSimpleName(),
-                                            bimename.getId(),
-                                            bimename.getVaziateBimename().name());
+                                            bimename.getId());
         artifactLogRepository.save(log);
 
         return bimename;

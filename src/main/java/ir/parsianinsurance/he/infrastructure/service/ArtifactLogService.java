@@ -1,6 +1,7 @@
 package ir.parsianinsurance.he.infrastructure.service;
 
 import ir.parsianinsurance.he.domain.model.*;
+import ir.parsianinsurance.he.domain.model.enums.VaziateBimename;
 import ir.parsianinsurance.he.infrastructure.logging.ArtifactLog;
 import ir.parsianinsurance.he.infrastructure.repository.BimenameRepository;
 import ir.parsianinsurance.he.infrastructure.repository.ElhaghiyeRepository;
@@ -29,24 +30,20 @@ public class ArtifactLogService implements IArtifactLogService {
         switch (log.getArtifactType())
         {
             case "Bimename":
-                if(log.getArtifactState().equals("DAEM"))
-                {
-                    Long bimenameId = log.getArtifactId();
-                    Bimename bimename = bimenameRepository.findOne(bimenameId);
+                Long bimenameId = log.getArtifactId();
+                Bimename bimename = bimenameRepository.findOne(bimenameId);
+                if(bimename.getVaziateBimename().equals(VaziateBimename.DAEM))
                     artifact = bimename;
-                }
                 break;
 
             case "Elhaghiye":
-                if(     log.getArtifactState().equals("TAGHIR_NAHAYI_SHODE") ||
-                        log.getArtifactState().equals("FASKH_NAHAYI_SHODE") ||
-                        log.getArtifactState().equals("EBTAL_NAHAYI_SHODE")
+                Long elhaghiyeId = log.getArtifactId();
+                Elhaghiye elhaghiye = elhaghiyeRepository.findOne(elhaghiyeId);
+                if(     elhaghiye.getVaziateElhaghiye().equals(VaziateElhaghiye.TAGHIR_NAHAYI_SHODE) ||
+                        elhaghiye.getVaziateElhaghiye().equals(VaziateElhaghiye.FASKH_NAHAYI_SHODE) ||
+                        elhaghiye.getVaziateElhaghiye().equals(VaziateElhaghiye.EBTAL_NAHAYI_SHODE)
                         )
-                {
-                    Long elhaghiyeId = log.getArtifactId();
-                    Elhaghiye elhaghiye = elhaghiyeRepository.findOne(elhaghiyeId);
                     artifact = elhaghiye;
-                }
                 break;
 
             case "HavaleKhesarat":

@@ -16,7 +16,7 @@ public interface IApplicationService {
     Pishnahad sabtePishnahad(Bimename bimename);
     Optional<Warning> sodooreBimename(Bimename bimename);
     Bimename sodooreBimenameAgency(AgencyBimenameInfo info);
-    Elhaghiye sabteElhaghiyeTaghir(Elhaghiye elhaghiye);
+    Optional<Warning> sabteElhaghiyeTaghir(Elhaghiye elhaghiye);
     Optional<Warning> sabteKhesarat(Khesarat khesarat);
     Khesarat sabteKhesaratHavales(Khesarat khesarat);
     Optional<Warning> sabteElhaghiyeEbtal(Elhaghiye elhaghiye);

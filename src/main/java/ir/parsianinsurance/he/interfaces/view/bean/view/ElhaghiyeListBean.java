@@ -146,8 +146,21 @@ public class ElhaghiyeListBean implements Serializable{
         this.selectedItemRow = selectedItemRow;
     }
 
+    public boolean mojavezeElhaghiyeTayidShode(){
+
+        return  selectedElhaghiye!=null &&
+                selectedElhaghiye.getVaziateElhaghiye() != null &&
+                selectedElhaghiye.getVaziateElhaghiye().equals(VaziateElhaghiye.TAYIDE_MOJAVEZ);
+    }
+
     @WebAction(toState = StateName.NAMAYESH_ELHAGHIYE)
     public void namayeshElhaghiye() {
+        elhaghiyeBean.setElhaghiye(selectedElhaghiye);
+        setSelectedItemRow(-1);
+    }
+
+    @WebAction(toState = StateName.TAEEDE_ELHAGHIYE_TAGHIRAT)
+    public void sodoorElhaghiyePasAzTayidMojavez() {
             elhaghiyeBean.setElhaghiye(selectedElhaghiye);
         setSelectedItemRow(-1);
     }

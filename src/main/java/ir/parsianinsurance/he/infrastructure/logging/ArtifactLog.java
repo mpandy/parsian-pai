@@ -23,14 +23,12 @@ public class ArtifactLog {
     private Boolean bimeMarkaziDone;
     private String artifactType;
     private Long artifactId;
-    private String artifactState;
     private String creatorUsername;
 
-    public ArtifactLog(String username, String artifactType, Long id, String state) {
+    public ArtifactLog(String username, String artifactType, Long id) {
         this.creatorUsername = username;
         this.artifactType = artifactType;
         this.artifactId = id;
-        this.artifactState = state;
         this.createdDate = DateUtil.timeStamp();
         this.sanamDone = false;
         this.bimeMarkaziDone = false;
@@ -73,14 +71,6 @@ public class ArtifactLog {
 
     public void setBimeMarkaziDone(Boolean bimeMarkaziDone) {
         this.bimeMarkaziDone = bimeMarkaziDone;
-    }
-
-    public String getArtifactState() {
-        return artifactState;
-    }
-
-    public void setArtifactState(String artifactType) {
-        this.artifactState = artifactType;
     }
 
     public Long getArtifactId() {

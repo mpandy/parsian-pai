@@ -97,6 +97,9 @@ public class ArtifactDocListBean implements Serializable {
         if(artifactDoc instanceof SaghfeSodoorArtifactDoc)
             return setDestinationForAnySaghf(artifactDoc);
 
+        if(artifactDoc instanceof ElhaghiyeSaghfeSodoorArtifactDoc)
+            return setDestinationForAnySaghf(artifactDoc);
+
         if(artifactDoc instanceof SaghfeKhesaratFotArtifactDoc)
             return setDestinationForAnySaghf(artifactDoc);
 

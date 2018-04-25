@@ -124,19 +124,27 @@
 
     <p:outputPanel id="actions" styleClass="operationpanelnavbar">
 
+        <p:commandButton value="#{msg['taeedeSodoorElhaghiye']}"
+                         actionListener="#{elhaghiyeBean.taeedeSodoorElhaghiye}"
+                         icon="fa fa-save"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT]) and elhaghiyeListBean.mojavezeElhaghiyeTayidShode()}"
+        />
+
         <p:commandButton value="#{msg['tayidenahayieelhaghiye']}"
                          actionListener="#{elhaghiyeBean.sabtNahayiElhaghiye}"
                          icon="fa fa-save"
                          styleClass="matnfarsi"
                          style="border-color:#303030; border-width: 2px;"
-                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT])}"
+                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT]) and !elhaghiyeListBean.mojavezeElhaghiyeTayidShode()}"
         />
 
         <p:commandButton value="#{msg['eslahetaghirebimename']}" icon="fa fa-external-link"
                          actionListener="#{elhaghiyeBean.eslahetaghirebimename}"
                          styleClass="matnfarsi"
                          style="border-color:#303030; border-width: 2px;"
-                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT])}"
+                         rendered="#{mainView.inAnyOf([state.TAEEDE_ELHAGHIYE_TAGHIRAT]) and !elhaghiyeListBean.mojavezeElhaghiyeTayidShode()}"
         />
 
         <p:commandButton value="#{msg['mohasebeebtal']}" icon="fa fa-calculator"

@@ -186,6 +186,13 @@ public class ArtifactDocService implements IArtifactDocService {
     }
 
     @Override
+    public void addElhaghiyeSaghfeSodoorArtifactDoc(Elhaghiye elhaghiye) {
+        ElhaghiyeSaghfeSodoorArtifactDoc ad = ArtifactDocFactory.newElhaghiyeSaghfArtifactDoc( userBean.getCurrentUser());
+        ad.setElhaghiye(elhaghiye);
+        ebtalArtifactDocRepository.save(ad);
+    }
+
+    @Override
     public void addKhesaratFotArtifactDoc(KhesaratCase khesaratCase) {
         SaghfeKhesaratFotArtifactDoc ad = ArtifactDocFactory.newSaghfeKhesaratFotArtifactDoc(userBean.getCurrentUser());
         ad.setKhesarateGhabelePardakhtFot(khesaratCase.getKhesarat_ghabl_pardakht());

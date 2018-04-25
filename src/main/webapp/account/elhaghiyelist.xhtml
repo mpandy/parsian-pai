@@ -102,6 +102,15 @@
         />
         </shiro:hasPermission>
 
+        <shiro:hasPermission name="NAMAYESHE_JOZIATE_ELHAGHIYE">
+        <p:commandButton value="#{msg['sodoor']}" icon="fa fa-file-text-o"
+                         actionListener="#{elhaghiyeListBean.sodoorElhaghiyePasAzTayidMojavez}"
+                         styleClass="matnfarsi"
+                         style="border-color:#303030; border-width: 2px;"
+                         rendered="#{mainView.inAnyOf([state.ELHAGHIYE_SELECTED]) and elhaghiyeListBean.mojavezeElhaghiyeTayidShode()}"
+        />
+        </shiro:hasPermission>
+
         <shiro:hasPermission name="CHAP_ELHAGHIYE">
         <p:commandButton value="#{msg['chapelhaghiye']}" icon="fa fa-print"  ajax="false"
                          action="#{elhaghiyeListBean.printElhaghiye}" styleClass="matnfarsi"

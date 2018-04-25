@@ -43,6 +43,11 @@ public class ArtifactDocFactory {
         return (EbtalArtifactDoc)newArtifactDoc(artifactDoc, currentUser);
     }
 
+    public static ElhaghiyeSaghfeSodoorArtifactDoc newElhaghiyeSaghfArtifactDoc(User currentUser) {
+        ArtifactDoc artifactDoc = new ElhaghiyeSaghfeSodoorArtifactDoc();
+        return (ElhaghiyeSaghfeSodoorArtifactDoc)newArtifactDoc(artifactDoc, currentUser);
+    }
+
     private static ArtifactDoc newArtifactDoc(ArtifactDoc artifactDoc, User user){
         artifactDoc.setAz(user.getVahed());
         artifactDoc.setBe(user.getVahed());

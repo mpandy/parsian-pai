@@ -13,16 +13,14 @@ import java.util.Set;
 public interface IArtifactDocService {
 
     void addSaghfeSodoorArtifactDoc(Bimename bimename);
-
-    boolean alreadyHasTayidShodeArfictDocOfKhesaratNaghseOzv(KhesaratCase khesaratCase);
-
-    boolean alreadyHasTayidShodeArfictDocOfKhesaratHazPez(KhesaratCase khesaratCase);
-
     void addTakhfifeModiriatiArtifactDoc(Bimename bimename);
     void addFaskhArtifactDoc(Elhaghiye elhaghiye);
     void addEbtalArtifactDoc(Elhaghiye elhaghiye);
+    void addElhaghiyeSaghfeSodoorArtifactDoc(Elhaghiye elhaghiye);
     void addKhesaratFotArtifactDoc(KhesaratCase khesaratCase);
 
+    boolean alreadyHasTayidShodeArfictDocOfKhesaratNaghseOzv(KhesaratCase khesaratCase);
+    boolean alreadyHasTayidShodeArfictDocOfKhesaratHazPez(KhesaratCase khesaratCase);
     boolean alreadyHasTayidShodeArfictDocOfSaghfeSodoor(Bimename bimename);
     boolean alreadyHasTayidShodeArfictDocOfTakhfifeModiriati(Bimename bimename);
     boolean alreadyHasTayidShodeArfictDocOfFaskh(Elhaghiye elhaghiye);

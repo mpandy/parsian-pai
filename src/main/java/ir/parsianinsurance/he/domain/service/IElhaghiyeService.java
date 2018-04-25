@@ -22,6 +22,8 @@ public interface IElhaghiyeService {
     List<Elhaghiye> searchElhaghiye(ElhaghiyeSearchModel searchElhaghiye, int rowLimit);
     void deprecateOldPishnahad(Pishnahad oldPishnahad);
 
+    void taeedeSodooreElhaghiyeyeMojavezDaar(Elhaghiye elhaghiye);
     Optional<Warning> addPossibleElhaghiyeFaskhArtifactDocs(Elhaghiye elhaghiye, User user);
     Optional<Warning> addPossibleElhaghiyeEbtalArtifactDocs(Elhaghiye elhaghiye, User user);
+    Optional<Warning> addPossibleElhaghiyeTaghirSaghfeSodoorArtifactDocs(Elhaghiye elhaghiye, User user);
 }

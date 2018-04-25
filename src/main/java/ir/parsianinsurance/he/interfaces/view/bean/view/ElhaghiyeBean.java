@@ -1,10 +1,7 @@
 package ir.parsianinsurance.he.interfaces.view.bean.view;
 
 import ir.parsianinsurance.he.domain.facade.IApplicationService;
-import ir.parsianinsurance.he.domain.model.Elhaghiye;
-import ir.parsianinsurance.he.domain.model.ElhaghiyeDiff;
-import ir.parsianinsurance.he.domain.model.ElhaghiyeFactory;
-import ir.parsianinsurance.he.domain.model.Pishnahad;
+import ir.parsianinsurance.he.domain.model.*;
 import ir.parsianinsurance.he.domain.model.enums.NoeElhaghiye;
 import ir.parsianinsurance.he.domain.rule.IAyinName24Rules;
 import ir.parsianinsurance.he.domain.rule.IPropertyRules;
@@ -20,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.*;
 
@@ -84,11 +82,24 @@ public class ElhaghiyeBean implements Serializable{
     @WebAction( toState = StateName.LIST_ELHAGHIYE,
                 successMessage = "sabteElhaghiye",
                 validator = SabteElhaghiyeValidator.class)
-    public void sabtNahayiElhaghiye(){
+    public Optional<Warning> sabtNahayiElhaghiye(){
+
             elhaghiye.setPishnahad_new(bimenameBean.getBimename().getPishnahadeFaal());
             elhaghiye.setCreatedDate(DateUtil.now());
-            heService.sabteElhaghiyeTaghir(elhaghiye);
+            Optional<Warning> optionalWarning = heService.sabteElhaghiyeTaghir(elhaghiye);
             init();
+            return optionalWarning;
+
+    }
+
+    @WebAction( toState = StateName.LIST_ELHAGHIYE,
+                successMessage = "sabteElhaghiye")
+    public void taeedeSodoorElhaghiye(){
+
+            elhaghiye.beVaziate(VaziateElhaghiye.TAGHIR_NAHAYI_SHODE);
+            elhaghiye.setNoe_elhaghie(NoeElhaghiye.TAGHIR);
+            elhaghiyeDomainService.taeedeSodooreElhaghiyeyeMojavezDaar(elhaghiye);
+
     }
 
     @WebAction( toState = StateName.LIST_BIMENAME,

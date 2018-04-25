@@ -87,13 +87,13 @@ public class SanamJob {
         String daryaftKonandehKhesarat = "";
         String shomareHavaleKhesarat = "";
         String type = "";
-
+        String shaba = "";
 
         if (artifact instanceof Bimename)
         {
             description = "Policy";
             amount = String.valueOf(((Bimename)artifact).getPishnahadeFaal().getHagheBime().getHaghe_bime_ghabelepardakht());
-            rcptName = ((Bimename)artifact).getPishnahadeFaal().getBimeShode().getShakhseHaghighi().toString();
+            rcptName = ((Bimename)artifact).getPishnahadeFaal().getBimeGozar().toString();
             identifier = ((Bimename)artifact).getShomare();
             uniqueCode = "ACC_BIMENAME_"+((Bimename)artifact).getId();
             codeVahedeSodor = ((Bimename)artifact).getVahedeSodoor().getCode();
@@ -159,11 +159,8 @@ public class SanamJob {
             daryaftKonandehKhesarat = ((HavaleKhesarat)artifact).getName_daryaft_konande();
             isReal = isReal(((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal());
             type = "HAVALE_KHESARAT";
-            rcptName = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getBimeShode().getShakhseHaghighi().toString();
-
-//            rcptName va codeNamayande
-//
-//                shaba bayad valid bashe
+            rcptName = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getBimeGozar().toString();
+            shaba = ((HavaleKhesarat)artifact).getEttelaateShaba();
         }
 
         Map<String, String> sanam = new HashMap<>();
@@ -182,6 +179,7 @@ public class SanamJob {
         sanam.put("shomareHavaleKhesarat", shomareHavaleKhesarat);
         sanam.put("type", type);
         sanam.put("daryaftKonandehKhesarat", daryaftKonandehKhesarat);
+        sanam.put("shaba", shaba);
         sanam.put("isDolati", isDolati);
         sanam.put("isReal", isReal);
         sanam.put("field", field);

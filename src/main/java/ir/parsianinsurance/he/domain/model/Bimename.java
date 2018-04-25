@@ -146,4 +146,12 @@ public class Bimename implements Artifact, ArtifactDocAttachable {
         this.vahedeSodoor = vahedeSodoor;
     }
 
+    public Elhaghiye getNiazBeAkhzeMojavezElhaghiye(){
+        return  getElhaghiyes()
+                .stream()
+                .filter(e -> e.getVaziateElhaghiye().equals(VaziateElhaghiye.NIAZ_BE_AKHZE_MOJAVEZ))
+                .findFirst()
+                .get();
+    }
+
 }

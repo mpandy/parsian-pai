@@ -2,7 +2,9 @@ package ir.parsianinsurance.he.domain.service;
 
 import com.querydsl.jpa.impl.JPAQuery;
 import ir.parsianinsurance.he.domain.model.*;
+import ir.parsianinsurance.he.domain.model.enums.NoeTaahod;
 import ir.parsianinsurance.he.domain.model.enums.VahedType;
+import ir.parsianinsurance.he.domain.model.enums.VaziateBimename;
 import ir.parsianinsurance.he.infrastructure.Warning;
 import ir.parsianinsurance.he.infrastructure.repository.*;
 import ir.parsianinsurance.he.infrastructure.security.User;
@@ -13,6 +15,7 @@ import ir.parsianinsurance.he.interfaces.view.model.ElhaghiyeSearchModel;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -39,16 +42,25 @@ public class ElhaghiyeService implements IElhaghiyeService {
     BimeshodeRepository bimeshodeRepository;
 
     @Inject
+    BimenameRepository bimenameRepository;
+
+    @Inject
     ZinafRepository zinafRepository;
 
     @Inject
     EntityManager entityManager;
 
     @Inject
+    ElhaghiyeRepository elhaghiyeRepository;
+
+    @Inject
     UserBean userBean;
 
     @Inject
     IArtifactDocService artifactDocService;
+
+    @Inject
+    IBimenameService bimenameService;
 
     @Override
     public Set<ElhaghiyeDiff> elhaghiyeDiffs(Pishnahad oldPishnahad, Pishnahad newPishnahad) {
@@ -202,6 +214,14 @@ public class ElhaghiyeService implements IElhaghiyeService {
     }
 
     @Override
+    @Transactional
+    public void taeedeSodooreElhaghiyeyeMojavezDaar(Elhaghiye elhaghiye) {
+        elhaghiyeRepository.save(elhaghiye);
+        elhaghiye.getBimename().setVaziateBimename(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR);
+        bimenameRepository.save(elhaghiye.getBimename());
+    }
+
+    @Override
     public Optional<Warning> addPossibleElhaghiyeFaskhArtifactDocs(Elhaghiye elhaghiye, User user) {
 
             if(!artifactDocService.alreadyHasTayidShodeArfictDocOfFaskh(elhaghiye))
@@ -225,6 +245,19 @@ public class ElhaghiyeService implements IElhaghiyeService {
 
         return Optional.empty();
     }
+
+    @Override
+    public Optional<Warning> addPossibleElhaghiyeTaghirSaghfeSodoorArtifactDocs(Elhaghiye elhaghiye, User user) {
+
+        long saghfeSodoor = vahedRepository.findOne(user.getVahed().getId()).getSaghfe_sodoor();
+        if (saghfeSodoor < elhaghiye.getBimename().getPishnahadeFaal().getSarmayePooshesh(NoeTaahod.FOT)) {
+                artifactDocService.addElhaghiyeSaghfeSodoorArtifactDoc(elhaghiye);
+                return Optional.of(Warning.warn("sarmayefotBishtarAzSaghfeSodoorAst"));
+        }
+
+        return Optional.empty();
+    }
+
 
     private void filterForAll(JPAQuery query) {
 

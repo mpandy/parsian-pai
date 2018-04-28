@@ -1,13 +1,22 @@
 package ir.parsianinsurance.he.domain.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
 /**
  * Created by Mohammad on 5/27/2017.
  */
 
-@Embeddable
+@Entity
+@Table(name = "DMN_ELHAGHIYE_DIFF")
 public class ElhaghiyeDiff {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="elhaghiye_id")
+    private Elhaghiye elhaghiye;
 
     private String title;
     private String oldValue;
@@ -46,6 +55,13 @@ public class ElhaghiyeDiff {
         this.newValue = newValue;
     }
 
+    public Elhaghiye getElhaghiye() {
+        return elhaghiye;
+    }
+
+    public void setElhaghiye(Elhaghiye elhaghiye) {
+        this.elhaghiye = elhaghiye;
+    }
 
     public ElhaghiyeDiff swapNewAndOld(){
         return new ElhaghiyeDiff(this.title, this.newValue, this.oldValue);

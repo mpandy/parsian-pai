@@ -55,8 +55,7 @@ public class Elhaghiye implements Artifact, ArtifactDocAttachable {
     @OneToOne(cascade = CascadeType.PERSIST)
     private Pishnahad pishnahad_new;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "DMN_ELHAGHIYE_DIFFS")
+    @OneToMany(mappedBy = "elhaghiye", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Set<ElhaghiyeDiff> diffsList;
 
     private Long createdDate;

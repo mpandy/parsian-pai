@@ -148,6 +148,8 @@ public class ElhaghiyeBean implements Serializable{
                                                                                     pishnahadeFaal);
 
         elhaghiyeDiffSet.forEach(this::translateIfAvailable);
+        elhaghiyeDiffSet.forEach(diff -> diff.setElhaghiye(elhaghiye));
+
         elhaghiye.setDiffsList(elhaghiyeDiffSet);
         Long mablagh =  pishnahadeFaal.getHagheBime().getHaghe_bime_ghabelepardakht().longValue()-
                 elhaghiye.getPishnahad_old().getHagheBime().getHaghe_bime_ghabelepardakht().longValue();

@@ -128,9 +128,41 @@
     <p:dataTable var="bimename" value="#{bimenameListBean.bimenames}" styleClass="matnfarsi"
                  emptyMessage="#{msg['emptylist']}" id="bimenamelist_table"
                  rowStyleClass="#{index eq bimenameListBean.selectedItemRow ? 'highlight-row' : null}"
-                 rowIndexVar="index"  resizableColumns="true" tableStyle="text-align: center" scrollable="true">
+                 rowIndexVar="index" dir="rtl" resizableColumns="true" tableStyle="text-align: center">
 
-        <p:column headerText="#{msg['amaliat']}" exportable="false" width="80" style="text-align: center"
+        <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['shomare_pishnahad']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.shomare_pishnahad}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['shomareBimename']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{bimename.shomare}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['aztarikheSodoor']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.tarikhesodoor}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['bimegozar']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.bimeGozar}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['bimeshode']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.bimeShode}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['namayandegi']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.vahed}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['vaziateBimename']}" style="text-align: center; height: 10%" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{msg[bimename.vaziateBimename]}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['amaliat']}" exportable="false" width="90" style="text-align: center"
                   styleClass="matnfarsi">
 
             <h:form>
@@ -143,38 +175,6 @@
 
         </p:column>
 
-        <p:column headerText="#{msg['vaziateBimename']}" style="text-align: center; height: 10%" styleClass="matnfarsi" width="80">
-            <p:outputLabel style="font-family: byekan" value="#{msg[bimename.vaziateBimename]}"/>
-        </p:column>
-
-        <p:column headerText="#{msg['namayandegi']}" style="text-align: center" styleClass="matnfarsi">
-            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.vahed}"/>
-        </p:column>
-
-
-        <p:column headerText="#{msg['bimeshode']}" style="text-align: center" styleClass="matnfarsi">
-            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.bimeShode}"/>
-        </p:column>
-
-        <p:column headerText="#{msg['bimegozar']}" style="text-align: center" styleClass="matnfarsi">
-            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.bimeGozar}"/>
-        </p:column>
-
-        <p:column headerText="#{msg['aztarikheSodoor']}" style="text-align: center" styleClass="matnfarsi" width="95">
-            <p:outputLabel style="font-family: byekan" value="#{bimename.tarikhesodoor}"/>
-        </p:column>
-
-        <p:column headerText="#{msg['shomareBimename']}" style="text-align: center" styleClass="matnfarsi" width="150">
-            <p:outputLabel style="font-family: byekan" value=" #{bimename.shomare}"/>
-        </p:column>
-
-        <p:column headerText="#{msg['shomare_pishnahad']}" style="text-align: center" styleClass="matnfarsi" width="150">
-            <p:outputLabel style="font-family: byekan" value="#{bimename.pishnahadeFaal.shomare_pishnahad}"/>
-        </p:column>
-
-        <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
-            <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
-        </p:column>
 
     </p:dataTable>
 

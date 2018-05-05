@@ -14,6 +14,7 @@ public class UserFactory {
 
     public static User newSearchUser() {
         User user = new User();
+        user.setUsername("");
         return user;
     }
 

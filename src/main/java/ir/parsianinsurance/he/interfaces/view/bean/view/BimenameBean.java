@@ -339,9 +339,10 @@ public class BimenameBean implements Serializable{
 
     @WebAction( toState = StateName.TAEEDE_ELHAGHIYE_TAGHIRAT,
                 validator = {   PreMohasebeHagheBimeValidator.class,
-                                MohasebeHagheBimeValidator.class})
+                                MohasebeHagheBimeValidator.class,
+                                SabtePishnahadHEValidator.class,
+                                SodoorBimenameValidator.class})
     public void taeedElhaghiyeTaghirat() {
-
         Pishnahad pishnahadeFaal = getBimename().getPishnahadeFaal();
         int modat = pishnahadeFaal.modatBimename();
         pishnahadeFaal.mohasebeyeHagheBime( propertyRules.getSinglesDoubleParam("nerkheMaliat"),

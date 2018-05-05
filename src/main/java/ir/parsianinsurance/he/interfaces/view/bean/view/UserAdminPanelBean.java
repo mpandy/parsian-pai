@@ -30,6 +30,9 @@ public class UserAdminPanelBean implements Serializable{
     @Inject
     IPropertyRules propertyRules;
 
+    @Inject
+    transient ResourceBundle bundle;
+
     private User newKarbar;
     private boolean karbarDialogVisible;
     private boolean showNewPasswordCheckBox;
@@ -64,12 +67,20 @@ public class UserAdminPanelBean implements Serializable{
         karbarDialogVisible = true;
     }
 
+    public String translateRoles(String roles){
+        String output = "";
+        List<Role> rolesList = RoleFactory.roleListFromString(roles);
+        for(Role role : rolesList)
+            output += bundle.getString(role.name())+" / ";
+        return output.trim();
+    }
+
     public void removeKarbar(User user){
         userService.removeUser(user);
     }
 
     public void search(){
-        userList = userService.searchUser();
+        userList = userService.searchUser(searchUser.getUsername());
     }
 
     public void addOrEditKarbar() {

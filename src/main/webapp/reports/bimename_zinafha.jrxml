@@ -41,37 +41,37 @@
 				<textFieldExpression><![CDATA[$F{nesbat_ba_bimeshode}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="436" y="0" width="29" height="20" uuid="53508f34-00df-44ce-9d87-203480ba058c"/>
+				<reportElement style="style1" x="436" y="0" width="29" height="20" uuid="53508f34-00df-44ce-9d87-203480ba058c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="465" y="0" width="52" height="20" uuid="84726493-1a20-452d-b525-c9b2413e2e6c"/>
+				<reportElement style="style1" x="465" y="0" width="52" height="20" uuid="84726493-1a20-452d-b525-c9b2413e2e6c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{name_khanevadegi}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="326" y="0" width="66" height="20" uuid="2cf6fbbc-a002-4ea3-8279-8092c53878fd"/>
+				<reportElement style="style1" x="326" y="0" width="66" height="20" uuid="2cf6fbbc-a002-4ea3-8279-8092c53878fd"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{shomare_shenasname}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="392" y="0" width="44" height="20" uuid="e8722bcd-ed4d-42dd-aae0-d56653b85fe0"/>
+				<reportElement style="style1" x="392" y="0" width="44" height="20" uuid="e8722bcd-ed4d-42dd-aae0-d56653b85fe0"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{name_pedar}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="261" y="0" width="65" height="20" uuid="6f5dd00a-9200-4de1-83cf-61f2c4b76451"/>
+				<reportElement style="style1" x="261" y="0" width="65" height="20" uuid="6f5dd00a-9200-4de1-83cf-61f2c4b76451"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{kode_meli}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="208" y="0" width="53" height="20" uuid="34d6c489-ddad-4402-b843-1b7753c57988"/>
+				<reportElement style="style1" x="208" y="0" width="53" height="20" uuid="34d6c489-ddad-4402-b843-1b7753c57988"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{olaviat_khesarat}.getIndexValue()+1]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="1" y="0" width="136" height="20" uuid="523a554a-c492-4e56-bf90-2ab07490ac5e"/>
+				<reportElement style="style1" x="1" y="0" width="136" height="20" uuid="523a554a-c492-4e56-bf90-2ab07490ac5e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{zarib_sahm}]]></textFieldExpression>
 			</textField>

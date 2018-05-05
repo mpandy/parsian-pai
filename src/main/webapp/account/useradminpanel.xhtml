@@ -35,7 +35,7 @@
             </p:column>
 
             <p:column headerText="#{msg['roles']}" styleClass="matnfarsi">
-                #{nextkarbar.roles}
+                <p:outputLabel value="#{userAdminPanelBean.translateRoles(nextkarbar.roles)}"/>
             </p:column>
 
             <p:column headerText="#{msg['vahedeMahaleKhedmat']}" styleClass="matnfarsi">
@@ -48,8 +48,6 @@
                 <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
                                  actionListener="#{userAdminPanelBean.editKarbar(nextkarbar)}"
                                  update="karbarantable newkarbardialog"/>
-                <p:commandButton icon="fa fa-trash" value="#{msg['hazf']}" styleClass="matnfarsi"
-                                 actionListener="#{userAdminPanelBean.removeKarbar(nextkarbar)}"/>
                 </h:form>
             </p:column>
 

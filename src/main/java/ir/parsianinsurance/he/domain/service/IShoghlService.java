@@ -11,6 +11,6 @@ public interface IShoghlService {
 
     void saveShoghl(Shoghl shoghl);
     void removeShoghl(Shoghl shoghl);
-    List<Shoghl> searchShoghl();
+    List<Shoghl> searchShoghl(String name);
     List<Shoghl> autocomplete(String name);
 }

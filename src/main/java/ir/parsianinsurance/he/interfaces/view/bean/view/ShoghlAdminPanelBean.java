@@ -51,7 +51,7 @@ public class ShoghlAdminPanelBean implements Serializable {
     }
 
     public void search(){
-        shoghlList = shoghlService.searchShoghl();
+        shoghlList = shoghlService.searchShoghl(searchShoghl.getName());
     }
 
     public void addOrEdittabaghekhatar() {

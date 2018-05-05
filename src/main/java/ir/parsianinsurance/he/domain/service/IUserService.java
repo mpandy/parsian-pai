@@ -24,7 +24,7 @@ public interface IUserService {
     List<User> autocompleteBazaryab(String name);
     void saveUser(User user);
     void removeUser(User user);
-    List<User> searchUser();
+    List<User> searchUser(String username);
     void changePassword(User user, String newPassword);
     List<String> validateChangePassword(User user, ChangePssword changePssword);
     void login(String username, String password, boolean rememberMe);

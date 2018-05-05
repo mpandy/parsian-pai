@@ -33,8 +33,11 @@ public class ShoghlService implements IShoghlService{
     }
 
     @Override
-    public List<Shoghl> searchShoghl() {
-        return shoghlRepository.findTop5ByOrderByIdDesc();
+    public List<Shoghl> searchShoghl(String name) {
+        if(name.trim().isEmpty())
+            return shoghlRepository.findTop5ByOrderByIdDesc();
+        else
+            return shoghlRepository.findByNameContains(name);
     }
 
     @Override

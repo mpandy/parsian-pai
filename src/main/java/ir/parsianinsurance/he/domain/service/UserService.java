@@ -145,8 +145,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public List<User> searchUser() {
-        return userRepository.findTop5ByOrderByIdDesc();
+    public List<User> searchUser(String username) {
+        if(username.trim().isEmpty())
+            return userRepository.findTop5ByOrderByIdDesc();
+        else
+            return userRepository.findByUsernameContains(username);
+
     }
 
     @Override

@@ -191,8 +191,8 @@ public class ElhaghiyeService implements IElhaghiyeService {
 
         boolean filterApplied = filterByUserCriteriaAppliedForElhaghiye(query, searchedElhaghiye);
 
-        if(!filterApplied)
-            query.limit(rowLimit);
+//        if(!filterApplied)
+//            query.limit(rowLimit);
 
         query.orderBy(QElhaghiye.elhaghiye.id.desc());
         return query.fetch();

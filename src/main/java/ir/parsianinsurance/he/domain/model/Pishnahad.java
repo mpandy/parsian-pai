@@ -349,17 +349,6 @@ public class Pishnahad {
             return 0d;
         }
     }
-    public String formatKhatarateEzafi() {
-        if (getKhatarEzafis().size() != 0) {
-            String returnString = "";
-            for (KhatarEzafi khatarEzafi : getKhatarEzafis())
-                returnString += (khatarEzafi.getNoekhatarezafi() + " - ");
-
-            return returnString.substring(0, returnString.length() - 3);
-        } else {
-            return null;
-        }
-    }
 
     public double getNerkheZelze(){
         for(KhatarEzafi khatarEzafi : getKhatarEzafis())

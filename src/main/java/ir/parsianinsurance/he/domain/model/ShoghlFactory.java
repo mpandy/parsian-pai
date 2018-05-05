@@ -16,6 +16,7 @@ public class ShoghlFactory {
 
     public static Shoghl newSearchShoghl() {
         Shoghl shoghl = new Shoghl();
+        shoghl.setName("");
         return shoghl;
     }
 

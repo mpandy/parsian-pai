@@ -19,6 +19,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,6 +45,7 @@ public class PrintService implements IPrintService {
     public JasperPrint printBimename(Bimename bimename, ServletContext context) throws JRException, IOException {
 
         BimenamePrint bimenamePrint = new BimenamePrint();
+
         bimenamePrint.setBimename(bimename);
 
         if(bimename.getPishnahadeFaal().getNoeBimegozar().equals(NoeShakhs.HAGHIGHI))
@@ -61,6 +63,7 @@ public class PrintService implements IPrintService {
         JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(bimenamePrints);
         Map parameters = new HashMap();
 
+        parameters.put("khatareEzafi", translateKhatarateEzafe(bimename));
         parameters.put("realPath", context.getRealPath("/")+"\\reports\\");
         parameters.put("maliat", (propertyRules.getSinglesDoubleParam("nerkheMaliat")* bimename.getPishnahadeFaal().getHagheBime().getHaghe_bime_ghabelepardakht()+""));
 
@@ -159,5 +162,15 @@ public class PrintService implements IPrintService {
         return jasperPrint;
     }
 
+    private String translateKhatarateEzafe(Bimename bimename) {
+        if (bimename.getPishnahadeFaal().getKhatarEzafis().size() != 0) {
+            String returnString = "";
+            for (KhatarEzafi khatarEzafi : bimename.getPishnahadeFaal().getKhatarEzafis())
+                returnString += (bundle.getString(khatarEzafi.getNoekhatarezafi().name()) + " - ");
 
+            return returnString.substring(0, returnString.length() - 3);
+        } else {
+            return null;
+        }
+    }
 }

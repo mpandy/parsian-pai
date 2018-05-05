@@ -29,12 +29,12 @@
                 #{nextnamayande.name}
             </p:column>
 
-            <p:column headerText="#{msg['codenamayandegi']}" styleClass="matnfarsi" style="text-align: center">
-                <p:outputLabel style="font-family: byekan" value=" #{nextnamayande.codeNamayandegi}"/>
+            <p:column headerText="#{msg['code']}" styleClass="matnfarsi" style="text-align: center">
+                <p:outputLabel style="font-family: byekan" value=" #{nextnamayande.code}"/>
             </p:column>
 
             <p:column headerText="#{msg['namayandetype']}" styleClass="matnfarsi" style="text-align: center">
-                #{nextnamayande.vahedType}
+                <p:outputLabel value="#{msg[nextnamayande.vahedType]}"/>
             </p:column>
 
             <p:column headerText="#{msg['sarparast']}" styleClass="matnfarsi" style="text-align: center">

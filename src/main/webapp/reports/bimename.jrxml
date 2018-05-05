@@ -2,11 +2,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ddd8662-d55b-43a3-8ac2-9526eb6744ad">
 	<property name="ireport.zoom" value="1.3636363636363837"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="720"/>
+	<property name="ireport.y" value="816"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
 	<style name="heading" fontName="BNazanin" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<parameter name="khatareEzafi" class="java.lang.String"/>
 	<parameter name="realPath" class="java.lang.String"/>
 	<parameter name="maliat" class="java.lang.String"/>
 	<field name="bimename" class="ir.parsianinsurance.he.domain.model.Bimename"/>
@@ -751,8 +752,8 @@
 				<reportElement x="336" y="120" width="1" height="19" uuid="fe9df30b-9d8f-4dcf-a245-e5120cd037c6"/>
 			</line>
 			<textField isBlankWhenNull="true">
-				<reportElement x="43" y="126" width="218" height="13" uuid="fdccfd9f-c999-473f-a90d-e5944bb8a906"/>
-				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal}.formatKhatarateEzafi()]]></textFieldExpression>
+				<reportElement style="style1" x="43" y="126" width="218" height="13" uuid="fdccfd9f-c999-473f-a90d-e5944bb8a906"/>
+				<textFieldExpression><![CDATA[$P{khatareEzafi}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="55">

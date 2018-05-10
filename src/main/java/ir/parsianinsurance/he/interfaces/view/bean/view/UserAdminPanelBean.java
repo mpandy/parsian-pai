@@ -107,7 +107,7 @@ public class UserAdminPanelBean implements Serializable{
         boolean valid = true;
         List<String> errorMessages = new ArrayList<>();
 
-        if(newKarbar.getVahed() == null) {
+        if(!newKarbar.getRoles().contains(Role.BAZARYAB.name()) && newKarbar.getVahed() == null) {
             mainView.error("entekhabevahedelzamist");
             return false;
         }

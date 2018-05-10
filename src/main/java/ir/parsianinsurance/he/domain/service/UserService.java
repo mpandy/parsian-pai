@@ -2,6 +2,7 @@ package ir.parsianinsurance.he.domain.service;
 
 import com.querydsl.core.types.Predicate;
 import ir.parsianinsurance.he.domain.model.Vahed;
+import ir.parsianinsurance.he.domain.model.VahedFactory;
 import ir.parsianinsurance.he.domain.rule.IAccessRules;
 import ir.parsianinsurance.he.domain.rule.IPropertyRules;
 import ir.parsianinsurance.he.infrastructure.repository.UserRepository;
@@ -108,8 +109,8 @@ public class UserService implements IUserService {
     @Override
     public User buildUser(User user) {
 
-        Vahed vahed = vahedRepository.findOne(user.getVahed().getId());
-        user.setVahed(vahed);
+        if(user.getVahed() != null && user.getVahed().getId() != null)
+            user.setVahed(vahedRepository.findOne(user.getVahed().getId()));
 
         return user;
     }
@@ -132,8 +133,8 @@ public class UserService implements IUserService {
     @Override
     @Transactional
     public void saveUser(User user) {
-        Vahed vahedeMahalleKhedmat = vahedRepository.findOne(user.getVahed().getId());
-        user.setVahed(vahedeMahalleKhedmat);
+        if(user.getVahed()!=null && user.getVahed().getId()!=null)
+            user.setVahed(vahedRepository.findOne(user.getVahed().getId()));
         userRepository.save(user);
     }
 

@@ -51,13 +51,25 @@ public class SabteKhesaratValidator extends HEValidator{
         if (tarikhElameKhesarat.compareTo(tarikhhadese) == -1)
             errorMessages.add("tarikheelamekhesaratGhablAzHadese");
 
-        if(khesarat.getVaziateparvande().equals(VaziateParvandeKhesarat.ELAAM_BE_MAALI))
+        if(khesarat.getVaziateparvande().equals(VaziateParvandeKhesarat.ELAAM_BE_MAALI)) {
             validateKhesaratCasesForElamBeMali(errorMessages, khesarat.getKhesaratCases());
+            validateSaghfeTaahodat(errorMessages, khesarat.getKhesaratCases());
+        }
 
         validateKhesaratCasesSize(errorMessages, khesarat.getKhesaratCases());
 
         if(!errorMessages.isEmpty())
             throw new HeException(errorMessages);
+    }
+
+    private void validateSaghfeTaahodat(List<String> errorMessages, Set<KhesaratCase> khesaratCases) {
+
+        for(KhesaratCase khesaratCase : khesaratCases)
+            if(khesaratCase.getMablagh_mazad_bar_saghf()!=null && khesaratCase.getMablagh_mazad_bar_saghf()>0)
+            {
+                errorMessages.add("mablaghekhesaratbishazsaghfetaahodast");
+                return;
+            }
     }
 
     private void validateKhesaratCasesSize(List<String> errorMessages, Set<KhesaratCase> khesaratCases) {

@@ -115,6 +115,14 @@
             />
         </shiro:hasPermission>
 
+        <shiro:hasPermission name="CHAP_KHESARAT">
+            <p:commandButton value="#{msg['chapkhesarat']}" icon="fa fa-print"  ajax="false"
+                             action="#{khesaratListBean.printKhesarat}" styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.KHESARAT_SELECTED])}"
+            />
+        </shiro:hasPermission>
+
     </p:outputPanel>
 
 </h:form>

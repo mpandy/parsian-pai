@@ -2,12 +2,10 @@ package ir.parsianinsurance.he.infrastructure.service;
 
 import ir.parsianinsurance.he.domain.model.*;
 import ir.parsianinsurance.he.domain.model.enums.NoeShakhs;
+import ir.parsianinsurance.he.domain.model.enums.NoeTaahod;
 import ir.parsianinsurance.he.domain.rule.IPropertyRules;
 import ir.parsianinsurance.he.infrastructure.util.DateUtil;
-import ir.parsianinsurance.he.interfaces.report.AghsatPrint;
-import ir.parsianinsurance.he.interfaces.report.BimenamePrint;
-import ir.parsianinsurance.he.interfaces.report.ElhaghiyePrint;
-import ir.parsianinsurance.he.interfaces.report.HavaleKhesaratPrint;
+import ir.parsianinsurance.he.interfaces.report.*;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
@@ -99,6 +97,47 @@ public class PrintService implements IPrintService {
         ServletOutputStream servletOutputStream = httpServletResponse.getOutputStream();
         JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
         facesContext.responseComplete();
+    }
+
+    @Override
+    public JasperPrint printParvandekhesarat(Khesarat khesarat, ServletContext context) throws JRException, IOException {
+        KhesaratPrint khesaratPrint = new KhesaratPrint();
+        khesaratPrint.setKhesarat(khesarat);
+        for(KhesaratCase khesaratCase : khesarat.getKhesaratCases()) {
+            khesaratCase.setVaziatFarsi(bundle.getString(khesaratCase.getVaziat().name()));
+            khesaratCase.setNoeKhesaratFarsi(bundle.getString(khesaratCase.getNoe_khesarat().name()));
+        }
+        khesaratPrint.setMavared(new JRBeanCollectionDataSource(khesarat.getKhesaratCases()));
+
+        if(khesarat.getBimename().getPishnahadeFaal().getNoeBimegozar().equals(NoeShakhs.HAGHIGHI)) {
+            ShakhseHaghighi shakhs = (ShakhseHaghighi) khesarat
+                    .getBimename()
+                    .getPishnahadeFaal()
+                    .getBimeGozar()
+                    .getShakhs();
+            khesaratPrint.setBimegozarShakhsHaghighi(shakhs);
+        }
+
+        ArrayList<KhesaratPrint> khesaratPrints = new ArrayList<>();
+        khesaratPrints.add(khesaratPrint);
+        JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(khesaratPrints);
+        Map parameters = new HashMap();
+
+        parameters.put("sarmayefot", khesarat.getBimename().getPishnahadeFaal().getSarmayePooshesh(NoeTaahod.FOT));
+        parameters.put("sarmayenaghsozv", khesarat.getBimename().getPishnahadeFaal().getSarmayePooshesh(NoeTaahod.NAGHSOZV_AZKAROFTADEGI));
+        parameters.put("sarmayehazinepezeshki", khesarat.getBimename().getPishnahadeFaal().getSarmayePooshesh(NoeTaahod.HAZINE_PEZESHKI));
+        parameters.put("realPath", context.getRealPath("/")+"\\reports\\");
+
+        JasperCompileManager.compileReportToFile(context.getRealPath("/reports/chapkhesarat_mavared.jrxml"),
+                context.getRealPath("/reports/chapkhesarat_mavared.jasper"));
+
+        JasperCompileManager.compileReportToFile(context.getRealPath("/reports/chapkhesarat.jrxml"),
+                context.getRealPath("/reports/chapkhesarat.jasper"));
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(context.getResourceAsStream("/reports/chapkhesarat.jasper"), parameters, beanColDataSource);
+
+        return jasperPrint;
+
     }
 
     @Override

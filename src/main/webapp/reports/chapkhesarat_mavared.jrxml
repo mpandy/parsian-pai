@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bimename_khatareezafi" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="975b5ef3-154b-4323-909f-3b7c27c646cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.amaliat" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="0"/>
+	<style name="style1" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
+	<field name="noeKhesaratFarsi" class="java.lang.String"/>
+	<field name="vaziatFarsi" class="java.lang.String"/>
+	<field name="mablagh_khesarate_elamshode" class="java.lang.Long"/>
+	<field name="mablagh_khesarate_taeedshode" class="java.lang.Long"/>
+	<field name="khesarat_ghabl_pardakht" class="java.lang.Long"/>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement style="style1" x="418" y="0" width="101" height="21" uuid="c5c5f043-fef4-4381-9974-fb9e316c88a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noeKhesaratFarsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="311" y="0" width="101" height="21" uuid="02b3fbb5-1c60-40d3-a0e4-414da57968af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vaziatFarsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="209" y="0" width="101" height="21" uuid="88a539e4-c480-4ed8-8f48-bd07f9640a2d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mablagh_khesarate_elamshode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="106" y="0" width="101" height="21" uuid="1c8bd45a-7481-4ba6-a3e2-d6faec0362c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mablagh_khesarate_taeedshode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style1" x="3" y="0" width="101" height="21" uuid="7301e07c-ca7e-4d69-9d63-c841ba7ed260"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="12" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{khesarat_ghabl_pardakht}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

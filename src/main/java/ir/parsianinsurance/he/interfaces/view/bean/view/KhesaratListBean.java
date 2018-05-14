@@ -11,12 +11,20 @@ import ir.parsianinsurance.he.infrastructure.workflow.WebAction;
 import ir.parsianinsurance.he.interfaces.view.bean.session.MainView;
 import ir.parsianinsurance.he.interfaces.view.model.KhesaratSearchModel;
 import ir.parsianinsurance.he.interfaces.view.uiflow.StateName;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperPrint;
 
 import javax.annotation.PostConstruct;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -50,7 +58,7 @@ public class KhesaratListBean implements Serializable{
     MainView mainView;
 
     @Inject
-    IPrintService iPrintService;
+    IPrintService printService;
 
     @Inject
     FacesContext facesContext;
@@ -124,6 +132,26 @@ public class KhesaratListBean implements Serializable{
     public void setSelectedKhesarat(Khesarat selectedKhesarat) {
         this.selectedKhesarat = selectedKhesarat;
         hideShowOperationButtons();
+    }
+
+    public void printKhesarat()
+    {
+        try {
+            ExternalContext externalContext = facesContext.getExternalContext();
+            ServletContext servletContext = (ServletContext) externalContext.getContext();
+            JasperPrint jasperPrint = printService.printParvandekhesarat(getSelectedKhesarat(), servletContext);
+            HttpServletResponse httpServletResponse = (HttpServletResponse) externalContext.getResponse();
+            httpServletResponse.addHeader("Content-disposition", "attachment; filename=report.pdf");
+            ServletOutputStream servletOutputStream = httpServletResponse.getOutputStream();
+            JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+            facesContext.responseComplete();
+        } catch (JRException e) {
+            e.printStackTrace();
+            mainView.error(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+            mainView.error(e.getMessage());
+        }
     }
 
     public KhesaratSearchModel getSearchKhesarat() {

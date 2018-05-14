@@ -46,109 +46,15 @@
     <favorites_list name="parsian_he" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KhesaratBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratBean.java">
+    <leaf>
+      <file leaf-file-name="PrintService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/PrintService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1628">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="khesaratcase.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/account/dialog/khesaratcase.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="89" column="94" lean-forward="false" selection-start-line="89" selection-start-column="94" selection-end-line="89" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SabteKhesaratValidator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/SabteKhesaratValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="69" column="72" lean-forward="false" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsfMessages.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/JsfMessages.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="861" column="37" lean-forward="false" selection-start-line="861" selection-start-column="0" selection-end-line="861" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Khesarat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2310">
-              <caret line="150" column="20" lean-forward="false" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
+            <state relative-caret-position="82">
+              <caret line="107" column="92" lean-forward="false" selection-start-line="107" selection-start-column="92" selection-end-line="107" selection-end-column="92" />
               <folding>
-                <element signature="e#3860#3861#0" expanded="true" />
-                <element signature="e#3896#3897#0" expanded="true" />
+                <element signature="method#printAghsat#0;class#PrintService#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KhesaratCase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/KhesaratCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-              <folding>
-                <element signature="e#3900#3901#0" expanded="true" />
-                <element signature="e#3947#3948#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoeHadese.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeHadese.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoeTaahod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeTaahod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaahodeBimegarService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/TaahodeBimegarService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArtifactDocService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ArtifactDocService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="81" column="57" lean-forward="false" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -170,36 +76,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>1.8</find>
-      <find>gorooheBimename</find>
-      <find>YEK</find>
-      <find>codenamayandegi</find>
-      <find>formatKhatarateEzafi</find>
-      <find>realPath</find>
-      <find>khatareEzafi</find>
-      <find>entityManager</find>
-      <find>address</find>
-      <find>sodoo</find>
-      <find>translateRoles</find>
-      <find>KARSHENAS_SODOOR</find>
-      <find>find</find>
-      <find>/help</find>
-      <find>BimenameFilter</find>
-      <find>query</find>
-      <find>perm</find>
-      <find>permi</find>
-      <find>prof</find>
-      <find>elamb</find>
-      <find>NAMAYESHE_JOZIATE_KHESARAT</find>
-      <find>bimename_khatareezafi.jrxml</find>
-      <find>chapkhesarat.jrxml</find>
-      <find>jrxml</find>
       <find>chap</find>
-      <find>khatar</find>
-      <find>mojad</find>
-      <find>taaho</find>
-      <find>mablagh_kharej_az_taahoh</find>
-      <find>maza</find>
+      <find>CHAP_KHESARAT</find>
+      <find>zinaf</find>
+      <find>bimename</find>
+      <find>tarikhe_hadese</find>
+      <find>elam</find>
+      <find>taah</find>
+      <find>FOT</find>
+      <find>zinafha</find>
+      <find>currentDate</find>
+      <find>realpa</find>
+      <find>shomare_parvande</find>
+      <find>shor</find>
+      <find>subre</find>
+      <find>bimename.pishnahadeFaal.bimeGozar</find>
+      <find>bimegozarShakhsHaghighi</find>
+      <find>khesarat.bimename.pishnahadeFaal</find>
+      <find>khesarat.bimename.pishnahadeFaal.bimeGozar</find>
+      <find>khesarat.bimename.pishnahadeFaal.bimeShode</find>
+      <find>khesarat.bimename.pishnahadeFaal.bimeGozar.shakhs</find>
+      <find>bimename.pishnahadeFaal.bimeGozar.shakhs</find>
+      <find>bimename.pishnahadeFaal.bimeShode.shakhseHaghighi</find>
+      <find>pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas</find>
+      <find>pishnahadeFaal.bimeShode.shakhseHaghighi.ettelaateTamas</find>
+      <find>bimename.pishnahadeFaal.vahed</find>
+      <find>$F{khesarat}.get</find>
+      <find>&quot;105</find>
+      <find>VaziateKhesaratCase</find>
+      <find>style1</find>
+      <find>bundle</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -220,16 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/repository/ElhaghiyeRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Bimename.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/IArtifactDocService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/ArtifactDocFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ArtifactDocService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/ElhaghiyeSaghfeSodoorArtifactDoc.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/account/dialog/zinaf.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/SabteElhaghiyeValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/account/elhaghiye.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/IElhaghiyeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/ElhaghiyeListBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/SaghfeSodoorArtifactDoc.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/ArtifactDocListBean.java" />
@@ -264,13 +160,23 @@
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/UserAdminPanelBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/PrintService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/workflow/WebActionInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/rule/AccessRules.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameListBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeTaahod.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/JsfMessages.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/SabteKhesaratValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/IPrintService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/Permission.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/account/khesaratlist.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameListBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratListBean.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/JsfMessages.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/report/KhesaratPrint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/PreMohasebeHagheBimeValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/PishnahadService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/reports/chapkhesarat.jrxml" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/KhesaratCase.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/reports/chapkhesarat_mavared.jrxml" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/PrintService.java" />
       </list>
     </option>
   </component>
@@ -352,7 +258,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -424,6 +332,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="he" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="rule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="he" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
               <item name="validator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -442,16 +360,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
               <item name="interfaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -459,33 +367,7 @@
               <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
@@ -508,8 +390,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
@@ -574,22 +455,11 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -600,7 +470,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.379" />
     <property name="dynamic.classpath" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/parsian_he/src/main/java/ir/parsianinsurance/he/domain/model/Elhaghiye.java" />
   </component>
@@ -1342,7 +1212,11 @@
       <workItem from="1525673145429" duration="94000" />
       <workItem from="1525681403123" duration="6879000" />
       <workItem from="1525768171107" duration="7796000" />
-      <workItem from="1525943503864" duration="2036000" />
+      <workItem from="1525943503864" duration="3582000" />
+      <workItem from="1526046664875" duration="1025000" />
+      <workItem from="1526117099712" duration="6202000" />
+      <workItem from="1526198424748" duration="14684000" />
+      <workItem from="1526288070614" duration="10430000" />
     </task>
     <task id="LOCAL-00001">
       <created>1488614833668</created>
@@ -1684,7 +1558,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1040848000" />
+    <option name="totallyTimeSpent" value="1074735000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1711,7 +1585,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.61865795" sideWeight="0.4838946" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3535188" sideWeight="0.4838946" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.49341142" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59574467" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1727,7 +1601,6 @@
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.81996727" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4893617" sideWeight="0.49707174" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.295764" sideWeight="0.5231144" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1738,6 +1611,7 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24515393" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4893617" sideWeight="0.49707174" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1757,7 +1631,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5744681" sideWeight="0.4838946" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3535188" sideWeight="0.4838946" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.49341142" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.59574467" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1773,11 +1647,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2831424" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24515393" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.47688565" order="4" side_tool="false" content_ui="combo" x="464" y="105" width="437" height="517" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.295764" sideWeight="0.47688565" order="4" side_tool="false" content_ui="combo" x="464" y="105" width="437" height="517" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.81996727" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46481177" sideWeight="0.49707174" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4893617" sideWeight="0.49707174" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.295764" sideWeight="0.5231144" order="1" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -1915,7 +1789,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameListBean.java</url>
-          <line>103</line>
+          <line>100</line>
           <properties />
           <option name="timeStamp" value="278" />
         </line-breakpoint>
@@ -1991,8 +1865,14 @@
           <properties />
           <option name="timeStamp" value="315" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/PrintService.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="324" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="321" />
+      <option name="time" value="325" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2001,174 +1881,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/useradminpanel.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="74" lean-forward="false" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/dialog/user.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="51" column="84" lean-forward="true" selection-start-line="51" selection-start-column="84" selection-end-line="51" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/VahedFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/java/ir/parsianinsurance/he/domain/model/QBimeGozar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/BimeGozar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/repository/BimegozarRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/BimenameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="522" column="25" lean-forward="false" selection-start-line="522" selection-start-column="11" selection-end-line="522" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/BimenameFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/bimenameLoader/BimenameFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="52" column="38" lean-forward="true" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/uiflow/StateName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/uiflow/UIFlow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/main.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bimename.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="771" column="52" lean-forward="false" selection-start-line="771" selection-start-column="52" selection-end-line="771" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bimenamelist.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="129" column="37" lean-forward="true" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/RoleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/shiro.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/SecurityManagerRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/UserAdminPanelBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2068">
-          <caret line="111" column="25" lean-forward="false" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="70" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/he/WEB-INF/classes/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="59" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2176,7 +1892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5478">
           <caret line="249" column="41" lean-forward="false" selection-start-line="249" selection-start-column="32" selection-end-line="249" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2205,17 +1920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/session/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding>
-            <element signature="e#3271#3272#0" expanded="true" />
-            <element signature="e#3337#3338#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2249,65 +1953,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/rule/AccessRules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="64" column="77" lean-forward="false" selection-start-line="64" selection-start-column="77" selection-end-line="64" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/khesaratlist.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="84" column="31" lean-forward="true" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/PrintService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="44" column="32" lean-forward="false" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameListBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="257" column="50" lean-forward="false" selection-start-line="257" selection-start-column="50" selection-end-line="257" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/khesarat.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="207" column="65" lean-forward="true" selection-start-line="207" selection-start-column="65" selection-end-line="207" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Pishnahad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9372">
-          <caret line="559" column="29" lean-forward="false" selection-start-line="559" selection-start-column="29" selection-end-line="559" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/BimeMarkaziService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="134" column="68" lean-forward="false" selection-start-line="134" selection-start-column="68" selection-end-line="134" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2315,18 +1964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1430">
           <caret line="81" column="57" lean-forward="false" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="150" column="20" lean-forward="false" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
-          <folding>
-            <element signature="e#3860#3861#0" expanded="true" />
-            <element signature="e#3896#3897#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2334,66 +1971,1067 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1628">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/TaahodeBimegarService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="374">
           <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeTaahod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/KhesaratCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding>
-            <element signature="e#3900#3901#0" expanded="true" />
-            <element signature="e#3947#3948#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/account/dialog/khesaratcase.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
+        <state relative-caret-position="1958">
           <caret line="89" column="94" lean-forward="false" selection-start-line="89" selection-start-column="94" selection-end-line="89" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/JsfMessages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="861" column="37" lean-forward="false" selection-start-line="861" selection-start-column="0" selection-end-line="861" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/SabteKhesaratValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="69" column="72" lean-forward="false" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
+        <state relative-caret-position="76">
+          <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/report/HavaleKhesaratPrint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="218" column="52" lean-forward="false" selection-start-line="218" selection-start-column="52" selection-end-line="218" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/khesarat.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="224" column="50" lean-forward="true" selection-start-line="224" selection-start-column="50" selection-end-line="224" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/elhaghiye.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="147" column="10" lean-forward="true" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/rule/AccessRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="53" column="60" lean-forward="false" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bimenamelist.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="248" column="62" lean-forward="false" selection-start-line="248" selection-start-column="62" selection-end-line="248" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/elhaghiyelist.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="115" column="58" lean-forward="false" selection-start-line="115" selection-start-column="58" selection-end-line="115" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/ElhaghiyeListBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="189" column="16" lean-forward="false" selection-start-line="189" selection-start-column="16" selection-end-line="189" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/IPrintService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameListBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/khesaratlist.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="115" column="30" lean-forward="true" selection-start-line="115" selection-start-column="30" selection-end-line="115" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/JsfMessages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="232" column="23" lean-forward="false" selection-start-line="232" selection-start-column="23" selection-end-line="232" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/session/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reports/chaphavalekhesarat.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratListBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeTaahod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/TaahodFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="51" column="46" lean-forward="false" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/report/BimenamePrint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/PreMohasebeHagheBimeValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="78" column="32" lean-forward="true" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bimename.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="69" column="55" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Bimename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <marker date="1524645727785" expanded="false" signature="54:163" ph="..." />
+            <marker date="1524645727785" expanded="true" signature="165:205" ph="/**...*/" />
+            <marker date="1524645727785" expanded="true" signature="207:244" ph="@{...}" />
+            <marker date="1524645727785" expanded="true" signature="317:340" ph="@{...}" />
+            <marker date="1524645727785" expanded="false" signature="981:992" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1011:1017" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1067:1078" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1109:1115" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1155:1166" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1189:1195" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1255:1266" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1305:1311" ph=" }" />
+            <marker date="1524645727785" expanded="true" signature="1349:1360" ph=" { " />
+            <marker date="1524645727785" expanded="true" signature="1381:1387" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1444:1455" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1490:1496" ph=" }" />
+            <marker date="1524645727785" expanded="true" signature="1528:1539" ph=" { " />
+            <marker date="1524645727785" expanded="true" signature="1554:1560" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1604:1615" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1638:1644" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1687:1698" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1716:1722" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1780:1791" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1820:1826" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1851:1862" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1872:1878" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1910:1921" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="1934:1940" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="1989:2000" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="2023:2029" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="2098:2109" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="2148:2154" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="2196:2207" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="2229:2235" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="2296:2307" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="2344:2350" ph=" }" />
+            <marker date="1524645727785" expanded="true" signature="2402:2468" ph="{...}" />
+            <marker date="1524645727785" expanded="true" signature="2523:2591" ph="{...}" />
+            <marker date="1524645727785" expanded="true" signature="2652:2725" ph="{...}" />
+            <marker date="1524645727785" expanded="true" signature="2770:2827" ph="{...}" />
+            <marker date="1524645727785" expanded="true" signature="2881:2953" ph="{...}" />
+            <marker date="1524645727785" expanded="false" signature="2994:3005" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="3022:3028" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="3083:3094" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="3121:3127" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="3163:3174" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="3194:3200" ph=" }" />
+            <marker date="1524645727785" expanded="false" signature="3253:3264" ph=" { " />
+            <marker date="1524645727785" expanded="false" signature="3297:3303" ph=" }" />
+            <marker date="1524645727785" expanded="true" signature="3358:3577" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/PishnahadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Pishnahad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+          <folding>
+            <marker date="1525515624874" expanded="false" signature="53:503" ph="..." />
+            <marker date="1525515624874" expanded="true" signature="505:545" ph="/**...*/" />
+            <marker date="1525515624874" expanded="true" signature="547:585" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="615:638" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="1182:1229" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="1308:1356" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="1389:1469" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="1508:1588" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="2000:2105" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="2142:2247" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="2300:2380" ph="@{...}" />
+            <marker date="1525515624874" expanded="true" signature="2469:2574" ph="@{...}" />
+            <marker date="1525515624874" expanded="false" signature="2730:2741" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="2760:2766" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="2811:2822" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="2843:2849" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="2912:2923" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="2958:2964" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="2997:3008" ph=" { " />
+            <marker date="1525515624874" expanded="true" signature="3024:3030" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3076:3087" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3112:3118" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3151:3162" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3178:3184" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3230:3241" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3266:3272" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3322:3333" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3364:3370" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3411:3422" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3446:3452" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3514:3525" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3566:3572" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3609:3620" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3637:3643" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3694:3705" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3732:3738" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3780:3791" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3816:3822" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3886:3897" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="3940:3946" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="3987:3998" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4022:4028" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4090:4101" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4142:4148" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4191:4202" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4222:4228" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4288:4299" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4332:4338" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4378:4389" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4412:4418" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4478:4489" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4528:4534" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4559:4570" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4580:4586" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4618:4629" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4642:4648" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4687:4698" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4720:4726" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4784:4795" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4832:4838" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="4886:4897" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="4928:4934" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="5011:5082" ph="{...}" />
+            <marker date="1525515624874" expanded="false" signature="5129:5140" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5170:5176" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="5251:5320" ph="{...}" />
+            <marker date="1525515624874" expanded="false" signature="5363:5374" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5400:5406" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5472:5483" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5528:5534" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5563:5574" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5587:5593" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5632:5643" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5662:5668" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5708:5719" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5742:5748" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5808:5819" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5858:5864" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5895:5906" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="5922:5928" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="5972:5983" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6008:6014" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6051:6062" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6079:6085" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6136:6147" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6174:6180" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6217:6228" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6245:6251" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6302:6313" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6340:6346" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6383:6394" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6411:6417" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6468:6479" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6506:6512" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6551:6562" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6586:6592" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6652:6663" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6704:6710" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6750:6761" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6786:6792" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6854:6865" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6908:6914" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="6949:6960" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="6974:6980" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7026:7037" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7058:7064" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7115:7126" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7148:7154" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7224:7235" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7272:7278" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7325:7336" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7356:7362" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7426:7437" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7470:7476" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7513:7524" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7541:7547" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7601:7612" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7639:7645" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7690:7701" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7722:7728" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7791:7802" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7837:7843" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7879:7890" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7904:7910" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="7957:7968" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="7989:7995" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="8041:8563" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="8599:8827" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="8862:9110" ph="{...}" />
+            <marker date="1525515624874" expanded="false" signature="9150:9161" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="9181:9187" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="9244:9255" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="9288:9294" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="9347:9413" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="9466:9532" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="9578:9650" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="9715:9789" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="9848:9920" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="9964:10034" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10096:10168" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10210:10279" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10331:10407" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10460:10526" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10578:10648" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10713:10789" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10830:10888" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="10941:11007" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="11053:11117" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="11173:11241" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="11295:11362" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="11425:11505" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="11570:11652" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="11705:11771" ph="{...}" />
+            <marker date="1525515624874" expanded="false" signature="11808:11819" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="11836:11842" ph=" }" />
+            <marker date="1525515624874" expanded="false" signature="11893:11904" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="11931:11937" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="12031:13754" ph="{...}" />
+            <marker date="1525515624874" expanded="true" signature="13827:15917" ph="{...}" />
+            <marker date="1525515624874" expanded="false" signature="15949:15960" ph=" { " />
+            <marker date="1525515624874" expanded="false" signature="16033:16039" ph=" }" />
+            <marker date="1525515624874" expanded="true" signature="16096:16271" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reports/bimename.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="22" selection-end-column="99" />
+          <folding>
+            <marker date="1525516580168" expanded="true" signature="470:47345" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="3192:5358" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="3213:5343" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="3229:3769" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="3455:3699" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="3780:3991" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4001:4114" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4130:4424" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4289:4366" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4440:4768" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4627:4704" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4784:5051" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4920:4988" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="4999:5034" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5067:5333" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5203:5271" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5368:46614" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5410:11350" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5426:5776" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5611:5674" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5792:6155" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="5975:6038" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="6171:6604" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="6355:6418" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="6620:6990" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="6805:6868" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="7005:7125" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="7141:7561" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="7327:7496" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="7599:7950" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="7786:7849" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="7966:8275" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="8152:8215" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="8291:8592" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="8539:8575" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="8630:8986" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="8816:8879" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9002:9325" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9189:9252" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9263:9308" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9340:9458" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9474:9791" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9660:9723" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="9829:10211" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="10016:10079" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="10249:10485" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="10523:10801" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="10817:10986" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="11024:11340" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="11181:11223" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="11371:16439" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="11516:11633" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="11649:11965" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="11834:11897" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="12003:12314" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="12352:12720" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="12537:12590" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="12736:13038" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="12921:12984" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="13076:13379" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="13395:13699" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="13581:13644" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="13737:14072" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="14110:14379" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="14395:14639" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="14593:14622" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="14655:14957" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="14841:14904" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="14973:15151" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="15102:15134" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="15189:15455" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="15493:15757" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="15795:16046" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="16062:16429" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="16297:16360" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="16460:21171" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="16607:16973" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="16842:16905" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="16988:17105" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="17143:17394" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="17410:17712" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="17595:17658" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="17728:17972" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="17926:17955" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="17988:18290" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="18174:18237" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="18306:18484" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="18435:18467" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="18522:18791" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="18829:19165" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="19203:19469" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="19507:19875" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="19692:19745" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="19913:20221" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="20237:20541" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="20423:20486" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="20579:20843" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="20859:21161" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21044:21107" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21192:26788" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21207:21339" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21355:21716" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21590:21653" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21732:22047" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="21917:21980" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="22085:22414" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="22452:22708" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="22746:23014" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="23030:23272" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="23310:23570" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="23586:23756" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="23772:23947" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="23985:24248" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="24286:24554" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="24570:24747" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="24763:24944" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="24960:25135" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="25173:25444" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="25482:25754" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="25770:26073" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="25956:26019" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="26111:26428" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="26466:26778" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="26809:29307" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="26824:26941" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="26957:27311" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27192:27255" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27266:27294" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27327:27603" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27463:27526" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27619:27929" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27804:27867" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="27945:28247" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="28130:28193" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="28263:28571" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="28447:28510" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="28609:28843" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="28881:29115" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29131:29297" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29329:33546" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29344:29462" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29478:29883" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29714:29777" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29788:29866" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="29899:30247" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="30118:30181" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="30263:30590" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="30482:30535" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="30606:30939" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="30825:30878" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="30955:31284" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="31174:31227" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="31300:31641" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="31519:31582" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="31657:32014" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="31875:31938" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32030:32376" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32249:32312" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32386:32498" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32508:32620" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32630:32742" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32752:32864" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32874:32986" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="32996:33108" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="33118:33230" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="33245:33536" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="33568:40383" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="33583:33701" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="33717:34021" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="33888:33930" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34037:34312" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34208:34250" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34328:34606" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34499:34541" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34622:34906" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34794:34836" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="34922:35204" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35094:35136" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35220:35521" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35389:35431" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35537:35799" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35707:35749" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35815:36083" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="35985:36027" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36099:36369" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36269:36311" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36385:36666" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36553:36595" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36682:36949" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36851:36893" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="36965:37233" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37133:37175" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37243:37357" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37367:37479" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37489:37601" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37611:37723" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37733:37847" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37857:37969" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="37979:38092" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38102:38214" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38224:38338" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38348:38462" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38472:38587" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38597:38712" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38728:38976" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="38992:39275" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="39162:39204" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="39291:39554" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="39462:39504" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="39569:39876" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="39886:40000" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40010:40124" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40162:40373" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40404:41175" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40419:40536" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40574:40905" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40715:40778" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="40921:41165" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="41196:43656" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="41212:41452" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="41467:41603" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="41619:41804" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="41820:41995" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="42011:42178" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="42137:42161" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="42194:42382" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="42398:42568" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="42622:42955" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="42757:42810" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43009:43282" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43297:43646" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43432:43510" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43677:46603" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43692:43845" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43861:44037" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="43989:44020" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="44053:44228" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="44244:44429" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="44467:44719" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="44757:45009" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="45047:45275" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="45313:45619" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="45635:45812" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="45828:46005" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="46043:46349" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="46364:46593" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="46628:47329" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="46649:47314" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="46665:47005" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="46800:46841" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="47021:47304" ph="..." />
+            <marker date="1525516580168" expanded="true" signature="47193:47234" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reports/bimename_taahodebimegar.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="63" />
+          <folding>
+            <marker date="1523112203019" expanded="true" signature="499:3866" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1213:3850" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1254:3839" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1269:1387" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1402:1520" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1535:1653" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1668:1785" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1800:1916" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="1970:2298" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="2153:2195" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="2336:2695" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="2540:2603" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="2733:3058" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="2918:2960" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="3112:3434" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="3296:3338" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="3488:3829" ph="..." />
+            <marker date="1523112203019" expanded="true" signature="3693:3735" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+          <folding>
+            <marker date="1524294901201" expanded="false" signature="53:299" ph="..." />
+            <marker date="1524294901201" expanded="true" signature="301:341" ph="/**...*/" />
+            <marker date="1524294901201" expanded="true" signature="343:380" ph="@{...}" />
+            <marker date="1524294901201" expanded="true" signature="410:433" ph="@{...}" />
+            <marker date="1524294901201" expanded="true" signature="460:506" ph="@{...}" />
+            <marker date="1524294901201" expanded="true" signature="719:821" ph="@{...}" />
+            <marker date="1524294901201" expanded="false" signature="1509:1520" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="1530:1536" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="1577:1588" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="1612:1618" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="1680:1691" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="1732:1738" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="1777:1788" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="1810:1816" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="1874:1885" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="1922:1928" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="1972:1983" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2010:2016" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="2084:2095" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2142:2148" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="2197:2208" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2240:2246" ph=" }" />
+            <marker date="1524294901201" expanded="true" signature="2325:2398" ph="{...}" />
+            <marker date="1524294901201" expanded="false" signature="2433:2444" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2460:2466" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="2514:2525" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2550:2556" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="2601:2612" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2640:2646" ph=" }" />
+            <marker date="1524294901201" expanded="true" signature="2717:2782" ph="{...}" />
+            <marker date="1524294901201" expanded="false" signature="2838:2849" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="2876:2882" ph=" }" />
+            <marker date="1524294901201" expanded="true" signature="2963:3026" ph="{...}" />
+            <marker date="1524294901201" expanded="false" signature="3064:3075" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3098:3104" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3162:3173" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3212:3218" ph=" }" />
+            <marker date="1524294901201" expanded="true" signature="3256:3267" ph=" { " />
+            <marker date="1524294901201" expanded="true" signature="3288:3294" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3350:3361" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3396:3402" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3439:3450" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3470:3476" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3530:3541" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3574:3580" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3637:3648" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3671:3677" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3754:3765" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3804:3810" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3859:3870" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="3891:3897" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="3964:3975" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4010:4016" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4050:4061" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4080:4086" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4136:4147" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4178:4184" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4237:4248" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4271:4277" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4350:4361" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4400:4406" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4435:4446" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4459:4465" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4504:4515" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4534:4540" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4584:4595" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4622:4628" ph=" }" />
+            <marker date="1524294901201" expanded="false" signature="4696:4707" ph=" { " />
+            <marker date="1524294901201" expanded="false" signature="4754:4760" ph=" }" />
+            <marker date="1524294901201" expanded="true" signature="4800:4853" ph="{...}" />
+            <marker date="1524294901201" expanded="true" signature="4901:4963" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeKhesarat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <marker date="1523112202691" expanded="true" signature="52:92" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/VaziateKhesaratCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <marker date="1523112202691" expanded="true" signature="52:92" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reports/chapkhesarat.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1526310450698" expanded="true" signature="494:16978" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2070:4095" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2111:4080" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2127:2358" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2369:2566" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2576:2689" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2705:3106" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="2876:3050" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="3122:3446" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="3308:3385" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="3461:3789" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="3618:3671" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="3805:4070" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="3963:4005" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16128:16266" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4146:8614" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4161:4278" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4294:4590" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4606:4874" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4764:4806" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4817:4857" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="4890:5152" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5048:5090" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5168:5424" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5326:5368" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5440:5707" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5598:5640" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5723:5990" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="5881:5923" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="6006:6261" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="6164:6206" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="6277:6532" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="6435:6477" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="6547:6817" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="6832:7108" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="7123:7393" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="7408:7693" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="7708:8008" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="8023:8332" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="8347:8604" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="8636:11089" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="8651:8769" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="8784:9079" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="9095:9413" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="9315:9357" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="9429:9748" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="9648:9690" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="9764:10090" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="9984:10026" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="10106:10429" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="10326:10368" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="10445:10768" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="10662:10704" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="10784:11079" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11110:11560" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11125:11242" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11258:11550" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11581:13007" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11596:11713" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11729:11913" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="11929:12114" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="12130:12426" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="12377:12409" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="12441:12709" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="12724:12997" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="15192:15538" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="13044:13162" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="13178:13510" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="13399:13441" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="13526:13851" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="13747:13789" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="13867:14180" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="14088:14130" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="14196:14495" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="14510:14719" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="14734:14948" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="15192:15295" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="15311:15528" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16128:16255" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="15575:15751" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="15767:15958" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="15895:15941" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16128:16245" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16280:16962" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16321:16947" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16337:16581" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16597:16937" ph="..." />
+            <marker date="1526310450698" expanded="true" signature="16732:16773" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/report/KhesaratPrint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <marker date="1526206469971" expanded="false" signature="58:212" ph="..." />
+            <marker date="1526206469971" expanded="true" signature="214:254" ph="/**...*/" />
+            <marker date="1526206469971" expanded="true" signature="439:450" ph=" { " />
+            <marker date="1526206469971" expanded="true" signature="465:471" ph=" }" />
+            <marker date="1526206469971" expanded="false" signature="521:532" ph=" { " />
+            <marker date="1526206469971" expanded="false" signature="555:561" ph=" }" />
+            <marker date="1526206469971" expanded="false" signature="596:607" ph=" { " />
+            <marker date="1526206469971" expanded="false" signature="623:629" ph=" }" />
+            <marker date="1526206469971" expanded="false" signature="677:688" ph=" { " />
+            <marker date="1526206469971" expanded="false" signature="713:719" ph=" }" />
+            <marker date="1526206469971" expanded="false" signature="776:787" ph=" { " />
+            <marker date="1526206469971" expanded="false" signature="818:824" ph=" }" />
+            <marker date="1526206469971" expanded="true" signature="910:981" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/KhesaratCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="31" />
+          <folding>
+            <marker date="1526310138054" expanded="false" signature="53:388" ph="..." />
+            <marker date="1526310138054" expanded="true" signature="390:430" ph="/**...*/" />
+            <marker date="1526310138054" expanded="true" signature="431:472" ph="@{...}" />
+            <marker date="1526310138054" expanded="true" signature="551:574" ph="@{...}" />
+            <marker date="1526310138054" expanded="true" signature="1574:1622" ph="@{...}" />
+            <marker date="1526310138054" expanded="false" signature="1678:1689" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="1699:1705" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="1746:1757" ph=" { " />
+            <marker date="1526310138054" expanded="true" signature="1781:1787" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="1849:1860" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="1901:1907" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="1943:1954" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="1973:1979" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2031:2042" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2073:2079" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2120:2131" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2150:2156" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2213:2224" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2255:2261" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2303:2314" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2334:2340" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2399:2410" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2443:2449" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2486:2497" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2514:2520" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2571:2582" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2609:2615" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2659:2670" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2684:2690" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2754:2765" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2795:2801" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2844:2855" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="2881:2887" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="2953:2964" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3009:3015" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3051:3062" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3081:3087" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3139:3150" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3181:3187" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3229:3240" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3265:3271" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3335:3346" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3389:3395" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3446:3457" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3493:3499" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3534:3545" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3561:3567" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="3615:3626" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3651:3657" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="3742:3823" ph="{...}" />
+            <marker date="1526310138054" expanded="false" signature="3873:3884" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="3919:3925" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="4008:4087" ph="{...}" />
+            <marker date="1526310138054" expanded="false" signature="4133:4144" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="4175:4181" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="4256:4327" ph="{...}" />
+            <marker date="1526310138054" expanded="false" signature="4374:4385" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="4417:4423" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="4500:4573" ph="{...}" />
+            <marker date="1526310138054" expanded="false" signature="4612:4623" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="4647:4653" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="4713:4724" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="4765:4771" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="4817:4828" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="4859:4865" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="4940:5011" ph="{...}" />
+            <marker date="1526310138054" expanded="false" signature="5060:5071" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5105:5111" ph=" }" />
+            <marker date="1526310138054" expanded="true" signature="5192:5269" ph="{...}" />
+            <marker date="1526310138054" expanded="false" signature="5303:5314" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5333:5339" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5389:5400" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5431:5437" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5479:5490" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5517:5523" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5589:5600" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5647:5653" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5693:5704" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5727:5733" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5793:5804" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5843:5849" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5881:5892" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5907:5913" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="5957:5968" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="5991:5997" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="6030:6041" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="6056:6062" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="6107:6118" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="6141:6147" ph=" }" />
+            <marker date="1526310138054" expanded="false" signature="6197:6208" ph=" { " />
+            <marker date="1526310138054" expanded="false" signature="6278:6284" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reports/chapkhesarat_mavared.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="66" lean-forward="false" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+          <folding>
+            <marker date="1526310138135" expanded="true" signature="499:3220" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="1214:3204" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="1235:3193" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="1250:1620" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="1436:1524" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="1635:2000" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="1821:1909" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="2015:2396" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="2201:2289" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="2411:2793" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="2597:2685" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="2808:3183" ph="..." />
+            <marker date="1526310138135" expanded="true" signature="2992:3080" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/service/PrintService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="107" column="92" lean-forward="false" selection-start-line="107" selection-start-column="92" selection-end-line="107" selection-end-column="92" />
+          <folding>
+            <element signature="method#printAghsat#0;class#PrintService#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

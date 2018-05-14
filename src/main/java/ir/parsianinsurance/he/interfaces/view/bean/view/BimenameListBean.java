@@ -78,10 +78,7 @@ public class BimenameListBean implements Serializable{
     TakhfifModiriatiArtifactDocRepository takhfifModiriatiArtifactDocRepository;
 
     @Inject
-    IApplicationService heService;
-
-    @Inject
-    IPrintService IPrintService;
+    IPrintService printService;
 
     @Inject
     BimenameBean bimenameBean;
@@ -256,7 +253,7 @@ public class BimenameListBean implements Serializable{
         try {
             ExternalContext externalContext = facesContext.getExternalContext();
             ServletContext servletContext = (ServletContext) externalContext.getContext();
-            JasperPrint jasperPrint = IPrintService.printBimename(getSelectedBimename(), servletContext);
+            JasperPrint jasperPrint = printService.printBimename(getSelectedBimename(), servletContext);
             HttpServletResponse httpServletResponse = (HttpServletResponse) externalContext.getResponse();
             httpServletResponse.addHeader("Content-disposition", "attachment; filename=report.pdf");
             ServletOutputStream servletOutputStream = httpServletResponse.getOutputStream();
@@ -274,7 +271,7 @@ public class BimenameListBean implements Serializable{
     public void printAghsat()
     {
         try {
-            IPrintService.printAghsat(getSelectedBimename());
+            printService.printAghsat(getSelectedBimename());
         } catch (JRException e) {
             e.printStackTrace();
             mainView.error(e.getMessage());

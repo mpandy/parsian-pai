@@ -242,7 +242,7 @@ public class ArtifactDocListBean implements Serializable {
         dialogArtifactDoc.getZamaem().remove(zamime);
     }
 
-    public void downloadZamime(Zamime zamime) throws IOException {
+    public void downloadZamime(Zamime zamime) {
         fileService.downloadZamime(zamime);
     }
 

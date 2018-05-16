@@ -14,8 +14,7 @@ public interface IPishnahadService {
     Pishnahad buildPishnahadToPersist(Pishnahad pishnahad);
     Pishnahad buildPishnahadToUpdate(Pishnahad pishnahad);
     Pishnahad loadPishnahad(Pishnahad pishnahad);
-    Set<Zamime> loadZamaem(Pishnahad pishnahad);
-    Zamime loadZamimePishnahad(Pishnahad pishnahad);
+    Zamime loadZamimePishnahad(Long pishnahadId);
     List<Gharardad> autocompleteGharardad(String name);
     List<BimeGozar> autocompleteBimegozar(String name);
     List<BimeShode> autocompleteBimeshode(String name);

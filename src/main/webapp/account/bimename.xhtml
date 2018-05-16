@@ -444,11 +444,12 @@
                                          disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
 
                             <p:outputLabel value="#{msg['shoghl']} : " for="shoghlbimeshode"/>
-                            <p:autoComplete id="shoghlbimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shoghl.id}"
+                            <p:autoComplete id="shoghlbimeshode" value="#{bimenameBean.bimename.pishnahadeFaal.bimeShode.shoghl}"
                                             var="shoghl"
-                                            itemLabel="#{shoghl}"
-                                            itemValue="#{shoghl.id}"
+                                            itemLabel="#{shoghl.name}"
+                                            itemValue="#{shoghl}"
                                             completeMethod="#{shoghlService.autocomplete}"
+                                            converter="#{shoghlConverter}"
                                             style="font-family: byekan; direction: ltr"
                                             forceSelection="true"
                                             disabled="#{mainView.inAnyOf([state.SODOOR_NEW_BIMENAME_MOHASEBE,state.NAMAYESH_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
@@ -649,57 +650,21 @@
 
         <p:panel>
 
-            <h:panelGrid columns="2">
-                <p:panel rendered="#{mainView.notInAnyOf([state.SABT_PISHNAHAD, state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
+
+            <p:panel rendered="#{mainView.notInAnyOf([state.SABT_PISHNAHAD,state.SABT_NEW_PISHNAHAD_MOHASEBE,state.TAGHIR_BIMENAME])}">
                 <p:fileUpload fileUploadListener="#{bimenameBean.uploadZamimePishnahad}"
                               disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"
                               mode="advanced"
                               auto="true"
                               sizeLimit="1000000"
                               allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/"
-                              label="#{msg['peyvaste_file_pishnahad']}"
-                              invalidSizeMessage="#{msg['invalidSizeMessage']}"
-                              invalidFileMessage="#{msg['invalidFileMessage']}"
-                              update="zamimepishnahadtable"/>
-
-                <p:dataTable id="zamimepishnahadtable" var="nextzamimePishnahad"
-                             value="#{bimenameBean.bimename.pishnahadeFaal.zamimePishnahad}"
-                             emptyMessage="#{msg['emptylist']}"
-                             tableStyleClass="datatable-odd">
-
-                    <p:column style="text-align: center">
-                        #{nextzamimePishnahad.fileName}
-                    </p:column>
-
-                    <p:column style="text-align: center">
-
-                        <p:commandButton icon="fa fa-trash"
-                                         actionListener="#{bimenameBean.removeZamimePishnahad()}"
-                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}"
-                                         update="zamimepishnahadtable" />
-
-                        <p:commandButton icon="fa fa-download"
-                                         ajax="false"
-                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.NAMAYESH_BIMENAME])}"
-                                         actionListener="#{bimenameBean.downloadZamimePishnahad()}"/>
-                    </p:column>
-
-                </p:dataTable>
-                </p:panel>
-                <p:panel>
-                <p:fileUpload fileUploadListener="#{bimenameBean.uploadZamime}"
-                              disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"
-                              mode="advanced"
-                              auto="true"
-                              sizeLimit="1000000"
-                              allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/"
-                              label="#{msg['sayere_zamaem']}"
+                              label="#{msg['zamime']}"
                               invalidSizeMessage="#{msg['invalidSizeMessage']}"
                               invalidFileMessage="#{msg['invalidFileMessage']}"
                               update="zamaemtable"/>
 
                 <p:dataTable id="zamaemtable" var="nextzamime"
-                             value="#{bimenameBean.bimename.pishnahadeFaal.zamaem}"
+                             value="#{bimenameBean.bimename.pishnahadeFaal.zamimePishnahad}"
                              emptyMessage="#{msg['emptylist']}"
                              tableStyleClass="datatable-odd">
 
@@ -710,61 +675,64 @@
                     <p:column style="text-align: center">
 
                         <p:commandButton icon="fa fa-trash"
-                                         actionListener="#{bimenameBean.removeZamimeFromZamaem(nextzamime)}"
-                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                         actionListener="#{bimenameBean.removeZamimePishnahad}"
+                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.SODOOR_NEW_BIMENAME_MOHASEBE])}"
                                          update="zamaemtable" />
 
                         <p:commandButton icon="fa fa-download"
                                          ajax="false"
-                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.NAMAYESH_BIMENAME])}"
-                                         actionListener="#{bimenameBean.downloadZamime(nextzamime)}"/>
+                                         rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.NAMAYESH_BIMENAME,state.SODOOR_NEW_BIMENAME_MOHASEBE])}"
+                                         actionListener="#{bimenameBean.downloadZamimePishnahad}"/>
                     </p:column>
 
                 </p:dataTable>
                 </p:panel>
 
-            </h:panelGrid>
+
+                <p:panel header="#{msg['haghebime']}">
+
+                    <h:panelGrid columns="3" styleClass="matnfarsi">
+                        <p:outputLabel value="#{msg['jamekhatarateasli']} : " />
+                        <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.jame_khatarate_asli}"
+                                       style="font-family: byekan; font-size: medium">
+                            <f:convertNumber pattern="#,##0"/>
+                        </p:outputLabel>
+                        <p:outputLabel value="#{msg['rial']}"/>
+
+                        <p:outputLabel value="#{msg['jamekhatarateezafi']} : "/>
+                        <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.jame_khatarate_ezafi}"
+                                       style="font-family: byekan; font-size: medium">
+                            <f:convertNumber pattern="#,##0"/>
+                        </p:outputLabel>
+                        <p:outputLabel value="#{msg['rial']}"/>
+
+                        <p:outputLabel value="#{msg['kasrehezarrial']} : "/>
+                        <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.kasr_hezar_rial}"
+                                       style="font-family: byekan; font-size: medium">
+                            <f:convertNumber pattern="#,##0"/>
+                        </p:outputLabel>
+                        <p:outputLabel value="#{msg['rial']}"/>
+
+                        <p:outputLabel value="#{msg['maliat']} : " styleClass="matnfarsi" style="font-weight:bold; " />
+                        <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.maliat}"
+                                       style="font-family: byekan; font-size: medium">
+                            <f:convertNumber pattern="#,##0"/>
+                        </p:outputLabel>
+                        <p:outputLabel value="#{msg['rial']}"/>
+
+                        <p:outputLabel value="#{msg['haghebimeghabelpardakht']} : " styleClass="matnfarsi" style="font-weight:bold; " />
+                        <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.haghe_bime_ghabelepardakht}"
+                                       style="font-family: byekan; font-size: medium">
+                            <f:convertNumber pattern="#,##0"/>
+                        </p:outputLabel>
+                        <p:outputLabel value="#{msg['rial']}"/>
+
+                    </h:panelGrid>
+
+                </p:panel>
+
         </p:panel>
 
-
-        <p:outputPanel id="haghebimepanel">
-            <p:panel header="#{msg['haghebime']}">
-
-                <h:panelGrid columns="2" styleClass="matnfarsi">
-                    <p:outputLabel value="#{msg['jamekhatarateasli']} : " />
-                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.jame_khatarate_asli}"
-                                   style="font-family: byekan; font-size: medium">
-                        <f:convertNumber pattern="#,##0"/>
-                    </p:outputLabel>
-
-                    <p:outputLabel value="#{msg['jamekhatarateezafi']} : "/>
-                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.jame_khatarate_ezafi}"
-                                   style="font-family: byekan; font-size: medium">
-                        <f:convertNumber pattern="#,##0"/>
-                    </p:outputLabel>
-
-                    <p:outputLabel value="#{msg['kasrehezarrial']} : "/>
-                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.kasr_hezar_rial}"
-                                   style="font-family: byekan; font-size: medium">
-                        <f:convertNumber pattern="#,##0"/>
-                    </p:outputLabel>
-
-                    <p:outputLabel value="#{msg['maliat']} : " styleClass="matnfarsi" style="font-weight:bold; " />
-                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.maliat}"
-                                   style="font-family: byekan; font-size: medium">
-                        <f:convertNumber pattern="#,##0"/>
-                    </p:outputLabel>
-
-                    <p:outputLabel value="#{msg['haghebimeghabelpardakht']} : " styleClass="matnfarsi" style="font-weight:bold; " />
-                    <p:outputLabel value="#{bimenameBean.bimename.pishnahadeFaal.hagheBime.haghe_bime_ghabelepardakht}"
-                                   style="font-family: byekan; font-size: medium">
-                        <f:convertNumber pattern="#,##0"/>
-                    </p:outputLabel>
-
-                </h:panelGrid>
-
-            </p:panel>
-        </p:outputPanel>
 
         <br></br>
         <br></br>

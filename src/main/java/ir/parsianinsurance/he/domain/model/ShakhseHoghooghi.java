@@ -13,7 +13,8 @@ import java.util.List;
 
 @Entity
 @DiscriminatorValue("Hoghooghi")
-public class ShakhseHoghooghi extends Shakhs {
+public class
+ShakhseHoghooghi extends Shakhs {
 
     private  String code_eghtesadi;
     private  String shenase_meli;

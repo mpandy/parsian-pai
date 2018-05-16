@@ -81,8 +81,8 @@ public class MainView implements Serializable {
         setFormattedPermissions(translatedPermissions);
     }
 
-    public void infoWithoutTranslate(String infoMessage){
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, infoMessage, "");
+    public void errorWithoutTranslate(String infoMessage){
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, infoMessage, "");
         facesContext.addMessage("", message);
         RequestContext.getCurrentInstance().update("msg");
     }

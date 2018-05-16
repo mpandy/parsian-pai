@@ -40,6 +40,9 @@ public class SabteElhaghiyeValidator extends HEValidator{
         if(elhaghiye.getTarikh_asar_elhaghie().compareTo(elhaghiye.getBimename().getTarikhesodoor()) == -1)
             errorMessages.add("tarikhAsareElhaghiyeGhablAzTarikhSodoor");
 
+        if(!elhaghiye.getTarikh_asar_elhaghie().equals(DateUtil.getJalaliCurrentDate()))
+            errorMessages.add("tarikhAsareElhaghiyeGheyrAzEmrooz");
+
         if(elhaghiye.getTarikh_sodoor_elhaghie().compareTo(elhaghiye.getBimename().getTarikhesodoor()) == -1)
             errorMessages.add("tarikhSodoorElhaghiyeGhablAzTarikhSodoorBimename");
 

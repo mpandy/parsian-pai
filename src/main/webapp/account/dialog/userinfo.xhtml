@@ -24,7 +24,10 @@
 
         <h:panelGrid styleClass="matnfarsi" columns="2">
             <p:outputLabel value="#{msg['name']} : "/>
-            #{userBean.currentUser.realName}
+            <p:outputLabel value="#{userBean.currentUser.realName}"/>
+
+            <p:outputLabel value="#{msg['mobile']} : "/>
+            <p:outputLabel value="#{userBean.currentUser.mobile}"/>
         </h:panelGrid>
 
         <p:separator/>

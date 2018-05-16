@@ -162,11 +162,8 @@ public class BimenameListBean implements Serializable{
         Vahed vahedeSodoor = userBean.getCurrentUser().getVahed();
         getSelectedBimename().setVahedeSodoor(vahedeSodoor);
 
-        Set<Zamime> loadedZamaemFiles = pishnahadService.loadZamaem(getSelectedBimename().getPishnahadeFaal());
-        getSelectedBimename().getPishnahadeFaal().setZamaem(loadedZamaemFiles);
-
-        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal());
-        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
+//        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal().getId());
+//        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
 
         bimenameBean.setBimename(getSelectedBimename());
         setSelectedItemRow(-1);
@@ -187,6 +184,9 @@ public class BimenameListBean implements Serializable{
 
         bimenameBean.setBimename(getSelectedBimename());
 
+//        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal());
+//        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
+
         setSelectedItemRow(-1);
     }
 
@@ -201,11 +201,9 @@ public class BimenameListBean implements Serializable{
     @BimenameRender(halate = HalateNamayesheBimename.NAMAYESH)
     @WebAction(toState =StateName.NAMAYESH_BIMENAME)
     public void namayesh(){
-        Set<Zamime> loadedZamaemFiles = pishnahadService.loadZamaem(getSelectedBimename().getPishnahadeFaal());
-        getSelectedBimename().getPishnahadeFaal().setZamaem(loadedZamaemFiles);
 
-        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal());
-        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
+//        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal().getId());
+//        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
 
         bimenameBean.setBimename(getSelectedBimename());
         setSelectedItemRow(-1);

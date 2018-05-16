@@ -24,6 +24,9 @@ public class AccessRules implements IAccessRules {
             case ADMIN:
                 return Arrays.asList(   Permission.values());
 
+            case SETAD:
+                return Arrays.asList(   Permission.values());
+
             case NAMAYANDE:
                 return Arrays.asList(   Permission.MOSHAHEBE_BIMENAME,
                                         Permission.MOSHAHEDE_ELHAGHIYE,

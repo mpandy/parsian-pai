@@ -40,7 +40,6 @@ public class Pishnahad {
     private String shomare_bime_sale_ghabl;
     private String tarikhe_engheza_ghabli;
     private String sharayete_khosoosi;
-    private String tozihate_zamaem;
 
     @ManyToOne
     @JoinColumn(name="gharardad_id")
@@ -86,10 +85,6 @@ public class Pishnahad {
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinColumn(name = "pishnahad_id")
     private Set<TaahodBimegar> taahodBimegars;
-
-    @OneToMany(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "pishnahad_id")
-    private Set<Zamime> zamaem;
 
     @OneToOne
     private Zamime zamimePishnahad;
@@ -173,14 +168,6 @@ public class Pishnahad {
 
     public void setNoePishnahad(NoePishnahad noePishnahad) {
         this.noePishnahad = noePishnahad;
-    }
-
-    public String getTozihate_zamaem() {
-        return tozihate_zamaem;
-    }
-
-    public void setTozihate_zamaem(String tozihate_zamaem) {
-        this.tozihate_zamaem = tozihate_zamaem;
     }
 
     public Long getId() {
@@ -325,14 +312,6 @@ public class Pishnahad {
 
     public void setTabagheKhatar(TabagheKhatar tabagheKhatar) {
         this.tabagheKhatar = tabagheKhatar;
-    }
-
-    public Set<Zamime> getZamaem() {
-        return zamaem;
-    }
-
-    public void setZamaem(Set<Zamime> zamaem) {
-        this.zamaem = zamaem;
     }
 
     public double getMaxNerkhKhatareEzafi() {

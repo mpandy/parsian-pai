@@ -164,10 +164,6 @@ public class BimenameBean implements Serializable{
         Zamime newZamime = ZamimeFactory.buildZamimeFromFile(event.getFile());
         bimename.getPishnahadeFaal().setZamimePishnahad(newZamime);
     }
-    public void uploadZamime(FileUploadEvent event) {
-        Zamime newZamime = ZamimeFactory.buildZamimeFromFile(event.getFile());
-        bimename.getPishnahadeFaal().getZamaem().add(newZamime);
-    }
 
     @WebAction( successMessage = "mohasebenewbimename",
                 toState = StateName.SABT_NEW_PISHNAHAD_MOHASEBE,
@@ -481,10 +477,6 @@ public class BimenameBean implements Serializable{
         bimename.getPishnahadeFaal().getKhatarEzafis().remove(khatarEzafi);
     }
 
-    public void removeZamimeFromZamaem(Zamime zamime){
-        bimename.getPishnahadeFaal().getZamaem().remove(zamime);
-    }
-
     public void removeZamimePishnahad(){
         bimename.getPishnahadeFaal().setZamimePishnahad(null);
     }
@@ -529,7 +521,7 @@ public class BimenameBean implements Serializable{
         Long shoghlId;
 
         if(event != null)
-            shoghlId = (Long) event.getObject();
+            shoghlId = ((Shoghl) event.getObject()).getId();
         else
             shoghlId = bimename.getPishnahadeFaal().getBimeShode().getShoghl().getId();
 
@@ -593,10 +585,7 @@ public class BimenameBean implements Serializable{
         return userBean;
     }
 
-    public void downloadZamime(Zamime zamime) throws IOException{
-        fileService.downloadZamime(zamime);
-    }
-    public void downloadZamimePishnahad() throws IOException{
+    public void downloadZamimePishnahad() {
         fileService.downloadZamime(bimename.getPishnahadeFaal().getZamimePishnahad());
     }
 }

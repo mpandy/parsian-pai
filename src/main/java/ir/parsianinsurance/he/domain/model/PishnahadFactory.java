@@ -3,7 +3,6 @@ package ir.parsianinsurance.he.domain.model;
 import ir.parsianinsurance.he.domain.model.enums.NahveMohasebe;
 import ir.parsianinsurance.he.domain.model.enums.NoePishnahad;
 import ir.parsianinsurance.he.domain.model.enums.NoeShakhs;
-import ir.parsianinsurance.he.infrastructure.io.Zamime;
 import ir.parsianinsurance.he.infrastructure.security.User;
 import ir.parsianinsurance.he.infrastructure.util.DateUtil;
 import ir.parsianinsurance.he.interfaces.webservice.model.AgencyBimenameInfo;
@@ -36,12 +35,10 @@ public class PishnahadFactory {
         Set<Zinaf> zinafs = new HashSet<>();
         Set<TaahodBimegar> taahodBimegars = new HashSet<>();
         Set<KhatarEzafi> khatarEzafis = new HashSet<>();
-        Set<Zamime> zamaem = new HashSet<>();
 
         pishnahad.setZinafs(zinafs);
         pishnahad.taahods(taahodBimegars);
         pishnahad.setKhatarEzafis(khatarEzafis);
-        pishnahad.setZamaem(zamaem);
 
         return pishnahad;
     }
@@ -65,6 +62,7 @@ public class PishnahadFactory {
         pishnahad.noeBimegozar(original.getNoeBimegozar());
         pishnahad.setEzafeKasr(EzafeKasrFactory.copyEzafeKasrForElhaghiye(original.getEzafeKasr()));
         pishnahad.setCreatedDate(DateUtil.now());
+        pishnahad.setZamimePishnahad(original.getZamimePishnahad());
 
         Set<Zinaf> zinafs = new HashSet();
         original.getZinafs().forEach(zn -> zinafs.add(ZinafFactory.copyZinafForElhaghiye(zn)));

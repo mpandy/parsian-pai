@@ -21,6 +21,9 @@
                     <p:outputLabel value="#{msg['username']} : " for="username"/>
                     <p:inputText id="username" value="#{userAdminPanelBean.newKarbar.username}"/>
 
+                    <p:outputLabel value="#{msg['mobile']} : " for="mobile"/>
+                    <p:inputText id="mobile" value="#{userAdminPanelBean.newKarbar.mobile}"/>
+
                     <p:outputLabel value="#{msg['vahedeMahaleKhedmat']} : " for="vahedeMahaleKhedmat"/>
                     <p:autoComplete id="vahedeMahaleKhedmat"  value="#{userAdminPanelBean.newKarbar.vahed}"
                                     var="vahedeMahaleKhedmat"

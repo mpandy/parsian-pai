@@ -91,7 +91,7 @@ public class WebActionInterceptor implements Serializable {
             return null;
         }
         catch (Exception e){
-            mainView.error("systemerror");
+            mainView.errorWithoutTranslate(e.getMessage());
             return null;
         }
 

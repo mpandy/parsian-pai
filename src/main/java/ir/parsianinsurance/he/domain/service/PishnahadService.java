@@ -129,15 +129,10 @@ public class PishnahadService implements IPishnahadService {
         updateZinafs(pishnahadToBeUpdated);
         updateKhatareEzafis(pishnahadToBeUpdated);
         updateTaahods(pishnahadToBeUpdated);
-        updateZamaem(pishnahadToBeUpdated);
         updateZamimePishnahad(pishnahadToBeUpdated);
 
         pishnahadRepository.save(pishnahadToBeUpdated);
         return pishnahadToBeUpdated;
-    }
-
-    private void updateZamaem(Pishnahad pishnahadToBeUpdated) {
-        pishnahadToBeUpdated.getZamaem().forEach(x -> zamimeRepository.save(x));
     }
 
     private void updateZamimePishnahad(Pishnahad pishnahadToBeUpdated) {
@@ -187,6 +182,7 @@ public class PishnahadService implements IPishnahadService {
 
         Long gharardadId = pishnahad.getGharardad().getId();
         Long bazaryabId = pishnahad.getBazaryab().getId();
+        Long zamimeId = pishnahad.getZamimePishnahad().getId();
         Long emzakonandeavalId = pishnahad.getEmzaKonande_aval().getId();
         Long emzakonandedovomId = pishnahad.getEmzaKonande_dovom().getId();
 
@@ -194,8 +190,10 @@ public class PishnahadService implements IPishnahadService {
         User emzaKonandeaval = userRepository.findOne(emzakonandeavalId);
         User emzaKonandedovom = userRepository.findOne(emzakonandedovomId);
         User bazaryab = userRepository.findOne(bazaryabId);
+        Zamime zamime = zamimeRepository.findOne(zamimeId);
 
         pishnahad.gharardad(gharardad);
+        pishnahad.setZamimePishnahad(zamime);
         pishnahad.setEmzaKonande_aval(emzaKonandeaval);
         pishnahad.setEmzaKonande_dovom(emzaKonandedovom);
         pishnahad.setBazaryab(bazaryab);
@@ -204,19 +202,8 @@ public class PishnahadService implements IPishnahadService {
     }
 
     @Override
-    @Transactional
-    public Set<Zamime> loadZamaem(Pishnahad pishnahad) {
-
-        Set<Zamime> zamaem = pishnahadRepository.findOne(pishnahad.getId()).getZamaem();
-        for (Zamime zamime : zamaem)
-            zamimeRepository.findOne(zamime.getId());
-
-        return zamaem;
-    }
-
-    @Override
-    public Zamime loadZamimePishnahad(Pishnahad pishnahad) {
-        Zamime zamimePishnahad = pishnahadRepository.findOne(pishnahad.getId()).getZamimePishnahad();
+    public Zamime loadZamimePishnahad(Long pishnahadId) {
+        Zamime zamimePishnahad = pishnahadRepository.findOne(pishnahadId).getZamimePishnahad();
         return (zamimePishnahad == null) ?
                 null : zamimeRepository.findOne(zamimePishnahad.getId());
     }

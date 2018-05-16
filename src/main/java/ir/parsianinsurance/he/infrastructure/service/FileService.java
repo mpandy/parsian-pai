@@ -16,7 +16,7 @@ import java.io.OutputStream;
 public class FileService implements IFileService {
 
     @Override
-    public void downloadZamime(Zamime zamime) throws IOException {
+    public void downloadZamime(Zamime zamime) {
         FacesContext fc = FacesContext.getCurrentInstance();
         ExternalContext ec = fc.getExternalContext();
 
@@ -25,9 +25,14 @@ public class FileService implements IFileService {
         ec.setResponseContentLength(zamime.getContent().length);
         ec.setResponseHeader("Content-Disposition", "attachment; filename=\"" + zamime.getFileName() + "\"");
 
-        OutputStream output = ec.getResponseOutputStream();
-        output.write(zamime.getContent());
+        OutputStream output = null;
+        try {
+            output = ec.getResponseOutputStream();
+            output.write(zamime.getContent());
+            fc.responseComplete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        fc.responseComplete();
     }
 }

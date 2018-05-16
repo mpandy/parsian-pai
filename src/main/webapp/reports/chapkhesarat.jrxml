@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="chapkhesarat" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e320411-121b-41c5-99c0-60bf20ca1bbc">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="307"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="161"/>
+	<property name="ireport.y" value="547"/>
 	<style name="header" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="18" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
 	<style name="style1" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
 	<parameter name="realPath" class="java.lang.String"/>
@@ -293,6 +293,21 @@
 				<reportElement style="style1" x="313" y="8" width="77" height="15" uuid="1639f50b-6d8a-4358-914b-973fd544f747"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[سرمایه تعهد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="258" y="34" width="39" height="15" uuid="a64832c8-0a64-41c1-91c6-e860ea5d1008"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="257" y="57" width="39" height="15" uuid="f485125c-0689-4a5b-a649-d04815ba5661"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ریال]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="257" y="82" width="39" height="15" uuid="dc44f2f6-32cf-4422-a8ae-3077417738f2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ریال]]></text>
 			</staticText>
 		</band>
 		<band height="38">

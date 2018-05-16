@@ -35,6 +35,8 @@ public class User implements Serializable{
 
     private String roles;
 
+    private String mobile;
+
     @OneToOne(cascade = CascadeType.PERSIST)
     private Vahed vahed;
 
@@ -110,6 +112,14 @@ public class User implements Serializable{
 
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     @Override

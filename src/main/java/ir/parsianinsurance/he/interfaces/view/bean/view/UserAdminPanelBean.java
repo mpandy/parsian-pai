@@ -85,21 +85,19 @@ public class UserAdminPanelBean implements Serializable{
 
     public void addOrEditKarbar() {
 
-        newKarbar.setRoles(getSelectedRoles().toString());
-        userService.buildUser(newKarbar);
-
         if (newKarbar.getPassword() == null)
             newKarbar.setPassword(propertyRules.getSinglesStringParam("defaultpassword"));
 
+        if(getSelectedRoles() != null)
+            newKarbar.setRoles(getSelectedRoles().toString());
+
         if(validate(newKarbar)) {
+            userService.buildUser(newKarbar);
             userService.saveUser(newKarbar);
             karbarDialogVisible = false;
             selectedRoles.clear();
             init();
         }
-
-
-
     }
 
     private boolean validate(User newKarbar) {
@@ -107,9 +105,29 @@ public class UserAdminPanelBean implements Serializable{
         boolean valid = true;
         List<String> errorMessages = new ArrayList<>();
 
-        if(!newKarbar.getRoles().contains(Role.BAZARYAB.name()) && newKarbar.getVahed() == null) {
+        if(newKarbar.getRoles() == null) {
+            mainView.error("entekhaberoleelzamist");
+            return false;
+        }
+
+        if(newKarbar.getVahed() == null) {
             mainView.error("entekhabevahedelzamist");
             return false;
+        }
+
+        if(newKarbar.getMobile() == null || newKarbar.getMobile().trim().isEmpty()) {
+            errorMessages.add("varedkardanemobileelzamist");
+            valid = false;
+        }
+
+        if(newKarbar.getRealName() == null || newKarbar.getRealName().trim().isEmpty()) {
+            errorMessages.add("varedkardanenameelzamist");
+            valid = false;
+        }
+
+        if(newKarbar.getUsername() == null || newKarbar.getUsername().trim().isEmpty()) {
+            errorMessages.add("varedkardaneusernameelzamist");
+            valid = false;
         }
 
         if(userService.hasRole(newKarbar, Role.KARSHENAS_SODOOR) &&

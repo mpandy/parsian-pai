@@ -2,6 +2,7 @@ package ir.parsianinsurance.he.interfaces.view.converter;
 
 import ir.parsianinsurance.he.domain.model.Shoghl;
 import ir.parsianinsurance.he.infrastructure.repository.ShoghlRepository;
+import ir.parsianinsurance.he.infrastructure.security.User;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -39,15 +40,6 @@ public class ShoghlConverter implements Converter {
 
     @Override
     public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object o) {
-//        if(o == null )
-//            return "";
-//        if(o instanceof Shoghl)
-//        {
-//            return String.valueOf(((Shoghl)o).getId());
-//        }
-//        else
-//            throw new ConverterException(new FacesMessage(String.format("%s is not a valid User", o)));
-//        return ((ُShoghl)o).getId()+"";
-    return ((Shoghl)o).getId()+"";
+        return ((Shoghl)o).getId()+"";
     }
 }

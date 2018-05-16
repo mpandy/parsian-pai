@@ -6,6 +6,7 @@ package ir.parsianinsurance.he.infrastructure.security;
 public enum Role {
 
     ADMIN,
+    SETAD,
     BAZARYAB,
     EMZAKONANDE,
     NAMAYANDE,

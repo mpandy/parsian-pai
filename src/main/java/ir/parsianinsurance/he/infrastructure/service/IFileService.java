@@ -10,5 +10,5 @@ import java.io.IOException;
 public interface IFileService {
 
 
-    void downloadZamime(Zamime zamime) throws IOException;
+    void downloadZamime(Zamime zamime);
 }

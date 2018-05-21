@@ -11,6 +11,7 @@ public class GharardadFactory {
 
     public static Gharardad newSearchGharardad() {
         Gharardad gharardad = new Gharardad();
+        gharardad.setName("");
         return gharardad;
     }
 

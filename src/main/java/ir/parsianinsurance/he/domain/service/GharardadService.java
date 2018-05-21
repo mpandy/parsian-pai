@@ -38,8 +38,11 @@ public class GharardadService implements IGharardadService{
     }
 
     @Override
-    public List<Gharardad> searchGharardad() {
-        return gharardadRepository.findTop5ByOrderByIdDesc();
+    public List<Gharardad> searchGharardad(String name) {
+        if(name.trim().equals(""))
+            return gharardadRepository.findTop5ByOrderByIdDesc();
+        else
+            return gharardadRepository.findByNameContains(name);
     }
 
     @Override

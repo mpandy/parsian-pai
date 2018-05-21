@@ -63,7 +63,7 @@ public class GharardadAdminPanelBean implements Serializable{
     }
 
     public void search(){
-        gharardadList = gharardadService.searchGharardad();
+        gharardadList = gharardadService.searchGharardad(searchGharardad.getName());
     }
 
     public List<String> autocompleteGorooh(String name)

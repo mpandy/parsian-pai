@@ -11,7 +11,7 @@ public interface IGharardadService {
 
     void saveGharardad(Gharardad gharardad);
     void removeGharardad(Gharardad gharardad);
-    List<Gharardad> searchGharardad();
+    List<Gharardad> searchGharardad(String name);
     Gharardad gharardadeOmoomiBimeMarkazi();
     List<String> shomareGharardadIsValid(String shomareGharardad);
 }

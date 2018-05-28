@@ -11,6 +11,6 @@ public interface IVahedService {
     Vahed setad();
     void saveVahed(Vahed vahed);
     void removeVahed(Vahed vahed);
-    List<Vahed> searchVahed();
+    List<Vahed> searchVahed(Vahed vahed);
     List<Vahed> zirmajmooe(Vahed vahed);
 }

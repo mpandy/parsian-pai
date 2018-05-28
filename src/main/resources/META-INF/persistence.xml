@@ -11,9 +11,9 @@
             <!--create-drop: drop the schema when the SessionFactory is closed explicitly, typically when the application is stopped.-->
 
             <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
-            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.dialect" value="${dialect.value}"/>
-            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.format_sql" value="false" />
 
             <!--<property name="generateDdl" value="false" />-->
             <!--<property name="javax.persistence.sql-load-script-source" value="META-INF/import.sql"/>-->

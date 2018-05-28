@@ -6,6 +6,7 @@ import ir.parsianinsurance.he.infrastructure.security.User;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by 8119 on 6/20/2017.
@@ -149,7 +150,7 @@ public class Khesarat {
     }
 
     public Set<KhesaratCase> getKhesaratCases() {
-        return khesaratCases;
+        return khesaratCases.stream().filter(kc->!kc.getDeleted()).collect(Collectors.toSet());
     }
 
     public void setKhesaratCases(Set<KhesaratCase> khesaratCases) {

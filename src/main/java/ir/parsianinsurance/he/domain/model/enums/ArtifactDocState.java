@@ -5,6 +5,7 @@ package ir.parsianinsurance.he.domain.model.enums;
  */
 public enum ArtifactDocState {
 
+    EMPTY,
     NIAZ,
     JADID,
     ELAME_NAGHS,

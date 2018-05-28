@@ -17,7 +17,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
@@ -55,7 +54,7 @@ public class ArtifactDocListBean implements Serializable {
     private List<ArtifactDocState> validNextVaziats;
     private ArtifactSearchModel searchArtifact;
     private int selectedItemRow;
-    private static final int ARTIFACT_MSX_ROW = 3;
+    private static final int ARTIFACT_MAX_ROW = 5;
 
     @PostConstruct
     public void init(){
@@ -235,7 +234,7 @@ public class ArtifactDocListBean implements Serializable {
     }
 
     public void search(){
-       artifactDocList = artifactDocService.searchArtifact(searchArtifact, ARTIFACT_MSX_ROW);
+       artifactDocList = artifactDocService.searchArtifact(searchArtifact, ARTIFACT_MAX_ROW);
     }
 
     public void removeZamimeFromZamaem(Zamime zamime){

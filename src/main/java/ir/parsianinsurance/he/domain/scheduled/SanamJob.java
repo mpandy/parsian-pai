@@ -1,6 +1,7 @@
 package ir.parsianinsurance.he.domain.scheduled;
 
 import ir.parsianinsurance.he.domain.model.*;
+import ir.parsianinsurance.he.domain.model.enums.NoeHavale;
 import ir.parsianinsurance.he.domain.model.enums.NoeShakhs;
 import ir.parsianinsurance.he.domain.service.IKhesaratService;
 import ir.parsianinsurance.he.infrastructure.logging.ArtifactLog;
@@ -158,10 +159,22 @@ public class SanamJob {
             shomareHavaleKhesarat = ((HavaleKhesarat)artifact).getShomareHavale();
             daryaftKonandehKhesarat = ((HavaleKhesarat)artifact).getName_daryaft_konande();
             isReal = isReal(((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal());
-            type = "HAVALE_KHESARAT";
+            NoeHavale noeHavale = ((HavaleKhesarat)artifact).getNoeHavale();
+            switch (noeHavale)
+            {
+                case HAVALE_PARDAKHTI:
+                    type = "HAVALE_KHESARAT";
+                break;
+
+                case HAVALE_BARGASHTI:
+                    type = "SIMAB_LOSSBILL_DEC";
+                break;
+            }
             rcptName = ((HavaleKhesarat)artifact).getKhesarat().getBimename().getPishnahadeFaal().getBimeGozar().toString();
             shaba = ((HavaleKhesarat)artifact).getEttelaateShaba();
         }
+
+//
 
         Map<String, String> sanam = new HashMap<>();
         sanam.put("amount", amount);

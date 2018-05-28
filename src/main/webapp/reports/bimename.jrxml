@@ -2,12 +2,13 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ddd8662-d55b-43a3-8ac2-9526eb6744ad">
 	<property name="ireport.zoom" value="1.3636363636363837"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="816"/>
+	<property name="ireport.y" value="861"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
 	<style name="heading" fontName="BNazanin" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
 	<parameter name="khatareEzafi" class="java.lang.String"/>
+	<parameter name="moddat" class="java.lang.Integer"/>
 	<parameter name="realPath" class="java.lang.String"/>
 	<parameter name="maliat" class="java.lang.String"/>
 	<field name="bimename" class="ir.parsianinsurance.he.domain.model.Bimename"/>
@@ -504,10 +505,10 @@
 				<reportElement style="style1" x="189" y="5" width="68" height="18" uuid="adcbaec0-a603-426d-a62a-f151e8e9270d"/>
 				<textFieldExpression><![CDATA[$F{bimename.pishnahadeFaal}.getTatarikh()]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement style="style1" x="79" y="5" width="70" height="18" uuid="817b5d50-565e-441b-94f2-c66a925c73e9"/>
-				<text><![CDATA[365]]></text>
-			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style1" x="83" y="6" width="68" height="18" uuid="be598c29-1fe3-4aa6-9815-6246964e4eb4"/>
+				<textFieldExpression><![CDATA[$P{moddat}]]></textFieldExpression>
+			</textField>
 		</band>
 		<band height="112">
 			<rectangle>

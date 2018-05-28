@@ -81,7 +81,7 @@ public class KhesaratBean implements Serializable{
         newHavaleKhesarat = new HavaleKhesarat();
     }
 
-    public  void newKhesaratCaseInit(){
+    public void newKhesaratCaseInit(){
         newkhesaratcase = KhesaratCaseFactory.newKhesaratCaseForAddToKhesarat();
         newkhesaratcase.setName_khesarat_dide(khesarat  .getBimename()
                                                         .getPishnahadeFaal()
@@ -123,6 +123,9 @@ public class KhesaratBean implements Serializable{
     public boolean validateKhesaratCase(KhesaratCase khesaratCase) {
 
         List<String> errorMessges = new ArrayList<>();
+
+        if (!khesarat.getBimename().getPishnahadeFaal().hasTaahod(khesaratCase.getNoehadese().getTaahod()))
+            errorMessges.add("bimenamefaghedetaahodemotenazerbahadeseast");
 
         if (khesaratCase.getMablagh_khesarate_elamshode() == null)
             errorMessges.add("mablagheElamshodeRaRavaredNamaeed");

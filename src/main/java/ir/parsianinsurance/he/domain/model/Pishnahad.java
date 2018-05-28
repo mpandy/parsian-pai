@@ -464,7 +464,6 @@ public class Pishnahad {
 
     public void mohasebeyeHagheBime(Double nerkheMaliat, double darsadeHagheBimeSalane)
     {
-
         long jame_khatarate_asli = 0;
         double max_nerkh_khatare_ezafi = getMaxNerkhKhatareEzafi();
         long jame_khatare_ezafi = 0;
@@ -542,6 +541,13 @@ public class Pishnahad {
             if (tb.getNoetaahod().equals(noeTaahod))
                 return tb.getSarmaye_taahod();
         return 0L;
+    }
+
+    public boolean hasTaahod(NoeTaahod noeTaahod){
+        for(TaahodBimegar taahod : getTaahodBimegars())
+            if(taahod.getNoetaahod().name().equals(noeTaahod.name()))
+                return true;
+        return false;
     }
 
 }

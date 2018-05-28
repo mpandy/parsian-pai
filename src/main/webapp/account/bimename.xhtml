@@ -300,6 +300,14 @@
                     <p:panel rendered="#{bimenameBean.filter.bimegozarHoghooghiDetails}" style="border: 0px">
                         <h:panelGrid columns="6" styleClass="matnfarsi" width="80%">
 
+                            <p:outputLabel value="#{msg['shenasemeli']} : " for="shenasemeli"/>
+                            <p:inputText id="shenasemeli" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.shenase_meli}"
+                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"
+                                         style="font-family: byekan">
+                            <p:ajax event="keyup" update="bimegozarhoghooghi" listener="#{bimenameBean.processLegalNo}" />
+                            </p:inputText>
+
+
                             <p:outputLabel value="#{msg['pishvand']} : " for="pishvandhoghooghi"/>
                             <p:selectOneMenu id="pishvandhoghooghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.pishvand}"
                                              style="direction: ltr"
@@ -309,21 +317,16 @@
 
                             <p:outputLabel value="#{msg['namesherkat']} : " for="namesherkat"/>
                             <p:inputText id="namesherkat" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.name}"
-                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}"/>
+                                         disabled="true" style="font-family: byekan"/>
 
                             <p:outputLabel value="#{msg['codeeghtesadi']} : " for="codeeghtesadi"/>
                             <p:inputText id="codeeghtesadi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.code_eghtesadi}"
                                          disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"
                                          style="font-family: byekan"/>
 
-                            <p:outputLabel value="#{msg['shenasemeli']} : " for="shenasemeli"/>
-                            <p:inputText id="shenasemeli" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.shenase_meli}"
-                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME])}"
-                                         style="font-family: byekan"/>
-
                             <p:outputLabel value="#{msg['address']} : " for="neshanihoghooghi"/>
                             <p:inputText id="neshanihoghooghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.address}"
-                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+                                         disabled="true" style="font-family: byekan"/>
 
                             <p:outputLabel value="#{msg['telephone']} : " for="telephonehoghooghi"/>
                             <p:inputText id="telephonehoghooghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.telefon}"
@@ -331,7 +334,7 @@
 
                             <p:outputLabel value="#{msg['codeposti']} : " for="codepostihoghoghi"/>
                             <p:inputText id="codepostihoghoghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.code_posti}"
-                                         disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME])}" style="font-family: byekan"/>
+                                         disabled="true" style="font-family: byekan"/>
 
                             <p:outputLabel value="#{msg['posteelectronic']} : " for="posteelectronichoghoghi"/>
                             <p:inputText id="posteelectronichoghoghi" value="#{bimenameBean.bimename.pishnahadeFaal.bimeGozar.shakhs.ettelaateTamas.poste_electronic}"

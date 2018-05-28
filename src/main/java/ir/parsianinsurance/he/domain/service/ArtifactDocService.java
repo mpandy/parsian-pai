@@ -9,6 +9,7 @@ import ir.parsianinsurance.he.domain.model.enums.VaziateParvandeKhesarat;
 import ir.parsianinsurance.he.infrastructure.io.Zamime;
 import ir.parsianinsurance.he.infrastructure.repository.*;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
+import ir.parsianinsurance.he.infrastructure.util.StringUtil;
 import ir.parsianinsurance.he.interfaces.view.model.ArtifactSearchModel;
 
 import javax.enterprise.context.RequestScoped;
@@ -225,13 +226,26 @@ public class ArtifactDocService implements IArtifactDocService {
 
         filterForVahed(userBean.getCurrentUser().getVahed(), query);
 
-//        boolean filterApplied = filterByUserCriteriaAppliedForArtifactDoc(query, searchedArtifact);
+        boolean filterApplied = filterByUserCriteriaAppliedForArtifactDoc(query, searchedArtifact);
 
-//        if(!filterApplied)
-//            query.limit(rowLimit);
+        if(!filterApplied)
+            query.limit(rowLimit);
 
         query.orderBy(QArtifactDoc.artifactDoc.createdDate.desc());
         return query.fetch();
+    }
+
+    private boolean filterByUserCriteriaAppliedForArtifactDoc(JPAQuery query, ArtifactSearchModel searchedArtifact) {
+
+        QArtifactDoc qArtifactDoc = QArtifactDoc.artifactDoc;
+
+        if(searchedArtifact.getArtifactDocState() != null &&
+                !searchedArtifact.getArtifactDocState().equals(ArtifactDocState.EMPTY))
+        {
+            query.where(qArtifactDoc.artifactDocState.eq(searchedArtifact.getArtifactDocState()));
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -335,9 +349,6 @@ public class ArtifactDocService implements IArtifactDocService {
 
     private void filterForVahed(Vahed currentUserVahed, JPAQuery query) {
 
-//        if(currentUserVahed.getVahedType().equals(VahedType.SETAD))
-//            return;
-
         QArtifactDoc qArtifactDoc = QArtifactDoc.artifactDoc;
 
         query.where(qArtifactDoc.az.eq(currentUserVahed)
@@ -347,39 +358,5 @@ public class ArtifactDocService implements IArtifactDocService {
         );
     }
 
-//    private boolean filterByUserCriteriaAppliedForArtifactDoc(JPAQuery query, ArtifactSearchModel artifactSearchModel) {
-//
-//        boolean applied = false;
-//        QArtifactDoc qArtifactDoc = QArtifactDoc.artifactDoc;
-//
-//        ArtifactDaryaftiErsali ersali_or_daryafti = artifactSearchModel.getErsali_or_daryafti();
-//        if(ersali_or_daryafti != null && !ersali_or_daryafti.equals(ArtifactDaryaftiErsali.EMPTY_KHATAR))
-//            switch (ersali_or_daryafti)
-//            {
-//                case DARYAFTI:
-//                    query.where(qArtifactDoc.be.eq(userBean.getCurrentUser().getVahed()));
-//                    applied = true;
-//                break;
-//
-//                case ERSALI:
-//                    query.where(qArtifactDoc.az.eq(userBean.getCurrentUser().getVahed()));
-//                    applied = true;
-//                break;
-//            }
-//
-//        String shomarePishnahad = artifactSearchModel.getShomarePishnahad();
-//        if(!StringUtil.isEmpty(shomarePishnahad)) {
-//            QBimename qBimename = QBimename.bimename;
-//            QPishnahad qPishnahad = QPishnahad.pishnahad;
-//
-//            query   .join(qArtifactDoc.bimename, qBimename)
-//                    .join(qBimename.pishnahadeFaal, qPishnahad)
-//                    .where(qPishnahad.shomare_pishnahad.contains(shomarePishnahad));
-//
-//            applied = true;
-//        }
-//
-//        return applied;
-//    }
 
 }

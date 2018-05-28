@@ -29,6 +29,9 @@ public class ComboOptions {
     public VaziateBimename[] getVaziateBimenames() {
         return VaziateBimename.values();
     }
+    public ArtifactDocState[] getArtifactDocStates() {
+        return ArtifactDocState.values();
+    }
     public NahvePardakht[] getNahvePardakhts() {return new NahvePardakht[]{NahvePardakht.PARDAKHT_NAGHDI_HAMZAMAN_BA_SODOOR};}
     public NesbatBaBimeshode[] getNesbatBaBimeshodes() {
         return NesbatBaBimeshode.values();

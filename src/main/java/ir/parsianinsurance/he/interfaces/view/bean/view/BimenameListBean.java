@@ -16,6 +16,7 @@ import ir.parsianinsurance.he.infrastructure.repository.BimenameRepository;
 import ir.parsianinsurance.he.infrastructure.repository.SaghfeSodoorArtifactDocRepository;
 import ir.parsianinsurance.he.infrastructure.repository.TakhfifModiriatiArtifactDocRepository;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
+import ir.parsianinsurance.he.infrastructure.service.IAshkhaseHoghooghiService;
 import ir.parsianinsurance.he.infrastructure.service.IPrintService;
 import ir.parsianinsurance.he.infrastructure.workflow.WebAction;
 import ir.parsianinsurance.he.interfaces.view.bean.session.MainView;

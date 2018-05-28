@@ -19,7 +19,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="B Nazanin" size="15" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[حواله خسارت پرداختی]]></text>
+				<text><![CDATA[حواله خسارت]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="style1" x="65" y="2" width="57" height="20" uuid="9bccc40e-4cb5-4826-9cc2-1e2e536d362e"/>

@@ -27,6 +27,10 @@ public class SabtePishnahadHEValidator extends HEValidator {
 
         Pishnahad pishnahad = ((BimenameBean) context.getTarget()).getBimename().getPishnahadeFaal();
 
+        if (pishnahad.getBimeGozar().getShakhs().getName() == null ||
+            pishnahad.getBimeGozar().getShakhs().getName().trim().equals(""))
+            errorMessages.add("namebimegozarravaredkonid");
+
         if (pishnahad.getBazaryab() == null)
             errorMessages.add("BazaryabEntekhabNashodeAst");
 

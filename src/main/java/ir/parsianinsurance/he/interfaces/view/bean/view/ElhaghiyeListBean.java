@@ -150,7 +150,8 @@ public class ElhaghiyeListBean implements Serializable{
 
         return  selectedElhaghiye!=null &&
                 selectedElhaghiye.getVaziateElhaghiye() != null &&
-                selectedElhaghiye.getVaziateElhaghiye().equals(VaziateElhaghiye.TAYIDE_MOJAVEZ);
+                selectedElhaghiye.getVaziateElhaghiye().equals(VaziateElhaghiye.TAYIDE_MOJAVEZ) &&
+                selectedElhaghiye.getNoe_elhaghie().equals(NoeElhaghiye.TAGHIR);
     }
 
     @WebAction(toState = StateName.NAMAYESH_ELHAGHIYE)

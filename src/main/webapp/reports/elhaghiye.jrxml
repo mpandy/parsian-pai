@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="elhaghiye" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="74d46278-5319-4901-8f6c-14432817a6f9">
 	<property name="ireport.zoom" value="1.4641000000000006"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="98"/>
+	<property name="ireport.y" value="373"/>
 	<style name="style1" hAlign="Center" vAlign="Middle" fontName="B Nazanin" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="net/sf/jasperreports/fonts/farsi/BNazanin.ttf" pdfEncoding="Identity-H"/>
 	<parameter name="maliat" class="java.lang.String"/>
 	<parameter name="realPath" class="java.lang.String"/>
@@ -33,13 +33,6 @@
 				<reportElement style="style1" x="480" y="31" width="42" height="14" uuid="34ca2b0f-b45c-420a-ba57-ae0f78e68365"/>
 				<textElement>
 					<font size="10"/>
-				</textElement>
-				<text><![CDATA[(سهامی عام)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="style1" x="430" y="38" width="47" height="16" uuid="feefcb4e-1832-4564-b549-08b18eccf231"/>
-				<textElement>
-					<font size="11"/>
 				</textElement>
 				<text><![CDATA[(سهامی عام)]]></text>
 			</staticText>
@@ -229,7 +222,7 @@
 				<textElement>
 					<font size="11"/>
 				</textElement>
-				<text><![CDATA[آدرس : تهران، خیابان ولیعصر، خیابان والی نژاد، پلاک 3، کد پستی 53391-19698   تلفن  8775261   دورنگار   8777440 ]]></text>
+				<text><![CDATA[آدرس : تهران، ضلع شمالی بلوار میرداماد، حد فاصل خیابان ولیعصر و بلوار آفریقا،پلاک 325، کد پستی: 1969633391- تلفن 8259]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

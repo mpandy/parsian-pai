@@ -61,6 +61,7 @@ public class PrintService implements IPrintService {
         JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(bimenamePrints);
         Map parameters = new HashMap();
 
+        parameters.put("moddat", bimename.getPishnahadeFaal().modatBimename());
         parameters.put("khatareEzafi", translateKhatarateEzafe(bimename));
         parameters.put("realPath", context.getRealPath("/")+"\\reports\\");
         parameters.put("maliat", (propertyRules.getSinglesDoubleParam("nerkheMaliat")* bimename.getPishnahadeFaal().getHagheBime().getHaghe_bime_ghabelepardakht()+""));

@@ -56,7 +56,7 @@ public class VahedAdminPanelBeen implements Serializable{
     }
 
     public void search(){
-        vahedList = vahedService.searchVahed();
+        vahedList = vahedService.searchVahed(searchVahed);
     }
 
     public void addOrEditNamayande() {

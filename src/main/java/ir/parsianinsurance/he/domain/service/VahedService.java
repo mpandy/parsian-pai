@@ -42,8 +42,11 @@ public class VahedService implements IVahedService {
     }
 
     @Override
-    public List<Vahed> searchVahed() {
-        return vahedRepository.findTop5ByOrderByIdDesc();
+    public List<Vahed> searchVahed(Vahed vahed) {
+        if(vahed.getName()==null || vahed.getName().trim().equals(""))
+            return vahedRepository.findTop5ByOrderByIdDesc();
+        else
+            return vahedRepository.findByNameContains(vahed.getName());
     }
 
     @Override

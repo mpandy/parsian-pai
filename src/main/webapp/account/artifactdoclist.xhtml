@@ -11,15 +11,13 @@
     <h:form id="artifactdocsform" >
 
     <h:panelGrid columns="2" styleClass="matnfarsi" style="direction: rtl;padding-top: 5%">
-                <p:outputLabel value="#{msg['darkhasthaye']} : " for="darkhastha"/>
-                <p:selectOneMenu id="darkhastha" value="#{artifactDocListBean.searchArtifact.ersali_or_daryafti}"
+
+                <p:outputLabel value="#{msg['artifactDocState']} : " for="searchartifactDocState"/>
+                <p:selectOneMenu id="searchartifactDocState" value="#{artifactDocListBean.searchArtifact.artifactDocState}"
                                  style="direction: ltr">
-                    <f:selectItems value="#{comboOptions.artifactDaryaftiErsali}" var="ersalidaryafti"
-                                   itemValue="#{ersalidaryafti}" itemLabel="#{msg[ersalidaryafti.name()]}"/>
+                    <f:selectItems value="#{comboOptions.artifactDocStates}" var="docstate" itemValue="#{docstate}"
+                                   itemLabel="#{msg[docstate.name()]}" />
                 </p:selectOneMenu>
-                <p:outputLabel value="#{msg['shomare_pishnahad']} : " for="shomare_pishnahad"/>
-                <p:inputText id="shomare_pishnahad" value="#{artifactDocListBean.searchArtifact.shomarePishnahad}"
-                             style="font-family: byekan" size="20" />
 
                 <p:commandButton value="#{msg['josteju']}" icon="fa fa-search" styleClass="matnfarsi"
                                  style="right: 45%; margin: 1%"

@@ -22,7 +22,9 @@ import ir.parsianinsurance.he.infrastructure.io.Zamime;
 import ir.parsianinsurance.he.infrastructure.io.ZamimeFactory;
 import ir.parsianinsurance.he.infrastructure.repository.*;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
+import ir.parsianinsurance.he.infrastructure.service.IAshkhaseHoghooghiService;
 import ir.parsianinsurance.he.infrastructure.service.IFileService;
+import ir.parsianinsurance.he.infrastructure.service.LegalEntity;
 import ir.parsianinsurance.he.infrastructure.util.DateUtil;
 import ir.parsianinsurance.he.infrastructure.workflow.WebAction;
 import ir.parsianinsurance.he.interfaces.view.bean.session.MainView;
@@ -63,6 +65,9 @@ public class BimenameBean implements Serializable{
 
     @Inject
     IFileService fileService;
+
+    @Inject
+    IAshkhaseHoghooghiService legalService;
 
     @Inject
     ITaahodeBimegarService taahodeBimegarService;
@@ -588,4 +593,22 @@ public class BimenameBean implements Serializable{
     public void downloadZamimePishnahad() {
         fileService.downloadZamime(bimename.getPishnahadeFaal().getZamimePishnahad());
     }
+
+    public void processLegalNo(){
+        String shenaseMelli = ((ShakhseHoghooghi)bimename.getPishnahadeFaal().getBimeGozar().getShakhs()).getShenase_meli();
+        if(shenaseMelli.length()==11)
+        {
+            LegalEntity legalEntity = legalService.estelam(shenaseMelli);
+            bimename.getPishnahadeFaal().getBimeGozar().getShakhs().setName(legalEntity.getName());
+            bimename.getPishnahadeFaal().getBimeGozar().getShakhs().getEttelaateTamas().setAddress(legalEntity.getAddress());
+            bimename.getPishnahadeFaal().getBimeGozar().getShakhs().getEttelaateTamas().setCode_posti(legalEntity.getCodeposti());
+        }
+        else {
+            bimename.getPishnahadeFaal().getBimeGozar().getShakhs().setName("");
+            bimename.getPishnahadeFaal().getBimeGozar().getShakhs().getEttelaateTamas().setAddress("");
+            bimename.getPishnahadeFaal().getBimeGozar().getShakhs().getEttelaateTamas().setCode_posti("");
+        }
+
+    }
+
 }

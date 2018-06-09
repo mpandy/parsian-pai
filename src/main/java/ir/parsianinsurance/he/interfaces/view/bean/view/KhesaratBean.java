@@ -325,24 +325,6 @@ public class KhesaratBean implements Serializable{
         this.filter = filter;
     }
 
-    public Set<KhesaratCase> undeletedKhesaratCases(){
-        if(khesarat.getKhesaratCases().isEmpty())
-            return Collections.emptySet();
-
-        return  khesarat.getKhesaratCases().stream()
-                .filter(khesaratCase -> khesaratCase.getDeleted() == null )
-                .collect(Collectors.toSet());
-    }
-
-    public Set<HavaleKhesarat> undeletedHavaleKhesarats(){
-        if(khesarat.getHavaleKhesarats().isEmpty())
-            return Collections.emptySet();
-
-        return  khesarat.getHavaleKhesarats().stream()
-                .filter(havaleKhesarat -> havaleKhesarat.getDeleted() == null )
-                .collect(Collectors.toSet());
-    }
-
     public boolean shabaIsOk(String shaba) {
         shaba = shaba.trim();
         if (shaba.length() != 24) {

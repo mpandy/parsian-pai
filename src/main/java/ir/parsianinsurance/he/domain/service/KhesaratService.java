@@ -82,7 +82,7 @@ public class KhesaratService implements IKhesaratService {
     @Override
     public void setShomareKhesaratCases(Khesarat khesarat) {
 
-        List khesaratCasesList = new ArrayList(khesarat.getKhesaratCases());
+        List khesaratCasesList = new ArrayList(khesarat.undeletedKhesaratCases());
         Collections.sort(khesaratCasesList);
         int counter = 1;
         for(Object khesaratCase : khesaratCasesList)
@@ -98,7 +98,7 @@ public class KhesaratService implements IKhesaratService {
     @Override
     public void setShomareHavaleKhesarat(Khesarat khesarat) {
 
-        List havalekhesaratslist = new ArrayList(khesarat.getHavaleKhesarats());
+        List havalekhesaratslist = new ArrayList(khesarat.undeletedHavaleKhesarats());
         java.util.Collections.sort(havalekhesaratslist);
         int counter = 1;
         for(Object havalekhesarat : havalekhesaratslist)
@@ -179,7 +179,7 @@ public class KhesaratService implements IKhesaratService {
 
     @Override
     public boolean allOfKhesaratCasesTayidShodeHastand(Khesarat khesarat) {
-        for(KhesaratCase khesaratCase : khesarat.getKhesaratCases())
+        for(KhesaratCase khesaratCase : khesarat.undeletedKhesaratCases())
             if(!khesaratCase.getVaziat().equals(VaziateKhesaratCase.TAYIDE_MOJAVEZ))
                 return false;
         return true;
@@ -187,7 +187,7 @@ public class KhesaratService implements IKhesaratService {
 
     @Override
     public boolean ayaBimenameBasteMishavad(Khesarat khesarat) {
-        return khesarat .getKhesaratCases()
+        return khesarat .undeletedKhesaratCases()
                         .stream()
                         .anyMatch(khcase -> khcase.getNoehadese().equals(NoeHadese.FOT));
     }

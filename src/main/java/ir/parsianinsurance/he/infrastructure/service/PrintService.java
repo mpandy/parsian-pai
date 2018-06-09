@@ -104,11 +104,11 @@ public class PrintService implements IPrintService {
     public JasperPrint printParvandekhesarat(Khesarat khesarat, ServletContext context) throws JRException, IOException {
         KhesaratPrint khesaratPrint = new KhesaratPrint();
         khesaratPrint.setKhesarat(khesarat);
-        for(KhesaratCase khesaratCase : khesarat.getKhesaratCases()) {
+        for(KhesaratCase khesaratCase : khesarat.undeletedKhesaratCases()) {
             khesaratCase.setVaziatFarsi(bundle.getString(khesaratCase.getVaziat().name()));
             khesaratCase.setNoeKhesaratFarsi(bundle.getString(khesaratCase.getNoe_khesarat().name()));
         }
-        khesaratPrint.setMavared(new JRBeanCollectionDataSource(khesarat.getKhesaratCases()));
+        khesaratPrint.setMavared(new JRBeanCollectionDataSource(khesarat.undeletedKhesaratCases()));
 
         if(khesarat.getBimename().getPishnahadeFaal().getNoeBimegozar().equals(NoeShakhs.HAGHIGHI)) {
             ShakhseHaghighi shakhs = (ShakhseHaghighi) khesarat

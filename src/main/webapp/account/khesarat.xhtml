@@ -80,7 +80,7 @@
                    <p:ajax event="click" listener="#{khesaratBean.newKhesaratCaseInit}" update="newkhesaratdialog"/>
                </p:commandButton>
 
-               <p:dataTable id="khesarattable" var="nextkhesaratcase" value="#{khesaratBean.undeletedKhesaratCases()}"
+               <p:dataTable id="khesarattable" var="nextkhesaratcase" value="#{khesaratBean.khesarat.undeletedKhesaratCases()}"
                             emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true">
 
                    <p:column headerText="#{msg['noekhesarat']}" style="text-align: center" styleClass="matnfarsi">
@@ -147,7 +147,7 @@
                 <p:ajax event="click" listener="#{khesaratBean.newHavaleKhesaratInit}" update="newhavalekhesaratdialog"/>
              </p:commandButton>
 
-           <p:dataTable id="havalekhesarattable" var="nexthavalekhesarat" value="#{khesaratBean.undeletedHavaleKhesarats()}"
+           <p:dataTable id="havalekhesarattable" var="nexthavalekhesarat" value="#{khesaratBean.khesarat.undeletedHavaleKhesarats()}"
                         emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true">
 
                <p:column headerText="#{msg['shomarehavale']}" styleClass="matnfarsi" style="text-align: center"

@@ -188,7 +188,7 @@ public class ApplicationService
     public Optional<Warning> sabteKhesarat(Khesarat khesarat) {
 
         Optional<Warning> possibleWarning = Optional.empty();
-        for(KhesaratCase khesaratCase : khesarat.getKhesaratCases()) {
+        for(KhesaratCase khesaratCase : khesarat.undeletedKhesaratCases()) {
 
             khesaratCase = khesaratService.buildKhesaratCase(khesaratCase);
             switch (khesaratCase.getNoehadese())
@@ -262,7 +262,7 @@ public class ApplicationService
     @Override
     public Khesarat sabteKhesaratHavales(Khesarat khesarat) {
         khesaratService.setShomareHavaleKhesarat(khesarat);
-        for(HavaleKhesarat havaleKhesarat : khesarat.getHavaleKhesarats()) {
+        for(HavaleKhesarat havaleKhesarat : khesarat.undeletedHavaleKhesarats()) {
 
             if(havaleKhesarat.getBeSanamRafte() == null) {
                 khesaratService.buildHavaleKhesarat(havaleKhesarat);

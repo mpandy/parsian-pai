@@ -52,11 +52,11 @@ public class SabteKhesaratValidator extends HEValidator{
             errorMessages.add("tarikheelamekhesaratGhablAzHadese");
 
         if(khesarat.getVaziateparvande().equals(VaziateParvandeKhesarat.ELAAM_BE_MAALI)) {
-            validateKhesaratCasesForElamBeMali(errorMessages, khesarat.getKhesaratCases());
-            validateSaghfeTaahodat(errorMessages, khesarat.getKhesaratCases());
+            validateKhesaratCasesForElamBeMali(errorMessages, khesarat.undeletedKhesaratCases());
+            validateSaghfeTaahodat(errorMessages, khesarat.undeletedKhesaratCases());
         }
 
-        validateKhesaratCasesSize(errorMessages, khesarat.getKhesaratCases());
+        validateKhesaratCasesSize(errorMessages, khesarat.undeletedKhesaratCases());
 
         if(!errorMessages.isEmpty())
             throw new HeException(errorMessages);

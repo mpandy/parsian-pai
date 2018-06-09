@@ -5,6 +5,7 @@ import ir.parsianinsurance.he.domain.model.enums.VaziateParvandeKhesarat;
 import ir.parsianinsurance.he.infrastructure.security.User;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -150,7 +151,11 @@ public class Khesarat {
     }
 
     public Set<KhesaratCase> getKhesaratCases() {
-        return khesaratCases.stream().filter(kc->!kc.getDeleted()).collect(Collectors.toSet());
+        return khesaratCases;
+    }
+
+    public Set<KhesaratCase> undeletedKhesaratCases() {
+        return getKhesaratCases().stream().filter(kc -> kc.getDeleted()==null).collect(Collectors.toSet());
     }
 
     public void setKhesaratCases(Set<KhesaratCase> khesaratCases) {
@@ -167,6 +172,10 @@ public class Khesarat {
 
     public Set<HavaleKhesarat> getHavaleKhesarats() {
         return havaleKhesarats;
+    }
+
+    public Set<HavaleKhesarat> undeletedHavaleKhesarats() {
+        return getHavaleKhesarats().stream().filter(hk -> hk.getDeleted()==null).collect(Collectors.toSet());
     }
 
     public void setHavaleKhesarats(Set<HavaleKhesarat> havaleKhesarats) {

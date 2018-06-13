@@ -42,7 +42,7 @@ public class SanamJob {
     @Inject
     IArtifactLogService artifactLogService;
 
-//    @Schedule(hour="*", minute = "*/1", persistent = false)
+    @Schedule(hour="*", minute = "*/1", persistent = false)
     public void callSanamDebitJsonService() {
 
         System.out.print("Try to call sanamService on... ");

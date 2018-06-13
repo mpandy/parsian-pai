@@ -267,12 +267,13 @@ public class ApplicationService
             if(havaleKhesarat.getBeSanamRafte() == null) {
                 khesaratService.buildHavaleKhesarat(havaleKhesarat);
 
-                ArtifactLog log = new ArtifactLog(userBean.getCurrentUser().getUsername(),
-                        HavaleKhesarat.class.getSimpleName(),
-                        havaleKhesarat.getId());
+                havaleKhesaratRepository.save(havaleKhesarat);
+
+                ArtifactLog log = new ArtifactLog(  userBean.getCurrentUser().getUsername(),
+                                                    HavaleKhesarat.class.getSimpleName(),
+                                                    havaleKhesarat.getId());
                 artifactLogRepository.save(log);
                 havaleKhesarat.setBeSanamRafte(true);
-                havaleKhesaratRepository.save(havaleKhesarat);
             }
 
         }

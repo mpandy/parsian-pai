@@ -10,6 +10,7 @@ import ir.parsianinsurance.he.domain.validator.SabteKhesaratValidator;
 import ir.parsianinsurance.he.infrastructure.HeException;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
 import ir.parsianinsurance.he.infrastructure.service.IPrintService;
+import ir.parsianinsurance.he.infrastructure.util.StringUtil;
 import ir.parsianinsurance.he.infrastructure.workflow.WebAction;
 import ir.parsianinsurance.he.interfaces.view.bean.session.MainView;
 import ir.parsianinsurance.he.interfaces.view.bean.view.khesaratLoader.KhesaratFilter;
@@ -240,6 +241,9 @@ public class KhesaratBean implements Serializable{
 
         if (!shabaIsOk(havaleKhesarat.getEttelaateShaba()))
             errorMessges.add("shabaisnotOk");
+
+        if (!StringUtil.isValidIranianNationalCode(havaleKhesarat.getKodemelli_daryaft_konande()))
+            errorMessges.add("KodeMeliDaryaftKonandeMotabarNemibashad");
 
         if(!errorMessges.isEmpty())
             mainView.errors(errorMessges);

@@ -106,7 +106,7 @@ public class PrintService implements IPrintService {
         khesaratPrint.setKhesarat(khesarat);
         for(KhesaratCase khesaratCase : khesarat.undeletedKhesaratCases()) {
             khesaratCase.setVaziatFarsi(bundle.getString(khesaratCase.getVaziat().name()));
-            khesaratCase.setNoeKhesaratFarsi(bundle.getString(khesaratCase.getNoe_khesarat().name()));
+            khesaratCase.setNoeHadeseFarsi(bundle.getString(khesaratCase.getNoehadese().name()));
         }
         khesaratPrint.setMavared(new JRBeanCollectionDataSource(khesarat.undeletedKhesaratCases()));
 

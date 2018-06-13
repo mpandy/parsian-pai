@@ -32,6 +32,7 @@ public class HavaleKhesarat implements Comparable, Artifact {
     private Long createdDate;
     private String noe_daryaft_konande;
     private String name_daryaft_konande;
+    private String kodemelli_daryaft_konande;
     private String elate_bargashti;
     private String tozihat;
     private String taeedkonandenahaei;
@@ -40,7 +41,13 @@ public class HavaleKhesarat implements Comparable, Artifact {
     private Boolean beSanamRafte;
     private Boolean deleted;
 
+    public String getKodemelli_daryaft_konande() {
+        return kodemelli_daryaft_konande;
+    }
 
+    public void setKodemelli_daryaft_konande(String kodemelli_daryaft_konande) {
+        this.kodemelli_daryaft_konande = kodemelli_daryaft_konande;
+    }
 
     public String getShomareHavale() {
         return shomareHavale;

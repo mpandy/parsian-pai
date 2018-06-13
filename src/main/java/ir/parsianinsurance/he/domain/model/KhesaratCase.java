@@ -45,7 +45,7 @@ public class KhesaratCase implements Comparable, ArtifactDocAttachable {
     private String sharhe_elat;
 
     @Transient
-    private String noeKhesaratFarsi;
+    private String noeHadeseFarsi;
 
     @Transient
     private String vaziatFarsi;
@@ -65,16 +65,16 @@ public class KhesaratCase implements Comparable, ArtifactDocAttachable {
         return id;
     }
 
-    public String getNoeKhesaratFarsi() {
-        return noeKhesaratFarsi;
-    }
-
-    public void setNoeKhesaratFarsi(String noeKhesaratFarsi) {
-        this.noeKhesaratFarsi = noeKhesaratFarsi;
-    }
-
     public String getVaziatFarsi() {
         return vaziatFarsi;
+    }
+
+    public String getNoeHadeseFarsi() {
+        return noeHadeseFarsi;
+    }
+
+    public void setNoeHadeseFarsi(String noeHadeseFarsi) {
+        this.noeHadeseFarsi = noeHadeseFarsi;
     }
 
     public void setVaziatFarsi(String vaziatFarsi) {

@@ -185,15 +185,13 @@ public class BimenameListBean implements Serializable{
 
         bimenameBean.setBimename(getSelectedBimename());
 
-//        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal());
-//        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
-
         setSelectedItemRow(-1);
     }
 
     @KhesaratRender
     @WebAction( toState = StateName.KHESARAT)
     public void sabteKhesarat(){
+        khesaratBeen.init();
         khesaratBeen.getKhesarat().setBimename(selectedBimename);
         khesaratBeen.setValidNextVaziats(Arrays.asList(VaziateParvandeKhesarat.TASHKILE_PARVANDE_VA_KARSHENASI));
         setSelectedItemRow(-1);

@@ -26,7 +26,6 @@ import ir.parsianinsurance.he.interfaces.view.uiflow.StateName;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
-
 import javax.annotation.PostConstruct;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -62,6 +61,7 @@ public class BimenameListBean implements Serializable{
     private boolean showChapButton;
     private boolean showFaskhButton;
     private boolean showEbtalButton;
+    private boolean showVirayeshePishnahadButton;
     private boolean showNamayeshButton;
     private boolean showDarkhastMojavezButton;
     private TabagheKhatar[] tabagheKhatars;
@@ -146,6 +146,7 @@ public class BimenameListBean implements Serializable{
                             selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_ELHAGHIYE_TAGHIR)) &&
                             (bimenameService.isEbtalable(selectedBimename)));
         showDarkhastMojavezButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.NIAZ_BE_AKHZE_MOJAVEZ);
+        showVirayeshePishnahadButton = selectedBimename.getVaziateBimename().equals(VaziateBimename.DARAYE_NAGHS);
     }
 
     @BimenameRender(halate = HalateNamayesheBimename.SABTE_PISHNAHAD)
@@ -163,8 +164,16 @@ public class BimenameListBean implements Serializable{
         Vahed vahedeSodoor = userBean.getCurrentUser().getVahed();
         getSelectedBimename().setVahedeSodoor(vahedeSodoor);
 
-//        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal().getId());
-//        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
+        bimenameBean.setBimename(getSelectedBimename());
+        setSelectedItemRow(-1);
+    }
+
+    @BimenameRender(halate = HalateNamayesheBimename.SODOORE_BIMENAME)
+    @WebAction( toState = StateName.VIRAYESH_PISHNAHAD)
+    public void virayeshePishnahad(){
+
+        Vahed vahedeSodoor = userBean.getCurrentUser().getVahed();
+        getSelectedBimename().setVahedeSodoor(vahedeSodoor);
 
         bimenameBean.setBimename(getSelectedBimename());
         setSelectedItemRow(-1);
@@ -201,9 +210,6 @@ public class BimenameListBean implements Serializable{
     @WebAction(toState =StateName.NAMAYESH_BIMENAME)
     public void namayesh(){
 
-//        Zamime zamimePishnahad = pishnahadService.loadZamimePishnahad(getSelectedBimename().getPishnahadeFaal().getId());
-//        getSelectedBimename().getPishnahadeFaal().setZamimePishnahad(zamimePishnahad);
-
         bimenameBean.setBimename(getSelectedBimename());
         setSelectedItemRow(-1);
     }
@@ -226,7 +232,7 @@ public class BimenameListBean implements Serializable{
         setSelectedItemRow(-1);
     }
 
-    @WebAction(toState =StateName.LIST_ARTIFACTDOC)
+    @WebAction(toState = StateName.LIST_ARTIFACTDOC)
     public void darkhastMojavezRooyeBimename(){
 
         List<ArtifactDoc> artifactDocList = new ArrayList<>();
@@ -350,6 +356,14 @@ public class BimenameListBean implements Serializable{
 
     public void setShowEbtalButton(boolean showEbtalButton) {
         this.showEbtalButton = showEbtalButton;
+    }
+
+    public boolean isShowVirayeshePishnahadButton() {
+        return showVirayeshePishnahadButton;
+    }
+
+    public void setShowVirayeshePishnahadButton(boolean showVirayeshePishnahadButton) {
+        this.showVirayeshePishnahadButton = showVirayeshePishnahadButton;
     }
 
     public boolean isShowNamayeshButton() {

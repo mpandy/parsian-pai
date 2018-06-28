@@ -126,6 +126,8 @@ public abstract class ArtifactDoc {
 
     public abstract void tayidArtifactDocAttachable();
 
+    public abstract void elameNaghsArtifactDocAttachable();
+
     public abstract void adameTayidArtifactDocAttachable();
 
     public Boolean getJavabDadeShode() {

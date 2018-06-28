@@ -14,6 +14,7 @@ import java.util.Optional;
  */
 public interface IApplicationService {
     Pishnahad sabtePishnahad(Bimename bimename);
+    void editPishnahad(Bimename bimename);
     Optional<Warning> sodooreBimename(Bimename bimename);
     Bimename sodooreBimenameAgency(AgencyBimenameInfo info);
     Optional<Warning> sabteElhaghiyeTaghir(Elhaghiye elhaghiye);

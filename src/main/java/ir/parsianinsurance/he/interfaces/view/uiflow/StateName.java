@@ -6,6 +6,7 @@ package ir.parsianinsurance.he.interfaces.view.uiflow;
 public enum StateName {
 
     SABT_PISHNAHAD,
+    VIRAYESH_PISHNAHAD,
     LIST_BIMENAME,
     SODOOR_NEW_BIMENAME,
     SABT_NEW_PISHNAHAD_MOHASEBE,

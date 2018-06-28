@@ -48,6 +48,11 @@ public class ElhaghiyeSaghfeSodoorArtifactDoc extends ArtifactDoc {
     }
 
     @Override
+    public void elameNaghsArtifactDocAttachable() {
+        getElhaghiye().beVaziate(VaziateElhaghiye.DARAYE_NAGHS);
+    }
+
+    @Override
     public void adameTayidArtifactDocAttachable() {
         getElhaghiye().beVaziate(VaziateElhaghiye.ADAME_TAYIDE_MOJAVEZ);
         getElhaghiye().getBimename().setVaziateBimename(VaziateBimename.DAEM);

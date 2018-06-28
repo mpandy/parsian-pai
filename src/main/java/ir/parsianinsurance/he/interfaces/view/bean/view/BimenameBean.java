@@ -151,6 +151,11 @@ public class BimenameBean implements Serializable{
     }
 
     @WebAction(toState = StateName.LIST_BIMENAME)
+    public void enserafazvirayeshepishnahad(){
+        init();
+    }
+
+    @WebAction(toState = StateName.LIST_BIMENAME)
     public void enserafazsabtpishnahad(){
         init();
     }
@@ -159,7 +164,6 @@ public class BimenameBean implements Serializable{
                 toState = StateName.SODOOR_NEW_BIMENAME_MOHASEBE,
                 validator = MohasebeHagheBimeValidator.class)
     public void mohasebeyeHagheBimesodoor(){
-
         int modat = bimename.getPishnahadeFaal().modatBimename();
         bimename.getPishnahadeFaal().mohasebeyeHagheBime(   propertyRules.getSinglesDoubleParam("nerkheMaliat"),
                                                             ayinName24Rules.darsadeHagheBimeSalane(modat));
@@ -200,6 +204,14 @@ public class BimenameBean implements Serializable{
             validator = SabtePishnahadHEValidator.class)
     public void sabtenahayiePishnahad() {
         heService.sabtePishnahad(bimename);
+        init();
+    }
+
+    @WebAction( successMessage = "virayeshepishnahadanjamshod",
+            toState = StateName.LIST_BIMENAME,
+            validator = SabtePishnahadHEValidator.class)
+    public void tayideVirayeshePishnahad() {
+        heService.editPishnahad(bimename);
         init();
     }
 

@@ -63,6 +63,11 @@ public class SaghfeSodoorArtifactDoc extends ArtifactDoc {
     }
 
     @Override
+    public void elameNaghsArtifactDocAttachable() {
+        getBimename().setVaziateBimename(VaziateBimename.DARAYE_NAGHS);
+    }
+
+    @Override
     public void adameTayidArtifactDocAttachable() {
         getBimename().setVaziateBimename(VaziateBimename.ADAME_TAYIDE_MOJAVEZ);
     }

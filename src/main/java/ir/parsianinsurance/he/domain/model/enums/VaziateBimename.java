@@ -10,6 +10,7 @@ public enum VaziateBimename {
     NIAZ_BE_AKHZE_MOJAVEZ,
     TAYIDE_MOJAVEZ,
     ADAME_TAYIDE_MOJAVEZ,
+    DARAYE_NAGHS,
     MOVAGHAT,
     DAEM,
     EBTAL_SHODE,

@@ -274,6 +274,14 @@
                              rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showDarkhastMojavezButton}"/>
         </shiro:hasPermission>
 
+        <shiro:hasPermission name="EDIT_PISHNAHAD">
+            <p:commandButton value="#{msg['virayeshePishnahad']}" action="#{bimenameListBean.virayeshePishnahad}"
+                             icon="fa fa-edit"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.BIMENAME_SELECTED]) and bimenameListBean.showVirayeshePishnahadButton}"/>
+        </shiro:hasPermission>
+
     </p:outputPanel>
 </h:form>
 

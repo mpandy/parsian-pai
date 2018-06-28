@@ -297,9 +297,9 @@ public class ArtifactDocService implements IArtifactDocService {
         artifactDocRepository.save(dialogArtifactDoc);
         artifactDocRepository.save(darEdameye);
 
-        boolean artifactIsInFinalState = dialogArtifactDoc.getArtifactDocState().isFinalState();
-        if(artifactIsInFinalState)
-            updateAttachedDocState(dialogArtifactDoc);
+//      boolean artifactIsInFinalState = dialogArtifactDoc.getArtifactDocState().isFinalState();
+//      if(artifactIsInFinalState)
+        updateAttachedDocState(dialogArtifactDoc);
 
     }
 
@@ -307,6 +307,9 @@ public class ArtifactDocService implements IArtifactDocService {
 
         if (dialogArtifactDoc.getArtifactDocState().equals(ArtifactDocState.TAYID))
             dialogArtifactDoc.tayidArtifactDocAttachable();
+
+        if (dialogArtifactDoc.getArtifactDocState().equals(ArtifactDocState.ELAME_NAGHS))
+            dialogArtifactDoc.elameNaghsArtifactDocAttachable();
 
         if (dialogArtifactDoc.getArtifactDocState().equals(ArtifactDocState.ADAMETAYID))
             dialogArtifactDoc.adameTayidArtifactDocAttachable();

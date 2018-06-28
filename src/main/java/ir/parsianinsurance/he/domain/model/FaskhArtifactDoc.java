@@ -1,6 +1,7 @@
 package ir.parsianinsurance.he.domain.model;
 
 import ir.parsianinsurance.he.domain.model.enums.VaziateBimename;
+import ir.parsianinsurance.he.domain.model.enums.VaziateKhesaratCase;
 import ir.parsianinsurance.he.infrastructure.security.User;
 import ir.parsianinsurance.he.infrastructure.util.DateUtil;
 
@@ -50,6 +51,11 @@ public class FaskhArtifactDoc extends ArtifactDoc  {
     @Override
     public void tayidArtifactDocAttachable() {
         getElhaghiye().beVaziate(VaziateElhaghiye.TAYIDE_MOJAVEZ);
+    }
+
+    @Override
+    public void elameNaghsArtifactDocAttachable() {
+        getElhaghiye().beVaziate(VaziateElhaghiye.DARAYE_NAGHS);
     }
 
     @Override

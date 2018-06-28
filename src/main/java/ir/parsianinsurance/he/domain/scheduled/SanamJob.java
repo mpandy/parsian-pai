@@ -174,8 +174,6 @@ public class SanamJob {
             shaba = ((HavaleKhesarat)artifact).getEttelaateShaba();
         }
 
-//
-
         Map<String, String> sanam = new HashMap<>();
         sanam.put("amount", amount);
         sanam.put("description", description);

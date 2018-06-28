@@ -11,6 +11,7 @@ public enum VaziateKhesaratCase {
     DAEM,
     NIAZ_BE_AKHZE_MOJAVEZ,
     TAYIDE_MOJAVEZ,
+    DARAYE_NAGHS,
     ADAME_TAYIDE_MOJAVEZ;
 
 }

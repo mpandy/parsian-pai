@@ -209,7 +209,8 @@ public class ArtifactDocListBean implements Serializable {
         dialogArtifactDoc.getZamaem().add(newZamime);
     }
 
-    public boolean showTaghirVaziatButton(ArtifactDoc artifactDoc){
+    public boolean
+    showTaghirVaziatButton(ArtifactDoc artifactDoc){
 
         Vahed myVahed = userBean.getCurrentUser().getVahed();
         return  !artifactDoc.getJavabDadeShode() &&

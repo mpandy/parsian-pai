@@ -66,6 +66,11 @@ public class SaghfeKhesaratHazPezArtifactDoc extends ArtifactDoc {
     }
 
     @Override
+    public void elameNaghsArtifactDocAttachable() {
+        getKhesaratCase().setVaziat(VaziateKhesaratCase.DARAYE_NAGHS);
+    }
+
+    @Override
     public void adameTayidArtifactDocAttachable() {
         getKhesaratCase().setVaziat(VaziateKhesaratCase.ADAME_TAYIDE_MOJAVEZ);
         getKhesaratCase().getKhesarat().setVaziateparvande(VaziateParvandeKhesarat.ADAME_TAYIDE_MOJAVEZ);

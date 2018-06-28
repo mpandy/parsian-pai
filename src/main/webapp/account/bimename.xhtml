@@ -191,7 +191,7 @@
                                     itemValue="#{bimegozarmojood}"
                                     completeMethod="#{pishnahadService.autocompleteBimegozar}"
                                     converter="#{bimeGozarConverter}"
-                                     style="direction: ltr; font-family: byekan"
+                                    style="direction: ltr; font-family: byekan"
                                     forceSelection="true"
                                     disabled="#{mainView.inAnyOf([state.NAMAYESH_BIMENAME,state.TAGHIR_BIMENAME,state.SABT_NEW_PISHNAHAD_MOHASEBE])}">
                         <p:ajax event="itemSelect" listener="#{bimenameBean.bimegozarSelectedFromAutocomplete}" update="bimegozar bimeShode" />
@@ -499,7 +499,7 @@
             <h:panelGrid columns="1" styleClass="matnfarsi">
 
                 <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
-                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME,state.VIRAYESH_PISHNAHAD])}">
                     <p:ajax event="click" listener="#{bimenameBean.newZinafInit}" update="newzinafdialog"/>
                 </p:commandButton>
 
@@ -529,7 +529,7 @@
 
 
                     <p:column headerText="#{msg['amaliat']}" width="145" styleClass="matnfarsi"
-                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.VIRAYESH_PISHNAHAD,state.TAGHIR_BIMENAME])}">
                         <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
                                          actionListener="#{bimenameBean.editZinaf(nextzinaf)}"
                                          update="zinaftable :bimenameform:newzinafdialog"/>
@@ -547,7 +547,7 @@
             <h:panelGrid columns="1" styleClass="matnfarsi">
 
                 <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
-                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.VIRAYESH_PISHNAHAD,state.TAGHIR_BIMENAME])}">
                     <p:ajax event="click" listener="#{bimenameBean.newTaahodInit}" update="newtaahoddialog"/>
                 </p:commandButton>
 
@@ -596,7 +596,7 @@
                     </p:column>
 
                     <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145"
-                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.VIRAYESH_PISHNAHAD,state.TAGHIR_BIMENAME])}">
                         <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
                                          actionListener="#{bimenameBean.editTaahod(nexttaahod)}"
                                          update="taahodtable :bimenameform:newtaahoddialog">
@@ -617,7 +617,7 @@
             <h:panelGrid columns="1" styleClass="matnfarsi">
 
                 <p:commandButton value="#{msg['add']}" icon="fa fa-plus" styleClass="matnfarsi"
-                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                                 rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.VIRAYESH_PISHNAHAD,state.TAGHIR_BIMENAME])}">
                     <p:ajax event="click" listener="#{bimenameBean.newKhatarezafiInit}" update="newkhatarezafidialog"/>
                 </p:commandButton>
 
@@ -637,7 +637,7 @@
                     </p:column>
 
                     <p:column headerText="#{msg['amaliat']}" styleClass="matnfarsi" width="145"
-                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.TAGHIR_BIMENAME])}">
+                              rendered="#{mainView.inAnyOf([state.SABT_PISHNAHAD,state.SODOOR_NEW_BIMENAME,state.VIRAYESH_PISHNAHAD,state.TAGHIR_BIMENAME])}">
                         <p:commandButton icon="fa fa-edit" value="#{msg['virayesh']}" styleClass="matnfarsi"
                                          actionListener="#{bimenameBean.editKhatar(nextkhatar)}"
                                          update="khatarezafitable :bimenameform:newkhatarezafidialog"/>
@@ -741,6 +741,20 @@
         <br></br>
 
         <p:outputPanel id="actions" styleClass="operationpanelnavbar">
+
+            <p:commandButton value="#{msg['taeedVirayesh']}" action="#{bimenameBean.tayideVirayeshePishnahad}"
+                             icon="fa fa-thumbs-o-up"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.VIRAYESH_PISHNAHAD])}"
+            />
+
+            <p:commandButton value="#{msg['enserafazvirayesh']}" icon="fa fa-external-link"
+                             actionListener="#{bimenameBean.enserafazvirayeshepishnahad}"
+                             styleClass="matnfarsi"
+                             style="border-color:#303030; border-width: 2px;"
+                             rendered="#{mainView.inAnyOf([state.VIRAYESH_PISHNAHAD])}"
+            />
 
             <p:commandButton value="#{msg['mohasebeyehaghebime']}" action="#{bimenameBean.mohasebeyeHagheBimesodoor}"
                              icon="fa fa-calculator"

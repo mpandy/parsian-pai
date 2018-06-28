@@ -30,6 +30,9 @@ public class ApplicationService
     BimenameRepository bimenameRepository;
 
     @Inject
+    PishnahadRepository pishnahadRepository;
+
+    @Inject
     ElhaghiyeRepository elhaghiyeRepository;
 
     @Inject
@@ -95,6 +98,13 @@ public class ApplicationService
         bimenameRepository.save(bimename);
 
         return bimename.getPishnahadeFaal();
+    }
+
+    @Override
+    public void editPishnahad(Bimename bimename) {
+
+        Pishnahad toBeEdited = pishnahadService.buildPishnahadToUpdate(bimename.getPishnahadeFaal());
+        pishnahadRepository.save(toBeEdited);
     }
 
     @Override

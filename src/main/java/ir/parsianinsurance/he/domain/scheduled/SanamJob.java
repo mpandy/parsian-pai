@@ -79,7 +79,7 @@ public class SanamJob {
         String codeVahedeSodor ="";
         String subsystemName = "IndividualAccident";
         String uniqueCode = "";
-        String field = "2610";
+        String field = "2630";
         String mohlatSarResid = "0";
         String nationalCode = "";
         String shomareGharardad = "";

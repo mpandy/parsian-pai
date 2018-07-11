@@ -1,6 +1,5 @@
 package ir.parsianinsurance.he.interfaces.view.bean.view;
 
-import ir.parsianinsurance.he.domain.facade.IApplicationService;
 import ir.parsianinsurance.he.domain.filter.bimename.BimenameRender;
 import ir.parsianinsurance.he.domain.filter.khesarat.KhesaratRender;
 import ir.parsianinsurance.he.domain.model.*;
@@ -11,12 +10,10 @@ import ir.parsianinsurance.he.domain.model.enums.VaziateParvandeKhesarat;
 import ir.parsianinsurance.he.domain.service.IArtifactDocService;
 import ir.parsianinsurance.he.domain.service.IBimenameService;
 import ir.parsianinsurance.he.domain.service.IPishnahadService;
-import ir.parsianinsurance.he.infrastructure.io.Zamime;
 import ir.parsianinsurance.he.infrastructure.repository.BimenameRepository;
 import ir.parsianinsurance.he.infrastructure.repository.SaghfeSodoorArtifactDocRepository;
 import ir.parsianinsurance.he.infrastructure.repository.TakhfifModiriatiArtifactDocRepository;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
-import ir.parsianinsurance.he.infrastructure.service.IAshkhaseHoghooghiService;
 import ir.parsianinsurance.he.infrastructure.service.IPrintService;
 import ir.parsianinsurance.he.infrastructure.workflow.WebAction;
 import ir.parsianinsurance.he.interfaces.view.bean.session.MainView;
@@ -40,7 +37,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by 8119 on 3/31/2017.

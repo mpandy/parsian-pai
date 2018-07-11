@@ -52,6 +52,9 @@ public class ComboOptions {
                                             VaziateKhesaratCase.MOVAGHAT,
                                             VaziateKhesaratCase.DAEM};
     }
+    public VaziateParvandeKhesarat[] getVaziateParvandeKhesarats() {
+        return VaziateParvandeKhesarat.values();
+    }
     public OlaviateKhesarat[] getOlaviateKhesarat() {return OlaviateKhesarat.values();}
     public NoeKhaseElhaghiye[] getNoeKhaseElhaghiye() {return NoeKhaseElhaghiye.values();}
     public TabagheKhatar[] getTabagheKhatar() {return TabagheKhatar.values();}

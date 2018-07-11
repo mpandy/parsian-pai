@@ -20,8 +20,9 @@
             <p:graphicImage library="default" name="images/ajax-loader.gif" />
         </p:dialog>
 
+        <p:growl id="logingrowl" showDetail="false" />
+
         <h:form id="login_form">
-            <p:growl id="logingrowl" showDetail="false" />
 
             <p:outputLabel value="#{msg['loginpagetitle']}" styleClass="matnfarsi" style="position:fixed;top:20%;right:2%;font-size: x-large;color: #004b99;"/>
 
@@ -45,9 +46,18 @@
             <p:commandButton value="#{msg['login']}" icon="fa fa-sign-in" action="#{loginBean.login}"
                              styleClass="matnfarsi" update="logingrowl">
             </p:commandButton>
+
         </h:panelGrid>
 
     </h:form>
+
+        <div style="padding-left:80%">
+            <h:form>
+                <p:outputLabel value="#{msg['username']} :" styleClass="matnfarsi" style="font-size: large;color: #004b99;" />
+                <p:inputText value="#{loginBean.username}"/>
+                <p:commandLink value="#{msg['passwordsms']}" action="#{loginBean.sendSMS}" update="logingrowl"></p:commandLink>
+            </h:form>
+        </div>
 
 
     </h:body>

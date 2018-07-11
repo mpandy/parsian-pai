@@ -5,6 +5,8 @@ import ir.parsianinsurance.he.domain.model.Khesarat;
 import ir.parsianinsurance.he.domain.model.KhesaratCase;
 import ir.parsianinsurance.he.infrastructure.Warning;
 import ir.parsianinsurance.he.infrastructure.security.User;
+import ir.parsianinsurance.he.interfaces.view.model.HavaleKhesaratSearchModel;
+import ir.parsianinsurance.he.interfaces.view.model.BordroKhesaratSearchModel;
 import ir.parsianinsurance.he.interfaces.view.model.KhesaratSearchModel;
 
 import java.util.List;
@@ -28,4 +30,7 @@ public interface IKhesaratService {
 
     boolean allOfKhesaratCasesTayidShodeHastand(Khesarat khesarat);
     boolean ayaBimenameBasteMishavad(Khesarat khesarat);
+
+    List<HavaleKhesarat> searchHavaleKhesarat(HavaleKhesaratSearchModel havaleKhesaratSearchModel);
+    List<Khesarat> searchBordroKhesarat(BordroKhesaratSearchModel bordroKhesaratSearchModel);
 }

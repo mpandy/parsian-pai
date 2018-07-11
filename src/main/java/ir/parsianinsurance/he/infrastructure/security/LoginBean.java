@@ -1,6 +1,7 @@
 package ir.parsianinsurance.he.infrastructure.security;
 
 import ir.parsianinsurance.he.domain.service.IUserService;
+import ir.parsianinsurance.he.infrastructure.service.ISMSService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -33,6 +34,9 @@ public class LoginBean implements Serializable {
     @Inject
     IUserService userService;
 
+    @Inject
+    ISMSService smsService;
+
     private String username;
     private String password;
     private boolean remember;
@@ -51,7 +55,6 @@ public class LoginBean implements Serializable {
     public void setRemember(boolean remember) {
         this.remember = remember;
     }
-
 
     private static final String HOME_URL = "account/main.xhtml";
     private static final String LOGIN_URL = "";
@@ -81,5 +84,49 @@ public class LoginBean implements Serializable {
         facesContext.getExternalContext().invalidateSession();
         facesContext.getExternalContext().redirect(LOGIN_URL);
     }
+
+
+    public void sendSMS() {
+
+        User user = null;
+        FacesMessage.Severity severity;
+        String username = getUsername();
+        String message;
+
+        try {
+            if (username == null || username.trim().isEmpty()) {
+                message = "enterusername";
+                severity = FacesMessage.SEVERITY_ERROR;
+            }
+            else {
+                user = userService.findByUsername(username);
+                if(user == null){
+                    message = "nouserfound";
+                    severity = FacesMessage.SEVERITY_ERROR;
+                }
+                else {
+                    String mobile = user.getMobile();
+                    if (mobile == null || mobile.trim().isEmpty()) {
+                        message = "mobileforusernotavailable";
+                        severity = FacesMessage.SEVERITY_ERROR;
+                    }
+                    else {
+                        smsService.sendSMS(user, mobile, "SALAM");
+                        message = "sendsmsok";
+                        severity = FacesMessage.SEVERITY_INFO;
+                    }
+                }
+
+            }
+        }
+        catch (Exception e) {
+            message = "sendsmserror";
+            severity = FacesMessage.SEVERITY_ERROR;
+
+        }
+        facesContext.addMessage(null, new FacesMessage(severity, bundle.getString(message), ""));
+
+    }
+
 
 }

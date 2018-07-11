@@ -208,4 +208,11 @@ public class Khesarat {
         return this;
     }
 
+    @Transient
+    public Long getMablaghParvandeKhesarat(){
+        return getKhesaratCases()
+                .stream()
+                .mapToLong(khesaratcase -> khesaratcase.getKhesarat_ghabl_pardakht())
+                .sum();
+    }
 }

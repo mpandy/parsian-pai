@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pfaces="http://omidbiz.com/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+<p:panel header="#{msg['bordroehavalekhesarat']}" toggleable="true" toggleSpeed="500"
+         styleClass="matnfarsi" style="direction: rtl" >
+    <h:form>
+        <h:panelGrid columns="4" cellpadding="5">
+
+            <p:outputLabel value="#{msg['vaziateparvande']} : " for="vaziateparvande" />
+            <p:selectOneMenu id="vaziateparvande" value="#{bordroHavaleKhesaratBean.havaleKhesaratSearchModel.vaziateParvandeKhesarat}"
+                             style="direction: ltr">
+                <f:selectItems value="#{comboOptions.vaziateParvandeKhesarats}" var="vaziateParvande" itemValue="#{vaziateParvande}" itemLabel="#{msg[vaziateParvande.name()]}" />
+            </p:selectOneMenu>
+
+            <p:outputLabel value="#{msg['namayandegi']} : " for="namayandegi"/>
+            <p:autoComplete id="namayandegi"
+                            value="#{bordroHavaleKhesaratBean.havaleKhesaratSearchModel.namayandegi}"
+                            var="namayandegi"
+                            itemLabel="#{namayandegi}"
+                            itemValue="#{namayandegi}"
+                            completeMethod="#{baseInfoService.autocompleteVahed}"
+                            converter="#{vahedConverter}"
+                            style="direction: ltr"
+                            forceSelection="true">
+            </p:autoComplete>
+
+            <p:outputLabel value="#{msg['sodoorehavaleaz']} : " for="aztarikh" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="aztarikh" value="#{bordroHavaleKhesaratBean.havaleKhesaratSearchModel.azTarikhSodoorHavale}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+            <p:outputLabel value="#{msg['sodoorehavaleta']} : " for="tatarikh" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="tatarikh" value="#{bordroHavaleKhesaratBean.havaleKhesaratSearchModel.taTarikhSodoorHavale}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+            <p:commandButton value="#{msg['run']}" icon="fa fa-toggle-right" styleClass="matnfarsi"
+                             style="right: 45%; margin: 1%"
+                             actionListener="#{bordroHavaleKhesaratBean.search}" update="bordrotable"/>
+
+        </h:panelGrid>
+    </h:form>
+
+</p:panel>
+
+<p:outputPanel>
+
+    <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroHavaleKhesaratBean.havaleKhesarats}"
+                 emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi"
+                 rowIndexVar="index" resizableColumns="true" dir="rtl">
+
+        <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['shomarehavale']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{nextbordro.shomareHavale}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['mablaghHavale']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{nextbordro.mablaghHavale}"/>
+        </p:column>
+
+
+    </p:dataTable>
+
+    <h:form>
+        <h:commandLink>
+            <p:graphicImage library="default" name="images/excel.png" width="50"/>
+            <p:dataExporter type="xls" target="bordrotable" fileName="bordroHavaleKhesarat" />
+        </h:commandLink>
+    </h:form>
+
+</p:outputPanel>
+<br></br>
+
+</html>

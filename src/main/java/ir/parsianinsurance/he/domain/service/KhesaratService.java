@@ -5,6 +5,7 @@ import ir.parsianinsurance.he.domain.model.*;
 import ir.parsianinsurance.he.domain.model.enums.NoeHadese;
 import ir.parsianinsurance.he.domain.model.enums.VahedType;
 import ir.parsianinsurance.he.domain.model.enums.VaziateKhesaratCase;
+import ir.parsianinsurance.he.domain.model.enums.VaziateParvandeKhesarat;
 import ir.parsianinsurance.he.infrastructure.Warning;
 import ir.parsianinsurance.he.infrastructure.repository.KhesaratRepository;
 import ir.parsianinsurance.he.infrastructure.repository.UserRepository;
@@ -13,6 +14,8 @@ import ir.parsianinsurance.he.infrastructure.security.User;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
 import ir.parsianinsurance.he.infrastructure.util.DateUtil;
 import ir.parsianinsurance.he.infrastructure.util.StringUtil;
+import ir.parsianinsurance.he.interfaces.view.model.BordroKhesaratSearchModel;
+import ir.parsianinsurance.he.interfaces.view.model.HavaleKhesaratSearchModel;
 import ir.parsianinsurance.he.interfaces.view.model.KhesaratSearchModel;
 
 import javax.enterprise.context.RequestScoped;
@@ -115,11 +118,8 @@ public class KhesaratService implements IKhesaratService {
     public List<Khesarat> searchKhesarat(KhesaratSearchModel searchedKhesarat, int rowLimit) {
 
         JPAQuery query = new JPAQuery(entityManager);
-
         filterForAll(query);
-
         filterForVahed(userBean.getCurrentUser().getVahed(), query);
-
         boolean filterApplied = filterByUserCriteriaAppliedForKhesarat(query, searchedKhesarat);
 
         if(!filterApplied)
@@ -190,6 +190,81 @@ public class KhesaratService implements IKhesaratService {
         return khesarat .undeletedKhesaratCases()
                         .stream()
                         .anyMatch(khcase -> khcase.getNoehadese().equals(NoeHadese.FOT));
+    }
+
+    @Override
+    public List<HavaleKhesarat> searchHavaleKhesarat(HavaleKhesaratSearchModel havaleKhesaratSearchModel) {
+        JPAQuery query = new JPAQuery(entityManager);
+
+        QHavaleKhesarat qHavaleKhesarat = QHavaleKhesarat.havaleKhesarat;
+        query.from(qHavaleKhesarat);
+
+        QKhesarat qKhesarat = QKhesarat.khesarat;
+
+        VaziateParvandeKhesarat vaziateParvandeKhesarat = havaleKhesaratSearchModel.getVaziateParvandeKhesarat();
+        if(vaziateParvandeKhesarat != null) {
+            query.join(qHavaleKhesarat.khesarat, qKhesarat)
+                    .where(qKhesarat.vaziateparvande.eq(vaziateParvandeKhesarat));
+        }
+
+        Vahed namayande = havaleKhesaratSearchModel.getNamayandegi();
+        if(namayande != null) {
+            query.join(qHavaleKhesarat.khesarat, qKhesarat)
+                    .where(qKhesarat.vahed.id.eq(namayande.getId()));
+        }
+
+        String sodoorAz = havaleKhesaratSearchModel.getAzTarikhSodoorHavale();
+        if(!StringUtil.isEmpty(sodoorAz)) {
+            query.where(qHavaleKhesarat.tarikhSodoorHavale.gt(sodoorAz));
+        }
+
+        String sodoorTa = havaleKhesaratSearchModel.getTaTarikhSodoorHavale();
+        if(!StringUtil.isEmpty(sodoorTa)) {
+            query.where(qHavaleKhesarat.tarikhSodoorHavale.lt(sodoorTa));
+        }
+
+        query.orderBy(QKhesarat.khesarat.id.desc());
+        return query.fetch();    }
+
+    @Override
+    public List<Khesarat> searchBordroKhesarat(BordroKhesaratSearchModel bordroKhesaratSearchModel) {
+        JPAQuery query = new JPAQuery(entityManager);
+
+        QKhesarat qKhesarat = QKhesarat.khesarat;
+        query.from(qKhesarat);
+
+        QBimename qBimename = QBimename.bimename;
+        QBimeGozar qBimeGozar = QBimeGozar.bimeGozar;
+
+        String shomareBimename = bordroKhesaratSearchModel.getShomareBimename();
+        if(!StringUtil.isEmpty(shomareBimename)) {
+            query.join(qKhesarat.bimename, qBimename)
+                    .where(qBimename.shomare.contains(shomareBimename));
+        }
+
+        BimeGozar bimeGozar = bordroKhesaratSearchModel.getBimeGozar();
+        if(bimeGozar != null) {
+            query.join(qBimename.pishnahadeFaal.bimeGozar, qBimeGozar)
+                    .where(qBimeGozar.id.eq(bimeGozar.getId()));
+        }
+
+        Vahed namayande = bordroKhesaratSearchModel.getNamayandegi();
+        if(namayande != null) {
+            query.where(qKhesarat.vahed.id.eq(namayande.getId()));
+        }
+
+        String tarikhtashkilAz = bordroKhesaratSearchModel.getAzTarikh();
+        if(!StringUtil.isEmpty(tarikhtashkilAz)) {
+            query.where(qKhesarat.tarikhe_tashkil_parvande.gt(tarikhtashkilAz));
+        }
+
+        String tarikhtashkilTa = bordroKhesaratSearchModel.getTaTarikh();
+        if(!StringUtil.isEmpty(tarikhtashkilTa)) {
+            query.where(qKhesarat.tarikhe_tashkil_parvande.lt(tarikhtashkilTa));
+        }
+
+        query.orderBy(QKhesarat.khesarat.id.desc());
+        return query.fetch();
     }
 
     private void filterForAll(JPAQuery query) {

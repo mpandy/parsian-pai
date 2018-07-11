@@ -70,8 +70,10 @@
 
                             <shiro:hasPermission name="MOSHAHEDE_GOZARESH">
                             <p:submenu label="#{msg['gozaresh']}" icon="fa fa-bar-chart" style="float:right">
-                                <p:menuitem value="#{msg['bordrobimename']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroBimename}"/>
+                                <p:menuitem value="#{msg['bordrosodoor']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroBimename}"/>
                                 <p:menuitem value="#{msg['bordroelhaghiye']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroElhaghiye}" />
+                                <p:menuitem value="#{msg['bordroekhesarat']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroParvandeKhesarat}" />
+                                <p:menuitem value="#{msg['bordroehavalekhesarat']}" icon="fa fa-line-chart" actionListener="#{homeBean.listbordroHavaleKhesarat}" />
                             </p:submenu>
                             </shiro:hasPermission>
 

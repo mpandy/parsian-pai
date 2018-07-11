@@ -550,4 +550,8 @@ public class Pishnahad {
         return false;
     }
 
+    public Long getSarmayeFot(){
+        return getSarmayePooshesh(NoeTaahod.FOT);
+    }
+
 }

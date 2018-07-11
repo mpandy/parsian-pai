@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pfaces="http://omidbiz.com/ui"
+>
+<p:panel header="#{msg['bordroekhesarat']}" toggleable="true" toggleSpeed="500"
+         styleClass="matnfarsi" style="direction: rtl" >
+    <h:form>
+        <h:panelGrid columns="6" cellpadding="5">
+
+            <p:outputLabel value="#{msg['shomareBimename']} : " for="shomareBimename"/>
+            <p:inputText id="shomareBimename" value="#{bordroKhesaratBean.bordroKhesaratSearchModel.shomareBimename}"
+                         styleClass="matnfarsikoochik" style="font-family: byekan"/>
+
+            <p:outputLabel for="bimegozar" value="#{msg['bimegozar']} : "/>
+            <p:autoComplete value="#{bordroKhesaratBean.bordroKhesaratSearchModel.bimeGozar}"
+                            id="bimegozar"
+                            var="bimegozar"
+                            itemLabel="#{bimegozar}"
+                            itemValue="#{bimegozar}"
+                            completeMethod="#{pishnahadService.autocompleteBimegozar}"
+                            converter="#{bimeGozarConverter}"
+                            style="direction: ltr; font-family: byekan"
+                            forceSelection="true">
+            </p:autoComplete>
+
+            <p:outputLabel value="#{msg['namayandegi']} : " for="namayandegi"/>
+            <p:autoComplete id="namayandegi"
+                            value="#{bordroKhesaratBean.bordroKhesaratSearchModel.namayandegi}"
+                            var="namayandegi"
+                            itemLabel="#{namayandegi}"
+                            itemValue="#{namayandegi}"
+                            completeMethod="#{baseInfoService.autocompleteVahed}"
+                            converter="#{vahedConverter}"
+                            style="direction: ltr"
+                            forceSelection="true">
+            </p:autoComplete>
+
+            <p:outputLabel value="#{msg['tashkilparvandeaz']} : " for="aztarikh" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="aztarikh" value="#{bordroKhesaratBean.bordroKhesaratSearchModel.azTarikh}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+            <p:outputLabel value="#{msg['tashkilparvandeta']} : " for="tatarikh" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="tatarikh" value="#{bordroKhesaratBean.bordroKhesaratSearchModel.taTarikh}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+            <p:commandButton value="#{msg['run']}" icon="fa fa-toggle-right" styleClass="matnfarsi"
+                             style="right: 45%; margin: 1%"
+                             actionListener="#{bordroKhesaratBean.search}" update="bordrotable"/>
+
+        </h:panelGrid>
+    </h:form>
+
+</p:panel>
+
+<p:outputPanel>
+
+    <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroKhesaratBean.khesarats}"
+                 emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi"
+                 rowIndexVar="index" resizableColumns="true" dir="rtl">
+
+        <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['mablaghekhesarat']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{nextbordro.getMablaghParvandeKhesarat()}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['vaziateparvande']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{msg[nextbordro.vaziateparvande]}"/>
+        </p:column>
+
+
+    </p:dataTable>
+
+    <h:form>
+        <h:commandLink>
+            <p:graphicImage library="default" name="images/excel.png" width="50"/>
+            <p:dataExporter type="xls" target="bordrotable" fileName="bordroParvandeKhesarat" />
+        </h:commandLink>
+    </h:form>
+
+</p:outputPanel>
+<br></br>
+
+</html>

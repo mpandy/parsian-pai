@@ -52,4 +52,12 @@ public class HomeBean implements Serializable{
     @WebAction(toState = StateName.BORDRO_ELHAGHIYE)
     public void listbordroElhaghiye(){
     }
+
+    @WebAction(toState = StateName.BORDRO_PARVANDE_KHESARAT)
+    public void listbordroParvandeKhesarat(){
+    }
+
+    @WebAction(toState = StateName.BORDRO_HAVALE_KHESARAT)
+    public void listbordroHavaleKhesarat(){
+    }
 }

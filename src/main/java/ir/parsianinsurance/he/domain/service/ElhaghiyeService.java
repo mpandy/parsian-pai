@@ -191,8 +191,8 @@ public class ElhaghiyeService implements IElhaghiyeService {
 
         boolean filterApplied = filterByUserCriteriaAppliedForElhaghiye(query, searchedElhaghiye);
 
-//        if(!filterApplied)
-//            query.limit(rowLimit);
+        if(!filterApplied)
+            query.limit(rowLimit);
 
         query.orderBy(QElhaghiye.elhaghiye.id.desc());
         return query.fetch();
@@ -281,6 +281,7 @@ public class ElhaghiyeService implements IElhaghiyeService {
         boolean applied = false;
         QElhaghiye qElhaghiye = QElhaghiye.elhaghiye;
 
+
         String shomareElhaghiye = searchedElhaghiye.getShomareElhaghiye();
         if(!StringUtil.isEmpty(shomareElhaghiye)) {
             query.where(qElhaghiye.shomareElhaghiye.contains(shomareElhaghiye));
@@ -292,6 +293,36 @@ public class ElhaghiyeService implements IElhaghiyeService {
             QBimename qBimename = QBimename.bimename;
             query.join(qElhaghiye.bimename, qBimename)
                  .where(qBimename.shomare.contains(shomareBimename));
+            applied = true;
+        }
+
+        Vahed vahedeSodoor = searchedElhaghiye.getVahedeSodoor();
+        if(vahedeSodoor != null) {
+            query.where(qElhaghiye.vahed.code.eq(vahedeSodoor.getCode()));
+            applied = true;
+        }
+
+        String aztarikhsodoor = searchedElhaghiye.getAztarikheSodoor();
+        if(aztarikhsodoor != null && !aztarikhsodoor.trim().isEmpty()) {
+            query.where(qElhaghiye.tarikh_sodoor_elhaghie.gt(aztarikhsodoor));
+            applied = true;
+        }
+
+        String tatarikhsodoor = searchedElhaghiye.getTatarikheSodoor();
+        if(tatarikhsodoor != null && !tatarikhsodoor.trim().isEmpty()) {
+            query.where(qElhaghiye.tarikh_sodoor_elhaghie.lt(tatarikhsodoor));
+            applied = true;
+        }
+
+        String aztarikhsodoorBimename = searchedElhaghiye.getAztarikheSodoorBimename();
+        if(aztarikhsodoorBimename != null && !aztarikhsodoorBimename.trim().isEmpty()) {
+            query.where(qElhaghiye.bimename.tarikhesodoor.gt(aztarikhsodoorBimename));
+            applied = true;
+        }
+
+        String tatarikhsodoorBimename = searchedElhaghiye.getTatarikheSodoorBimename();
+        if(tatarikhsodoorBimename != null && !tatarikhsodoorBimename.trim().isEmpty()) {
+            query.where(qElhaghiye.bimename.tarikhesodoor.lt(tatarikhsodoorBimename));
             applied = true;
         }
 

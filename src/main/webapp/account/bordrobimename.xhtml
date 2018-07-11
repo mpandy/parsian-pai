@@ -1,51 +1,147 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pfaces="http://omidbiz.com/ui"
 >
-<h:form id="bordrobimename" >
-    <p:panel header="#{msg['bordrobimename']}" toggleable="true" toggleSpeed="500"
+    <p:panel header="#{msg['bordrosodoor']}" toggleable="true" toggleSpeed="500"
              styleClass="matnfarsi" style="direction: rtl" >
 
-        <h:panelGrid columns="4" cellpadding="5">
-            <p:outputLabel value="#{msg['shomareBimenameaz']} : " for="searchBimename_shomare" styleClass="matnfarsi"/>
-            <p:inputText id="searchBimename_shomare" value="#{bordroBimenameBeen.searchBimename.shomare}"
-                         size="24" />
+        <h:form id="bordrobimename" >
+        <h:panelGrid columns="8" cellpadding="5">
 
-            <p:outputLabel value="#{msg['shomareBimenameta']} : " for="searchBimenameshomare" styleClass="matnfarsi"/>
-            <p:inputText id="searchBimenameshomare" value="#{bordroBimenameBeen.searchBimename.shomare}"
-                         size="24" />
+            <p:outputLabel value="#{msg['vahedesodoor']} : " for="vahedesodoor"/>
+            <p:autoComplete id="vahedesodoor"
+                            value="#{bordroBimenameBean.searchBimename.vahedeSodoor}"
+                            var="vahedeSodoor"
+                            itemLabel="#{vahedeSodoor}"
+                            itemValue="#{vahedeSodoor}"
+                            completeMethod="#{baseInfoService.autocompleteVahed}"
+                            converter="#{vahedConverter}"
+                            style="direction: ltr"
+                            forceSelection="true">
+            </p:autoComplete>
 
-            <p:outputLabel value="#{msg['shoghl']} : " for="searchshoghl" styleClass="matnfarsi"/>
-            <p:inputText id="searchshoghl" value="#{bordroBimenameBeen.searchBimename.pishnahadeFaal.bimeShode.shoghl.name}"
-                         size="24" />
+            <p:outputLabel value="#{msg['namayandegi']} : " for="namayandegi"/>
+            <p:autoComplete id="namayandegi"
+                            value="#{bordroBimenameBean.searchBimename.namayandegi}"
+                            var="namayandegi"
+                            itemLabel="#{namayandegi}"
+                            itemValue="#{namayandegi}"
+                            completeMethod="#{baseInfoService.autocompleteVahed}"
+                            converter="#{vahedConverter}"
+                            style="direction: ltr"
+                            forceSelection="true">
+            </p:autoComplete>
 
-            <p:outputLabel value="#{msg['tabaghekhatar']} : " for="tabaghekhatar" styleClass="matnfarsi"/>
-            <p:selectOneMenu id="tabaghekhatar" value="#{bordroBimenameBeen.searchBimename.pishnahadeFaal.bimeShode.shoghl.defaultTabagheKhatar}"
-                             styleClass="matnfarsi" style="font-size: small; direction: ltr">
-                <f:selectItems value="#{comboOptions.tabagheKhatar}" var="tabaghekhatar"
-                               itemValue="#{tabaghekhatar}" itemLabel="#{msg[tabaghekhatar.name()]}" />
+            <p:outputLabel value="#{msg['shoghl']} : " for="shoghlbimeshode"/>
+            <p:autoComplete id="shoghlbimeshode" value="#{bordroBimenameBean.searchBimename.shoghl}"
+                            var="shoghl"
+                            itemLabel="#{shoghl.name}"
+                            itemValue="#{shoghl}"
+                            completeMethod="#{shoghlService.autocomplete}"
+                            converter="#{shoghlConverter}"
+                            style="font-family: byekan; direction: ltr"
+                            forceSelection="true">
+            </p:autoComplete>
+
+            <p:outputLabel value="#{msg['tabaghekhatar']} : " for="tabaghekhatar"/>
+            <p:selectOneMenu id="tabaghekhatar" value="#{bordroBimenameBean.searchBimename.tabagheKhatar}"
+                             style="direction: ltr; font-family: byekan">
+                <f:selectItems value="#{bordroBimenameBean.tabagheKhatars}" var="tabagheKhatar" itemValue="#{tabagheKhatar}" itemLabel="#{msg[tabagheKhatar.name()]}" />
             </p:selectOneMenu>
+            
+            <p:outputLabel value="#{msg['aztarikheSodoor']} : "/>
+            <pfaces:datePicker value="#{bordroBimenameBean.searchBimename.aztarikheSodoor}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+            <p:outputLabel value="#{msg['tatarikheSodoor']} : "/>
+            <pfaces:datePicker value="#{bordroBimenameBean.searchBimename.tatarikheSodoor}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+
+            <p:outputLabel value="#{msg['gharardad']} : " for="gharardad"/>
+            <p:inputText id="gharardad" value="#{bordroBimenameBean.searchBimename.gharardadName}"
+                         style="font-family: byekan" size="15" />
+
+            <p:commandButton value="#{msg['run']}" icon="fa fa-toggle-right" styleClass="matnfarsi"
+                             style="right: 45%; margin: 1%"
+                             actionListener="#{bordroBimenameBean.search}" update="bordrotable"/>
+
         </h:panelGrid>
+        </h:form>
+
     </p:panel>
 
     <p:outputPanel>
 
-        <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroBimenameBeen.bimenames}"
-                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl">
+        <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroBimenameBean.bimenames}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi"
+                     rowIndexVar="index" resizableColumns="true" dir="rtl">
 
-            <p:column headerText="#{msg['shomareBimename']}" styleClass="matnfarsi">
-                #{nextbordro.shomare}
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
             </p:column>
 
-            <p:column headerText="#{msg['bimeshodename']}" styleClass="matnfarsi">]
-                #{nextbordro.pishnahadeFaal.bimeShode.shakhseHaghighi.toString()}
+            <p:column headerText="#{msg['shomareBimename']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{nextbordro.shomare}"/>
             </p:column>
 
-            <p:column headerText="#{msg['haghebime']}" styleClass="matnfarsi">
-                #{nextbordro.pishnahadeFaal.hagheBime.haghe_bime_ghabelepardakht}
+            <p:column headerText="#{msg['vaziateBimename']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{msg[nextbordro.vaziateBimename]}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['tarikheSodoor']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.tarikhesodoor}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['bimegozar']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.bimeGozar}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['bimeshode']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.bimeShode}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['shoroo']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.aztarikh}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['engheza']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.tatarikh}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['sarmayetaahod']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.getSarmayeFot()}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['tabaghekhatar']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.bimeShode.shoghl}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['tabaghekhatar']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{msg[nextbordro.pishnahadeFaal.bimeShode.shoghl.defaultTabagheKhatar]}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['haghebime']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.hagheBime.haghe_bime_ghabelepardakht}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['maliat']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.hagheBime.maliat}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['namayandegi']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.pishnahadeFaal.vahed}"/>
             </p:column>
 
         </p:dataTable>
+
+        <h:form>
+            <h:commandLink>
+                <p:graphicImage library="default" name="images/excel.png" width="50"/>
+                <p:dataExporter type="xls" target="bordrotable" fileName="bordrosodoor" />
+            </h:commandLink>
+        </h:form>
+
     </p:outputPanel>
     <br></br>
 
@@ -53,5 +149,4 @@
 
     </p:outputPanel>
 
-</h:form>
 </html>

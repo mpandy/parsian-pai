@@ -25,6 +25,8 @@ public class UIFlow {
         rules.add(new UIState(StateName.MODIRIATE_NAMAYANDEGAN, View.vahedadminpanel));
         rules.add(new UIState(StateName.BORDRO_BIMENAME, View.bordrobimename));
         rules.add(new UIState(StateName.BORDRO_ELHAGHIYE, View.bordroelhaghiye));
+        rules.add(new UIState(StateName.BORDRO_PARVANDE_KHESARAT, View.bordroparvandekhesarat));
+        rules.add(new UIState(StateName.BORDRO_HAVALE_KHESARAT, View.bordrohavalekhesarat));
         rules.add(new UIState(StateName.SABT_PISHNAHAD, View.bimename));
         rules.add(new UIState(StateName.VIRAYESH_PISHNAHAD, View.bimename));
         rules.add(new UIState(StateName.SABT_NEW_PISHNAHAD_MOHASEBE, View.bimename));

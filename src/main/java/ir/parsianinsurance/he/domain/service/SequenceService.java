@@ -90,7 +90,7 @@ public class SequenceService implements ISequenceService {
             vahedeSodoor.setVahedSequence(vahedSequence);
             vahedRepository.save(vahedeSodoor);
 
-            return "2611/"+
+            return "2631/"+
                     vahedeSodoor.getCode()+"/"+
                     DateUtil.extractTwoDigitYear(getJalaliCurrentDate())+"/"+
                     String.format("%06d", nextShomareKhesarat);

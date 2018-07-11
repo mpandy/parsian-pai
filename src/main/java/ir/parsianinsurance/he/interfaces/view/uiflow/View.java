@@ -11,6 +11,8 @@ public enum View {
     vahedadminpanel,
     bordrobimename,
     bordroelhaghiye,
+    bordroparvandekhesarat,
+    bordrohavalekhesarat,
     home,
     pishnahad,
     bimename,

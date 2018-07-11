@@ -1,60 +1,100 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:pfaces="http://omidbiz.com/ui"
 >
-<h:form id="bordroelhaghiye" >
     <p:panel header="#{msg['bordroelhaghiye']}" toggleable="true" toggleSpeed="500"
              styleClass="matnfarsi" style="direction: rtl" >
+        <h:form id="bordroelhaghiye" >
+        <h:panelGrid columns="8" cellpadding="5">
+            <p:outputLabel value="#{msg['aztarikh']} : " for="aztarikh" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="aztarikh" value="#{bordroElhaghiyeBean.elhaghiyeSearchModel.aztarikheSodoor}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
 
-        <h:panelGrid columns="4" cellpadding="5">
-            <p:outputLabel value="#{msg['tarikheSodoorelhaghiyeaz']} : " for="searchtarikhesodoor" styleClass="matnfarsi"/>
-            <p:inputText id="searchtarikhesodoor" value="#{bordroElhaghiyeBeen.searchElhaghiye.tarikh_sodoor_elhaghie}"
-                         size="24" />
+            <p:outputLabel value="#{msg['tatarikh']} : " for="tatarikh" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="tatarikh" value="#{bordroElhaghiyeBean.elhaghiyeSearchModel.tatarikheSodoor}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
 
-            <p:outputLabel value="#{msg['tarikheSodoorelhaghiyeta']} : " for="searchtarikhsodoor" styleClass="matnfarsi"/>
-            <p:inputText id="searchtarikhsodoor" value="#{bordroElhaghiyeBeen.searchElhaghiye.shomareElhaghiye}"
-                         size="24" />
+            <p:outputLabel value="#{msg['aztarikhesodoorBimename']} : " for="searchBimename_shomare" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="searchBimename_shomare" value="#{bordroElhaghiyeBean.elhaghiyeSearchModel.aztarikheSodoorBimename}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
 
-            <p:outputLabel value="#{msg['shomareBimenameaz']} : " for="searchBimename_shomare" styleClass="matnfarsi"/>
-            <p:inputText id="searchBimename_shomare" value="#{bordroElhaghiyeBeen.searchElhaghiye.bimename.shomare}"
-                         size="24" />
+            <p:outputLabel value="#{msg['tatarikhesodoorBimename']} : " for="tatarikhesodoorBimename" styleClass="matnfarsi"/>
+            <pfaces:datePicker id="tatarikhesodoorBimename" value="#{bordroElhaghiyeBean.elhaghiyeSearchModel.tatarikheSodoorBimename}" style="font-family: byekan"
+                               styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
 
-            <p:outputLabel value="#{msg['shomareBimenameta']} : " for="searchBimenameshomare" styleClass="matnfarsi"/>
-            <p:inputText id="searchBimenameshomare" value="#{bordroElhaghiyeBeen.searchElhaghiye.bimename.shomare}"
-                         size="24" />
+            <p:outputLabel value="#{msg['vahedesodoor']} : " for="vahedesodoor"/>
+            <p:autoComplete id="vahedesodoor"
+                            value="#{bordroElhaghiyeBean.elhaghiyeSearchModel.vahedeSodoor}"
+                            var="vahedeSodoor"
+                            itemLabel="#{vahedeSodoor}"
+                            itemValue="#{vahedeSodoor}"
+                            completeMethod="#{baseInfoService.autocompleteVahed}"
+                            converter="#{vahedConverter}"
+                            style="direction: ltr"
+                            forceSelection="true">
+            </p:autoComplete>
 
-            <p:outputLabel value="#{msg['vahedeSodoor']} : " for="vahedesodoor" styleClass="matnfarsi"/>
-            <p:inputText id="vahedesodoor" value="#{bordroElhaghiyeBeen.searchElhaghiye.vahed.vahedeSodoor}"
-                         size="24" />
+            <p:commandButton value="#{msg['run']}" icon="fa fa-toggle-right" styleClass="matnfarsi"
+                             style="right: 45%; margin: 1%"
+                             actionListener="#{bordroElhaghiyeBean.search}" update="bordrotable"/>
 
-            <p:outputLabel value="#{msg['namayandegi']} : " for="searchnamayandegi" styleClass="matnfarsi"/>
-            <p:inputText id="searchnamayandegi" value="#{bordroElhaghiyeBeen.searchElhaghiye.vahed.name}"
-                         size="24" />
         </h:panelGrid>
+        </h:form>
+
     </p:panel>
 
     <p:outputPanel>
 
-        <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroElhaghiyeBeen.elhaghiyes}"
-                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi" resizableColumns="true" dir="rtl">
+        <p:dataTable id="bordrotable" var="nextbordro" value="#{bordroElhaghiyeBean.elhaghiyes}"
+                     emptyMessage="#{msg['emptylist']}" styleClass="matnfarsi"
+                     rowIndexVar="index" resizableColumns="true" dir="rtl">
 
-            <p:column headerText="#{msg['tarikheSodoorelhaghiye']}" styleClass="matnfarsi">
-                #{nextbordro.tarikh_sodoor_elhaghie}
+            <p:column width="30" headerText="#{msg['radif']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{index+1}"/>
             </p:column>
 
-            <p:column headerText="#{msg['shomareBimename']}" styleClass="matnfarsi">
-                #{nextbordro.bimename.shomare}
+            <p:column headerText="#{msg['vaziatelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{msg[nextbordro.vaziateElhaghiye]}"/>
             </p:column>
 
-            <p:column headerText="#{msg['vahedeSodoor']}" styleClass="matnfarsi">
-            #{nextbordro.vahed.vahedeSodoor}
-        </p:column>
+            <p:column headerText="#{msg['shomareelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{nextbordro.shomareElhaghiye}"/>
+            </p:column>
 
-            <p:column headerText="#{msg['namayandegi']}" styleClass="matnfarsi">
-                #{nextbordro.vahed.name}
+            <p:column headerText="#{msg['tarikheSodoorelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{nextbordro.tarikh_sodoor_elhaghie}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['shomareBimename']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{nextbordro.bimename.shomare}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['tarikheSodoor']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{nextbordro.bimename.tarikhesodoor}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['noeelhaghie']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value=" #{msg[nextbordro.noe_elhaghie]}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['bimeshode']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.bimename.pishnahadeFaal.bimeShode}"/>
+            </p:column>
+
+            <p:column headerText="#{msg['mablagheelhaghiye']}" style="text-align: center" styleClass="matnfarsi">
+                <p:outputLabel style="font-family: byekan" value="#{nextbordro.mablagheElhaghiye}"/>
             </p:column>
 
         </p:dataTable>
+
+        <h:form>
+            <h:commandLink>
+                <p:graphicImage library="default" name="images/excel.png" width="50"/>
+                <p:dataExporter type="xls" target="bordrotable" fileName="bordroelhaghiye" />
+            </h:commandLink>
+        </h:form>
+
     </p:outputPanel>
     <br></br>
 
@@ -62,5 +102,4 @@
 
     </p:outputPanel>
 
-</h:form>
 </html>

@@ -5,6 +5,7 @@ import ir.parsianinsurance.he.domain.service.IUserService;
 import ir.parsianinsurance.he.infrastructure.repository.ShoghlRepository;
 import ir.parsianinsurance.he.infrastructure.repository.VahedRepository;
 import ir.parsianinsurance.he.infrastructure.security.UserBean;
+import ir.parsianinsurance.he.infrastructure.util.RandomStringUtil;
 import ir.parsianinsurance.he.interfaces.view.model.ChangePssword;
 import ir.parsianinsurance.he.interfaces.view.uiflow.StateName;
 import ir.parsianinsurance.he.interfaces.view.uiflow.UIFlow;

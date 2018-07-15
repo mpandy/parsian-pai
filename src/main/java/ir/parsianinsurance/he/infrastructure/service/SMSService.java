@@ -22,7 +22,7 @@ public class SMSService implements ISMSService {
 
     @Override
     public void sendSMS(User user, String number, String body) {
-        smsService.getServiceSoap12().insertSMS(  SMS_WEBSERVICE_USERNAME,
+        smsService.getServiceSoap12().insertSMS(SMS_WEBSERVICE_USERNAME,
                                                 SMS_WEBSERVICE_PASSWORD,
                                                 user.getRealName(),"",
                                                 number,

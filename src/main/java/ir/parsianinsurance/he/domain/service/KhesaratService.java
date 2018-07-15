@@ -202,7 +202,7 @@ public class KhesaratService implements IKhesaratService {
         QKhesarat qKhesarat = QKhesarat.khesarat;
 
         VaziateParvandeKhesarat vaziateParvandeKhesarat = havaleKhesaratSearchModel.getVaziateParvandeKhesarat();
-        if(vaziateParvandeKhesarat != null) {
+        if(!vaziateParvandeKhesarat.equals(VaziateParvandeKhesarat.EMPTY)) {
             query.join(qHavaleKhesarat.khesarat, qKhesarat)
                     .where(qKhesarat.vaziateparvande.eq(vaziateParvandeKhesarat));
         }

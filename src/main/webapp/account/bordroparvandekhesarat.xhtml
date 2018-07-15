@@ -3,7 +3,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:pfaces="http://omidbiz.com/ui"
 >
-<p:panel header="#{msg['bordroekhesarat']}" toggleable="true" toggleSpeed="500"
+<p:panel header="#{msg['bordroparvandekhesarat']}" toggleable="true" toggleSpeed="500"
          styleClass="matnfarsi" style="direction: rtl" >
     <h:form>
         <h:panelGrid columns="6" cellpadding="5">
@@ -65,6 +65,14 @@
 
         <p:column headerText="#{msg['mablaghekhesarat']}" style="text-align: center" styleClass="matnfarsi">
             <p:outputLabel style="font-family: byekan" value=" #{nextbordro.getMablaghParvandeKhesarat()}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['tarikheparvande']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{nextbordro.tarikhe_tashkil_parvande}"/>
+        </p:column>
+
+        <p:column headerText="#{msg['tarikheelamekhesarat']}" style="text-align: center" styleClass="matnfarsi">
+            <p:outputLabel style="font-family: byekan" value=" #{nextbordro.tarikh_elam_khesarat}"/>
         </p:column>
 
         <p:column headerText="#{msg['vaziateparvande']}" style="text-align: center" styleClass="matnfarsi">

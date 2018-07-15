@@ -2,6 +2,8 @@ package ir.parsianinsurance.he.infrastructure.security;
 
 import ir.parsianinsurance.he.domain.service.IUserService;
 import ir.parsianinsurance.he.infrastructure.service.ISMSService;
+import ir.parsianinsurance.he.infrastructure.util.RandomStringUtil;
+import ir.parsianinsurance.he.interfaces.view.bean.session.MainView;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -14,6 +16,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -85,14 +88,14 @@ public class LoginBean implements Serializable {
         facesContext.getExternalContext().redirect(LOGIN_URL);
     }
 
-
+    @Transactional
     public void sendSMS() {
 
         User user = null;
         FacesMessage.Severity severity;
         String username = getUsername();
         String message;
-
+        RandomStringUtil randomStringUtil = new RandomStringUtil();
         try {
             if (username == null || username.trim().isEmpty()) {
                 message = "enterusername";
@@ -111,7 +114,9 @@ public class LoginBean implements Serializable {
                         severity = FacesMessage.SEVERITY_ERROR;
                     }
                     else {
-                        smsService.sendSMS(user, mobile, "SALAM");
+                        String newPassword = randomStringUtil.nextString();
+                        userService.changePassword(user, newPassword);
+                        smsService.sendSMS(user, mobile, bundle.getString("forgetpassSMSBody")+ " " +newPassword);
                         message = "sendsmsok";
                         severity = FacesMessage.SEVERITY_INFO;
                     }

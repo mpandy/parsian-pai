@@ -41,24 +41,26 @@
 
             <p:outputLabel for="rememberMe" value="#{msg['rememberme']} :" styleClass="matnfarsi" style="color: #004b99;"/>
             <p:selectBooleanCheckbox id="rememberMe" value="#{loginBean.remember}" />
-
             <h:panelGroup />
             <p:commandButton value="#{msg['login']}" icon="fa fa-sign-in" action="#{loginBean.login}"
                              styleClass="matnfarsi" update="logingrowl">
             </p:commandButton>
+            <h:panelGroup />
+            <p:commandButton value="#{msg['forgetpassword']}" styleClass="matnfarsi" type="button" onclick="PF('dlg2').show();" />
 
-        </h:panelGrid>
+            </h:panelGrid>
 
     </h:form>
 
-        <div style="padding-left:80%">
+        <p:dialog header="#{msg['ersalesms']}" widgetVar="dlg2" modal="true" height="100" resizable="false">
             <h:form>
-                <p:outputLabel value="#{msg['username']} :" styleClass="matnfarsi" style="font-size: large;color: #004b99;" />
+                <h:panelGrid columns="2">
                 <p:inputText value="#{loginBean.username}"/>
-                <p:commandLink value="#{msg['passwordsms']}" action="#{loginBean.sendSMS}" update="logingrowl"></p:commandLink>
+                <p:outputLabel value="#{msg['username']}" styleClass="matnfarsi" />
+                <p:commandButton value="#{msg['passwordsms']}" styleClass="matnfarsi" action="#{loginBean.sendSMS}" update="logingrowl" onsuccess="PF('dlg2').hide();"></p:commandButton>
+                </h:panelGrid>
             </h:form>
-        </div>
-
+        </p:dialog>
 
     </h:body>
 </f:view>

@@ -37,7 +37,7 @@ public class BordroBimenameBean implements Serializable {
     }
 
     public void search(){
-        bimenames = bimenameService.searchBimename(searchBimename, 0);
+        bimenames = bimenameService.searchBimename(searchBimename, 1);
     }
 
     public List<Bimename> getBimenames() {

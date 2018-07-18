@@ -35,7 +35,7 @@ public class BordroElhaghiyeBean implements Serializable{
     }
 
     public void search(){
-        elhaghiyes = elhaghiyeService.searchElhaghiye(elhaghiyeSearchModel, 0);
+        elhaghiyes = elhaghiyeService.searchElhaghiye(elhaghiyeSearchModel, 1);
     }
 
     public List<Elhaghiye> getElhaghiyes() {

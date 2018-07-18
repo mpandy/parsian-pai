@@ -9,8 +9,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/account/bimename.xhtml" line="785" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="1ff39a33-0ca9-432c-ac22-b218f19abc07" name="Default" comment="" />
     <list id="977ee1da-8bf9-4109-bb8d-d14e65ff04c4" name="do not commit me" comment="" />
+    <list default="true" readonly="true" id="1ff39a33-0ca9-432c-ac22-b218f19abc07" name="Default" comment="" />
     <ignored path="parsian_he.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,39 +49,12 @@
     <favorites_list name="parsian_he" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KhesaratService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/KhesaratService.java">
+    <leaf>
+      <file leaf-file-name="Elhaghiye.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Elhaghiye.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="230" selection-start-line="230" selection-end-line="230" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HavaleKhesarat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/HavaleKhesarat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/facade/ApplicationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="127" column="56" selection-start-line="127" selection-start-column="56" selection-end-line="127" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SequenceService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/SequenceService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+            <state relative-caret-position="240">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -103,9 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>expo</find>
-      <find>bimenamelist_table</find>
-      <find>h:for</find>
       <find>getsa</find>
       <find>shoghl</find>
       <find>bordroElhaghiyeBeen</find>
@@ -118,7 +88,6 @@
       <find>2611</find>
       <find>2610</find>
       <find>mojood</find>
-      <find>shomare</find>
       <find>bordroelhaghiye</find>
       <find>bord</find>
       <find>bimegozar</find>
@@ -133,6 +102,10 @@
       <find>parvande</find>
       <find>اعلام خ</find>
       <find>bordroekh</find>
+      <find>shomare</find>
+      <find>sodo</find>
+      <find>ta</find>
+      <find>noe</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -154,11 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BimenameBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/facade/IApplicationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/VaziateBimename.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/facade/ApplicationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/ArtifactDocListBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/ArtifactDocState.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ArtifactDocService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/scheduled/SanamJob.java" />
@@ -173,9 +141,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/IBimenameService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroBimenameBeen.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/account/bordrobimename.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroBimenameBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroElhaghiyeBeen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroElhaghiyeBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/model/ElhaghiyeSearchModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ElhaghiyeService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/account/bordroelhaghiye.xhtml" />
@@ -184,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/uiflow/View.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/uiflow/UIFlow.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroHavaleKhesarat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/model/KhesaratCaseSearchModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/model/BordroKhesaratSearchModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/IKhesaratService.java" />
@@ -201,10 +166,18 @@
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/session/MainView.java" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/security/LoginBean.java" />
         <option value="$PROJECT_DIR$/src/main/resources/JsfMessages.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/account/bordrohavalekhesarat.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/account/bordroparvandekhesarat.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/account/main.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/KhesaratService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/account/bordrohavalekhesarat.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java" />
+        <option value="$PROJECT_DIR$/db/view/DocLostB.sql" />
+        <option value="$PROJECT_DIR$/db/view/LostB.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroBimenameBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroElhaghiyeBean.java" />
+        <option value="$PROJECT_DIR$/db/view/PlcyTb.sql" />
+        <option value="$PROJECT_DIR$/db/view/EDRSTB.sql" />
+        <option value="$PROJECT_DIR$/db/view/PLCYTB.sql" />
       </list>
     </option>
   </component>
@@ -283,7 +256,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -294,6 +269,17 @@
             <path>
               <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
               <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -334,7 +320,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="he" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
@@ -343,27 +329,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsian-pai" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="he" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="parsian_he" type="b2602c69:ProjectViewProjectNode" />
@@ -391,8 +359,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,7 +371,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.379" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -925,7 +891,9 @@
       <workItem from="1531546877772" duration="11860000" />
       <workItem from="1531566855250" duration="1359000" />
       <workItem from="1531571628020" duration="116000" />
-      <workItem from="1531637419187" duration="3041000" />
+      <workItem from="1531637419187" duration="3458000" />
+      <workItem from="1531724903407" duration="2724000" />
+      <workItem from="1531896069484" duration="12037000" />
     </task>
     <task id="LOCAL-00001">
       <created>1488614833668</created>
@@ -1267,7 +1235,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1339546000" />
+    <option name="totallyTimeSpent" value="1354724000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1295,7 +1263,7 @@
       <window_info anchor="right" id="JSF" order="5" />
       <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
       <window_info id="UI Designer" order="0" />
-      <window_info active="true" anchor="bottom" id="Debug" order="12" sideWeight="0.4838946" visible="true" weight="0.48366013" />
+      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.4838946" weight="0.4362745" />
       <window_info anchor="bottom" id="TODO" order="14" sideWeight="0.49341142" weight="0.32569557" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.38134205" />
       <window_info id="Palette&#9;" order="6" />
@@ -1305,11 +1273,12 @@
       <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49707174" weight="0.2831424" />
       <window_info anchor="bottom" id="Run" order="10" weight="0.64648116" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.5155483" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.5147059" />
       <window_info id="Persistence" order="3" side_tool="true" />
-      <window_info content_ui="combo" x="464" y="105" width="437" height="517" id="Project" order="4" sideWeight="0.47688565" weight="0.22108346" />
+      <window_info active="true" content_ui="combo" x="464" y="105" width="437" height="517" id="Project" order="4" sideWeight="0.47688565" visible="true" weight="0.19399707" />
       <window_info anchor="right" id="Bean Validation" order="2" weight="0.32980332" />
       <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49707174" visible="true" weight="0.251634" />
       <window_info anchor="right" id="Theme Preview" order="11" />
       <window_info id="Favorites" order="1" sideWeight="0.5231144" side_tool="true" weight="0.295764" />
       <window_info anchor="bottom" id="Sequence" order="3" />
@@ -1319,7 +1288,6 @@
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.24515393" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.24962178" />
       <window_info anchor="right" id="IDEtalk" order="13" side_tool="true" weight="0.27231467" />
-      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49707174" weight="0.25204584" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="IDEtalk Messages" order="8" weight="0.28805238" />
@@ -1337,7 +1305,7 @@
       <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.5231144" side_tool="true" weight="0.295764" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.5155483" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.5147059" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="JSF" order="5" />
@@ -1353,7 +1321,7 @@
       <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49707174" weight="0.2831424" />
       <window_info anchor="right" id="Maven Projects" order="0" weight="0.23524962" />
       <window_info anchor="bottom" id="Find" order="10" sideWeight="0.49707174" weight="0.25204584" />
-      <window_info content_ui="combo" x="464" y="105" width="437" height="517" id="Project" order="4" sideWeight="0.47688565" visible="true" weight="0.22108346" />
+      <window_info active="true" content_ui="combo" x="464" y="105" width="437" height="517" id="Project" order="4" sideWeight="0.47688565" visible="true" weight="0.22108346" />
       <window_info anchor="right" id="IDEtalk" order="13" side_tool="true" weight="0.27231467" />
       <window_info anchor="right" id="Database" order="4" weight="0.329582" />
       <window_info anchor="bottom" id="Message" order="6" />
@@ -1364,7 +1332,7 @@
       <window_info anchor="right" id="CDI" order="3" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="right" id="Coverage" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="13" sideWeight="0.4838946" weight="0.73543304" />
+      <window_info anchor="bottom" id="Debug" order="13" sideWeight="0.4838946" visible="true" weight="0.4362745" />
       <window_info anchor="right" id="Bean Validation" order="2" weight="0.32980332" />
     </layout-to-restore>
   </component>
@@ -1711,12 +1679,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ElhaghiyeService.java</url>
-          <line>280</line>
-          <properties />
-          <option name="timeStamp" value="426" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ElhaghiyeService.java</url>
           <line>298</line>
           <properties />
           <option name="timeStamp" value="427" />
@@ -1754,361 +1716,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/BimenameService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="211" column="8" lean-forward="true" selection-start-line="211" selection-start-column="8" selection-end-line="221" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Elhaghiye.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ElhaghiyeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="281" column="39" selection-start-line="281" selection-start-column="39" selection-end-line="281" selection-end-column="39" />
-          <folding>
-            <marker date="1530955585636" expanded="false" signature="55:903" ph="..." />
-            <marker date="1530955585636" expanded="true" signature="905:949" ph="/**...*/" />
-            <marker date="1530955585636" expanded="true" signature="1778:4011" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="4172:4411" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="4661:6609" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="6690:7116" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="7194:7478" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="7591:8232" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="8310:8726" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="8622:8718" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="8732:8760" ph="@{...}" />
-            <marker date="1530955585636" expanded="true" signature="8834:9037" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="9152:9466" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="9582:9896" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="10024:10452" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="10501:10598" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="10673:10958" ph="{...}" />
-            <marker date="1530955585636" expanded="true" signature="11075:13131" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/view/V_AMAR_ACCIDENT_LOSS.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/validator/SabteKhesaratValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <marker date="1528549425222" expanded="false" signature="57:725" ph="..." />
-            <marker date="1528549425222" expanded="true" signature="727:767" ph="/**...*/" />
-            <marker date="1528549425222" expanded="true" signature="909:2636" ph="{...}" />
-            <marker date="1528549425222" expanded="true" signature="2739:3041" ph="{...}" />
-            <marker date="1528549425222" expanded="true" signature="3147:3249" ph="{...}" />
-            <marker date="1528549425222" expanded="true" signature="3363:3586" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bordroelhaghiye.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="65" column="45" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/model/ElhaghiyeSearchModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroElhaghiyeBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bordrobimename.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="58" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/KhesaratCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <marker date="1528887650793" expanded="false" signature="53:388" ph="..." />
-            <marker date="1528887650793" expanded="true" signature="390:430" ph="/**...*/" />
-            <marker date="1528887650793" expanded="true" signature="431:472" ph="@{...}" />
-            <marker date="1528887650793" expanded="true" signature="551:574" ph="@{...}" />
-            <marker date="1528887650793" expanded="true" signature="1572:1620" ph="@{...}" />
-            <marker date="1528887650793" expanded="false" signature="1676:1687" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="1697:1703" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="1739:1750" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="1769:1775" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="1814:1825" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="1847:1853" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="1911:1922" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="1959:1965" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2017:2028" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2059:2065" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2106:2117" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2136:2142" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2199:2210" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2241:2247" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2289:2300" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2320:2326" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2385:2396" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2429:2435" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2472:2483" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2500:2506" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2557:2568" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2595:2601" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2645:2656" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2670:2676" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2740:2751" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2781:2787" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2830:2841" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2867:2873" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="2939:2950" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="2995:3001" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3037:3048" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3067:3073" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3125:3136" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3167:3173" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3215:3226" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3251:3257" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3321:3332" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3375:3381" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3432:3443" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3479:3485" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3520:3531" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3547:3553" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="3601:3612" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3637:3643" ph=" }" />
-            <marker date="1528887650793" expanded="true" signature="3728:3809" ph="{...}" />
-            <marker date="1528887650793" expanded="false" signature="3859:3870" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="3905:3911" ph=" }" />
-            <marker date="1528887650793" expanded="true" signature="3994:4073" ph="{...}" />
-            <marker date="1528887650793" expanded="false" signature="4119:4130" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="4161:4167" ph=" }" />
-            <marker date="1528887650793" expanded="true" signature="4242:4313" ph="{...}" />
-            <marker date="1528887650793" expanded="false" signature="4360:4371" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="4403:4409" ph=" }" />
-            <marker date="1528887650793" expanded="true" signature="4486:4559" ph="{...}" />
-            <marker date="1528887650793" expanded="false" signature="4598:4609" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="4633:4639" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="4699:4710" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="4751:4757" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="4803:4814" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="4845:4851" ph=" }" />
-            <marker date="1528887650793" expanded="true" signature="4926:4997" ph="{...}" />
-            <marker date="1528887650793" expanded="false" signature="5046:5057" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5091:5097" ph=" }" />
-            <marker date="1528887650793" expanded="true" signature="5178:5255" ph="{...}" />
-            <marker date="1528887650793" expanded="false" signature="5289:5300" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5319:5325" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5375:5386" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5417:5423" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5465:5476" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5503:5509" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5575:5586" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5633:5639" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5679:5690" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5713:5719" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5779:5790" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5829:5835" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5867:5878" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5893:5899" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="5943:5954" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="5977:5983" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="6016:6027" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="6042:6048" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="6093:6104" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="6127:6133" ph=" }" />
-            <marker date="1528887650793" expanded="false" signature="6183:6194" ph=" { " />
-            <marker date="1528887650793" expanded="false" signature="6264:6270" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/model/BordroKhesaratSearchModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/HomeBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/uiflow/UIFlow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/uiflow/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/PishnahadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
-          <folding>
-            <marker date="1526481514001" expanded="false" signature="55:560" ph="..." />
-            <marker date="1526481514001" expanded="true" signature="562:606" ph="/**...*/" />
-            <marker date="1526481514001" expanded="true" signature="1639:3223" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="3315:4204" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="4277:4448" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="4513:4944" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="4802:4936" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="5015:5430" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="5291:5421" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="5494:5849" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="5725:5841" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="5921:6875" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="6947:7167" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="7245:7320" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="7398:8121" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="8199:8922" ph="{...}" />
-            <marker date="1526481514001" expanded="true" signature="8996:9198" ph="{...}" />
-            <marker date="1526481514001" expanded="false" signature="9271:9282" ph=" { " />
-            <marker date="1526481514001" expanded="false" signature="9333:9339" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="633" column="19" selection-start-line="633" selection-start-column="19" selection-end-line="633" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/util/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratListBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="84" column="51" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/khesarat.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="31" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/KhesaratBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="315" column="41" selection-start-line="315" selection-start-column="41" selection-end-line="315" selection-end-column="41" />
-          <folding>
-            <marker date="1528890835816" expanded="false" signature="66:1763" ph="..." />
-            <marker date="1528890835816" expanded="true" signature="1766:1806" ph="/**...*/" />
-            <marker date="1528890835816" expanded="true" signature="1808:1826" ph="@{...}" />
-            <marker date="1528890835816" expanded="true" signature="2574:2801" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="2840:3370" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="3412:3641" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="3683:4480" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="4549:5450" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="5494:5744" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="5783:5793" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="5823:5829" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="5872:6070" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="6115:6125" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="6161:6167" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="6228:6350" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="6417:6555" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="6629:6693" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="6756:6766" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="6796:6802" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="6871:6881" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="6913:6919" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="7006:7016" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="7023:7029" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="7108:7118" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="7125:7131" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="7137:7241" ph="@{...}" />
-            <marker date="1528890835816" expanded="true" signature="7292:7500" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="7573:8540" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="8615:9080" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="9169:9179" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9220:9226" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="9261:9272" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9288:9294" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="9342:9353" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9378:9384" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="9430:9441" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9464:9470" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="9536:9547" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9586:9592" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="9638:9649" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9678:9684" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="9758:9820" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="9863:9874" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="9900:9906" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="9973:9984" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="10029:10035" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="10085:10096" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="10121:10127" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="10199:10210" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="10253:10259" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="10311:10322" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="10357:10363" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="10449:10523" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="10572:10583" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="10615:10621" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="10701:10769" ph="{...}" />
-            <marker date="1528890835816" expanded="true" signature="10833:10844" ph=" { " />
-            <marker date="1528890835816" expanded="true" signature="10868:10874" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="10960:11017" ph="{...}" />
-            <marker date="1528890835816" expanded="false" signature="11056:11067" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="11081:11087" ph=" }" />
-            <marker date="1528890835816" expanded="false" signature="11137:11148" ph=" { " />
-            <marker date="1528890835816" expanded="false" signature="11169:11175" ph=" }" />
-            <marker date="1528890835816" expanded="true" signature="11220:11707" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/infrastructure/ComboOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -2134,13 +1741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Pishnahad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="220" column="18" selection-start-line="220" selection-start-column="18" selection-end-line="220" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -2330,31 +1930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="161" column="29" selection-start-line="161" selection-start-column="29" selection-end-line="161" selection-end-column="29" />
-          <folding>
-            <marker date="1530706638737" expanded="false" signature="55:1072" ph="..." />
-            <marker date="1530706638737" expanded="true" signature="1074:1117" ph="/**...*/" />
-            <marker date="1530706638737" expanded="true" signature="1512:2204" ph="{...}" />
-            <marker date="1530706638737" expanded="false" signature="2267:2278" ph=" { " />
-            <marker date="1530706638737" expanded="false" signature="2330:2336" ph=" }" />
-            <marker date="1530706638737" expanded="true" signature="2386:2488" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="2563:2817" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="2889:3429" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="3482:3660" ph="{...}" />
-            <marker date="1530706638737" expanded="false" signature="3721:3732" ph=" { " />
-            <marker date="1530706638737" expanded="false" signature="3759:3765" ph=" }" />
-            <marker date="1530706638737" expanded="false" signature="3832:3843" ph=" { " />
-            <marker date="1530706638737" expanded="false" signature="3876:3882" ph=" }" />
-            <marker date="1530706638737" expanded="true" signature="3937:4023" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="4029:4057" ph="@{...}" />
-            <marker date="1530706638737" expanded="true" signature="4094:4280" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="4286:4314" ph="@{...}" />
-            <marker date="1530706638737" expanded="true" signature="4353:4426" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="4492:4680" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="4686:4714" ph="@{...}" />
-            <marker date="1530706638737" expanded="true" signature="4777:5059" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="5162:5597" ph="{...}" />
-            <marker date="1530706638737" expanded="true" signature="5689:5842" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2446,13 +2021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1622">
-          <caret line="148" column="52" lean-forward="true" selection-start-line="148" selection-start-column="52" selection-end-line="148" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/JsfMessages.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -2474,45 +2042,210 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bordrohavalekhesarat.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="38" column="74" lean-forward="true" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroHavaleKhesaratBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/HavaleKhesarat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/facade/ApplicationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="2794">
           <caret line="127" column="56" selection-start-line="127" selection-start-column="56" selection-end-line="127" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/SequenceService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+        <state relative-caret-position="1562">
+          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/KhesaratService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
+        <state relative-caret-position="4620">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/account/bordrohavalekhesarat.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Khesarat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Vahed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/HavaleKhesarat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/V_AMAR_ACCIDENT_LOSS.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/BimenameService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroBimenameBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroElhaghiyeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="37" column="77" selection-start-line="37" selection-start-column="77" selection-end-line="37" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/interfaces/view/bean/view/BordroHavaleKhesaratBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/service/ElhaghiyeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="301" column="27" lean-forward="true" selection-start-line="301" selection-start-column="27" selection-end-line="301" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Bimename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding>
+            <element signature="e#3254#3255#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/V_AMAR_ACCIDENT_PERSON.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/V_AMAR_ACCIDENT_PORTFOLIO.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/ShakhseHaghighi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/BimeShode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/BimeGozar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Shakhs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Pishnahad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+          <folding>
+            <element signature="e#5953#5954#0" expanded="true" />
+            <element signature="e#5995#5996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/TaahodBimegar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/enums/NoeTaahod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/HagheBime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/PLCYTB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/LOSTB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/DOCLOSTB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/view/EDRSTB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ir/parsianinsurance/he/domain/model/Elhaghiye.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
